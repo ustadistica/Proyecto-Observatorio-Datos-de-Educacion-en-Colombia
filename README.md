@@ -26,7 +26,7 @@ Las bases de datos de Estudiantes Matriculados y Graduados 2024 del SNIES se pub
 
 Esta periodicidad permite comparaciones anuales, seguimiento de tendencias en matrícula y graduación, y evaluación de la evolución del sistema de educación superior en el mediano plazo.
 
-## ✅Calidad y retos de limpieza de los datos
+## 🔎Calidad y retos de limpieza de los datos
 La base consolidada resultante cuenta con 121.715 filas y 42 variables. Una de sus principales fortalezas es que *no presenta datos faltantes en las variables*, facilitando el análisis estadístico sin necesidad de imputaciones.
 
 Durante la exploración y procesamiento se identificaron algunos retos importantes:
