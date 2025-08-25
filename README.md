@@ -69,6 +69,7 @@ La calidad de la base de datos Saber Pro 2024 es consistente con los estándares
 ## 🌐Vía de acceso
 El acceso a la base de datos Saber Pro 2024 se realiza a través del portal oficial DataIcfes, que centraliza la publicación de los microdatos anonimizados de las diferentes evaluaciones aplicadas por el ICFES. Desde esta plataforma, los usuarios pueden consultar la documentación técnica, descargar los diccionarios de variables y acceder a los archivos en formato txt, lo que garantiza un uso ágil de la información por parte de investigadores, instituciones de educación superior y público en general. Adicionalmente, los microdatos se encuentran almacenados en el SharePoint institucional del ICFES, el cual actúa como repositorio seguro y de respaldo. Esta infraestructura asegura la disponibilidad, preservación y actualización de las bases de datos, manteniendo tanto la trazabilidad de las versiones históricas como el acceso a las más recientes. De este modo, el ICFES garantiza un canal de distribución confiable que combina transparencia en la difusión pública de la información y control sobre la integridad de los archivos.
 
+Debes clickear en el enlace para ingresar y descargar la base de datos. [Instituto Colombiano para la Evaluación de la Educación - ICFES] (https://docs.google.com/spreadsheets/d/1CVmA-RwaluSQrchsNbv4a8fJN5Pc6s-o/edit?usp=sharing&ouid=110163285986054343703&rtpof=true&sd=true ) 
 
 🔗 *Enlace oficial:* [Instituto Colombiano para la Evaluación de la Educación - ICFES](https://www.icfes.gov.co/investigaciones/data-icfes/)
 
