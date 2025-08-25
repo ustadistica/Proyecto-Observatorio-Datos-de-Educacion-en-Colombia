@@ -4,8 +4,6 @@
 
 *Fuente:* Sistema Nacional de Información de la Educación Superior (SNIES), Ministerio de Educación Nacional.
 
----
-
 ## 📝Descripción
 El dataset proviene del Sistema Nacional de Información de la Educación Superior (SNIES), administrado por el Ministerio de Educación Nacional, y reúne información consolidada sobre estudiantes matriculados y graduados en Instituciones de Educación Superior (IES) en Colombia durante 2024.
 
