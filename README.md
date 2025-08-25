@@ -119,3 +119,17 @@ Los datos del Presupuesto General de la Nación – Educación 2024 se encuentra
 
 🔗 *Enlace oficial:* [Portal de Transparencia Economica (PTE)]
 (https://www.pte.gov.co/presupuesto-general-nacion/seguimiento-ejecucion-presupuestal-gastos/2024)
+
+
+
+## Viabilidad 
+
+**Factibilidad de uso:** Las tres bases —SNIES (matriculados y graduados 2024), ICFES (Saber Pro 2024) y PTE (Presupuesto Educación 2024)— presentan una alta factibilidad de uso, pues abarcan los tres ejes estratégicos del Observatorio: cobertura, calidad y financiamiento.  
+
+**Cobertura y comparabilidad:** Son fuentes oficiales, nacionales y de acceso abierto. El SNIES refleja la dinámica de ingreso y egreso en las IES, el ICFES consolida resultados académicos y el PTE muestra la ejecución presupuestal. Su comparabilidad es posible gracias a variables comunes como institución, nivel académico y territorio.  
+
+**Hallazgos preliminares:** Los datos son consistentes y confiables, aunque fue necesario integrar archivos en el SNIES, depurar microdatos del ICFES y unificar formatos en el PTE. Estos retos fueron solucionables y no afectan la calidad general.  
+
+**Usos estratégicos:** En conjunto, las bases permiten relacionar inversión pública con acceso, desempeño y resultados en la educación superior, identificar diferencias entre instituciones o territorios y analizar brechas regionales en cobertura y calidad.  
+
+**Recomendaciones:** Integrar las tres fuentes como núcleo del Observatorio, construir un diccionario común de variables, estandarizar códigos geográficos y categorías, realizar cruces entre bases y desarrollar visualizaciones claras que comuniquen los resultados a tomadores de decisiones y público general.  
