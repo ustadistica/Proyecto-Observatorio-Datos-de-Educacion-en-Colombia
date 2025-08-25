@@ -24,7 +24,7 @@ Los registros originales se encontraban en dos archivos separados (matriculados 
 Esta información permite construir indicadores de cobertura, permanencia y eficiencia, y facilita la conexión con otros conjuntos de datos como las pruebas Saber del ICFES o los registros del Portal de Transparencia Económica (PTE).
 
 ## ⏳Frecuencia de actualización
-La base de datos de Estudiantes Matriculados y Graduados 2024 del SNIES se publica *una vez al año. Las IES envían su información al Ministerio de Educación Nacional cada semestre, pero el consolidado oficial se presenta en **mayo del año siguiente*. En este caso, los datos de 2024 se publicaron en mayo de 2025, asegurando un corte completo y validado a nivel nacional.  
+La base de datos de Estudiantes Matriculados y Graduados 2024 del SNIES se publica *una vez al año*. Las IES envían su información al Ministerio de Educación Nacional cada semestre, pero el consolidado oficial se presenta en *mayo del año siguiente*. En este caso, los datos de 2024 se publicaron en mayo de 2025, asegurando un corte completo y validado a nivel nacional.  
 
 Esta periodicidad permite comparaciones anuales, seguimiento de tendencias en matrícula y graduación, y evaluación de la evolución del sistema de educación superior en el mediano plazo.
 
@@ -43,7 +43,7 @@ Durante la exploración y procesamiento se identificaron algunos retos important
 El acceso a la base es *público y gratuito*, reforzando la transparencia del sistema. Los archivos están disponibles en formato Excel (.xlsx) en el portal oficial del SNIES, dentro de la sección:  
 Estadísticas → Bases consolidadas. Desde allí se pueden descargar las bases correspondientes a cada año y sus metadatos asociados.
 
-Para el dataset trabajado, la información corresponde al corte estadístico de *2024, publicado en **mayo de 2025*. Además, el portal ofrece un archivo complementario llamado “Metadatos bases consolidadas 2024”, que contiene la descripción detallada de cada variable y es fundamental para interpretar correctamente la estructura de la base.
+Para el dataset trabajado, la información corresponde al corte estadístico de *2024*, publicado en *mayo de 2025*. Además, el portal ofrece un archivo complementario llamado “Metadatos bases consolidadas 2024”, que contiene la descripción detallada de cada variable y es fundamental para interpretar correctamente la estructura de la base.
 
 🔗 *Enlace oficial:* [SNIES - Ministerio de Educación Nacional](https://snies.mineducacion.gov.co/portal/)
 
