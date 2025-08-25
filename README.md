@@ -114,8 +114,8 @@ Cada mes, el PTE publica los reportes de ejecución acumulada con corte a la fec
   - Se requiere consolidación de los 12 meses para análisis anual y comparativo. 
 
 ## 🌐Vía de acceso
-Los datos del Presupuesto General de la Nación – Educación 2024 se encuentran disponibles en el [Portal de Transparencia Económica – PTE](https://www.pte.gov.co/presupuesto-general-nacion/seguimiento-ejecucion-presupuestal-gastos/2024), dentro de la ruta *Presupuesto General de la Nación → Ejecución Presupuestal → Vigencia 2024 → carpetas por mes → archivo “Cuadros informe de ejecución”*. La información puede descargarse en formatos Excel y PDF, con acceso totalmente abierto y gratuito, lo que permite tanto la consulta en línea como la descarga directa de los archivos para su análisis.
+Los datos del Presupuesto General de la Nación – Educación 2024 se encuentran disponibles en el PTE dentro de la ruta *Presupuesto General de la Nación → Ejecución Presupuestal → Vigencia 2024 → carpetas por mes → archivo “Cuadros informe de ejecución”*. La información puede descargarse en formatos Excel y PDF, con acceso totalmente abierto y gratuito, lo que permite tanto la consulta en línea como la descarga directa de los archivos para su análisis.
 
 
 🔗 *Enlace oficial:* [Portal de Transparencia Economica (PTE)]
-(https://www.pte.gov.co/)
+(https://www.pte.gov.co/presupuesto-general-nacion/seguimiento-ejecucion-presupuestal-gastos/2024)
