@@ -46,3 +46,76 @@ Para el dataset trabajado, la información corresponde al corte estadístico de 
 🔗 *Enlace oficial:* [SNIES - Ministerio de Educación Nacional](https://snies.mineducacion.gov.co/portal/)
 
 ---
+
+
+## 📊Dataset: Dataset: Saber Pro 2024 
+
+*Fuente:*  Instituto Colombiano para la Evaluación de la Educación (ICFES), a través del portal 
+oficial DataIcfes. 
+
+## 📝Descripción
+La base de datos Saber Pro 2024 corresponde a los microdatos anonimizados de los estudiantes que presentaron el examen de competencias genéricas en ese año. Contiene información detallada tanto de los resultados en las pruebas (Comunicación Escrita, Inglés, Lectura Crítica, Razonamiento Cuantitativo y Competencias Ciudadanas) como de variables sociodemográficas, familiares e institucionales de los evaluados. Gracias a esta estructura, es posible analizar no solo los puntajes y niveles de desempeño, sino también las condiciones de contexto que influyen en los resultados académicos.
+
+En total, la base cuenta con 281.601 registros y 90 variables, donde cada fila corresponde a un estudiante que presentó el examen y cada columna a una característica o resultado asociado. Entre las variables se incluyen datos del estudiante (edad, género, tipo de documento, nivel del programa académico), de la institución de educación superior (nombre, carácter académico, origen) y del hogar (ocupación y educación de los padres, acceso a bienes y servicios). Adicionalmente, se incorporan indicadores como percentiles nacionales y por núcleo básico de conocimiento, lo cual facilita comparaciones entre diferentes grupos poblacionales o académicos. Este conjunto de datos es producido y difundido por el ICFES a través del portal DataIcfes, con el propósito de apoyar procesos de investigación, formulación de políticas y evaluación de la calidad de la educación superior en Colombia. 
+
+Los microdatos permiten un análisis amplio de la equidad y calidad del sistema, pero garantizan el anonimato de los estudiantes. Así, la base Saber Pro 2024 constituye una herramienta clave para investigadores, instituciones y tomadores de decisiones interesados en comprender y mejorar el desempeño académico en el país.
+
+## ⏳Frecuencia de actualización
+El examen Saber Pro se aplica anualmente a los estudiantes de educación superior próximos a culminar sus programas académicos en Colombia. En consecuencia, la base de microdatos asociada también se actualiza con esta misma frecuencia: cada año, el ICFES publica los resultados correspondientes a la cohorte que presentó el examen. Esto asegura que investigadores, instituciones y formuladores de política cuenten con información reciente y comparable en el tiempo, permitiendo el análisis de tendencias y cambios en el desempeño de los estudiantes y en las condiciones de contexto. La publicación de los microdatos generalmente ocurre unos meses después de la aplicación del examen, tras los procesos de consolidación, validación y anonimización de la información. Esta dinámica de actualización anual hace que la base de datos sea un insumo confiable para estudios longitudinales, ya que ofrece series continuas año tras año. Además, al estar disponible en el portal DataIcfes, los usuarios pueden acceder a los archivos históricos junto con la versión más reciente, facilitando el análisis comparativo entre diferentes periodos académicos.
+
+## 🔎Calidad y retos de limpieza de los datos
+La calidad de la base de datos Saber Pro 2024 es consistente con los estándares de difusión de microdatos del ICFES: los registros se encuentran anonimizados, las variables están estandarizadas y cuentan con documentación en el diccionario de datos, lo cual facilita su interpretación y análisis. No obstante, al tratarse de información masiva con más de 280 mil registros y 90 variables, se observan algunos desafíos relacionados con valores faltantes, respuestas inconsistentes en las preguntas de contexto y variaciones en los formatos de ciertas variables categóricas. Estos aspectos requieren procesos previos de validación y depuración antes de realizar análisis estadísticos o modelos comparativos. Entre los principales retos de limpieza se encuentran la gestión de valores nulos o no reportados, la recodificación de categorías con nombres largos o inconsistentes, y la homogeneización de variables que pueden presentar diferencias frente a años anteriores (por ejemplo, en escalas de desempeño o en preguntas de caracterización socioeconómica). Asimismo, algunos estudiantes pueden tener registros incompletos en pruebas específicas, lo que obliga a los analistas a definir estrategias de imputación o exclusión según el objetivo del estudio. En este sentido, aunque la base es robusta y confiable, su uso óptimo exige un trabajo riguroso de preprocesamiento que asegure la coherencia y comparabilidad de los resultados.
+
+## 🌐Vía de acceso
+El acceso a la base de datos Saber Pro 2024 se realiza a través del portal oficial DataIcfes, que centraliza la publicación de los microdatos anonimizados de las diferentes evaluaciones aplicadas por el ICFES. Desde esta plataforma, los usuarios pueden consultar la documentación técnica, descargar los diccionarios de variables y acceder a los archivos en formato txt, lo que garantiza un uso ágil de la información por parte de investigadores, instituciones de educación superior y público en general. Adicionalmente, los microdatos se encuentran almacenados en el SharePoint institucional del ICFES, el cual actúa como repositorio seguro y de respaldo. Esta infraestructura asegura la disponibilidad, preservación y actualización de las bases de datos, manteniendo tanto la trazabilidad de las versiones históricas como el acceso a las más recientes. De este modo, el ICFES garantiza un canal de distribución confiable que combina transparencia en la difusión pública de la información y control sobre la integridad de los archivos.
+
+
+🔗 *Enlace oficial:* [Instituto Colombiano para la Evaluación de la Educación - ICFES](https://www.icfes.gov.co/investigaciones/data-icfes/)
+
+---
+
+## 📊Dataset: Presupuesto General de la Nación – Educación 2024
+
+*Fuente:*  Portal de Transparencia Economica (PTE)
+
+## 📝Descripción
+El dataset **Presupuesto General de la Nación – Educación 2024** corresponde a la información oficial publicada por el **Portal de Transparencia Económica (PTE)** del Ministerio de Hacienda y Crédito Público.  
+
+El Presupuesto General de la Nación (PGN) es el principal instrumento financiero del Estado colombiano y refleja cómo se asignan y ejecutan los recursos públicos en cada vigencia fiscal. Dentro de él, el sector **Educación** constituye uno de los rubros más relevantes, al ser históricamente el sector con mayor apropiación del presupuesto nacional.  
+
+Este dataset muestra, **mes a mes durante el año 2024**, la ejecución de los recursos destinados al sector Educación. Sus principales variables son:  
+
+- **Apropiación Vigente (1):** monto del presupuesto autorizado para la vigencia.  
+- **Compromisos (2):** recursos ya asignados formalmente a un propósito.  
+- **Obligaciones (3):** compromisos respaldados legal o contractualmente, que deben pagarse.  
+- **Pagos (4):** giros efectivamente realizados.  
+- **Apropiación sin comprometer (5 = 1 – 2):** saldo de presupuesto aún no comprometido.  
+- **Comp./Apro. (6 = 2/1):** porcentaje del presupuesto que fue comprometido.  
+- **Oblig./Apro. (7 = 3/1):** porcentaje del presupuesto que se convirtió en obligaciones.  
+- **Pago/Apro. (8 = 4/1):** porcentaje del presupuesto que fue efectivamente pagado.  
+- **Oblig./Comp. (9 = 3/2):** proporción de compromisos que pasaron a ser obligaciones.  
+- **Pago/Oblig. (10 = 4/3):** proporción de obligaciones que ya fueron pagadas.  
+
+Este dataset es estratégico porque evidencia cómo se materializa la política pública en educación, mostrando el flujo real de recursos que financian **programas de cobertura, calidad y permanencia en el sistema educativo colombiano** (desde preescolar hasta educación superior, incluyendo pregrado y posgrado). Su disponibilidad mensual permite observar la dinámica de la ejecución, identificar en qué periodos del año se concentran los desembolsos y facilitar comparaciones con indicadores de cobertura (SNIES) y calidad académica (ICFES).
+
+
+## ⏳Frecuencia de actualización
+El dataset tiene una **frecuencia de actualización mensual**.  
+Cada mes, el PTE publica los reportes de ejecución acumulada con corte a la fecha, lo que permite seguir la trazabilidad del gasto público en Educación durante toda la vigencia fiscal. Al final del año (diciembre), se cuenta con el consolidado anual definitivo.  
+
+
+## 🔎Calidad y retos de limpieza de los datos
+- **Fuente oficial:** Ministerio de Hacienda y Crédito Público, a través del **Portal de Transparencia Económica (PTE)**.  
+- **Cobertura:** Nacional, con desglose por sector presupuestal (en este caso, Educación).  
+- **Confiabilidad:** Alta, ya que corresponde a cifras oficiales reportadas por el Sistema Integrado de Información Financiera (SIIF Nación).  
+- **Retos en el uso:**  
+  - Los archivos mensuales se presentan en formato Excel con múltiples cuadros; es necesario ubicar el cuadro que presenta la ejecución por sectores y extraer la fila correspondiente a Educación.  
+  - Puede haber variaciones menores en el formato de un mes a otro.  
+  - Se requiere consolidación de los 12 meses para análisis anual y comparativo. 
+
+## 🌐Vía de acceso
+Los datos del Presupuesto General de la Nación – Educación 2024 se encuentran disponibles en el [Portal de Transparencia Económica – PTE](https://www.pte.gov.co/presupuesto-general-nacion/seguimiento-ejecucion-presupuestal-gastos/2024), dentro de la ruta *Presupuesto General de la Nación → Ejecución Presupuestal → Vigencia 2024 → carpetas por mes → archivo “Cuadros informe de ejecución”*. La información puede descargarse en formatos Excel y PDF, con acceso totalmente abierto y gratuito, lo que permite tanto la consulta en línea como la descarga directa de los archivos para su análisis.
+
+
+🔗 *Enlace oficial:* [Portal de Transparencia Economica (PTE)]
+(https://www.pte.gov.co/)
