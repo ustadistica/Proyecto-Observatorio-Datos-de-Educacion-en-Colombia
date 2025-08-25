@@ -1,4 +1,4 @@
-# Proyecto-Observatorio-Datos-de-Educacion-en-Colombia
+# Proyecto-Observatorio-Datos-de-Educación-en-Colombia
 
 ## 📊Dataset: Estudiantes Matriculados y Graduados en Instituciones de Educación Superior – Colombia – Año 2024
 
