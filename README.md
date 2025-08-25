@@ -48,7 +48,7 @@ Para el dataset trabajado, la información corresponde al corte estadístico de 
 ---
 
 
-## 📊Dataset: Dataset: Saber Pro 2024 
+## 📊Dataset: Saber Pro 2024 
 
 *Fuente:*  Instituto Colombiano para la Evaluación de la Educación (ICFES), a través del portal 
 oficial DataIcfes. 
