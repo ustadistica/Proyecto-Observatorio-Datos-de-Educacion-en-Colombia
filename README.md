@@ -41,8 +41,6 @@ Durante la exploración y procesamiento se identificaron algunos retos important
 
 - *Tratamiento de variables de identificación territorial:* En la carga inicial de datos en R, los códigos de departamento y municipio fueron interpretados como números, lo que ocasionó la pérdida de ceros a la izquierda (ejemplo: “05” → “5”). Se solucionó forzando el tratamiento de estas variables como texto, conservando la codificación oficial del DANE.
 
-- *Nombres de programas e instituciones:* Aunque el SNIES estandariza los códigos, algunos nombres presentan variaciones tipográficas menores (uso de mayúsculas, tildes, abreviaturas). Esto no afecta el análisis cuantitativo, pero puede requerir normalización adicional para análisis descriptivos o visualización.
-
 *Conclusión:* La calidad de los datos puede calificarse como alta, dado que las inconsistencias encontradas no comprometen la integridad de la información y fueron corregidas con procedimientos sencillos de limpieza.
 
 ---
