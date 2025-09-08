@@ -1,4 +1,4 @@
-# snies_copy_to_renamed_from_raw.py
+
 import os, re, sys, time, csv, logging, shutil
 from datetime import datetime
 import pandas as pd
@@ -142,3 +142,4 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"ERROR: {e}", file=sys.stderr)
         sys.exit(1)
+
