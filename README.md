@@ -19,6 +19,8 @@ Los datasets provienen del **Sistema Nacional de Información de la Educación S
 | Administrativos | 2021, 2022, 2023, 2024 | Personal administrativo por IES. |
 | Docentes | 2021, 2022, 2023, 2024 | Planta docente (dedicación, área, etc.). |
 
+Cada archivo consolida información a nivel de las **Instituciones de Educación Superior**, con distinto número de variables y registros por año.
+
 > **Qué datos incluye cada archivo:** nombre y código de la IES (y su sector), programa académico, nivel (pregrado/posgrado), modalidad (presencial/distancia/virtual), ubicación (departamento y municipio según DANE), sexo, año/semestre y los conteos correspondientes (matriculados, inscritos, admitidos, graduados). Para **Docentes** y **Administrativos** se incluyen estructuras específicas.
 
 Esta información permite construir indicadores de cobertura, permanencia y eficiencia, y facilita la conexión con otros conjuntos de datos como las pruebas Saber del ICFES o los registros del Portal de Transparencia Económica (PTE).
@@ -26,24 +28,37 @@ Esta información permite construir indicadores de cobertura, permanencia y efic
 ## ⏳Frecuencia de actualización
 Las bases de datos del SNIES se publican *una vez al año*. Las IES envían su información al Ministerio de Educación Nacional cada semestre, pero el consolidado oficial se presenta en *mayo del año siguiente*. Por ejemplo, los datos de 2024 se publicaron en mayo de 2025, asegurando un corte completo y validado a nivel nacional.  
 
-Esta periodicidad permite comparaciones anuales, seguimiento de tendencias en matrícula y graduación, y evaluación de la evolución del sistema de educación superior en el mediano plazo.
+Esta periodicidad permite comparaciones anuales, seguimiento de tendencias como en estudiantes matriculados y graduados, y evaluación de la evolución del sistema de educación superior en el mediano plazo.
 
 ## 🔎Calidad y retos de limpieza de los datos
-La base consolidada resultante cuenta con 121.715 filas y 42 variables. Una de sus principales fortalezas es que *no presenta datos faltantes en las variables*, facilitando el análisis estadístico sin necesidad de imputaciones.
+Las bases de datos cuentan con distinto número de variables y registros por año. Una de sus principales fortalezas es que *no presentan datos faltantes en las variables*, facilitando el análisis estadístico sin necesidad de imputaciones.
 
 Durante la exploración y procesamiento se identificaron algunos retos importantes:
 
-- *Integración de bases separadas:* Dado que los datos de matriculados y graduados se encontraban en archivos separados, se realizó un proceso de integración en RStudio, añadiendo la variable TIPO (con valores "Matriculado" o "Graduado") y una variable de conteo estandarizada (NÚMERO DE GRADUADOS/MATRICULADOS). Esto mejora la consistencia y facilita comparaciones dentro de un mismo marco de análisis.
+- **Tratamiento de variables de identificación territorial.** En la carga inicial de datos en R, los códigos de departamento y municipio fueron interpretados como números, lo que ocasionó la pérdida de ceros a la izquierda (ejemplo: “05” → “5”). Se puede solucionar forzando el tratamiento de estas variables como texto, conservando la codificación oficial del DANE.
 
-- *Tratamiento de variables de identificación territorial:* En la carga inicial de datos en R, los códigos de departamento y municipio fueron interpretados como números, lo que ocasionó la pérdida de ceros a la izquierda (ejemplo: “05” → “5”). Se solucionó forzando el tratamiento de estas variables como texto, conservando la codificación oficial del DANE.
+- **Trazabilidad y reproducción.** Implementamos una automatización con **Selenium**: al ejecutar `scraper_snies.py`, el navegador entra a **SNIES → Estadísticas → Bases consolidadas**, recorre todas las páginas y **descarga** los archivos por **año** y **categoría** en `data/raw/`, dejando registro en `output/manifest.csv`; luego, `snies_renamed_registros.py` toma esos archivos, los **renombra** con un título claro (categoría + año), los copia a `data/renamed/` y documenta cada cambio en `output/manifest_renamed.csv`, conservando los originales. Así el flujo es **repetible y verificable**.
 
-*Conclusión:* La calidad de los datos puede calificarse como alta, dado que las inconsistencias encontradas no comprometen la integridad de la información y fueron corregidas con procedimientos sencillos de limpieza.
+  **🔁 Pipeline reproducible**
+  - **Código 1 – Descarga automática → `data/raw/`**  
+    Actúa como un “ayudante” que abre el portal del SNIES y hace el siguiente recorrido: entra a *Bases consolidadas*, revisa desde **2021**, abre cada ficha y **descarga solo los archivos válidos** (Excel/CSV/ZIP). Guarda el **nombre original** del archivo y anota todo en `output/manifest.csv` (enlace, categoría, año, ruta y resultado). Si faltó alguna categoría, queda **anotado**.
 
-## 🌐Vía de acceso
-El acceso a la base es *público y gratuito*, reforzando la transparencia del sistema. Los archivos están disponibles en formato Excel (.xlsx) en el portal oficial del SNIES, dentro de la sección:  
-Estadísticas → Bases consolidadas. Desde allí se pueden descargar las bases correspondientes a cada año y sus metadatos asociados.
+  - **Código 2 – Renombrado claro → `data/renamed/`**  
+    Toma los archivos almacenados en `data/raw/` y les pone **los nombres correctos** (ej.: **“Estudiantes Matriculados 2024.xlsx”**), copiando a `data/renamed/` sin borrar el original y **respetando la extensión**. Si el nombre ya existe, añade “(2)”, “(3)”, etc. Registra cada cambio en `output/manifest_renamed.csv` (origen, token, nombre final, ruta y estado); si hay archivos sin mapeo, los **reporta** para revisión.
 
-Para el dataset trabajado, la información corresponde al corte estadístico de *2024*, publicado en *mayo de 2025*. Además, el portal ofrece un archivo complementario llamado “Metadatos bases consolidadas 2024”, que contiene la descripción detallada de cada variable y es fundamental para interpretar correctamente la estructura de las base.
+  > **Resultado:** En `data/renamed/` quedan los archivos listos para su análisis, con nombres claros y correctos; los originales se conservan en `data/raw/`.
+
+*Conclusión:* La calidad de los datos puede calificarse como alta, dado que las inconsistencias encontradas no comprometen la integridad de la información y pueden ser corregidas con procedimientos sencillos de limpieza.
+
+## 🌐 Vía de acceso
+El acceso es **público y gratuito**. Los archivos están disponibles en **Excel (.xlsx)** (en algunos casos .xls/.csv/.zip) en el portal del **SNIES**, ruta: **Estadísticas → Bases consolidadas**. Desde allí se pueden descargar las bases correspondientes a cada año y sus metadatos asociados.  
+Además, el portal ofrece el archivo **“Metadatos bases consolidadas”**, con la descripción detallada de cada variabley es fundamental para interpretar correctamente la estructura de las base.
+
+**Automatización del acceso**
+- `scraper_snies.py`: abre el portal, recorre todas las páginas y **descarga** automáticamente por año y categoría a `data/raw/`, registrando cada acción en `output/manifest.csv`.
+- `snies_renamed_registros.py`: **renombra** los archivos con los nombres correctos de cada registro, los copia a `data/renamed/` y documenta los cambios en `output/manifest_renamed.csv` y ya quedan los datasets limpios para su uso.
+
+Ambos scripts se incluyen en la **carpeta `codigos/` del repositorio**.
 
 🔗 *Enlace oficial:* [SNIES - Ministerio de Educación Nacional](https://snies.mineducacion.gov.co/portal/)
 
