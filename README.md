@@ -15,26 +15,16 @@ Los datasets provienen del **Sistema Nacional de Información de la Educación S
 | Estudiantes admitidos | 2021, 2022, 2023, 2024 | Admisiones por periodo. |
 | Estudiantes inscritos | 2021, 2022, 2023, 2024 | Inscripciones/aspirantes. |
 | Estudiantes graduados | 2021, 2022, 2023, 2024 | Egresos por nivel/modalidad. |
-| Metadatos bases consolidadas | **2023–2024** | Documenta nombre, descripción y codificación de variables (imprescindible para lectura homogénea). |
+| Metadatos bases consolidadas | **2023–2024** | Documenta nombre, descripción y codificación de variables. |
 | Administrativos | 2021, 2022, 2023, 2024 | Personal administrativo por IES. |
 | Docentes | 2021, 2022, 2023, 2024 | Planta docente (dedicación, área, etc.). |
 
-Los registros originales se encontraban en dos archivos separados (matriculados y graduados), los cuales fueron integrados en una sola base de datos. Se añadieron variables que diferencian los registros (Tipo: matriculado o graduado) y permiten estandarizar el conteo (Número). La base final cuenta con 42 variables y 121.715 registros, ofreciendo un panorama detallado sobre la dinámica de la educación superior en el país, tanto en ingreso como en egreso.
-
-### Variables relevantes
-- Institución de educación superior (IES), sector (oficial o privado), programa académico.
-- Nivel académico (pregrado o posgrado), nivel de formación.
-- Modalidad de estudio (presencial, distancia o virtual).
-- Variables geográficas de departamento y municipio.
-- Sexo de los estudiantes.
-- Año y semestre de referencia.
-- Número de matriculados o graduados.
-- Variable Tipo (Graduados o Matriculados).
+> **Qué datos incluye cada archivo:** nombre y código de la IES (y su sector), programa académico, nivel (pregrado/posgrado), modalidad (presencial/distancia/virtual), ubicación (departamento y municipio según DANE), sexo, año/semestre y los conteos correspondientes (matriculados, inscritos, admitidos, graduados). Para **Docentes** y **Administrativos** se incluyen estructuras específicas.
 
 Esta información permite construir indicadores de cobertura, permanencia y eficiencia, y facilita la conexión con otros conjuntos de datos como las pruebas Saber del ICFES o los registros del Portal de Transparencia Económica (PTE).
 
 ## ⏳Frecuencia de actualización
-Las bases de datos de Estudiantes Matriculados y Graduados 2024 del SNIES se publican *una vez al año*. Las IES envían su información al Ministerio de Educación Nacional cada semestre, pero el consolidado oficial se presenta en *mayo del año siguiente*. En este caso, los datos de 2024 se publicaron en mayo de 2025, asegurando un corte completo y validado a nivel nacional.  
+Las bases de datos del SNIES se publican *una vez al año*. Las IES envían su información al Ministerio de Educación Nacional cada semestre, pero el consolidado oficial se presenta en *mayo del año siguiente*. Por ejemplo, los datos de 2024 se publicaron en mayo de 2025, asegurando un corte completo y validado a nivel nacional.  
 
 Esta periodicidad permite comparaciones anuales, seguimiento de tendencias en matrícula y graduación, y evaluación de la evolución del sistema de educación superior en el mediano plazo.
 
