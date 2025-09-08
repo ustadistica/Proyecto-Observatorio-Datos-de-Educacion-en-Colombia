@@ -5,7 +5,19 @@
 *Fuente:* Sistema Nacional de Información de la Educación Superior (SNIES), Ministerio de Educación Nacional.
 
 ## 📝Descripción
-El dataset proviene del Sistema Nacional de Información de la Educación Superior (SNIES), administrado por el Ministerio de Educación Nacional, y reúne información consolidada sobre estudiantes matriculados y graduados en Instituciones de Educación Superior (IES) en Colombia durante 2024.
+Los datasets provienen del **Sistema Nacional de Información de la Educación Superior (SNIES)**, administrado por el **Ministerio de Educación Nacional**, y reúnen información consolidada sobre **estudiantes**, **docentes** y **administrativos** en Instituciones de Educación Superior (IES) en Colombia durante **2021–2024**.
+
+### 📚 Conjuntos incluidos (serie 2021–2024)
+| Conjunto | Años disponibles | Nota |
+|---|---|---|
+| Estudiantes matriculados en primer curso | 2021, 2022, 2023, 2024 | Ingresos a primer curso por IES/programa. |
+| Estudiantes matriculados | 2021, 2022, 2023, 2024 | Matrícula total por IES/programa. |
+| Estudiantes admitidos | 2021, 2022, 2023, 2024 | Admisiones por periodo. |
+| Estudiantes inscritos | 2021, 2022, 2023, 2024 | Inscripciones/aspirantes. |
+| Estudiantes graduados | 2021, 2022, 2023, 2024 | Egresos por nivel/modalidad. |
+| Metadatos bases consolidadas | **2023–2024** | Documenta nombre, descripción y codificación de variables (imprescindible para lectura homogénea). |
+| Administrativos | 2021, 2022, 2023, 2024 | Personal administrativo por IES. |
+| Docentes | 2021, 2022, 2023, 2024 | Planta docente (dedicación, área, etc.). |
 
 Los registros originales se encontraban en dos archivos separados (matriculados y graduados), los cuales fueron integrados en una sola base de datos. Se añadieron variables que diferencian los registros (Tipo: matriculado o graduado) y permiten estandarizar el conteo (Número). La base final cuenta con 42 variables y 121.715 registros, ofreciendo un panorama detallado sobre la dinámica de la educación superior en el país, tanto en ingreso como en egreso.
 
