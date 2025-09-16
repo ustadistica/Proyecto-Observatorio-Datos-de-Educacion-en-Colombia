@@ -25,7 +25,7 @@ En la distribución por etnia del Saber Pro 2021–2024, el grupo afrodescendien
 ## Estadísticas descriptivas de los puntajes 📊
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/4bdd1de8-25be-4c73-933e-18d7cf0acab" width="45%">
+  <img src="https://github.com/user-attachments/assets/ef060f76-f904-4aad-83f1-0e77ad34a849" width="45%">
 </p>
 
 En estos años, el módulo con mejores resultados es Inglés (promedio cerca de 154 puntos). Después vienen Lectura Crítica (alrededor de 149), Razonamiento Cuantitativo (144) y Competencias Ciudadanas (143). El más bajo es Comunicación Escrita, con un promedio de unos 135 puntos. Entre Inglés y Comunicación Escrita hay una diferencia grande, casi 19 puntos, así que valdría la pena poner atención especial a fortalecer Escritura.
