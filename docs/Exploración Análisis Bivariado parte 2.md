@@ -38,7 +38,19 @@ Al cruzar tipo de institución con método del programa se ve que la modalidad p
 
 Al cruzar origen de la institución con nivel del programa, se ve que casi todo está en nivel universitario, sin importar si la institución es oficial como nacional, municipal, departamental, o no oficial como fundación, corporación, o de régimen especial. Los niveles tecnológico y técnico profesional aparecen solo con participaciones mínimas. La prueba estadística con un resultado de p = 0.27 indica que no hay una relación clara entre el origen y el nivel del programa.
 
+## Relación estrato de vivienda con carácter académico de la institución
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/48f990d4-81af-43cd-b81e-380b300301cf" width="45%">
+  <img src="https://github.com/user-attachments/assets/4d88129c-5f5f-4d09-9747-48814b2eef2f" width="45%">
+</p>
+
+ Al cruzar estrato de vivienda con carácter académico de la institución, se ve que la universidad es mayoría en todos los estratos. En estrato 1 cerca del 61% está en universidad y ese porcentaje crece a medida que sube el estrato, llegando a alrededor del 87% en estrato 6. En cambio, las instituciones universitarias y tecnológicas tienen más peso en los estratos bajos y van perdiendo participación en los estratos altos; la técnica profesional es minoritaria en todos los casos. La prueba estadística confirma que sí hay diferencias claras por estrato pues cambian las proporciones según el nivel socioeconómico.
+
 ---
+
+
+
 
 
 
