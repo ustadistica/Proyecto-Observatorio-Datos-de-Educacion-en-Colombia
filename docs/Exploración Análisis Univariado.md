@@ -62,8 +62,7 @@ El caso distinto es Comunicación Escrita es el promedio más bajo en todos los 
 ## Distribución de puntajes por módulo - *diagrama de cajas* 📉📈
 
 <p align="center">
-  <img src="<img width="1002" height="532" alt="image" src="https://github.com/user-attachments/assets/d8ebd871-66d4-4df6-8828-4112cd62e355" />
-" width="45%">
+  <img src="https://github.com/user-attachments/assets/d8ebd871-66d4-4df6-8828-4112cd62e355" width="45%">
 </p>
 
 En este gráfico vemos cómo se reparten los puntajes por módulo. La mayoría de resultados está entre 120 y 170 puntos. Los modulos de Inglés y Lectura suelen quedar un poco más altos; Ciudadanas y Cuantitativo se mantienen en la mitad; y Comunicación Escrita aparece más baja y con más diferencia entre estudiantes. En todos los módulos aparecen puntos extremos cerca de 0 y 300, que son valores poco comunes.
