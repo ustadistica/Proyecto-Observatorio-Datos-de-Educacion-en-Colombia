@@ -47,7 +47,7 @@ Al cruzar origen de la institución con nivel del programa, se ve que casi todo 
 
  Al cruzar estrato de vivienda con carácter académico de la institución, se ve que la universidad es mayoría en todos los estratos. En estrato 1 cerca del 61% está en universidad y ese porcentaje crece a medida que sube el estrato, llegando a alrededor del 87% en estrato 6. En cambio, las instituciones universitarias y tecnológicas tienen más peso en los estratos bajos y van perdiendo participación en los estratos altos; la técnica profesional es minoritaria en todos los casos. La prueba estadística confirma que sí hay diferencias claras por estrato pues cambian las proporciones según el nivel socioeconómico.
 
-## Relación tiene computador con carácter académico de la institución: 
+## Relación tiene computador con carácter académico de la institución
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/915ba31d-44bf-45dc-879e-1b2fb732ea8e" width="45%">
@@ -56,8 +56,16 @@ Al cruzar origen de la institución con nivel del programa, se ve que casi todo 
 
 Al cruzar tener computador en casa con el tipo de institución, en ambos casos la mayoría de estudiantes está en universidad. Tener computador se asocia con una ligera mayor presencia en universidad y una ligera menor presencia en tecnológicas/técnicas; en institución universitaria casi no hay diferencia. La prueba estadística confirma que sí hay diferencias, pero son pequeñas y no cambian mucho la distribución entre tipos de institución.
 
----
+## Relación entre periodo y método del programa
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ec351474-a77f-45f1-b909-de0613f756d4" width="45%">
+  <img src="https://github.com/user-attachments/assets/9440421f-31d4-4554-93a5-e377a72a2e53" width="45%">
+</p>
+
+La relación entre periodo y método del programa deja claro que la modalidad presencial es la más común en todo el tiempo, con participaciones entre 66% y 83%. En 20223 se ve una bajada fuerte del presencial, cerca del 55%, al mismo tiempo que sube la virtual hasta alrededor del 32%. Entre 20225 y 20234 el presencial vuelve a dominar, cerca del 80%. En 20242–20244 otra vez cae el presencial hasta 66% y la virtual crece a 23–25%. La distancia tradicional se mantiene estable entre 10% y 16%, y la semipresencial es casi nula. La prueba chi-cuadrado indica que sí hay diferencias por periodo dado que las proporciones no son iguales en todos los años.
+
+---
 
 
 
