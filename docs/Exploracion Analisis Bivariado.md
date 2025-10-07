@@ -108,7 +108,105 @@ Se observa un **gradiente ascendente**: las medianas aumentan desde **E1/Sin est
 
 El patrón es **ascendente**: las medianas pasan de **~130–135** en **E1/Sin estrato** a **~160–165** en **E6**, con **E5** muy cercano. Es una brecha **clara pero moderada**; las cajas se **solapan** ampliamente y hay outliers en **0** y **300** en todos los estratos. Lectura práctica: el estrato del hogar se asocia positivamente con Cuantitativo, aunque la variación dentro de cada estrato sigue siendo alta y no permite clasificar personas solo por este indicador.
 
+---
 
+# Educación de la madre vs puntajes
+
+**Lectura general.** A mayor **nivel educativo de la madre**, mayores puntajes en todos los módulos. Las categorías **“Ninguno/No aplica/No sabe”** tienen medias bajas y, en algunos casos, n pequeños; trátalas con cautela. La dispersión es alta en todos los grupos, por lo que hay **solapamiento**.
+
+- **Ciudadana:** de **~127 (Ninguno)** a **~160 (Postgrado)**; profesional completa **~152**. Gradiente claro, efecto **pequeño–moderado**.
+- **Comunicación escrita:** de **~125 (Ninguno)** a **~146 (Postgrado)**; profesional completa **~141**. Brecha **moderada** pero con alta variabilidad.
+- **Inglés:** salto más grande: de **~131 (Ninguno)** a **~181 (Postgrado)**; profesional completa **~172**. **Efecto más marcado** entre módulos.
+- **Lectura crítica:** de **~134 (Ninguno)** a **~165 (Postgrado)**; profesional completa **~159**. Gradiente estable.
+- **Razonamiento cuantitativo:** de **~126 (Ninguno)** a **~159 (Postgrado)**; profesional completa **~152**. Diferencias **claras** pero aún con solapamiento.
+
+---
+
+# Educación del padre vs puntajes
+
+Cuanto mayor es el **nivel educativo del padre**, mejores son los puntajes en todos los módulos. El patrón es monotónico y estable, aunque con mucha **variación dentro de cada categoría**. En los extremos se observan brechas de tamaño práctico **pequeño–moderado**:  
+- **Ciudadana:** de ~**129.6** (Ninguno) a ~**161.9** (Postgrado) → **≈+32 pts**.  
+- **Comunicación escrita:** aumento sostenido hasta niveles profesionales/postgrado; diferencia **moderada**.  
+- **Inglés:** el salto más grande, de ~**134.8** (Ninguno) a ~**184.3** (Postgrado) → **≈+50 pts**.  
+- **Lectura crítica:** de ~**136.6** (Ninguno) a ~**166.0** (Postgrado) → **≈+30 pts**.  
+- **Razonamiento cuantitativo:** gradiente claro; **profesional completa ≈151.6** frente a **Ninguno ≈129** → **≈+22 pts**.
+
+---
+
+# Puntajes por año (2021–2024)
+
+## Competencias Ciudadanas por año (2021–2024)
+
+<img width="705" height="501" alt="image" src="https://github.com/user-attachments/assets/e937a892-2f7f-4d2a-a240-b334977c63de" />
+
+
+Las distribuciones son **muy parecidas** entre años: medianas en ~140–150 y rangos intercuartílicos casi iguales. Se nota un **bache en 2023** y una **recuperación en 2024**, que queda levemente por encima de 2021–2022. Hay outliers en **0** y cercanos a **300** todos los años. Lectura práctica: **variación anual pequeña** y patrón general **estable**.
+
+## Comunicación escrita por año (2021–2024)
+
+<img width="705" height="501" alt="image" src="https://github.com/user-attachments/assets/c313ae99-cb3b-434a-8a84-fec59c99ba0e" />
+
+
+Este módulo es el más **volátil**: baja en **2022**, **rebota** en 2023 y **cede** un poco en 2024. Aun así, las medianas e IQR son parecidos y las cajas se **solapan** en todos los años. Aparecen outliers muy bajos (~0–60) y altos (~220–300) en cada corte. Lectura práctica: **cambios moderados**, sin giros estructurales del desempeño.
+
+#### Inglés por año (2021–2024)
+
+<img width="705" height="501" alt="image" src="https://github.com/user-attachments/assets/94db32ec-2e13-4215-bf39-b54a74b1b9c7" />
+
+
+Patrón **estable** con **leve mejora**: las medianas se mantienen ~145–165 y el IQR es casi igual en todos los años; **2024** marca el nivel más alto. Hay outliers en **0** y cercanos a **300** en cada corte. Lectura práctica: variación anual **pequeña**; el desempeño en Inglés se mantiene constante con un ligero avance reciente.
+
+## Lectura crítica por año (2021–2024)
+
+<img width="705" height="501" alt="image" src="https://github.com/user-attachments/assets/326f3237-ac2c-4f42-9c47-c6b45aa2a9a0" />
+
+Tendencia **ligeramente ascendente**: medianas suben de 2021 a 2022, hay **bache leve en 2023** y **máximo en 2024**. Los IQR son muy parecidos y las cajas se **solapan** entre años, lo que indica **cambios pequeños** del desempeño global. En todos los cortes aparecen outliers en **0** y cercanos a **300**. Lectura práctica: mejora paulatina sin cambios estructurales.
+
+
+## Razonamiento cuantitativo por año (2021–2024)
+
+<img width="705" height="501" alt="image" src="https://github.com/user-attachments/assets/31167243-98f0-47eb-8e54-e454b943c8fc" />
+
+Serie **plana**: medianas alrededor de **140–150** e IQR casi idéntico cada año. **2022** muestra un leve máximo, **2023** una pequeña caída y **2024** regresa al nivel de **2021**. Outliers en **0** y cercanos a **300** en todos los cortes. Lectura práctica: **sin cambios relevantes** en el desempeño cuantitativo entre 2021 y 2024.
+
+---
+
+# Puntajes por período (20212–2024)
+
+## Competencias Ciudadanas por período (20212–20244)
+
+<img width="705" height="507" alt="image" src="https://github.com/user-attachments/assets/137a8783-c14e-4325-abbc-a85ebda535ee" />
+
+
+Cajas **muy similares** entre períodos: medianas ~135–155 e IQR casi idéntico. Se observan **repuntes leves** en 20226 y 20234 y **baches** en 20223–20233, pero el **solapamiento** es alto y hay outliers en **0** y **300** en todos los cortes. Lectura práctica: la variación por período es **pequeña**; el patrón de Ciudadana se mantiene **estable** a lo largo de 20212–20244.
+
+## Comunicación escrita por período (20212–20244)
+
+<img width="705" height="507" alt="image" src="https://github.com/user-attachments/assets/ad1d5eb3-ca9d-470f-b13a-bf76fc8921eb" />
+
+
+Serie **irregular**: cae con fuerza en **20222**, **sube** en **20231–20234** y luego **retrocede** en **20241–20244** hacia niveles medios. Aun así, las cajas se **solapan** casi siempre y el IQR es parecido, con outliers bajos (~0–60) y altos (~300) en todos los cortes. Lectura práctica: **variación moderada**, con el mínimo en 20222 y sin cambios estructurales del desempeño.
+
+
+## Inglés por período (20212–20244)
+
+<img width="705" height="507" alt="image" src="https://github.com/user-attachments/assets/12e979ea-c277-41ce-bcb6-bc92ee110834" />
+
+Oscila más que otros módulos: **picos** de mediana altos en **20213, 20226 y 20233** (~190–205) y **valles** en **20222, 20231 y 20242** (~145–155). Las cajas se **solapan** y hay outliers bajos (~0–100) y altos (~300) en todos los cortes. Lectura práctica: **variación moderada** entre períodos; los picos suelen coincidir con **muestras pequeñas**, por lo que el nivel general de Inglés se mantiene **bastante estable**.
+
+## Lectura crítica por período (20212–20244)
+
+<img width="705" height="507" alt="image" src="https://github.com/user-attachments/assets/befdff5f-9462-496a-95ba-57637a96ef81" />
+
+
+Patrón **estable con leve mejora**: las medianas suben respecto a los primeros cortes y muestran picos en **20213, 20226 y 20234**, con **20244** por encima de los niveles iniciales. Las cajas se **solapan** casi siempre y el IQR es similar, con outliers en **0** y cerca de **300** en todos los períodos. Lectura práctica: **incrementos moderados** a lo largo del tiempo; los picos coinciden con **muestras más pequeñas**, por lo que el nivel general se mantiene **bastante constante**.
+
+## Razonamiento cuantitativo por período (20212–20244)
+
+<img width="705" height="507" alt="image" src="https://github.com/user-attachments/assets/b5668c09-e449-45bc-b1fd-6a3d410b3257" />
+
+
+Fluctúa **poco**: medianas ~140–165 con **alto solapamiento** del IQR. Se ven **picos** en **20213, 20226 y 20234** y **valles** en **20231/20243**, pero esos extremos coinciden con **muestras pequeñas**. Outliers en **0** y cerca de **300** en todos los cortes. Lectura práctica: **nivel estable** con variaciones moderadas que no cambian el patrón general.
 
 
 
