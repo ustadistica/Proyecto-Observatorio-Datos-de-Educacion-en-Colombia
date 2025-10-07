@@ -62,7 +62,7 @@ El caso distinto es Comunicación Escrita es el promedio más bajo en todos los 
 ## Distribución de puntajes por módulo - *diagrama de cajas* 📉📈
 
 <p align="center">
-  <img src="<img width="1002" height="532" alt="image" src="https://github.com/user-attachments/assets/d1c270d5-5023-4784-93b9-c765d51481d9" />
+  <img src="<img width="1002" height="532" alt="image" src="https://github.com/user-attachments/assets/d1c270d5-5023-4784-93b9-c765d51481d9">
 ">
 </p>
 
