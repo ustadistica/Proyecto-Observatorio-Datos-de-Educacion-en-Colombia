@@ -208,7 +208,53 @@ Patrón **estable con leve mejora**: las medianas suben respecto a los primeros 
 
 Fluctúa **poco**: medianas ~140–165 con **alto solapamiento** del IQR. Se ven **picos** en **20213, 20226 y 20234** y **valles** en **20231/20243**, pero esos extremos coinciden con **muestras pequeñas**. Outliers en **0** y cerca de **300** en todos los cortes. Lectura práctica: **nivel estable** con variaciones moderadas que no cambian el patrón general.
 
+---
+
+# Relación Género con Tener internet en casa
+
+Al cruzar género con tener internet en casa, se ve que en ambos grupos alrededor de 9 de cada 10 estudiantes sí tienen internet. Los hombres aparecen con acceso apenas un poco mayor que las mujeres, y ellas concentran un poco más de no tiene internet en casa. La prueba estadística detecta diferencia, pero es pequeña y no cambia mucho la distribución entre géneros.
+
+---
+
+# Relación Género con estrato de Vivienda
+
+Al cruzar género con estrato de vivienda, ambos géneros se concentran sobre todo en estratos 2 y 3; luego viene el estrato 1, y a partir del 4 la participación baja bastante. Los estratos 5 y 6 son minoritarios para todos. La diferencia entre géneros es leve pero consistente: las mujeres tienen un poco más de presencia en estratos 1–2, mientras que los hombres pesan un poco más en estratos 3–6.
+
+---
+
+#  Relación tipo de institución con método del programa
+
+<img width="742" height="539" alt="image" src="https://github.com/user-attachments/assets/fb5f2c02-224b-4517-b42f-2c9eb29febe1" />
+
+Al cruzar tipo de institución con método del programa se ve que la modalidad presencial domina en todos los casos, pero con diferencias claras según la institución. En la institución tecnológica casi todo es presencial prácticamente la totalidad. En la universidad también predomina lo presencial alrededor de ocho de cada diez. En la institución universitaria el esquema es más mixto: cerca de seis de cada diez son presenciales y una parte importante se reparte entre distancia y virtual. En la técnica profesional hay dos tercios presenciales y casi tres de cada diez en virtual. La semipresencial casi no aparece. La prueba confirma que el método cambia según el tipo de institución.
+
+---
+
+# Relación Origen de la institución con Nivel del Programa
+
+<img width="739" height="585" alt="image" src="https://github.com/user-attachments/assets/5e3b272e-b155-479b-a784-f4efcf569c37" />
+
+Al cruzar origen de la institución con nivel del programa, se ve que casi todo está en nivel universitario, sin importar si la institución es oficial como nacional, municipal, departamental, o no oficial como fundación, corporación, o de régimen especial. Los niveles tecnológico y técnico profesional aparecen solo con participaciones mínimas. La prueba estadística con un resultado de p = 0.27 indica que no hay una relación clara entre el origen y el nivel del programa.
+
+---
+
+# Relación estrato de vivienda con carácter académico de la institución
+
+<img width="586" height="625" alt="image" src="https://github.com/user-attachments/assets/3af04e25-4d64-4ed4-92f0-9d07ec19651d" />
+
+Al cruzar estrato de vivienda con carácter académico de la institución, se ve que la universidad es mayoría en todos los estratos. En estrato 1 cerca del 61% está en universidad y ese porcentaje crece a medida que sube el estrato, llegando a alrededor del 87% en estrato 6. En cambio, las instituciones universitarias y tecnológicas tienen más peso en los estratos bajos y van perdiendo participación en los estratos altos; la técnica profesional es minoritaria en todos los casos. La prueba estadística confirma que sí hay diferencias claras por estrato pues cambian las proporciones según el nivel socioeconómico.
+
+---
+
+# Relación tiene computador con carácter académico de la institución
+
+<img width="519" height="625" alt="image" src="https://github.com/user-attachments/assets/8d5232fd-3f93-4cbf-93ee-2a50519c6892" />
+
+Al cruzar tener computador en casa con el tipo de institución, en ambos casos la mayoría de estudiantes está en universidad. Tener computador se asocia con una ligera mayor presencia en universidad y una ligera menor presencia en tecnológicas/técnicas; en institución universitaria casi no hay diferencia. La prueba estadística confirma que sí hay diferencias, pero son pequeñas y no cambian mucho la distribución entre tipos de institución.
+
+# Relación entre periodo y método del programa
+
+<img width="550" height="539" alt="image" src="https://github.com/user-attachments/assets/a997b102-6b52-4e5d-af07-9b91f29c930e" />
 
 
-
-
+La relación entre periodo y método del programa deja claro que la modalidad presencial es la más común en todo el tiempo, con participaciones entre 66% y 83%. En 20223 se ve una bajada fuerte del presencial, cerca del 55%, al mismo tiempo que sube la virtual hasta alrededor del 32%. Entre 20225 y 20234 el presencial vuelve a dominar, cerca del 80%. En 20242–20244 otra vez cae el presencial hasta 66% y la virtual crece a 23–25%. La distancia tradicional se mantiene estable entre 10% y 16%, y la semipresencial es casi nula. La prueba chi-cuadrado indica que sí hay diferencias por periodo dado que las proporciones no son iguales en todos los años.
