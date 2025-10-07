@@ -29,7 +29,20 @@ Al cruzar género con estrato de vivienda, ambos géneros se concentran sobre to
 
 Al cruzar tipo de institución con método del programa se ve que la modalidad presencial domina en todos los casos, pero con diferencias claras según la institución. En la institución tecnológica casi todo es presencial prácticamente la totalidad. En la universidad también predomina lo presencial alrededor de ocho de cada diez. En la institución universitaria el esquema es más mixto: cerca de seis de cada diez son presenciales y una parte importante se reparte entre distancia y virtual. En la técnica profesional hay dos tercios presenciales y casi tres de cada diez en virtual. La semipresencial casi no aparece. La prueba confirma que el método cambia según el tipo de institución.
 
+## Relación Origen de la institución con Nivel del Programa
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/29f47419-45d6-40cb-91ae-c8b7a1c0bcb7" width="45%">
+  <img src="https://github.com/user-attachments/assets/643a3c62-9e5e-46a0-8dce-3d886cafecdb" width="45%">
+</p>
+
+Al cruzar origen de la institución con nivel del programa, se ve que casi todo está en nivel universitario, sin importar si la institución es oficial como nacional, municipal, departamental, o no oficial como fundación, corporación, o de régimen especial. Los niveles tecnológico y técnico profesional aparecen solo con participaciones mínimas. La prueba estadística con un resultado de p = 0.27 indica que no hay una relación clara entre el origen y el nivel del programa.
+
 ---
+
+
+
+
 
 
 
