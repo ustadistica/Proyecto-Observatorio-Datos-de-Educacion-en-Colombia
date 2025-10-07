@@ -1,5 +1,5 @@
 
-# 📊📝 Exploración de Variables Categóricas y Numéricas
+# 📊📝 Exploración de la base de datos SaberPro (2021-2024) - ANÁLISIS UNIVARIADO
 
 ---
 ## Districución de género ♀️♂️ 
@@ -56,4 +56,14 @@ Con más de 1 millón de registros, los promedios se ubican así: Inglés ~154, 
 
 En todos los años, Inglés es el módulo con mejor promedio y se mantiene estable alrededor de 154–155 puntos. Lectura Crítica muestra la mejor mejora en el tiempo pues pasa de 145.7 puntos en 2021 a 152.2 puntos en 2024, un salto claro de unos +6.5 puntos. Competencias Ciudadanas cae en 2023, pero se recupera en 2024 y termina un poco arriba de donde empezó (de 143.1 a 145.2). Razonamiento Cuantitativo se mantiene prácticamente casi igual pues sube en 2022, baja en 2023 y cierra 2024 casi igual que 2021 alrededor de 143.
 
-El caso distinto es Comunicación Escrita es el promedio más bajo en todos los años y además es el más inestable. Baja fuerte en 2022 (≈129), rebota en 2023 (≈140) y vuelve a caer en 2024 (≈134), quedando por debajo de 2021. En conclusión podemos decir que el módulo de Inglés lidera y se mantiene, Lectura Crítica mejora de forma sostenida, Competencias Ciudadanas se recupera, Razonamiento Cuantititivo está estable, y Comunicación Escrita necesita atención porque no consolida mejoras y termina con un nivel inferior al del inicio del periodo.
+El caso distinto es Comunicación Escrita es el promedio más bajo en todos los años y además es el más inestable. Baja fuerte en 2022 aproximadamente 129, aumenta en 2023 a 140 y vuelve a caer en 2024 aproximadamente a 134, quedando por debajo de 2021. En conclusión podemos decir que el módulo de Inglés lidera y se mantiene, Lectura Crítica mejora de forma sostenida, Competencias Ciudadanas se recupera, Razonamiento Cuantititivo está estable, y Comunicación Escrita necesita atención porque no consolida mejoras y termina con un nivel inferior al del inicio del periodo.
+
+---
+## Distribución de puntajes por módulo - *diagrama de cajas* 📉📈
+
+<p align="center">
+  <img src="<img width="1002" height="532" alt="image" src="https://github.com/user-attachments/assets/d1c270d5-5023-4784-93b9-c765d51481d9" />
+">
+</p>
+
+En este gráfico vemos cómo se reparten los puntajes por módulo. La mayoría de resultados está entre 120 y 170 puntos. Los modulos de Inglés y Lectura suelen quedar un poco más altos; Ciudadanas y Cuantitativo se mantienen en la mitad; y Comunicación Escrita aparece más baja y con más diferencia entre estudiantes. En todos los módulos aparecen puntos extremos cerca de 0 y 300, que son valores poco comunes.
