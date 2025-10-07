@@ -47,6 +47,15 @@ Al cruzar origen de la institución con nivel del programa, se ve que casi todo 
 
  Al cruzar estrato de vivienda con carácter académico de la institución, se ve que la universidad es mayoría en todos los estratos. En estrato 1 cerca del 61% está en universidad y ese porcentaje crece a medida que sube el estrato, llegando a alrededor del 87% en estrato 6. En cambio, las instituciones universitarias y tecnológicas tienen más peso en los estratos bajos y van perdiendo participación en los estratos altos; la técnica profesional es minoritaria en todos los casos. La prueba estadística confirma que sí hay diferencias claras por estrato pues cambian las proporciones según el nivel socioeconómico.
 
+## Relación tiene computador con carácter académico de la institución: 
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/915ba31d-44bf-45dc-879e-1b2fb732ea8e" width="45%">
+  <img src="https://github.com/user-attachments/assets/294ad2e1-d263-4881-94b3-b1aca3fed3b8" width="45%">
+</p>
+
+Al cruzar tener computador en casa con el tipo de institución, en ambos casos la mayoría de estudiantes está en universidad. Tener computador se asocia con una ligera mayor presencia en universidad y una ligera menor presencia en tecnológicas/técnicas; en institución universitaria casi no hay diferencia. La prueba estadística confirma que sí hay diferencias, pero son pequeñas y no cambian mucho la distribución entre tipos de institución.
+
 ---
 
 
