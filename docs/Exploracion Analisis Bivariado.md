@@ -86,6 +86,30 @@ Se observa un **gradiente**: a medida que sube el estrato, la mediana aumenta (b
 Se ve un **gradiente claro**: a mayor estrato, mayor puntaje en escrita. Las medianas suben desde **E1/Sin estrato** hasta **E5–E6**. Aun así, las cajas se **solapan mucho** entre estratos y hay outliers bajos (~50–70) y altos (~300) en todos, lo que indica gran variación interna. Lectura práctica: el estrato está **positivo y consistentemente asociado** con el desempeño en escrita, pero el **tamaño del efecto es moderado**; no alcanza para diferenciar bien a los individuos solo por su estrato.
 
 
+## Inglés por estrato del hogar
+
+<img width="705" height="532" alt="image" src="https://github.com/user-attachments/assets/dffd077c-fdb5-4fa8-9343-55897cdb6e2b" />
+
+
+El **gradiente es nítido**: las medianas suben de **E1/Sin estrato (~140–150)** a **E6 (~205–215)**, con **E5** apenas por debajo. Es la **brecha más marcada** entre los módulos (≈**+50 puntos** de E1 a E6). Aun así, hay **solapamiento** y mucha variación interna en todos los estratos, con outliers bajos y altos en cada grupo. Lectura práctica: el estrato del hogar se asocia **fuertemente** con el desempeño en **Inglés**, aunque no permite clasificar individuos con precisión por sí solo.
+
+
+## Lectura crítica por estrato del hogar
+
+<img width="705" height="532" alt="image" src="https://github.com/user-attachments/assets/30144aa3-636e-45ec-9ad2-c002cb621b46" />
+
+
+Se observa un **gradiente ascendente**: las medianas aumentan desde **E1/Sin estrato** hasta **E5–E6** (salto aproximado de **+30 puntos** entre extremos). Aun con ese patrón, las cajas se **solapan mucho** y la dispersión dentro de cada estrato es alta; hay outliers en **0** y valores cercanos a **300** en todos. Lectura práctica: el estrato se asocia **positivamente** con Lectura crítica, con **tamaño de efecto moderado**, insuficiente para discriminar individuos de forma precisa.
+
+## Razonamiento cuantitativo por estrato del hogar
+
+<img width="705" height="532" alt="image" src="https://github.com/user-attachments/assets/c8dce22e-91c6-4252-9eed-7111fc443561" />
+
+
+El patrón es **ascendente**: las medianas pasan de **~130–135** en **E1/Sin estrato** a **~160–165** en **E6**, con **E5** muy cercano. Es una brecha **clara pero moderada**; las cajas se **solapan** ampliamente y hay outliers en **0** y **300** en todos los estratos. Lectura práctica: el estrato del hogar se asocia positivamente con Cuantitativo, aunque la variación dentro de cada estrato sigue siendo alta y no permite clasificar personas solo por este indicador.
+
+
+
 
 
 
