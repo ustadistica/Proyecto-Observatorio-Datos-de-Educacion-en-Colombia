@@ -60,7 +60,7 @@ Aquí sí se observa la brecha más clara: los hombres rinden **~14–15 puntos*
 
 ---
 
-# Estrato socioeconómico del hogar vs puntajes (num–cat, k>2)
+# Estrato socioeconómico del hogar vs puntajes 
 
 **Patrón general.** Se ve un **gradiente claro**: a mayor estrato del hogar, mayores puntajes en todos los módulos. Aun así, las desviaciones estándar son altas (~30–48), por lo que hay **mucho solapamiento** entre estratos. “Sin estrato” rinde parecido al **estrato 1**.
 
