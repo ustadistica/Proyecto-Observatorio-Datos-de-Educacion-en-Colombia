@@ -133,6 +133,148 @@ Cuanto mayor es el **nivel educativo del padre**, mejores son los puntajes en to
 
 ---
 
+# Acceso a internet del hogar vs puntajes
+
+
+## Competencias Ciudadanas según acceso a internet
+
+<img width="705" height="489" alt="image" src="https://github.com/user-attachments/assets/482469bd-8a2a-44df-b1ae-fca538387cef" />
+
+El boxplot indica que quienes reportan **sí** tienen la **mediana** y la mayor parte del rango intercuartílico **desplazados hacia arriba** frente a **no**, señal de una ventaja asociada al acceso. Aun así, hay **amplio solapamiento** y **alta dispersión** en ambos grupos, por lo que la diferencia es, como mucho, **moderada**. Aparecen **outliers** bajos (cercanos a 0) y altos (cercanos a 300) en los dos grupos. Conclusión: contar con internet se relaciona con puntajes más altos en Ciudadana, pero no basta para explicar el desempeño individual.
+
+#### Comunicación escrita según acceso a internet
+
+<img width="705" height="489" alt="image" src="https://github.com/user-attachments/assets/7ac434af-f8d3-4d64-a7f7-10525ae99056" />
+
+
+Las dos cajas son muy parecidas y se solapan casi por completo; el grupo **con internet** muestra la mediana apenas más alta. Hay alta dispersión y outliers en ambos grupos. Lectura práctica: el acceso a internet se asocia con una **ventaja leve** en Comunicación escrita, pero el efecto es **pequeño** frente a la variabilidad individual.
+
+
+#### Inglés según acceso a internet
+
+<img width="705" height="489" alt="image" src="https://github.com/user-attachments/assets/8ab30e3c-4e44-475e-96ee-146c92b0ab31" />
+
+
+El grupo **con internet** presenta la **mediana** y casi todo el **IQR** claramente por encima del grupo **sin internet**; el solapamiento entre cajas es menor que en otros módulos, señal de una ventaja consistente asociada al acceso. Aun así, la variabilidad es alta y hay outliers en ambos grupos, por lo que el acceso explica solo parte del rendimiento.
+
+## Lectura crítica según acceso a internet
+
+<img width="705" height="489" alt="image" src="https://github.com/user-attachments/assets/9eca1af6-e44c-4d9c-a026-5d842e9f866e" />
+
+
+Quienes tienen internet muestran la **mediana** y gran parte del **IQR** más altos, señal de mejor desempeño asociado al acceso. Aun así, existe **solapamiento** importante entre grupos y **alta dispersión** con outliers en ambos, por lo que el efecto luce **moderado**: contar con internet ayuda, pero no define por sí solo el resultado individual.
+
+## Razonamiento cuantitativo según acceso a internet
+
+<img width="705" height="489" alt="image" src="https://github.com/user-attachments/assets/f964ebcb-b1f5-47b6-b418-8a372b6b43e6" />
+
+El grupo **con internet** muestra la **mediana** y la mayor parte del **IQR** por encima del grupo **sin internet**, lo que sugiere una ventaja asociada al acceso. Sin embargo, las cajas se **solapan** ampliamente y hay **alta dispersión** con outliers en ambos grupos. Conclusión: contar con internet se relaciona con mejores puntajes en Cuantitativo, pero el efecto es **moderado** y no determina por sí solo el desempeño individual.
+
+---
+
+# Acceso a computador del hogar vs puntajes
+
+Contar con computador en casa se asocia con **mejores puntajes en todos los módulos**; la ventaja es **más marcada en Inglés** y **clara en Lectura crítica, Cuantitativo y Ciudadana**, mientras que en **Comunicación escrita** es **más leve**. Aun así, las distribuciones se **solapan** ampliamente y la variabilidad individual es alta, por lo que el efecto luce **pequeño–moderado**: disponer de computador ayuda, pero no determina por sí solo el desempeño.
+
+---
+# Nivel del programa académico vs puntajes
+
+#### Competencias Ciudadanas según nivel del programa
+
+<img width="705" height="643" alt="image" src="https://github.com/user-attachments/assets/9e3eeecd-37bf-44ca-b9e5-64be9c0c2d9f" />
+
+
+El boxplot muestra **mediana más alta y mayor dispersión** en programas **universitarios**, **tecnología** queda por debajo y **técnico profesional** es el más bajo con caja estrecha. El **solapamiento** entre niveles es limitado, pero las cajas de tecnología y técnico son **poco confiables** por su **tamaño muestral ínfimo**; los outliers extremos aparecen sobre todo en universitario por la mayor n. Lectura práctica: se sugiere una **ventaja para programas universitarios**, pero la comparación debe tomarse **con cautela** por el desbalance de la muestra.
+
+
+## Comunicación escrita según carácter académico de la institución
+
+<img width="705" height="643" alt="image" src="https://github.com/user-attachments/assets/bead9b61-87a2-4061-b3e1-03044a9e7f60" />
+
+Las **universidades** y las **instituciones universitarias** muestran **medianas algo más altas** que las **instituciones tecnológicas** y las **técnicas profesionales**. Sin embargo, los **IQR** son parecidos y hay **alto solapamiento** entre grupos, con outliers bajos y altos en todos. Lectura práctica: el carácter académico se asocia con el puntaje de escrita, pero la **diferencia es modesta** y no permite distinguir bien desempeño individual.
+
+## Inglés según carácter académico de la institución
+
+<img width="705" height="643" alt="image" src="https://github.com/user-attachments/assets/c6d14a52-4a45-4c8d-9b2d-625fda7a7924" />
+
+
+Las **universidades** muestran la **mediana** más alta y un IQR desplazado hacia arriba; las **instituciones universitarias** quedan algo por debajo y las **instituciones tecnológicas** y **técnicas profesionales** registran centros más bajos. Aun así, los IQR se **solapan** ampliamente y la dispersión es grande, con outliers en 0 y cerca de 300 en todos los grupos. Lectura práctica: el carácter académico se asocia con mejor desempeño en Inglés, con **ventaja para universidades**, pero el efecto es **moderado** y no determina el resultado individual.
+
+## Lectura crítica según carácter académico de la institución
+
+<img width="705" height="643" alt="image" src="https://github.com/user-attachments/assets/d86a5708-1bbd-4d5c-b6e7-f8c0ef425494" />
+
+Las **universidades** muestran la **mediana** más alta y un IQR desplazado hacia arriba; las **instituciones universitarias** quedan ligeramente por debajo y las **instituciones tecnológicas** y **técnicas profesionales** exhiben centros más bajos. Hay **amplio solapamiento** y **alta dispersión** en todos los grupos, con outliers en 0 y en valores altos. Lectura práctica: el carácter académico se asocia con mejor desempeño en Lectura crítica, con **ventaja para universidades**, pero la diferencia es **moderada** y no determina el resultado individual.
+
+## Razonamiento cuantitativo según carácter académico de la institución
+
+<img width="705" height="643" alt="image" src="https://github.com/user-attachments/assets/b998e686-6d51-44d4-94d2-e7806ec75f3a" />
+
+
+Las **universidades** concentran la **mediana** más alta y el IQR desplazado hacia arriba; las **instituciones universitarias** quedan ligeramente por debajo y las **tecnológicas** y **técnicas profesionales** presentan centros más bajos. Aun así, los **IQR se solapan** ampliamente y la dispersión es alta en todos los grupos, con outliers bajos y altos. Lectura práctica: el carácter académico se asocia con mejor desempeño en Cuantitativo, con **ventaja para universidades**, pero el efecto es **moderado** y no determina por sí solo el resultado individual.
+
+---
+
+# Origen institucional vs puntajes
+
+Se observa un patrón consistente por módulos: las **instituciones oficiales municipales** tienden a ubicarse en la parte alta de los puntajes, seguidas por las **oficiales departamentales** y luego las **oficiales nacionales**; las **no oficiales (fundación)** quedan en la zona intermedia, mientras que las **no oficiales (corporación)** y **régimen especial** aparecen en la parte baja. Aun con esa gradación, las distribuciones muestran **alto solapamiento** y **gran variabilidad interna**, por lo que las brechas son **moderadas** en términos prácticos. Además, los grupos difieren mucho en **tamaño muestral** (municipal y régimen especial son pequeños), lo que puede inflar o hacer inestables algunos promedios. Esta es una **asociación descriptiva**, no causal: el patrón podría reflejar diferencias de composición (programas ofrecidos, regiones, perfil socioeconómico, educación y recursos del hogar, etc.)
+
+---
+
+# Nivel del programa académico vs puntajes
+
+La tabla está **extremadamente desbalanceada** (casi todo “Universitario”; “Tecnología” y “Técnico profesional” con n ínfimo), por lo que sus medias son **inestables** y no permiten comparar con fiabilidad. Aun con esa salvedad, el patrón es consistente: **Universitario** se ubica arriba en todos los módulos, con separación más visible en **Inglés** y **Lectura**, y más moderada en **Ciudadana**, **Cuantitativo** y **Escrita**. 
+
+---
+
+# Método de formación del programa vs puntajes
+
+## Competencias Ciudadanas según método del programa
+
+<img width="705" height="582" alt="image" src="https://github.com/user-attachments/assets/8c9e374d-a177-43ef-9728-ccfd8741a797" />
+
+El boxplot muestra a **presencial** con la **mediana** y el IQR más altos; **distancia** queda más abajo y **distancia virtual** se ubica entre ambos. **Semipresencial** presenta caja estrecha y debe leerse con cautela por su **muestra pequeña**. Hay **solapamiento** notable y alta dispersión en todos los grupos, por lo que el método se asocia con el nivel de Ciudadana pero el efecto es **moderado**.
+
+
+## Comunicación escrita según método del programa
+
+<img width="705" height="582" alt="image" src="https://github.com/user-attachments/assets/0ce9aa92-74c8-4412-9026-31791dbb349b" />
+
+
+**Presencial** y **semipresencial** exhiben medianas algo más altas, mientras **distancia** y **distancia virtual** quedan por debajo. Los **IQR** son similares y se **solapan** ampliamente, con alta dispersión y outliers en todos los grupos. Lectura práctica: el método de formación se asocia de forma **leve** con el desempeño en escrita; no es un factor determinante por sí solo.
+
+
+## Inglés según método del programa
+
+<img width="705" height="582" alt="image" src="https://github.com/user-attachments/assets/1f648b67-3b8a-4aa3-9d12-d961d05afc2e" />
+
+**Presencial** muestra la **mediana** y la mayor parte del **IQR** más altos; **semipresencial** se ubica cercano pero algo por debajo; **distancia virtual** queda en nivel intermedio y **distancia** es el más bajo. Hay **amplio solapamiento** y **alta dispersión** con outliers en todos los grupos. Lectura práctica: el método se asocia con el desempeño en Inglés, con **ventaja para la presencialidad**, aunque el efecto es **moderado**.
+
+
+## Lectura crítica según método del programa
+
+<img width="705" height="582" alt="image" src="https://github.com/user-attachments/assets/9509c275-40b3-4259-a3af-a74b2d9f81ec" />
+
+
+**Presencial** concentra la **mediana** más alta; **distancia** queda abajo; **distancia virtual** y **semipresencial** se ubican en un **nivel intermedio**. Las cajas se **solapan** ampliamente y la dispersión es alta, con outliers muy bajos y muy altos en todos los grupos. Lectura práctica: el método se asocia con el desempeño en Lectura crítica, con **ventaja para la presencialidad**, pero el efecto es **moderado** y no basta para explicar el resultado individual.
+
+
+## Razonamiento cuantitativo según método del programa
+
+<img width="705" height="582" alt="image" src="https://github.com/user-attachments/assets/d8926653-a523-47c1-b71c-a1a86837a6de" />
+
+
+**Presencial** presenta la **mediana** y la mayor parte del **IQR** más altos; **distancia virtual** queda en un nivel intermedio, **distancia** algo por debajo y **semipresencial** es el más bajo. Las cajas se **solapan** de forma amplia y la dispersión es alta, con outliers en valores muy bajos y muy altos en todos los grupos. Lectura práctica: el método se asocia con el desempeño en Cuantitativo, con **ventaja para la presencialidad**, pero el efecto es **moderado** y no suficiente para explicar el resultado individual.
+
+---
+
+# Núcleo del programa de pregrado vs puntajes
+
+Por áreas se observan perfiles nítidos: los programas afines a **lenguajes, comunicación y ciencias sociales** sobresalen en **Lectura crítica** y **Comunicación escrita**, y también muestran buen desempeño en **Inglés**. Las disciplinas **cuantitativas** —**Matemáticas y Estadística, Economía e Ingenierías**, junto con **Física**— lideran en **Razonamiento cuantitativo** y mantienen resultados competitivos en **Competencias ciudadanas**. Las **áreas de la salud** (Medicina, Odontología, Enfermería, Bacteriología, etc.) exhiben un patrón **equilibrado** de medio a alto en todos los módulos, sin picos tan marcados como en Ingenierías para Cuantitativo ni tan altos como en Humanidades para Lectura/Escrita. **Administración, Contaduría y Derecho** tienden a ubicarse alrededor del **promedio** con variabilidad apreciable entre instituciones, mientras que **Artes y Diseño** presentan la **mayor dispersión** (conviven desempeños muy altos y muy bajos), señal de gran heterogeneidad formativa. 
+
+
+---
+
 # Puntajes por año (2021–2024)
 
 ## Competencias Ciudadanas por año (2021–2024)
@@ -210,51 +352,3 @@ Fluctúa **poco**: medianas ~140–165 con **alto solapamiento** del IQR. Se ven
 
 ---
 
-# Relación Género con Tener internet en casa
-
-Al cruzar género con tener internet en casa, se ve que en ambos grupos alrededor de 9 de cada 10 estudiantes sí tienen internet. Los hombres aparecen con acceso apenas un poco mayor que las mujeres, y ellas concentran un poco más de no tiene internet en casa. La prueba estadística detecta diferencia, pero es pequeña y no cambia mucho la distribución entre géneros.
-
----
-
-# Relación Género con estrato de Vivienda
-
-Al cruzar género con estrato de vivienda, ambos géneros se concentran sobre todo en estratos 2 y 3; luego viene el estrato 1, y a partir del 4 la participación baja bastante. Los estratos 5 y 6 son minoritarios para todos. La diferencia entre géneros es leve pero consistente: las mujeres tienen un poco más de presencia en estratos 1–2, mientras que los hombres pesan un poco más en estratos 3–6.
-
----
-
-#  Relación tipo de institución con método del programa
-
-<img width="742" height="539" alt="image" src="https://github.com/user-attachments/assets/fb5f2c02-224b-4517-b42f-2c9eb29febe1" />
-
-Al cruzar tipo de institución con método del programa se ve que la modalidad presencial domina en todos los casos, pero con diferencias claras según la institución. En la institución tecnológica casi todo es presencial prácticamente la totalidad. En la universidad también predomina lo presencial alrededor de ocho de cada diez. En la institución universitaria el esquema es más mixto: cerca de seis de cada diez son presenciales y una parte importante se reparte entre distancia y virtual. En la técnica profesional hay dos tercios presenciales y casi tres de cada diez en virtual. La semipresencial casi no aparece. La prueba confirma que el método cambia según el tipo de institución.
-
----
-
-# Relación Origen de la institución con Nivel del Programa
-
-<img width="739" height="585" alt="image" src="https://github.com/user-attachments/assets/5e3b272e-b155-479b-a784-f4efcf569c37" />
-
-Al cruzar origen de la institución con nivel del programa, se ve que casi todo está en nivel universitario, sin importar si la institución es oficial como nacional, municipal, departamental, o no oficial como fundación, corporación, o de régimen especial. Los niveles tecnológico y técnico profesional aparecen solo con participaciones mínimas. La prueba estadística con un resultado de p = 0.27 indica que no hay una relación clara entre el origen y el nivel del programa.
-
----
-
-# Relación estrato de vivienda con carácter académico de la institución
-
-<img width="586" height="625" alt="image" src="https://github.com/user-attachments/assets/3af04e25-4d64-4ed4-92f0-9d07ec19651d" />
-
-Al cruzar estrato de vivienda con carácter académico de la institución, se ve que la universidad es mayoría en todos los estratos. En estrato 1 cerca del 61% está en universidad y ese porcentaje crece a medida que sube el estrato, llegando a alrededor del 87% en estrato 6. En cambio, las instituciones universitarias y tecnológicas tienen más peso en los estratos bajos y van perdiendo participación en los estratos altos; la técnica profesional es minoritaria en todos los casos. La prueba estadística confirma que sí hay diferencias claras por estrato pues cambian las proporciones según el nivel socioeconómico.
-
----
-
-# Relación tiene computador con carácter académico de la institución
-
-<img width="519" height="625" alt="image" src="https://github.com/user-attachments/assets/8d5232fd-3f93-4cbf-93ee-2a50519c6892" />
-
-Al cruzar tener computador en casa con el tipo de institución, en ambos casos la mayoría de estudiantes está en universidad. Tener computador se asocia con una ligera mayor presencia en universidad y una ligera menor presencia en tecnológicas/técnicas; en institución universitaria casi no hay diferencia. La prueba estadística confirma que sí hay diferencias, pero son pequeñas y no cambian mucho la distribución entre tipos de institución.
-
-# Relación entre periodo y método del programa
-
-<img width="550" height="539" alt="image" src="https://github.com/user-attachments/assets/a997b102-6b52-4e5d-af07-9b91f29c930e" />
-
-
-La relación entre periodo y método del programa deja claro que la modalidad presencial es la más común en todo el tiempo, con participaciones entre 66% y 83%. En 20223 se ve una bajada fuerte del presencial, cerca del 55%, al mismo tiempo que sube la virtual hasta alrededor del 32%. Entre 20225 y 20234 el presencial vuelve a dominar, cerca del 80%. En 20242–20244 otra vez cae el presencial hasta 66% y la virtual crece a 23–25%. La distancia tradicional se mantiene estable entre 10% y 16%, y la semipresencial es casi nula. La prueba chi-cuadrado indica que sí hay diferencias por periodo dado que las proporciones no son iguales en todos los años.
