@@ -140,7 +140,7 @@ Cuanto mayor es el **nivel educativo del padre**, mejores son los puntajes en to
 
 <img width="705" height="489" alt="image" src="https://github.com/user-attachments/assets/482469bd-8a2a-44df-b1ae-fca538387cef" />
 
-El boxplot indica que quienes reportan **sí** tienen la **mediana** y la mayor parte del rango intercuartílico **desplazados hacia arriba** frente a **no**, señal de una ventaja asociada al acceso. Aun así, hay **amplio solapamiento** y **alta dispersión** en ambos grupos, por lo que la diferencia es, como mucho, **moderada**. Aparecen **outliers** bajos (cercanos a 0) y altos (cercanos a 300) en los dos grupos. Conclusión: contar con internet se relaciona con puntajes más altos en Ciudadana, pero no basta para explicar el desempeño individual.
+El boxplot indica que quienes reportan **sí** tienen la **mediana** y la mayor parte del rango intercuartílico **desplazados hacia arriba** frente a **no**, señal de una ventaja asociada al acceso. Aun así, hay **amplio solapamiento** y **alta dispersión** en ambos grupos, por lo que la diferencia es, como mucho, **moderada**. Aparecen **outliers** bajos (cercanos a 0) y altos (cercanos a 300) en los dos grupos. 
 
 #### Comunicación escrita según acceso a internet
 
@@ -162,13 +162,13 @@ El grupo **con internet** presenta la **mediana** y casi todo el **IQR** clarame
 <img width="705" height="489" alt="image" src="https://github.com/user-attachments/assets/9eca1af6-e44c-4d9c-a026-5d842e9f866e" />
 
 
-Quienes tienen internet muestran la **mediana** y gran parte del **IQR** más altos, señal de mejor desempeño asociado al acceso. Aun así, existe **solapamiento** importante entre grupos y **alta dispersión** con outliers en ambos, por lo que el efecto luce **moderado**: contar con internet ayuda, pero no define por sí solo el resultado individual.
+Quienes tienen internet muestran la **mediana** y gran parte del **IQR** más altos, señal de mejor desempeño asociado al acceso. Aun así, existe **solapamiento** importante entre grupos y **alta dispersión** con outliers en ambos, por lo que el efecto luce **moderado**
 
 ## Razonamiento cuantitativo según acceso a internet
 
 <img width="705" height="489" alt="image" src="https://github.com/user-attachments/assets/f964ebcb-b1f5-47b6-b418-8a372b6b43e6" />
 
-El grupo **con internet** muestra la **mediana** y la mayor parte del **IQR** por encima del grupo **sin internet**, lo que sugiere una ventaja asociada al acceso. Sin embargo, las cajas se **solapan** ampliamente y hay **alta dispersión** con outliers en ambos grupos. Conclusión: contar con internet se relaciona con mejores puntajes en Cuantitativo, pero el efecto es **moderado** y no determina por sí solo el desempeño individual.
+El grupo **con internet** muestra la **mediana** y la mayor parte del **IQR** por encima del grupo **sin internet**, lo que sugiere una ventaja asociada al acceso. Sin embargo, las cajas se **solapan** ampliamente y hay **alta dispersión** con outliers en ambos grupos. Contar con internet se relaciona con mejores puntajes en Cuantitativo, pero el efecto es **moderado** y no determina por sí solo el desempeño individual.
 
 ---
 
