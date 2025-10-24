@@ -38,13 +38,13 @@ Consolidamos fuentes públicas 2021–2024 para construir una base integrada y g
 **Requisitos**: Python ≥ 3.10; paquetes: `selenium`, `pandas`, `openpyxl`.
 
 ~~~bash
-# 0) estructura local de datos (no versionada)
+# 0) estructura local de datos 
 mkdir -p data/raw data/interim data/processed
 
 # 1) PTE/PGN Educación
 # Si la web permite Selenium:
 python "Códigos/extrae_pte_educacion_full.py"
-# Si la web bloquea, realizar **descarga manual** a data/raw/pte/ y correr el script para consolidar.
+# Si la web bloquea, realizar descarga manual a data/raw/pte/ y correr el script para consolidar.
 
 # 2) SNIES
 python "Códigos/scraper_snies.py"               # descarga
