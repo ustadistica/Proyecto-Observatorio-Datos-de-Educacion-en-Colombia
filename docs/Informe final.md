@@ -61,7 +61,7 @@ El trabajo más profundo se realizó con Saber Pro. Esta base tiene más de un m
 <p align="center">
   <img width="1252" height="454" alt="Figura . Modelo Estrella" src="https://github.com/user-attachments/assets/6a1885f5-c095-4d6d-99ec-1a025f714530" />
   <br>
-  <strong>Figura .</strong> Modelo Estrella
+  <strong>Figura 1.</strong> Modelo Estrella
 </p>
 
 En el centro del modelo está la tabla donde guardamos los puntajes de cada estudiante. A su alrededor están las dimensiones, que son tablas más pequeñas que describen información básica como quién es el estudiante, en qué institución estudia, cuál es su programa, cómo es su hogar y a qué año corresponde el registro. Al unir estas tablas se forma la tabla de hechos, que es la que conecta toda la información y guarda los resultados del examen. Esta organización ayuda a manejar bien la cantidad de datos y hace que el análisis sea más fácil y ordenado.
