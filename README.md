@@ -19,19 +19,24 @@ Consolidamos fuentes públicas 2021–2024 para construir una base integrada y g
 ## Estructura del repositorio
 ~~~text
 .
-├─ Códigos/
-│  ├─ Exploración.ipynb
-│  ├─ Exploración.py
+├─ codigos/
+│  ├─ exploracion.ipynb
+│  ├─ exploracion.py
 │  ├─ extrae_pte_educacion_full.py
 │  ├─ scraper_snies.py
-│  └─ snies_renamed_registros.py
+│  └─ saber_pro_2021_2024/
+│     ├─ modelo_estrella.py
+│     └─ database.py
 ├─ docs/
-│  ├─ Analisis de Bases.md
-│  ├─ Exploración Análisis Univariado.md
-│  ├─ Exploración Análisis Bivariado.md
-│  ├─ Exploración Análisis Bivariado parte 2.md
-│  └─ Exploración Análisis Multivariado.md
+│  ├─ analisis_de_bases_seleccionadas.md
+│  ├─ exploracion_analisis_univariado.md
+│  ├─ exploracion_analisis_bivariado.md
+│  ├─ exploracion_analisis_bivariado_parte_2.md
+│  ├─ exploracion_analisis_multivariado.md
+│  ├─ informe_final.md
+│      
 └─ README.md
+
 ~~~
 
 ## Codigos
