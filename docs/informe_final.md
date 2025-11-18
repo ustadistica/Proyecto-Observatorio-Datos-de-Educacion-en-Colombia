@@ -67,3 +67,69 @@ El trabajo más profundo se realizó con Saber Pro. Esta base tiene más de un m
 En el centro del modelo está la tabla donde guardamos los puntajes de cada estudiante. A su alrededor están las dimensiones, que son tablas más pequeñas que describen información básica como quién es el estudiante, en qué institución estudia, cuál es su programa, cómo es su hogar y a qué año corresponde el registro. Al unir estas tablas se forma la tabla de hechos, que es la que conecta toda la información y guarda los resultados del examen. Esta organización ayuda a manejar bien la cantidad de datos y hace que el análisis sea más fácil y ordenado.
 
 Una vez construido el modelo, se realizaron tres tipos de análisis: univariado, bivariado y multivariado. En el análisis univariado se revisaron las distribuciones de las variables, los valores atípicos, los tipos de datos y la presencia de duplicados o inconsistencias. En el análisis bivariado se compararon relaciones entre variables numéricas y categóricas. Finalmente, se exploraron métodos como componentes principales y análisis factorial con el fin de identificar patrones en los datos.
+
+---
+
+## Resultados
+
+### 1) Alcance y composición de la base
+Se consolidó el universo de **Saber Pro 2021–2024** con **1.015.276** registros de estudiantes. La distribución por sexo es **58% mujeres** y **42% hombres**. Para **2024**, el microdato dispone de **281.601** observaciones y **90** variables (resultados y contexto).
+
+### 2) Niveles de desempeño por módulo
+El orden de desempeño promedio del periodo es: **Inglés** (más alto) → **Lectura Crítica** → **Razonamiento Cuantitativo** ≈ **Competencias Ciudadanas** → **Comunicación Escrita** (más bajo). **Comunicación Escrita** presenta la **mayor dispersión**.
+
+### 3) Evolución temporal 2021–2024
+- **Inglés:** nivel alto y **estable**; el máximo se observa en **2024**.  
+- **Lectura Crítica:** **mejora sostenida** a lo largo del cuatrienio.  
+- **Razonamiento Cuantitativo:** **prácticamente plano**, sin cambios relevantes.  
+- **Competencias Ciudadanas:** **descenso en 2023** con **recuperación en 2024**.  
+- **Comunicación Escrita:** **serie más inestable** (cae en 2022, rebota en 2023 y cede en 2024).
+
+### 4) Participación institucional y modalidad
+Las IES con mayor peso relativo en la cohorte son **Uniminuto** y **Politécnico Grancolombiano**. Por **modalidad**, los programas **presenciales** muestran **medianas ligeramente superiores** en **Razonamiento Cuantitativo**; **virtual** y **a distancia** quedan en niveles intermedios y **semipresencial** por debajo. Las diferencias son **moderadas** y con **alto solapamiento**.
+
+### 5) Factores del hogar y brechas asociadas
+Se observa un **gradiente positivo por estrato socioeconómico** en todos los módulos, con la **brecha más marcada en Inglés**. La **educación de madre y padre** se asocia de forma consistente con mejores puntajes. La **disponibilidad de TIC** en el hogar (**internet** y **computador**) se relaciona con **ventajas pequeñas–moderadas**, más evidentes en **Inglés** y **Lectura**.
+
+### 6) Relaciones entre módulos
+Los puntajes muestran **correlaciones altas** entre **Lectura Crítica**, **Razonamiento Cuantitativo** y **Competencias Ciudadanas**, indicando co-ocurrencia de buen desempeño. **Comunicación Escrita** exhibe **correlaciones bajas** con los demás módulos, lo que sugiere un comportamiento **más independiente**.
+
+### 7) Análisis multivariado (FAMD)
+La varianza se reparte en varias dimensiones: **una** explica ~**6,6%**, **dos** ~**10,9%** y **siete** ~**28,0%**, por lo que **no existe un único eje dominante**. La **Dimensión 1** se alinea con un **eje socioeconómico/educativo** (estrato, educación parental y TIC), con **Inglés** particularmente asociado a ese eje.
+
+---
+
+## Análisis de resultados
+
+### 1) Alcance y composición de la base
+El universo **Saber Pro 2021–2024** (1.015.276 registros) y el corte **2024** (281.601 observaciones; 90 variables) ofrecen potencia estadística para desagregar por **IES**, **modalidad**, **estrato** y **áreas de programa** sin comprometer estabilidad. La composición por sexo (≈58% mujeres; ≈42% hombres) es equilibrada en el agregado, por lo que no exige ponderaciones específicas. La amplitud de variables en 2024 permite integrar **contexto del hogar** y **resultados**, habilitando análisis multivariados consistentes. Toda comparación debe reportar **tamaños muestrales** y **medidas de dispersión** para evitar sobreinterpretar diferencias pequeñas.
+
+### 2) Niveles de desempeño y variabilidad por módulo
+Se sostiene un patrón claro: **Inglés** al tope, seguido por **Lectura Crítica**; **Razonamiento Cuantitativo** y **Competencias Ciudadanas** en franja media; **Comunicación Escrita** en el nivel más bajo. **Escrita** presenta, además, la **mayor dispersión**, señal de heterogeneidad en la competencia de producción de texto y posible variabilidad en criterios de evaluación entre programas/IES. Este binomio (media baja + alta variabilidad) indica necesidad de leer resultados con **percentiles/IQR** además de promedios.
+
+### 3) Evolución temporal 2021–2024
+Las trayectorias confirman señales robustas: **Inglés** alto y estable (máximo en 2024); **Lectura** con **mejora sostenida**; **Cuantitativo** prácticamente **plano**; **Ciudadanas** con **bache en 2023** y **recuperación en 2024**; **Escrita** es la **más volátil** (caída 2022, rebote 2023, nueva caída 2024). La interpretación debe privilegiar **dirección** y **estabilidad** por encima de variaciones anuales puntuales, distinguiendo tendencia de ruido.
+
+### 4) Participación institucional y modalidad
+La cohorte está influida por IES de gran tamaño (p. ej., Uniminuto y Politécnico Grancolombiano), lo que condiciona la composición. Por **modalidad**, **presencial** muestra **medianas ligeramente superiores** en **Cuantitativo**, con **alto solapamiento** frente a **virtual/distancia** y **semipresencial** por debajo. Las diferencias son **moderadas**; sin **controles por área, nivel y perfil del estudiante**, atribuir efectos a la modalidad introduce riesgo de sesgo por composición.
+
+### 5) Factores del hogar y brechas asociadas
+Se observa un **gradiente positivo por estrato** en todos los módulos, con **brecha más marcada en Inglés**. La **educación parental** se asocia consistentemente con mayores puntajes. La disponibilidad de **TIC en el hogar** (internet y computador) se vincula con **ventajas pequeñas–moderadas**, más visibles en **Inglés** y **Lectura**. Son **asociaciones** (no causalidad); en análisis comparativos deben incorporarse como **covariables de control** para reducir sesgos.
+
+### 6) Relaciones entre módulos
+Las correlaciones elevadas entre **Lectura Crítica**, **Razonamiento Cuantitativo** y **Competencias Ciudadanas** posicionan a **Lectura** como **indicador bisagra** del desempeño general: avances en esta dimensión suelen co-ocurrir con mejoras en otras. **Inglés** co-varía con **Lectura/Ciudadanas**, lo que sugiere un sustrato común de habilidades verbales/comprensivas. **Comunicación Escrita** muestra **correlaciones bajas** con el resto, por lo que su trayectoria es más **independiente** y debe analizarse por separado.
+
+### 7) Estructura latente (FAMD)
+La varianza se **distribuye en múltiples dimensiones** (≈6,6% en Dim.1; ≈10,9% acumulado en Dim.1–2; ≈28% en Dim.1–7), descartando un eje único dominante. La **Dimensión 1** se alinea con un **eje socioeconómico/educativo** (estrato, educación parental y TIC), con **Inglés** mostrando la asociación más fuerte con ese eje. La nube de individuos es **continua** (sin clústeres nítidos): predominan **gradientes** más que segmentos discretos; las segmentaciones deben sustentarse en **modelos multivariados con controles** y reporte de **incertidumbre**.
+
+---
+
+## Conclusión 
+
+El proyecto alcanza su propósito al entregar un observatorio de datos del sistema educativo para 2021 a 2024 que integra fuentes oficiales, estandariza formatos y deja un flujo reproducible de ingesta, limpieza y validación listo para incorporar nuevos años sin rehacer procesos. El modelo en estrella construido sobre Saber Pro, con más de un millón de registros y noventa variables, permite consultas eficientes y análisis consistentes, mientras que los controles de calidad y la documentación técnica aseguran trazabilidad, auditoría y transferencia a otros equipos.
+
+El examen de resultados muestra un sistema estable en el que Inglés se mantiene sólido, Lectura Crítica mejora de manera sostenida, Razonamiento Cuantitativo y Competencias Ciudadanas se ubican en una franja media y Comunicación Escrita aparece rezagada y con mayor variabilidad. Las diferencias asociadas al contexto del hogar se observan de forma consistente pero con magnitud moderada, y las variaciones por modalidad existen aunque presentan alto solapamiento, por lo que conviene interpretar comparaciones con controles adecuados. La estructura multivariada confirma un comportamiento verdaderamente multidimensional, con Lectura como eje articulador del desempeño y Escrita como dimensión que exige acciones específicas.
+
+El valor para la gestión queda claro al contar con una línea base confiable, métricas estandarizadas y un camino de actualización simple que reduce tiempos operativos y mejora la comparabilidad entre periodos y grupos. El alcance de esta versión prioriza el análisis profundo de Saber Pro y deja SNIES y PTE preparados para usos agregados y futuros cruces, reconociendo que los vínculos a nivel individual no se implementaron por diferencias de granularidad y que las relaciones reportadas son asociativas. Con esta base, la organización queda en posición de integrar 2025 con mínimo esfuerzo, profundizar en intervenciones sobre Comunicación Escrita y ampliar los análisis con las demás fuentes para sostener una mejora continua y equitativa.
+
+
