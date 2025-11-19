@@ -189,4 +189,13 @@ El examen de resultados muestra un sistema estable en el que Inglés se mantiene
 
 El valor para la gestión queda claro al contar con una línea base confiable, métricas estandarizadas y un camino de actualización simple que reduce tiempos operativos y mejora la comparabilidad entre periodos y grupos. El alcance de esta versión prioriza el análisis profundo de Saber Pro y deja SNIES y PTE preparados para usos agregados y futuros cruces, reconociendo que los vínculos a nivel individual no se implementaron por diferencias de granularidad y que las relaciones reportadas son asociativas. Con esta base, la organización queda en posición de integrar 2025 con mínimo esfuerzo, profundizar en intervenciones sobre Comunicación Escrita y ampliar los análisis con las demás fuentes para sostener una mejora continua y equitativa.
 
+---
+
+## Bibliografía
+
+- ICFES. (2024). Examen Saber Pro – Competencias Genéricas 2024. SharePoint institucional del ICFES.
+- ICFES. (2023). Examen Saber Pro – Competencias Genéricas 2023. SharePoint institucional del ICFES.
+- ICFES. (2022). Examen Saber Pro – Competencias Genéricas 2022. SharePoint institucional del ICFES.
+- ICFES. (2021). Examen Saber Pro – Competencias Genéricas 2021. SharePoint institucional del ICFES.
+
 
