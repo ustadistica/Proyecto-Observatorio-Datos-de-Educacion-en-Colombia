@@ -117,7 +117,11 @@ El orden de desempeño promedio del periodo es: **Inglés** (más alto) → **Le
 
 Las IES con mayor peso relativo en la cohorte son **Uniminuto** y **Politécnico Grancolombiano**. Por **modalidad**, los programas **presenciales** muestran **medianas ligeramente superiores** en **Razonamiento Cuantitativo**; **virtual** y **a distancia** quedan en niveles intermedios y **semipresencial** por debajo. Las diferencias son **moderadas** y con **alto solapamiento**.
 
-### 5) Factores del hogar y brechas asociadas
+### 5) Participación departamental
+
+La gráfica evidencia que Bogotá concentra la mayor cantidad de estudiantes por amplio margen, seguida por Antioquia y varios departamentos con volúmenes moderados. En general, la distribución es muy desigual, con un fuerte predominio de las principales ciudades del país en la presentación del SABER-PRO.
+
+### 6) Factores del hogar y brechas asociadas
 
 <p align="center">
   <img src="https://github.com/ustadistica/Proyecto-Observatorio-Datos-de-Educacion-en-Colombia/blob/main/Imagenes/FAMD.png" alt="Figura 6. Componentes" width="80%" style="border-radius: 8px; border: 1px solid #ccc;">
@@ -127,7 +131,7 @@ Las IES con mayor peso relativo en la cohorte son **Uniminuto** y **Politécnico
 
 Se observa un **gradiente positivo por estrato socioeconómico** en todos los módulos, con la **brecha más marcada en Inglés**. La **educación de madre y padre** se asocia de forma consistente con mejores puntajes. La **disponibilidad de TIC** en el hogar (**internet** y **computador**) se relaciona con **ventajas pequeñas–moderadas**, más evidentes en **Inglés** y **Lectura**.
 
-### 6) Relaciones entre módulos
+### 7) Relaciones entre módulos
 
 <p align="center">
   <img src="https://github.com/ustadistica/Proyecto-Observatorio-Datos-de-Educacion-en-Colombia/blob/main/Imagenes/Correlaciones.png" alt="Figura 7. Relaciones" width="80%" style="border-radius: 8px; border: 1px solid #ccc;">
@@ -137,7 +141,7 @@ Se observa un **gradiente positivo por estrato socioeconómico** en todos los m�
 
 Los puntajes muestran **correlaciones altas** entre **Lectura Crítica**, **Razonamiento Cuantitativo** y **Competencias Ciudadanas**, indicando co-ocurrencia de buen desempeño. **Comunicación Escrita** exhibe **correlaciones bajas** con los demás módulos, lo que sugiere un comportamiento **más independiente**.
 
-### 7) Análisis multivariado (FAMD)
+### 8) Análisis multivariado (FAMD)
 La varianza se reparte en varias dimensiones: **una** explica ~**6,6%**, **dos** ~**10,9%** y **siete** ~**28,0%**, por lo que **no existe un único eje dominante**. La **Dimensión 1** se alinea con un **eje socioeconómico/educativo** (estrato, educación parental y TIC), con **Inglés** particularmente asociado a ese eje.
 
 ---
@@ -156,13 +160,17 @@ Las trayectorias confirman señales robustas: **Inglés** alto y estable (máxim
 ### 4) Participación institucional y modalidad
 La cohorte está influida por IES de gran tamaño (p. ej., Uniminuto y Politécnico Grancolombiano), lo que condiciona la composición. Por **modalidad**, **presencial** muestra **medianas ligeramente superiores** en **Cuantitativo**, con **alto solapamiento** frente a **virtual/distancia** y **semipresencial** por debajo. Las diferencias son **moderadas**; sin **controles por área, nivel y perfil del estudiante**, atribuir efectos a la modalidad introduce riesgo de sesgo por composición.
 
-### 5) Factores del hogar y brechas asociadas
+### 5) Participación departamental
+
+Se identifica una fuerte concentración de estudiantes en Bogotá, que supera ampliamente al resto de departamentos, evidenciando su papel como el principal centro educativo del país. Antioquia ocupa el segundo lugar pero con una brecha considerable frente a la capital, mientras que Atlántico, Valle y Santander conforman un grupo intermedio con volúmenes importantes asociados a sus ciudades principales. Los demás departamentos del top (Bolívar, Norte de Santander, Boyacá, Nariño y Córdoba) presentan cifras menores pero que reflejan su peso regional. En conjunto, la distribución exhibe un patrón claramente desigual, donde la oferta educativa y la población estudiantil se concentran especialmente en unas pocas zonas urbanas de gran tamaño.
+
+### 6) Factores del hogar y brechas asociadas
 Se observa un **gradiente positivo por estrato** en todos los módulos, con **brecha más marcada en Inglés**. La **educación parental** se asocia consistentemente con mayores puntajes. La disponibilidad de **TIC en el hogar** (internet y computador) se vincula con **ventajas pequeñas–moderadas**, más visibles en **Inglés** y **Lectura**. Son **asociaciones** (no causalidad); en análisis comparativos deben incorporarse como **covariables de control** para reducir sesgos.
 
-### 6) Relaciones entre módulos
+### 7) Relaciones entre módulos
 Las correlaciones elevadas entre **Lectura Crítica**, **Razonamiento Cuantitativo** y **Competencias Ciudadanas** posicionan a **Lectura** como **indicador bisagra** del desempeño general: avances en esta dimensión suelen co-ocurrir con mejoras en otras. **Inglés** co-varía con **Lectura/Ciudadanas**, lo que sugiere un sustrato común de habilidades verbales/comprensivas. **Comunicación Escrita** muestra **correlaciones bajas** con el resto, por lo que su trayectoria es más **independiente** y debe analizarse por separado.
 
-### 7) Estructura latente (FAMD)
+### 8) Estructura latente (FAMD)
 La varianza se **distribuye en múltiples dimensiones** (≈6,6% en Dim.1; ≈10,9% acumulado en Dim.1–2; ≈28% en Dim.1–7), descartando un eje único dominante. La **Dimensión 1** se alinea con un **eje socioeconómico/educativo** (estrato, educación parental y TIC), con **Inglés** mostrando la asociación más fuerte con ese eje. La nube de individuos es **continua** (sin clústeres nítidos): predominan **gradientes** más que segmentos discretos; las segmentaciones deben sustentarse en **modelos multivariados con controles** y reporte de **incertidumbre**.
 
 ---
