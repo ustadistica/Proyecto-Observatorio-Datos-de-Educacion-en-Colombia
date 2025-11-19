@@ -93,6 +93,14 @@ Se consolidó el universo de **Saber Pro 2021–2024** con **1.015.276** registr
 El orden de desempeño promedio del periodo es: **Inglés** (más alto) → **Lectura Crítica** → **Razonamiento Cuantitativo** ≈ **Competencias Ciudadanas** → **Comunicación Escrita** (más bajo). **Comunicación Escrita** presenta la **mayor dispersión**.
 
 ### 3) Evolución temporal 2021–2024
+
+<p align="center">
+  <img src="https://github.com/ustadistica/Proyecto-Observatorio-Datos-de-Educacion-en-Colombia/blob/main/Imagenes/Puntajes%20anuales.png" alt="Figura 4. Promedio Anual" width="80%" style="border-radius: 8px; border: 1px solid #ccc;">
+  <br>
+  <strong>Figura 4.</strong> Promedio Anual
+</p>
+
+
 - **Inglés:** nivel alto y **estable**; el máximo se observa en **2024**.  
 - **Lectura Crítica:** **mejora sostenida** a lo largo del cuatrienio.  
 - **Razonamiento Cuantitativo:** **prácticamente plano**, sin cambios relevantes.  
