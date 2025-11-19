@@ -119,14 +119,20 @@ Las IES con mayor peso relativo en la cohorte son **Uniminuto** y **Politécnico
 
 ### 5) Participación departamental
 
+<p align="center">
+  <img src="https://github.com/ustadistica/Proyecto-Observatorio-Datos-de-Educacion-en-Colombia/blob/main/Imagenes/Departamentos.jpg" alt="Figura 6. Departemnetos" width="80%" style="border-radius: 8px; border: 1px solid #ccc;">
+  <br>
+  <strong>Figura 6.</strong> Departamentos
+</p>
+
 La gráfica evidencia que Bogotá concentra la mayor cantidad de estudiantes por amplio margen, seguida por Antioquia y varios departamentos con volúmenes moderados. En general, la distribución es muy desigual, con un fuerte predominio de las principales ciudades del país en la presentación del SABER-PRO.
 
 ### 6) Factores del hogar y brechas asociadas
 
 <p align="center">
-  <img src="https://github.com/ustadistica/Proyecto-Observatorio-Datos-de-Educacion-en-Colombia/blob/main/Imagenes/FAMD.png" alt="Figura 6. Componentes" width="80%" style="border-radius: 8px; border: 1px solid #ccc;">
+  <img src="https://github.com/ustadistica/Proyecto-Observatorio-Datos-de-Educacion-en-Colombia/blob/main/Imagenes/FAMD.png" alt="Figura 7. Componentes" width="80%" style="border-radius: 8px; border: 1px solid #ccc;">
   <br>
-  <strong>Figura 6.</strong> Componentes
+  <strong>Figura 7.</strong> Componentes
 </p>
 
 Se observa un **gradiente positivo por estrato socioeconómico** en todos los módulos, con la **brecha más marcada en Inglés**. La **educación de madre y padre** se asocia de forma consistente con mejores puntajes. La **disponibilidad de TIC** en el hogar (**internet** y **computador**) se relaciona con **ventajas pequeñas–moderadas**, más evidentes en **Inglés** y **Lectura**.
@@ -134,9 +140,9 @@ Se observa un **gradiente positivo por estrato socioeconómico** en todos los m�
 ### 7) Relaciones entre módulos
 
 <p align="center">
-  <img src="https://github.com/ustadistica/Proyecto-Observatorio-Datos-de-Educacion-en-Colombia/blob/main/Imagenes/Correlaciones.png" alt="Figura 7. Relaciones" width="80%" style="border-radius: 8px; border: 1px solid #ccc;">
+  <img src="https://github.com/ustadistica/Proyecto-Observatorio-Datos-de-Educacion-en-Colombia/blob/main/Imagenes/Correlaciones.png" alt="Figura 8. Relaciones" width="80%" style="border-radius: 8px; border: 1px solid #ccc;">
   <br>
-  <strong>Figura 7.</strong> Relaciones
+  <strong>Figura 8.</strong> Relaciones
 </p>
 
 Los puntajes muestran **correlaciones altas** entre **Lectura Crítica**, **Razonamiento Cuantitativo** y **Competencias Ciudadanas**, indicando co-ocurrencia de buen desempeño. **Comunicación Escrita** exhibe **correlaciones bajas** con los demás módulos, lo que sugiere un comportamiento **más independiente**.
