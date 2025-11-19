@@ -118,6 +118,13 @@ El orden de desempeño promedio del periodo es: **Inglés** (más alto) → **Le
 Las IES con mayor peso relativo en la cohorte son **Uniminuto** y **Politécnico Grancolombiano**. Por **modalidad**, los programas **presenciales** muestran **medianas ligeramente superiores** en **Razonamiento Cuantitativo**; **virtual** y **a distancia** quedan en niveles intermedios y **semipresencial** por debajo. Las diferencias son **moderadas** y con **alto solapamiento**.
 
 ### 5) Factores del hogar y brechas asociadas
+
+<p align="center">
+  <img src="https://github.com/ustadistica/Proyecto-Observatorio-Datos-de-Educacion-en-Colombia/blob/main/Imagenes/FAMD.png" alt="Figura 6. Componentes" width="80%" style="border-radius: 8px; border: 1px solid #ccc;">
+  <br>
+  <strong>Figura 6.</strong> Componentes
+</p>
+
 Se observa un **gradiente positivo por estrato socioeconómico** en todos los módulos, con la **brecha más marcada en Inglés**. La **educación de madre y padre** se asocia de forma consistente con mejores puntajes. La **disponibilidad de TIC** en el hogar (**internet** y **computador**) se relaciona con **ventajas pequeñas–moderadas**, más evidentes en **Inglés** y **Lectura**.
 
 ### 6) Relaciones entre módulos
