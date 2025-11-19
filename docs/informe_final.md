@@ -83,6 +83,13 @@ Una vez construido el modelo, se realizaron tres tipos de análisis: univariado,
 Se consolidó el universo de **Saber Pro 2021–2024** con **1.015.276** registros de estudiantes. La distribución por sexo es **58% mujeres** y **42% hombres**. Para **2024**, el microdato dispone de **281.601** observaciones y **90** variables (resultados y contexto).
 
 ### 2) Niveles de desempeño por módulo
+
+<p align="center">
+  <img src="https://github.com/ustadistica/Proyecto-Observatorio-Datos-de-Educacion-en-Colombia/blob/main/Imagenes/Distrib%20puntajes.png" alt="Figura 3. Distribución puntajes" width="80%" style="border-radius: 8px; border: 1px solid #ccc;">
+  <br>
+  <strong>Figura 3.</strong> Distribución Puntajes
+</p>
+
 El orden de desempeño promedio del periodo es: **Inglés** (más alto) → **Lectura Crítica** → **Razonamiento Cuantitativo** ≈ **Competencias Ciudadanas** → **Comunicación Escrita** (más bajo). **Comunicación Escrita** presenta la **mayor dispersión**.
 
 ### 3) Evolución temporal 2021–2024
