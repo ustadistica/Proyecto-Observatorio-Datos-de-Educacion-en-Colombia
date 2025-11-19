@@ -108,6 +108,13 @@ El orden de desempeño promedio del periodo es: **Inglés** (más alto) → **Le
 - **Comunicación Escrita:** **serie más inestable** (cae en 2022, rebota en 2023 y cede en 2024).
 
 ### 4) Participación institucional y modalidad
+
+<p align="center">
+  <img src="https://github.com/ustadistica/Proyecto-Observatorio-Datos-de-Educacion-en-Colombia/blob/main/Imagenes/Universidades.jpg" alt="Figura 5. Universidades" width="80%" style="border-radius: 8px; border: 1px solid #ccc;">
+  <br>
+  <strong>Figura 5.</strong> Universidades
+</p>
+
 Las IES con mayor peso relativo en la cohorte son **Uniminuto** y **Politécnico Grancolombiano**. Por **modalidad**, los programas **presenciales** muestran **medianas ligeramente superiores** en **Razonamiento Cuantitativo**; **virtual** y **a distancia** quedan en niveles intermedios y **semipresencial** por debajo. Las diferencias son **moderadas** y con **alto solapamiento**.
 
 ### 5) Factores del hogar y brechas asociadas
