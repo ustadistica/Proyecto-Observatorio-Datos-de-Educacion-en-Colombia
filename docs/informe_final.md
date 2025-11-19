@@ -72,7 +72,14 @@ Una vez construido el modelo, se realizaron tres tipos de análisis: univariado,
 
 ## Resultados
 
-### 1) Alcance y composición de la base
+### 1) Alcance y composición de la base 
+
+<p align="center">
+  <img src="https://github.com/ustadistica/Proyecto-Observatorio-Datos-de-Educacion-en-Colombia/blob/main/Imagenes/Distrib%20sexo.png" alt="Figura 2. Distribución Género" width="80%" style="border-radius: 8px; border: 1px solid #ccc;">
+  <br>
+  <strong>Figura 2.</strong> Distribución Género
+</p>
+
 Se consolidó el universo de **Saber Pro 2021–2024** con **1.015.276** registros de estudiantes. La distribución por sexo es **58% mujeres** y **42% hombres**. Para **2024**, el microdato dispone de **281.601** observaciones y **90** variables (resultados y contexto).
 
 ### 2) Niveles de desempeño por módulo
