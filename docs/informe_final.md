@@ -80,7 +80,7 @@ Una vez construido el modelo, se realizaron tres tipos de análisis: univariado,
   <strong>Figura 2.</strong> Distribución Género
 </p>
 
-Se consolidó el universo de **Saber Pro 2021–2024** con **1.015.276** registros de estudiantes. La distribución por sexo es **58% mujeres** y **42% hombres**. Para **2024**, el microdato dispone de **281.601** observaciones y **90** variables (resultados y contexto).
+En el grupo de estudiantes que presentó el Saber Pro entre 2021 y 2024 vemos que participaron más mujeres que hombres. De 1.015.276 personas, 588.790 son mujeres aproximadamente un 58% y 426.486 son hombres aproximadamente un 42%. Esto quiere decir que, en estos años, las mujeres fueron mayoría entre quienes presentaron el examen.
 
 ### 2) Niveles de desempeño por módulo
 
@@ -90,7 +90,7 @@ Se consolidó el universo de **Saber Pro 2021–2024** con **1.015.276** registr
   <strong>Figura 3.</strong> Distribución Puntajes
 </p>
 
-El orden de desempeño promedio del periodo es: **Inglés** (más alto) → **Lectura Crítica** → **Razonamiento Cuantitativo** ≈ **Competencias Ciudadanas** → **Comunicación Escrita** (más bajo). **Comunicación Escrita** presenta la **mayor dispersión**.
+El orden de los puntajes promedio muestra un patrón claro: Inglés es el módulo con mejores resultados, seguido por Lectura Crítica. Más abajo aparecen Razonamiento Cuantitativo y Competencias Ciudadanas, que tienen niveles muy parecidos. El puntaje más bajo es el de Comunicación Escrita, que además es el módulo donde los resultados están más dispersos, lo que indica mayor variabilidad entre los estudiantes.
 
 ### 3) Evolución temporal 2021–2024
 
@@ -100,12 +100,11 @@ El orden de desempeño promedio del periodo es: **Inglés** (más alto) → **Le
   <strong>Figura 4.</strong> Promedio Anual
 </p>
 
-
-- **Inglés:** nivel alto y **estable**; el máximo se observa en **2024**.  
-- **Lectura Crítica:** **mejora sostenida** a lo largo del cuatrienio.  
-- **Razonamiento Cuantitativo:** **prácticamente plano**, sin cambios relevantes.  
-- **Competencias Ciudadanas:** **descenso en 2023** con **recuperación en 2024**.  
-- **Comunicación Escrita:** **serie más inestable** (cae en 2022, rebota en 2023 y cede en 2024).
+- **Inglés**: nivel alto y estable, con su mejor resultado en 2024.
+- **Lectura Crítica**: mejora constante a lo largo de los cuatro años.
+- **Razonamiento Cuantitativo**: comportamiento casi igual en todo el periodo.
+- **Competencias Ciudadanas**: baja en 2023 y se recupera en 2024.
+- **Comunicación Escrita**: la más inestable, con caídas y recuperaciones sin una tendencia clara.
 
 ### 4) Participación institucional y modalidad
 
@@ -115,7 +114,7 @@ El orden de desempeño promedio del periodo es: **Inglés** (más alto) → **Le
   <strong>Figura 5.</strong> Universidades
 </p>
 
-Las IES con mayor peso relativo en la cohorte son **Uniminuto** y **Politécnico Grancolombiano**. Por **modalidad**, los programas **presenciales** muestran **medianas ligeramente superiores** en **Razonamiento Cuantitativo**; **virtual** y **a distancia** quedan en niveles intermedios y **semipresencial** por debajo. Las diferencias son **moderadas** y con **alto solapamiento**.
+Las instituciones con mayor participación en la cohorte son Uniminuto y el Politécnico Grancolombiano, ya que aportan una parte importante de los estudiantes evaluados. Cuando se comparan las modalidades, los programas presenciales muestran resultados un poco más altos en Razonamiento Cuantitativo. La educación virtual y a distancia se ubica en un punto intermedio, mientras que la semipresencial queda un poco más abajo. Aun así, las diferencias no son muy grandes y los rangos entre modalidades se mezclan bastante.
 
 ### 5) Participación departamental
 
@@ -135,7 +134,7 @@ La gráfica evidencia que Bogotá concentra la mayor cantidad de estudiantes por
   <strong>Figura 7.</strong> Componentes
 </p>
 
-Se observa un **gradiente positivo por estrato socioeconómico** en todos los módulos, con la **brecha más marcada en Inglés**. La **educación de madre y padre** se asocia de forma consistente con mejores puntajes. La **disponibilidad de TIC** en el hogar (**internet** y **computador**) se relaciona con **ventajas pequeñas–moderadas**, más evidentes en **Inglés** y **Lectura**.
+En este análisis se observa que las variables del hogar tienen un papel importante en la forma en que se organizan los datos. Las que más pesan son el estrato de vivienda y la educación de la madre y del padre; también cuentan si la familia tiene internet y tiene computador. Todas quedan hacia el lado derecho y un poco arriba, así que la Dimensión 1 puede leerse como un eje socioeconómico/educativo se podría decir que a mayor estrato y mayor educación de los padres, más se ubican los casos hacia ese lado. En ese mismo sentido aparece el puntaje de Inglés, que se alinea sobre todo con la Dimensión 1. El resto de variables como género, nivel del programa, carácter académico y los otros puntajes, queda cerca del centro, por lo que en este plano aportan poco.
 
 ### 7) Relaciones entre módulos
 
@@ -145,39 +144,35 @@ Se observa un **gradiente positivo por estrato socioeconómico** en todos los m�
   <strong>Figura 8.</strong> Relaciones
 </p>
 
-Los puntajes muestran **correlaciones altas** entre **Lectura Crítica**, **Razonamiento Cuantitativo** y **Competencias Ciudadanas**, indicando co-ocurrencia de buen desempeño. **Comunicación Escrita** exhibe **correlaciones bajas** con los demás módulos, lo que sugiere un comportamiento **más independiente**.
+Los resultados muestran que Lectura Crítica, Razonamiento Cuantitativo y Competencias Ciudadanas suelen moverse juntas: cuando un estudiante tiene buen desempeño en una de estas áreas, normalmente también le va bien en las otras. En cambio, Comunicación Escrita no se relaciona tanto con los demás módulos, lo que indica que su comportamiento es más independiente.
 
 ### 8) Análisis multivariado (FAMD)
-La varianza se reparte en varias dimensiones: **una** explica ~**6,6%**, **dos** ~**10,9%** y **siete** ~**28,0%**, por lo que **no existe un único eje dominante**. La **Dimensión 1** se alinea con un **eje socioeconómico/educativo** (estrato, educación parental y TIC), con **Inglés** particularmente asociado a ese eje.
+
+El análisis muestra que la información no se concentra en un solo eje. La primera dimensión explica alrededor del 6,6%, las dos primeras juntas llegan al 10,9% y las seis primeras alcanzan cerca del 28%. Esto quiere decir que no hay una única línea que ordene completamente los datos. La Dimensión 1 está muy relacionada con las condiciones del hogar, como el estrato, la educación de los padres y el acceso a internet y computador. En esa misma dirección aparece el módulo de Inglés, que es el que más se conecta con este nivel socioeconómico.
 
 ---
 
 ## Análisis de resultados
 
-### 1) Alcance y composición de la base
-El universo **Saber Pro 2021–2024** (1.015.276 registros) y el corte **2024** (281.601 observaciones; 90 variables) ofrecen potencia estadística para desagregar por **IES**, **modalidad**, **estrato** y **áreas de programa** sin comprometer estabilidad. La composición por sexo (≈58% mujeres; ≈42% hombres) es equilibrada en el agregado, por lo que no exige ponderaciones específicas. La amplitud de variables en 2024 permite integrar **contexto del hogar** y **resultados**, habilitando análisis multivariados consistentes. Toda comparación debe reportar **tamaños muestrales** y **medidas de dispersión** para evitar sobreinterpretar diferencias pequeñas.
+El análisis muestra que el desempeño académico está relacionado con varios factores del contexto. Una de las diferencias más claras aparece en el nivel socioeconómico. Los estudiantes que viven en hogares con mejores condiciones suelen obtener puntajes más altos, lo que refleja desigualdades que no nacen en el examen sino que vienen de todo su proceso educativo. Este patrón se ve en los módulos, pero es más marcado en Inglés, que es la prueba donde aparecen las brechas más grandes.
 
-### 2) Niveles de desempeño y variabilidad por módulo
-Se sostiene un patrón claro: **Inglés** al tope, seguido por **Lectura Crítica**; **Razonamiento Cuantitativo** y **Competencias Ciudadanas** en franja media; **Comunicación Escrita** en el nivel más bajo. **Escrita** presenta, además, la **mayor dispersión**, señal de heterogeneidad en la competencia de producción de texto y posible variabilidad en criterios de evaluación entre programas/IES. Este binomio (media baja + alta variabilidad) indica necesidad de leer resultados con **percentiles/IQR** además de promedios.
+Cuando se mira la base completa, que reúne más de un millón de estudiantes entre 2021 y 2024, se ve que tiene la fuerza suficiente para analizar diferencias por instituciones, por modalidad, por estrato y por regiones. La distribución por género es amplia y equilibrada, por lo que no requiere ajustes adicionales. Esto permite trabajar con la base sin miedo a que pequeñas variaciones cambien los resultados de manera artificial.
 
-### 3) Evolución temporal 2021–2024
-Las trayectorias confirman señales robustas: **Inglés** alto y estable (máximo en 2024); **Lectura** con **mejora sostenida**; **Cuantitativo** prácticamente **plano**; **Ciudadanas** con **bache en 2023** y **recuperación en 2024**; **Escrita** es la **más volátil** (caída 2022, rebote 2023, nueva caída 2024). La interpretación debe privilegiar **dirección** y **estabilidad** por encima de variaciones anuales puntuales, distinguiendo tendencia de ruido.
+Sobre los puntajes, se mantiene un patrón constante se observo que inglés es el módulo con el promedio más alto, seguido por Lectura Crítica. Luego vienen Razonamiento Cuantitativo y Competencias Ciudadanas, que están en un punto intermedio. Comunicación Escrita queda como el módulo más bajo y también el más variable, lo que muestra que esta competencia presenta mayores retos para la mayoría de estudiantes. Esto puede ser una señal para orientar esfuerzos que fortalezcan la escritura académica, que es una habilidad fundamental para el desarrollo profesional.
 
-### 4) Participación institucional y modalidad
-La cohorte está influida por IES de gran tamaño (p. ej., Uniminuto y Politécnico Grancolombiano), lo que condiciona la composición. Por **modalidad**, **presencial** muestra **medianas ligeramente superiores** en **Cuantitativo**, con **alto solapamiento** frente a **virtual/distancia** y **semipresencial** por debajo. Las diferencias son **moderadas**; sin **controles por área, nivel y perfil del estudiante**, atribuir efectos a la modalidad introduce riesgo de sesgo por composición.
+Cuando se recorren los años, las tendencias son estables. Inglés se mantiene alto y mejora en 2024. Lectura avanza de forma constante. Razonamiento cuantitativo prácticamente no cambia. Competencias ciudadanas baja en 2023 pero se recupera en 2024. Comunicación Escrita es la que más sube y baja, por lo que su comportamiento es más difícil de anticipar. En lugar de quedarse solo con lo que pasa en un año, es mejor mirar cómo se comporta cada módulo en el tiempo y si mantiene una tendencia clara o no.
 
-### 5) Participación departamental
+A nivel institucional, el peso de algunas universidades es muy grande. Instituciones como Uniminuto o el Politécnico Grancolombiano aportan una parte importante de los estudiantes evaluados, lo que influye en la composición general de la base. Cuando se comparan modalidades, la mayoría sigue siendo presencial. Aunque se observan pequeñas diferencias entre presencial, virtual y distancia, estas diferencias no son lo suficientemente grandes como para decir que la modalidad, por sí sola, explica el rendimiento, ya que detrás también hay variaciones por área, nivel del programa y perfiles de los estudiantes.
 
-Se identifica una fuerte concentración de estudiantes en Bogotá, que supera ampliamente al resto de departamentos, evidenciando su papel como el principal centro educativo del país. Antioquia ocupa el segundo lugar pero con una brecha considerable frente a la capital, mientras que Atlántico, Valle y Santander conforman un grupo intermedio con volúmenes importantes asociados a sus ciudades principales. Los demás departamentos del top (Bolívar, Norte de Santander, Boyacá, Nariño y Córdoba) presentan cifras menores pero que reflejan su peso regional. En conjunto, la distribución exhibe un patrón claramente desigual, donde la oferta educativa y la población estudiantil se concentran especialmente en unas pocas zonas urbanas de gran tamaño.
+En el análisis por departamentos, la mayor concentración se encuentra en Bogotá, que supera ampliamente a cualquier otra región del país. Antioquia ocupa el segundo lugar, y después vienen departamentos como Atlántico, Valle y Santander. Esto muestra que la población evaluada se concentra en las grandes zonas urbanas, donde también se agrupa buena parte de la oferta educativa.
 
-### 6) Factores del hogar y brechas asociadas
-Se observa un **gradiente positivo por estrato** en todos los módulos, con **brecha más marcada en Inglés**. La **educación parental** se asocia consistentemente con mayores puntajes. La disponibilidad de **TIC en el hogar** (internet y computador) se vincula con **ventajas pequeñas–moderadas**, más visibles en **Inglés** y **Lectura**. Son **asociaciones** (no causalidad); en análisis comparativos deben incorporarse como **covariables de control** para reducir sesgos.
+Los datos muestran que el hogar sí marca diferencias. El estrato, la educación de los padres y tener internet y computador en casa están asociados con mejores resultados. Estas variables reflejan un nivel socioeconómico más alto, y hacia ese mismo lado se mueve el puntaje de Inglés, que es el que más se relaciona con estas ventajas. En cambio, variables como el género, el nivel del programa o el tipo de institución casi no cambian la forma en que se agrupan los estudiantes en este análisis.
 
-### 7) Relaciones entre módulos
-Las correlaciones elevadas entre **Lectura Crítica**, **Razonamiento Cuantitativo** y **Competencias Ciudadanas** posicionan a **Lectura** como **indicador bisagra** del desempeño general: avances en esta dimensión suelen co-ocurrir con mejoras en otras. **Inglés** co-varía con **Lectura/Ciudadanas**, lo que sugiere un sustrato común de habilidades verbales/comprensivas. **Comunicación Escrita** muestra **correlaciones bajas** con el resto, por lo que su trayectoria es más **independiente** y debe analizarse por separado.
+Cuando se analizan las relaciones entre módulos, se observa que Lectura Crítica es un punto de conexión importante. Tiende a moverse junto con Razonamiento Cuantitativo y Competencias Ciudadanas, lo que sugiere que quienes leen y comprenden mejor también suelen tener buenos resultados en las demás competencias. Inglés también tiene cierta relación con estas habilidades, aunque es más sensible al contexto socioeconómico. Comunicación Escrita, por el contrario, tiene una relación más débil con los otros módulos y sigue un patrón más independiente.
 
-### 8) Estructura latente (FAMD)
-La varianza se **distribuye en múltiples dimensiones** (≈6,6% en Dim.1; ≈10,9% acumulado en Dim.1–2; ≈28% en Dim.1–7), descartando un eje único dominante. La **Dimensión 1** se alinea con un **eje socioeconómico/educativo** (estrato, educación parental y TIC), con **Inglés** mostrando la asociación más fuerte con ese eje. La nube de individuos es **continua** (sin clústeres nítidos): predominan **gradientes** más que segmentos discretos; las segmentaciones deben sustentarse en **modelos multivariados con controles** y reporte de **incertidumbre**.
+Aunque este proyecto también trabajó con SNIES y con el PTE, en esta fase no se unieron esas bases con los datos de Saber Pro. Cada fuente maneja un nivel distinto: Saber Pro trabaja a nivel de estudiante, SNIES a nivel de instituciones y programas, y el PTE a nivel de sector presupuestal. Estas estructuras no tienen llaves que permitan unirlas sin correr el riesgo de mezclar información incorrecta. Por esa razón, los resultados presentados en esta parte se basan únicamente en Saber Pro, que es la base más sólida y homogénea.
+
+Sin embargo, el trabajo realizado con las otras dos fuentes no se pierde. Los datos de SNIES y del PTE ya quedaron descargados, limpios y documentados, y el sistema está preparado para recibir nuevos años sin repetir todo el proceso. Esto permite que, en el futuro, se puedan integrar análisis más amplios que combinen cobertura, calidad y presupuesto. El observatorio que se construyó queda como una base para que este tipo de estudios crezca y se fortalezca con el tiempo.
 
 ---
 
