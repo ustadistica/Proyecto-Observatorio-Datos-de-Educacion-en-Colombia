@@ -1,72 +1,125 @@
-# Proyecto Observatorio de Datos de Educación en Colombia
+# Observatorio de Educacion en Colombia
 
-## Introducción
-Consolidamos fuentes públicas 2021–2024 para construir una base integrada y generar análisis descriptivos. La primera fase fue **descargar, revisar y perfilar** las bases; luego **automatizar** con Selenium cuando fue posible y estandarizar campos para su integración.
+> **Ustadistica** -- Consultoria e Investigacion . Universidad Santo Tomas . 2026-I
 
-## Objetivos
-- Integrar **PTE/PGN Educación**, **Saber Pro** y **SNIES** en una tabla maestra documentada.
-- Normalizar identificadores, años y nombres; crear un **diccionario de variables**.
-- Implementar un **modelo estrella** (hechos: puntajes; 5 dimensiones) y preparar exploraciones.
-- Entregar **figuras** y una **presentación** con hallazgos principales.
+Observatorio de datos abiertos de educacion en Colombia. Integracion de SNIES, ICFES y PTE para analisis territorial de brechas educativas.
 
-## Datos y alcance
-- **PTE – PGN Educación (2021–2024)**: 48 archivos consolidados en una sola base. Nota: en **nov/2021** no hubo registro reportado.
-- **Saber Pro (ICFES 2021–2024)**: puntajes e información de estudiantes/programas.
-- **SNIES**: matrícula, instituciones y programas.
+## Fuentes de Datos
 
-> Los archivos de datos **no se suben al repo** por tamaño. Se almacenan en OneDrive. 
+SNIES (matricula, graduados), ICFES (Saber 11, Saber Pro), PTE (presupuesto educativo) -- datos.gov.co
 
-## Estructura del repositorio
-~~~text
-.
-├─ codigos/
-│  ├─ exploracion.ipynb
-│  ├─ exploracion.py
-│  ├─ extrae_pte_educacion_full.py
-│  ├─ scraper_snies.py
-│  └─ saber_pro_2021_2024/
-│     ├─ modelo_estrella.py
-│     └─ database.py
-├─ docs/
-│  ├─ analisis_de_bases_seleccionadas.md
-│  ├─ exploracion_analisis_univariado.md
-│  ├─ exploracion_analisis_bivariado.md
-│  ├─ exploracion_analisis_bivariado_parte_2.md
-│  ├─ exploracion_analisis_multivariado.md
-│  ├─ informe_final.md
-│      
-└─ README.md
+Consultar [`datos/catalogo.yaml`](datos/catalogo.yaml) para los identificadores Socrata y metadatos de cada dataset.
 
-~~~
+## Preguntas de Investigacion
 
-## Codigos
-**Requisitos**: Python ≥ 3.10; paquetes: `selenium`, `pandas`, `openpyxl`.
+- Como ha evolucionado la cobertura en educacion superior por departamento entre 2015 y 2024?
+- Existe correlacion entre la ejecucion presupuestal del PTE y los puntajes Saber Pro a nivel departamental?
+- Que programas academicos muestran mayor crecimiento de matricula y cuales presentan senales de saturacion?
+- Cual es la brecha de genero en matricula y graduacion por area de conocimiento?
 
-~~~bash
-# 0) estructura local de datos 
-mkdir -p data/raw data/interim data/processed
+## Estructura del Proyecto
 
-# 1) PTE/PGN Educación
-# Si la web permite Selenium:
-python "Códigos/extrae_pte_educacion_full.py"
-# Si la web bloquea, realizar descarga manual a data/raw/pte/ y correr el script para consolidar.
+```
+Proyecto-Observatorio-Datos-de-Educacion-en-Colombia/
+|-- README.md                    # Este archivo
+|-- CONTRIBUTING.md              # Guia de contribucion y Git Flow
+|-- pyproject.toml               # Poetry (dependencias + metadata)
+|-- Dockerfile                   # Contenedor reproducible
+|-- .github/
+|   +-- workflows/
+|       +-- etl_update.yml       # GitHub Actions para ingesta periodica
+|-- src/
+|   |-- ingesta/                 # Scripts de extraccion (sodapy)
+|   |-- transformacion/          # Limpieza, normalizacion, joins
+|   |-- modelo/                  # Modelo estrella / modelado estadistico
+|   +-- visualizacion/           # Funciones de graficos reutilizables
+|-- notebooks/
+|   |-- 01_eda.ipynb
+|   |-- 02_analisis.ipynb
+|   +-- 03_modelado.ipynb
+|-- app/
+|   +-- streamlit_app.py         # Dashboard interactivo
+|-- datos/
+|   |-- raw/                     # Datos crudos (gitignored si pesados)
+|   |-- processed/               # Datos limpios
+|   +-- catalogo.yaml            # Metadatos de cada dataset
+|-- docs/                        # Informes y documentacion
+|-- tests/                       # Tests automatizados
+|-- artifacts/                   # Artefactos generados (metricas, reportes)
++-- models/                      # Modelos serializados
+```
 
-# 2) SNIES
-python "Códigos/scraper_snies.py"               # descarga
-python "Códigos/snies_renamed_registros.py"     # renombrado/trazabilidad
+## Instalacion
 
-# 3) Saber Pro / Exploración
-python "Códigos/Exploración.py"  # o abrir Códigos/Exploración.ipynb
-~~~
+```bash
+# Clonar el repositorio
+git clone https://github.com/ustadistica/Proyecto-Observatorio-Datos-de-Educacion-en-Colombia.git
+cd Proyecto-Observatorio-Datos-de-Educacion-en-Colombia
 
-## Notas metodológicas cortas
-- PGN: cuando la página bloqueó Selenium se usó **descarga manual** y un script que **une** las bases y extrae **PGN del sector educación** por año.
-- El **modelo estrella** y la exploración posterior se montaron sobre **Saber Pro**.
+# Instalar dependencias con Poetry
+pip install poetry
+poetry install
 
-## Resultados parciales
-- **Base consolidada** PTE Educación 2021–2024 y diccionario (ver `docs/Analisis de Bases.md`).
-- **Esquema estrella** operativo para puntajes de Saber Pro.
-- **Exploraciones** con tablas y gráficas base (ver `docs/*` y `reports/figures/` si aplica).
+# Ejecutar pipeline de ingesta
+poetry run python -m src.ingesta.main
 
-## Licencia y uso de datos
-El código se publica bajo la licencia definida por el equipo. Los datos siguen los términos de PTE, ICFES y MEN; el procedimiento de obtención queda documentado en `docs/`.
+# Ejecutar pipeline de transformacion
+poetry run python -m src.transformacion.main
+
+# Lanzar dashboard
+poetry run streamlit run app/streamlit_app.py
+```
+
+## Cronograma -- CRISP-DM
+
+### Sprint 1 (Sem 1-2)
+
+Ingesta automatizada: `src/ingesta/snies.py`, `src/ingesta/icfes.py`, `src/ingesta/pte.py` con sodapy. Crear `datos/catalogo.yaml`.
+
+### Sprint 2 (Sem 3-4)
+
+Modelo estrella en DuckDB: `fact_matricula`, `fact_graduados`, `fact_saber`, `fact_presupuesto` + dimensiones compartidas.
+
+### Sprint 3 (Sem 5-7)
+
+EDA territorial (mapas coropleticos), analisis de brechas (estrato, zona, genero), cruce presupuesto vs resultados. Dashboard Streamlit.
+
+### Sprint 4 (Sem 8)
+
+Informe Quarto reproducible. Deploy del dashboard en Streamlit Cloud. Resolver issues abiertos.
+
+
+## Equipo
+
+| Rol | GitHub |
+|-----|--------|
+| Lider tecnico/ETL | [@Grmng31](https://github.com/Grmng31) |
+| Modelado + analisis | [@AndresFHR2002](https://github.com/AndresFHR2002) |
+| Por perfilar -- Canon Gonzalez Jhonatan | (por confirmar) |
+
+**Director:** [@Izainea](https://github.com/Izainea)
+
+## Metodologia
+
+- **Framework analitico:** CRISP-DM
+- **Gestion de proyecto:** Sprints de 2 semanas con Kanban (GitHub Projects)
+- **Control de versiones:** Git Flow (`main` / `develop` / `feature/*`)
+- **Estandar operativo:** Big 4 (governance formal, auditoria cruzada, mejora continua)
+
+Consultar [CONTRIBUTING.md](CONTRIBUTING.md) para la guia completa de contribucion.
+
+## Stack Tecnologico
+
+| Capa | Herramientas |
+|------|-------------|
+| Ingesta | sodapy, pandas, requests |
+| Almacen | DuckDB (modelo estrella) |
+| Analisis | pandas, scikit-learn, statsmodels |
+| Visualizacion | matplotlib, seaborn, plotly, folium |
+| Dashboard | Streamlit |
+| Reproducibilidad | Poetry, Docker, GitHub Actions |
+| Testing | pytest, pandera |
+
+---
+
+> *"Si no esta en el README, el proyecto no existe."* -- Ustadistica 2026-I
