@@ -13,6 +13,9 @@ COPY pyproject.toml poetry.lock* ./
 RUN poetry config virtualenvs.create false \
     && poetry install --no-interaction --no-ansi --without dev
 
+# Instalar DVC y configurar pipeline
+RUN pip install --no-cache-dir dvc[s3,azure,gdrive,ossfs]
+
 COPY src/ ./src/
 COPY app/ ./app/
 COPY datos/ ./datos/
