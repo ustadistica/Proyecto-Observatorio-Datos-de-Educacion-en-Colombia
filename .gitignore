@@ -15,9 +15,7 @@ env/
 # === Datos pesados (usar DVC para versionar) ===
 datos/raw/*.csv
 datos/raw/*.xlsx
-datos/raw/*.parquet
 datos/processed/*.csv
-datos/processed/*.parquet
 datos/interim/
 *.duckdb
 *.sqlite
@@ -56,3 +54,7 @@ mlruns/
 *.tmp
 .coverage
 htmlcov/
+
+# === Ignorar archivos Excel ===
+*.xlsx
+*.xls

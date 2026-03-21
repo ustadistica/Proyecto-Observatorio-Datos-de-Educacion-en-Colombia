@@ -1,4 +1,4 @@
-# Catalogo de Datos del Proyecto
+# Catálogo de Datos del Proyecto
 # ================================
 # Cada entrada incluye el identificador Socrata, la URL, campos clave
 # y la periodicidad de actualizacion.
@@ -16,5 +16,20 @@
 #     ultimo_pull: null
 #     notas: "Descripcion breve"
 
-fuentes: []
-  # TODO: Agregar las fuentes de datos del proyecto
+fuentes:
+  - nombre: "SNIES - Estadísticas Consolidadas"
+    plataforma: "snies.mineducacion.gov.co"
+    url: "https://snies.mineducacion.gov.co/portal/ESTADISTICAS/Bases-consolidadas/"
+    formato: "xlsx"
+    campos_clave:
+      - codigo_institucion
+      - nombre_institucion
+      - programa_academico
+      - nivel_academico
+      - departamento
+      - municipio
+      - año
+      - tipo_registro
+    periodicidad: "anual"
+    ultimo_pull: null
+    notas: "Bases consolidadas de matriculados y graduados SNIES"

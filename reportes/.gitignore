@@ -1,0 +1,9 @@
+/entorno_verificado.txt
+/ingesta_snies_verificada.txt
+/ingesta_original_verificada.txt
+/ingesta_main_verificada.txt
+/transformacion_verificada.txt
+/visualizacion_verificada.txt
+/modelo_verificado.txt
+/tests_verificados.txt
+/dvc_pipeline_report.txt
