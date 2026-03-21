@@ -6,7 +6,7 @@ authors = ["Ustadistica <ustadistica@usantotomas.edu.co>"]
 readme = "README.md"
 packages = [{include = "src"}]
 
-[tool.poetry.dependencies]
+[tool.poetry.group.main.dependencies]
 python = "^3.10"
 pandas = "^2.2"
 numpy = "^1.26"
@@ -16,10 +16,11 @@ plotly = "^5.18"
 streamlit = "^1.31"
 jupyter = "^1.0"
 scikit-learn = "^1.4"
-    sodapy = "^2.2"
-    duckdb = "^1.0"
-    geopandas = "^0.14"
-    quarto = "^0.1"
+sodapy = "^2.2"
+duckdb = "^1.0"
+geopandas = "^0.14"
+quarto = "^0.1"
+
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.0"

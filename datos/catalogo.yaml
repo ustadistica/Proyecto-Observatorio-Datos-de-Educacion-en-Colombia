@@ -1,20 +1,118 @@
-# Catalogo de Datos del Proyecto
-# ================================
-# Cada entrada incluye el identificador Socrata, la URL, campos clave
-# y la periodicidad de actualizacion.
-#
-# fuentes:
-#   - nombre: "Nombre descriptivo del dataset"
-#     plataforma: "datos.gov.co"
-#     socrata_id: "xxxx-xxxx"
-#     url: "https://www.datos.gov.co/resource/xxxx-xxxx"
-#     formato: "csv"
-#     campos_clave:
-#       - campo1
-#       - campo2
-#     periodicidad: "trimestral"
-#     ultimo_pull: null
-#     notas: "Descripcion breve"
+# FICHA TÉCNICA Y CATÁLOGO DE DATOS
+# Proyecto: Consultoría de Datos Saber Pro 2015-2024
+# Estado: Sprint 1 Completado
 
-fuentes: []
-  # TODO: Agregar las fuentes de datos del proyecto
+configuracion:
+  version_proyecto: 1.0
+  autor: "Jhona"
+  formato_final: "PARQUET (Optimizado)"
+
+descripcion_general:
+  fuente: "ICFES - Saber Pro"
+  total_registros: 2317648
+  periodo_analizado: "2015 - 2024"
+
+fuentes:
+  - nombre: "ICFES Saber Pro - Histórico Nacional"
+    plataforma: "Datos Abiertos Colombia / Socrata"
+    socrata_id: "kgxf-xxbe"
+    url_oficial: "https://www.datos.gov.co/resource/kgxf-xxbe"
+    url_privada_sharepoint: "https://icfesgovco.sharepoint.com/sites/BasesDataIcfes/Documentos%20compartidos/Forms/AllItems.aspx?id=%2Fsites%2FBasesDataIcfes%2FDocumentos%20compartidos%2F01%5FExamen%20Saber%2011%C2%B0%2F01%5FBases%20Nacionales&p=true&ga=1"
+    formato: "parquet / txt"
+    campos_clave:
+      - "anio_proceso"
+      - "estu_consecutivo"
+      - "inst_codigo_institucion"
+    periodicidad: "anual"
+    ultimo_pull: "2025-01-20"
+    notas: "Datos 2015-2024 procesados desde archivos TXT. El SharePoint es una fuente restringida para validación de microdatos privados."
+    esquema_columnas:
+      - nombre: "anio_proceso"
+        tipo: "int"
+        descripcion: "Año en el que se aplicó la prueba"
+      - nombre: "estu_consecutivo"
+        tipo: "string"
+        descripcion: "Identificador único anónimo del estudiante"
+      - nombre: "inst_codigo_institucion"
+        tipo: "string"
+        descripcion: "Código único de la institución educativa"
+      - nombre: "inst_nombre_institucion"
+        tipo: "string"
+        descripcion: "Nombre de la universidad (Normalizado en Mayúsculas)"
+      - nombre: "estu_prgm_nombre"
+        tipo: "string"
+        descripcion: "Nombre de la carrera o programa académico"
+      - nombre: "punt_global"
+        tipo: "float"
+        descripcion: "Puntaje total obtenido por el estudiante"
+
+  - nombre: "Presupuesto de Educación Nacional (PTE)"
+    plataforma: "datos.gov.co / MinEducacion"
+    socrata_id: "5phs-yqfw"
+    url: "https://www.datos.gov.co/resource/5phs-yqfw"
+    url_historica: "https://www.mineducacion.gov.co/portal/micrositios-institucionales/Presupuesto/Reportes-de-ejecucion-presupuestal/"
+    formato: "parquet/csv/xlsx"
+    campos_clave:
+      - "anio"
+      - "nombreentidad"
+      - "codigoentidad"
+      - "descripcion"
+    periodicidad: "anual"
+    ultimo_pull: "2025-01-20"
+    notas: "Datos 2019-2024 vía Socrata (Hacienda). Datos 2015-2018 descargados de MinEducacion (URL Historica), donde el campo descripción es vital para identificar colegios."
+    esquema_columnas:
+      - nombre: "anio"
+        tipo: "int"
+        descripcion: "Año de la vigencia fiscal"
+      - nombre: "nombreentidad"
+        tipo: "string"
+        descripcion: "Nombre de la institución o entidad"
+      - nombre: "descripcion"
+        tipo: "string"
+        descripcion: "Detalle del rubro o colegio (específico 2015-2018)"
+      - nombre: "apropiacion_vigente"
+        tipo: "float"
+        descripcion: "Presupuesto total disponible"
+      - nombre: "compromisos"
+        tipo: "float"
+        descripcion: "Monto comprometido para gasto"
+      - nombre: "pagos"
+        tipo: "float"
+        descripcion: "Monto efectivamente pagado"
+
+# Este es el diccionario de las columnas que ya limpiamos
+diccionario_datos:
+  - columna: anio_proceso
+    descripcion: "Año en el que se aplicó la prueba"
+    tipo: "Entero"
+  
+  - columna: inst_nombre_institucion
+    descripcion: "Nombre de la universidad (Normalizado en Mayúsculas)"
+    tipo: "Texto"
+  
+  - columna: estu_prgm_nombre
+    descripcion: "Nombre de la carrera o programa académico"
+    tipo: "Texto"
+
+  - columna: punt_global
+    descripcion: "Puntaje total obtenido por el estudiante"
+    tipo: "Numérico"
+
+reglas_de_limpieza_aplicadas:
+  - "Unificación de 10 archivos anuales en un solo maestro."
+  - "Eliminación de espacios en blanco y estandarización a mayúsculas."
+  - "Conversión de formato CSV a Parquet para reducir peso (de 2.1GB a 147MB)."
+
+decalogo_interactivo:
+  descripcion: "Guía rápida y dinámica para explorar la base limpia"
+  pasos:
+    - "🔍 **Explora los metadatos**: Revisa las variables principales (`anio_proceso`, `inst_nombre_institucion`, `estu_prgm_nombre`, `punt_global`) y otras columnas que puedas necesitar. Usa `df.info()` y `df.describe()`."
+    - "✅ **Calidad de datos**: ¿Hay nulos o duplicados en variables clave como `punt_global` o `inst_nombre_institucion`? Revisa con `df.isnull().sum()` y `df.drop_duplicates()`."
+    - "📆 **Distribución temporal**: Observa `anio_proceso` para entender la cobertura por año y cómo varían los puntajes con el tiempo."
+    - "🏫 **Principales instituciones**: ¿Qué universidades (`inst_nombre_institucion`) dominan la muestra? Visualiza con un conteo y considera agrupar por `estu_prgm_nombre`."
+    - "🎯 **Rangos de puntajes**: Desglosa `punt_global` para detectar outliers o valores atípicos; compara según `anio_proceso` o programas."
+    - "🧹 **Reglas aplicadas**: Recuerda las tres reglas de limpieza implementadas anteriormente y cómo afectan a `inst_nombre_institucion` y otras columnas."
+    - "📦 **Formato optimizado**: ¿Ya convertiste a Parquet? Comprueba tamaño y rendimiento, ideal para manejar 151 columnas."
+    - "🛠 **Reutiliza scripts**: Mira `LIMPIEZA_SNIES.py`, `VALIDACION_DATOS.py` y `OPTIMIZAR_DATOS.py` para entender el flujo y la manipulación de variables."
+    - "💡 **Haz tu propio análisis**: Ajusta columnas (p. ej. agrega `punt_lectura` si existe) o agrega nuevas métricas según interés."
+    - "📌 **Documenta tus hallazgos**: Anota descubrimientos en este YAML o en un informe separado, destacando insights sobre variables clave."

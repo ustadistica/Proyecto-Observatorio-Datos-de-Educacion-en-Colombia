@@ -1,0 +1,174 @@
+
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Master Report | Consultoría Saber Pro</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <style>
+            :root { --primary: #003049; --accent: #d62828; --gold: #f77f00; --bg: #ffffff; }
+            body { font-family: 'Inter', sans-serif; background-color: #f4f7f6; }
+            .sidebar-nav { background: var(--primary); color: white; min-height: 100vh; padding: 20px; position: sticky; top: 0; }
+            .nav-link { color: #bdc3c7; margin: 10px 0; transition: 0.3s; }
+            .nav-link:hover, .nav-link.active { color: white; background: rgba(255,255,255,0.1); border-radius: 8px; }
+            .sprint-card { border-left: 5px solid var(--gold); background: white; border-radius: 10px; margin-bottom: 20px; padding: 20px; }
+            .badge-tech { font-family: 'Courier New', monospace; font-size: 0.85rem; }
+            .methodology-box { background: #e9ecef; border-radius: 15px; padding: 30px; border: 1px solid #dee2e6; }
+            .table-decalogo thead { background: var(--primary); color: white; }
+        </style>
+    </head>
+    <body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 sidebar-nav d-none d-md-block">
+                <h4 class="fw-bold mb-4 text-center"><i class="bi bi-rocket-takeoff"></i> PROYECTO SNIES</h4>
+                <hr>
+                <nav class="nav flex-column">
+                    <a class="nav-link" href="#metodologia"><i class="bi bi-diagram-3 me-2"></i> Metodología</a>
+                    <a class="nav-link" href="#sprints"><i class="bi bi-calendar-check me-2"></i> Línea de Sprints</a>
+                    <a class="nav-link" href="#limpieza"><i class="bi bi-droplet-half me-2"></i> Limpieza e Imputación</a>
+                    <a class="nav-link" href="#decalogo"><i class="bi bi-journal-code me-2"></i> Decálogo de Datos</a>
+                    <a class="nav-link" href="#visualizacion"><i class="bi bi-bar-chart me-2"></i> Visualización Final</a>
+                </nav>
+            </div>
+
+            <div class="col-md-10 p-5">
+                <div class="d-flex justify-content-between align-items-center mb-5">
+                    <h1>Reporte Técnico de Consultoría <span class="badge bg-danger">Sprint 1</span></h1>
+                    <img src="https://www.usta.edu.co/images/logo_usta.png" alt="USTA" height="50">
+                </div>
+
+                <section id="metodologia" class="mb-5">
+                    <h3 class="fw-bold section-title"><i class="bi bi-diagram-3-fill text-primary"></i> 1. Metodología de Proceso (ETL)</h3>
+                    <div class="methodology-box mt-3">
+                        <div class="row text-center">
+                            <div class="col-md-4">
+                                <i class="bi bi-cloud-download fs-1 text-primary"></i>
+                                <h5>Extracción (E)</h5>
+                                <p class="small text-muted">Ingesta masiva de 10 archivos TXT/CSV (2015-2024). Superamos el reto de codificación (Latin-1) y separadores inconsistentes.</p>
+                            </div>
+                            <div class="col-md-4 border-start border-end">
+                                <i class="bi bi-gear-wide-connected fs-1 text-warning"></i>
+                                <h5>Transformación (T)</h5>
+                                <p class="small text-muted">Limpieza profunda: Normalización de strings, manejo de nulos y estandarización institucional (Mapping de nombres).</p>
+                            </div>
+                            <div class="col-md-4">
+                                <i class="bi bi-file-earmark-binary fs-1 text-success"></i>
+                                <h5>Carga (L)</h5>
+                                <p class="small text-muted">Optimización a formato Parquet, logrando un archivo 93% más ligero y listo para análisis en alta velocidad.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="sprints" class="mb-5">
+                    <h3 class="fw-bold mb-4"><i class="bi bi-calendar-check-fill text-primary"></i> 2. Cronología de Logros (Sprints)</h3>
+                    <div class="sprint-card shadow-sm">
+                        <h5><span class="badge bg-warning text-dark">Semana 1-2</span> Sprint 1.1: Ingesta e Integración</h5>
+                        <p class="mb-0 text-muted">Logramos unir 2.3 millones de filas dispersas en diferentes formatos. Reto superado: Gestión de memoria RAM para procesar archivos de más de 2GB.</p>
+                    </div>
+                    <div class="sprint-card shadow-sm" style="border-left-color: var(--accent);">
+                        <h5><span class="badge bg-danger">Semana 3</span> Sprint 1.2: Limpieza y Calidad</h5>
+                        <p class="mb-0 text-muted">Eliminamos duplicados exactos y estandarizamos el 100% de las columnas de texto. Aplicamos "Fuzzy Matching" conceptual para unificar nombres de universidades.</p>
+                    </div>
+                    <div class="sprint-card shadow-sm" style="border-left-color: var(--primary);">
+                        <h5><span class="badge bg-success">Actual</span> Sprint 1.3: Documentación y Optimización</h5>
+                        <p class="mb-0 text-muted">Creación del <b>Decálogo de Datos</b> y conversión a Parquet. Generación de este reporte automatizado para entrega al cliente.</p>
+                    </div>
+                </section>
+
+                <section id="limpieza" class="mb-5">
+                    <h3 class="fw-bold mb-4"><i class="bi bi-droplet-half text-primary"></i> 3. Gestión de Limpieza e Imputación</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card p-4">
+                                <h6>Resultados de Limpieza:</h6>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item d-flex justify-content-between">Nulos en identificación: <span class="fw-bold">39 (Removidos)</span></li>
+                                    <li class="list-group-item d-flex justify-content-between">Duplicados encontrados: <span class="fw-bold">0 (Tras limpieza)</span></li>
+                                    <li class="list-group-item d-flex justify-content-between">Espacios en blanco removidos: <span class="fw-bold">Sí</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card p-4">
+                                <h6>Lógica de Imputación aplicada:</h6>
+                                <p class="small text-muted">Para las variables de puntaje (módulos genéricos), los valores faltantes se imputaron con el valor '0' para indicar ausencia de presentación, evitando distorsionar los promedios de estudiantes que sí asistieron.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="decalogo" class="mb-5">
+                    <h3 class="fw-bold mb-4"><i class="bi bi-journal-code text-primary"></i> 4. Decálogo de Datos (Diccionario Técnico)</h3>
+                    <div class="card overflow-hidden">
+                        <table class="table table-hover table-decalogo mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Variable</th>
+                                    <th>Tipo</th>
+                                    <th>Metodología / Imputación</th>
+                                    <th>Importancia</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>anio_proceso</code></td>
+                                    <td><span class="badge bg-light text-dark border badge-tech">int64</span></td>
+                                    <td>Sin nulos. Fuente directa del archivo.</td>
+                                    <td><span class="badge bg-primary">Crítica</span></td>
+                                </tr>
+                                <tr>
+                                    <td><code>inst_nombre_institucion</code></td>
+                                    <td><span class="badge bg-light text-dark border badge-tech">object</span></td>
+                                    <td>Normalización Mayúsculas + Strip.</td>
+                                    <td><span class="badge bg-primary">Crítica</span></td>
+                                </tr>
+                                <tr>
+                                    <td><code>punt_global</code></td>
+                                    <td><span class="badge bg-light text-dark border badge-tech">float64</span></td>
+                                    <td>Imputación de nulos con valor 0.</td>
+                                    <td><span class="badge bg-success">KPI</span></td>
+                                </tr>
+                                <tr>
+                                    <td><code>estu_genero</code></td>
+                                    <td><span class="badge bg-light text-dark border badge-tech">category</span></td>
+                                    <td>Estandarización M/F.</td>
+                                    <td><span class="badge bg-secondary">Demográfico</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section id="visualizacion" class="mb-5">
+                    <h3 class="fw-bold mb-4"><i class="bi bi-bar-chart-fill text-primary"></i> 5. Distribución de Datos Procesados</h3>
+                    <div class="card p-4 shadow-sm">
+                        <div id="plotly-bar"></div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var data = [{
+            x: [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
+            y: [330578, 182024, 248854, 214612, 214291, 183890, 253568, 179593, 228637, 281601],
+            type: 'bar',
+            marker: { color: '#003049', line: { color: '#d62828', width: 1.5 } }
+        }];
+        var layout = {
+            title: 'Histórico de Registros por Año (2015-2024)',
+            font: { family: 'Inter' },
+            plot_bgcolor: 'rgba(0,0,0,0)',
+            paper_bgcolor: 'rgba(0,0,0,0)'
+        };
+        Plotly.newPlot('plotly-bar', data, layout);
+    </script>
+    </body>
+    </html>
+    
