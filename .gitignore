@@ -13,6 +13,12 @@ venv/
 env/
 
 # === Datos pesados (usar DVC para versionar) ===
+# Ignorar archivos .txt de datos tabulares de ICFES
+datos/raw/icfes/**/*.txt
+# Ignorar archivos Excel del datos raw de PTE
+datos/raw/pte/**/*.xlsx
+datos/raw/pte/**/*.xls
+# Ignorar CSVs generales pero mantener parquet consolidados
 datos/raw/*.csv
 datos/raw/*.xlsx
 datos/processed/*.csv

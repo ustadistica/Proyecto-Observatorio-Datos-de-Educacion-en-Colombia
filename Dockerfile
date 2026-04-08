@@ -27,18 +27,14 @@ COPY requirements.txt .
 # Instalar dependencias de Python
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Instalar DVC con soporte para diferentes remotos
-RUN pip install --no-cache-dir \
-    dvc[s3,gs,azure,oss,ssh] \
-    dvc-ssh
+RUN pip install --no-cache-dir dvc[s3,gs,azure,gdrive,oss,ssh]
 
-# Copiar estructura de proyecto (excluyendo archivos innecesarios)
-COPY .gitignore .
-COPY pyproject.toml .
 COPY src/ ./src/
 COPY datos/ ./datos/
 COPY notebooks/ ./notebooks/
 COPY reportes/ ./reportes/
+COPY .gitignore .
+COPY pyproject.toml .
 
 # Inicializar DVC
 RUN dvc init

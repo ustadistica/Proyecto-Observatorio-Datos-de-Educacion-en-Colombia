@@ -1,22 +1,38 @@
-# Catálogo de Datos del Proyecto
+# Catalogo de Datos del Proyecto
 # ================================
 # Cada entrada incluye el identificador Socrata, la URL, campos clave
 # y la periodicidad de actualizacion.
-#
-# fuentes:
-#   - nombre: "Nombre descriptivo del dataset"
-#     plataforma: "datos.gov.co"
-#     socrata_id: "xxxx-xxxx"
-#     url: "https://www.datos.gov.co/resource/xxxx-xxxx"
-#     formato: "csv"
-#     campos_clave:
-#       - campo1
-#       - campo2
-#     periodicidad: "trimestral"
-#     ultimo_pull: null
-#     notas: "Descripcion breve"
 
 fuentes:
+
+  - nombre: "Presupuesto de Educación Nacional (PTE)"
+    plataforma: "datos.gov.co / MinEducacion"
+    socrata_id: "5phs-yqfw"
+    url: "https://www.datos.gov.co/resource/5phs-yqfw"
+    url_historica: "https://www.mineducacion.gov.co/portal/micrositios-institucionales/Presupuesto/Reportes-de-ejecucion-presupuestal/"
+    formato: "parquet/csv/xlsx"
+    campos_clave:
+      - anio
+      - nombreentidad
+      - codigoentidad
+      - descripcion
+    periodicidad: "anual"
+    ultimo_pull: "2025-01-20"
+    notas: "Datos 2019-2024 vía Socrata. Datos 2015-2018 descargados de MinEducacion."
+
+  - nombre: "ICFES Saber 11 - Histórico Nacional"
+    plataforma: "Datos Abiertos Colombia / Socrata"
+    socrata_id: "kgxf-xxbe"
+    url: "https://www.datos.gov.co/resource/kgxf-xxbe"
+    formato: "parquet / txt"
+    campos_clave:
+      - periodo
+      - estu_consecutivo
+      - cole_codigo_icfes
+    periodicidad: "semestral"
+    ultimo_pull: null
+    notas: "Datos 2000-2009 en TXT. Datos 2010-2022 vía API."
+
   - nombre: "SNIES - Estadísticas Consolidadas"
     plataforma: "snies.mineducacion.gov.co"
     url: "https://snies.mineducacion.gov.co/portal/ESTADISTICAS/Bases-consolidadas/"
@@ -32,4 +48,5 @@ fuentes:
       - tipo_registro
     periodicidad: "anual"
     ultimo_pull: null
-    notas: "Bases consolidadas de matriculados y graduados SNIES"
+    notas: "Bases consolidadas de matriculados y graduados SNIES."
+
