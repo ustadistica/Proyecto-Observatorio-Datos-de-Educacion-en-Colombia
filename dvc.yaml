@@ -1,0 +1,59 @@
+stages:
+  # Stage 1: Descarga y procesamiento de PTE
+  descargar_pte:
+    cmd: python src/ingesta/pte.py
+    deps:
+      - src/ingesta/pte.py
+    outs:
+      - datos/raw/pte/
+    always_changed: true
+
+  # Stage 2: Descarga y procesamiento de ICFES Saber 11
+  descargar_icfes_saber11:
+    cmd: python src/ingesta/icfes_saber11.py
+    deps:
+      - src/ingesta/icfes_saber11.py
+    outs:
+      - datos/raw/icfes/saber_11/
+    always_changed: true
+
+  # Stage 3: Descarga y procesamiento de ICFES Saber Pro
+  descargar_icfes_saberpro:
+    cmd: python src/ingesta/icfes_socrata.py
+    deps:
+      - src/ingesta/icfes_socrata.py
+    outs:
+      - datos/raw/icfes/saber_pro/
+    always_changed: true
+
+  # Stage 4: Descarga y procesamiento de SNIES
+  descargar_snies:
+    cmd: python src/ingesta/download_datos.py
+    deps:
+      - src/ingesta/download_datos.py
+    outs:
+      - datos/raw/snies/
+    always_changed: true
+
+  # Stage 5: Transformación de datos
+  transformar_datos:
+    cmd: python src/transformacion/main.py
+    deps:
+      - src/transformacion/main.py
+      - datos/raw/pte/
+      - datos/raw/icfes/saber_11/
+      - datos/raw/icfes/saber_pro/
+      - datos/raw/snies/
+    outs:
+      - datos/processed/
+    always_changed: true
+
+  # Stage 6: Visualización de datos
+  visualizar_datos:
+    cmd: python src/visualizacion/main.py
+    deps:
+      - src/visualizacion/main.py
+      - datos/processed/
+    outs:
+      - Imagenes/
+    always_changed: true

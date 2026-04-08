@@ -1,20 +1,60 @@
-# Catalogo de Datos del Proyecto
-# ================================
-# Cada entrada incluye el identificador Socrata, la URL, campos clave
-# y la periodicidad de actualizacion.
-#
-# fuentes:
-#   - nombre: "Nombre descriptivo del dataset"
-#     plataforma: "datos.gov.co"
-#     socrata_id: "xxxx-xxxx"
-#     url: "https://www.datos.gov.co/resource/xxxx-xxxx"
-#     formato: "csv"
-#     campos_clave:
-#       - campo1
-#       - campo2
-#     periodicidad: "trimestral"
-#     ultimo_pull: null
-#     notas: "Descripcion breve"
+fuentes:
+  - nombre: "Presupuesto de Educación Nacional (PTE)"
+    plataforma: "datos.gov.co / MinEducacion"
+    socrata_id: "5phs-yqfw"
+    url: "https://www.datos.gov.co/resource/5phs-yqfw"
+    url_historica: "https://www.mineducacion.gov.co/portal/micrositios-institucionales/Presupuesto/Reportes-de-ejecucion-presupuestal/"
+    formato: "parquet/csv/xlsx"
+    campos_clave:
+      - "anio"
+      - "nombreentidad"
+      - "codigoentidad"
+      - "descripcion"
+    periodicidad: "anual"
+    ultimo_pull: "2025-01-20"
+    notas: "Datos 2019-2024 vía Socrata (Hacienda). Datos 2015-2018 descargados de MinEducacion (URL Historica), donde el campo descripción es vital para identificar colegios."
+    esquema_columnas:
+      - nombre: "anio"
+        tipo: "int"
+        descripcion: "Año de la vigencia fiscal"
+      - nombre: "nombreentidad"
+        tipo: "string"
+        descripcion: "Nombre de la institución o entidad"
+      - nombre: "descripcion"
+        tipo: "string"
+        descripcion: "Detalle del rubro o colegio (específico 2015-2018)"
+      - nombre: "apropiacion_vigente"
+        tipo: "float"
+        descripcion: "Presupuesto total disponible"
+      - nombre: "compromisos"
+        tipo: "float"
+        descripcion: "Monto comprometido para gasto"
+      - nombre: "pagos"
+        tipo: "float"
+        descripcion: "Monto efectivamente pagado"
 
-fuentes: []
-  # TODO: Agregar las fuentes de datos del proyecto
+  - nombre: "ICFES Saber 11 - Histórico Nacional"
+    plataforma: "Datos Abiertos Colombia / Socrata"
+    socrata_id: "kgxf-xxbe"
+    url_oficial: "https://www.datos.gov.co/resource/kgxf-xxbe"
+    url_privada_sharepoint: "https://icfesgovco.sharepoint.com/sites/BasesDataIcfes/Documentos%20compartidos/Forms/AllItems.aspx?id=%2Fsites%2FBasesDataIcfes%2FDocumentos%20compartidos%2F01%5FExamen%20Saber%2011%C2%B0%2F01%5FBases%20Nacionales&p=true&ga=1"
+    formato: "parquet / txt"
+    campos_clave:
+      - "periodo"
+      - "estu_consecutivo"
+      - "cole_codigo_icfes"
+    periodicidad: "semestral"
+    notas: "Datos 2000-2009 unificados desde archivos TXT (requieren carga manual en raw). Datos 2010-2022 descargados vía API. El SharePoint es una fuente restringida para validación de microdatos privados."
+    esquema_columnas:
+      - nombre: "periodo"
+        tipo: "string"
+        descripcion: "Año y semestre del examen"
+      - nombre: "estu_consecutivo"
+        tipo: "string"
+        descripcion: "Identificador único anónimo del estudiante"
+      - nombre: "cole_codigo_icfes"
+        tipo: "string"
+        descripcion: "Código único de la institución educativa"
+      - nombre: "punt_global"
+        tipo: "float"
+        descripcion: "Puntaje total obtenido"
