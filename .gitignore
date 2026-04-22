@@ -18,10 +18,13 @@ datos/raw/icfes/**/*.txt
 # Ignorar archivos Excel del datos raw de PTE
 datos/raw/pte/**/*.xlsx
 datos/raw/pte/**/*.xls
-# Ignorar CSVs generales pero mantener parquet consolidados
-datos/raw/*.csv
-datos/raw/*.xlsx
+# === Datos RAW (NUNCA SUBIR ESTOS ARCHIVOS) ===
+datos/raw/*
+
+# === Datos PROCESADOS (SI PERMITIR SUBIR ESTOS) ===
+!datos/processed/
 datos/processed/*.csv
+
 datos/interim/
 *.duckdb
 *.sqlite
