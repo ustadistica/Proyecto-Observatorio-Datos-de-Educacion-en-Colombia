@@ -20,8 +20,8 @@ from pathlib import Path
 
 # Configuración de rutas
 RUTA_PROYECTO = Path(__file__).parent.parent.parent
-RUTA_DATOS = RUTA_PROYECTO / "datos" / "raw"
-RUTA_SALIDA = RUTA_PROYECTO / "datos" / "processed"
+RUTA_DATOS = RUTA_PROYECTO / "datos"
+RUTA_SALIDA = RUTA_PROYECTO / "Códigos" / "procesamiento_saber_pro" / "datos_procesados"
 
 # Crear directorio de salida si no existe
 RUTA_SALIDA.mkdir(parents=True, exist_ok=True)

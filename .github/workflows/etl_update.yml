@@ -1,31 +1,47 @@
-name: ETL Update
+name: ETL Update Pipeline
 
 on:
-  schedule:
-    - cron: '0 6 1 * *'
   workflow_dispatch:
+  schedule:
+    # Ejecutar todos los días a las 2 AM UTC (9 PM hora colombiana)
+    - cron: '0 2 * * *'
 
 jobs:
-  update-data:
+  etl-pipeline:
     runs-on: ubuntu-latest
+    
     steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-
-      - name: Install dependencies
-        run: pip install poetry && poetry install --no-interaction
-
-      - name: Run ingesta pipeline
-        run: poetry run python -m src.ingesta.main
-
-      - name: Run transformacion pipeline
-        run: poetry run python -m src.transformacion.main
-
-      - name: Commit updated data
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "data: actualizacion automatica de datos"
-          file_pattern: "datos/processed/**"
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: Run data ingestion
+      run: |
+        python src/ingesta/extrae_pte_educacion_full.py
+        python src/ingesta/scraper_snies.py
+        
+    - name: Run data transformation
+      run: |
+        python src/transformacion/main.py
+        
+    - name: Run data analysis
+      run: |
+        python src/modelo/analisis_descriptivo.py
+        python src/modelo/analizar_departamentos.py
+        
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add datos/ artifacts/
+        git diff --staged --quiet || git commit -m "Automated ETL update $(date -u +%Y-%m-%d)"
+        git push
