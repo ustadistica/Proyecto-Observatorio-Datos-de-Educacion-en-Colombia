@@ -24,6 +24,7 @@ datos/raw/*
 # === Datos PROCESADOS (SI PERMITIR SUBIR ESTOS) ===
 !datos/processed/
 datos/processed/*.csv
+!datos/processed/**/*.parquet
 
 datos/interim/
 *.duckdb
