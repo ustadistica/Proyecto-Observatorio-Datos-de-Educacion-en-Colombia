@@ -139,17 +139,92 @@ Un dato curioso que puede convertirse en una línea de investigación fascinante
 
 ## 🎨 Visualización: Cuando una imagen vale más que mil palabras
 
-Creamos un **dashboard interactivo** con Streamlit que permite:
+### Dashboard Interactivo con Streamlit
 
-- **Explorar año por año** sin tener que programar
-- **Ver gráficos interactivos** donde puedes hacer hover para ver detalles
-- **Filtrar por categorías** (género, departamento, institución)
-- **Descargar subconjuntos** de datos para análisis propios
+Creamos un **dashboard ejecutivo** (`app_streamlit.py`) que es la herramienta principal para explorar visualmente todos los resultados del procesamiento. Este dashboard incluye:
 
-También generamos **reportes HTML automáticos** con:
-- Gráficos de Plotly que puedes rotar y ampliar
-- Interpretaciones escritas de cada hallazgo
-- KPIs clave en tarjetas visuales
+#### 📊 Secciones del Dashboard:
+
+1. **🏠 Inicio** - KPIs principales y visión general
+   - Tarjetas con total de registros, años procesados, calidad de datos
+   - Gráfico de evolución de registros por año (barras + línea de tendencia)
+   - Gráfico de torta con distribución porcentual por año
+   - Gráfico de calidad de datos por año
+
+2. **📊 Métricas de Procesamiento** - Detalle técnico
+   - Tabla de métricas por año con formato condicional
+   - Gráfico de evolución de columnas (estructura de datos)
+   - Análisis de cambios en la estructura entre años
+
+3. **📈 Análisis por Año** - Exploración anual
+   - Selector de año para análisis individual
+   - Muestra de datos del año seleccionado
+   - Estadísticas descriptivas de columnas numéricas
+
+4. **🔍 Análisis Descriptivo** - El corazón del EDA
+   - **Top 15 instituciones** con más estudiantes (gráfico de barras horizontales)
+   - **Distribución por departamentos** (número absoluto y tasa por 1000 habitantes)
+   - **Puntajes por categoría**: género, área de residencia, nivel académico, carácter institucional, estrato
+   - **Evolución temporal** de puntajes y número de estudiantes
+   - **Análisis de diferencias de género** con boxplots
+
+5. **🌍 Ciudades Internacionales** - Hallazgo especial
+   - Distribución por año (2017-2019)
+   - Top 20 ciudades internacionales
+   - Mapa mundial interactivo con distribución geográfica
+   - Lista completa de ciudades
+
+6. **🧹 Detalle de Limpieza** - Transparencia del proceso
+   - Descripción paso a paso del ETL
+   - Reporte completo de procesamiento
+
+7. **📋 Muestra de Datos** - Exploración directa
+   - Vista previa del archivo consolidado
+   - Información del consolidado (registros, columnas, tamaño)
+   - Distribución de registros por año
+
+#### 🚀 Cómo Ejecutar el Dashboard:
+
+```bash
+# Navegar a la carpeta del procesamiento
+cd procesamiento_saber_pro
+
+# Ejecutar el dashboard
+streamlit run app_streamlit.py
+```
+
+El dashboard se abrirá automáticamente en tu navegador en `http://localhost:8501`.
+
+#### 📸 Capturas de Pantalla:
+
+Para incluir visualizaciones estáticas en informes impresos, puedes usar el script:
+
+```bash
+python procesamiento_saber_pro/generar_capturas_dashboard.py
+```
+
+Este script genera capturas de pantalla de cada sección del dashboard y las guarda en `imagenes_informe/`.
+
+---
+
+### Reportes HTML Automáticos
+
+También generamos **reportes HTML** con gráficos de Plotly que puedes explorar sin necesidad de ejecutar código:
+
+- **`reporte_completo.html`** - Integra todos los análisis con interpretaciones
+- **Gráficos individuales** en `analisis_resultados/`:
+  - `top_instituciones.html`
+  - `departamentos_estudiantes.html`
+  - `departamentos_tasa.html`
+  - `evolucion_temporal.html`
+  - `puntajes_por_genero.html`
+  - Y más...
+
+Para ver un gráfico, simplemente ábrelo en tu navegador:
+
+```bash
+start procesamiento_saber_pro/analisis_resultados/evolucion_temporal.html
+```
 
 ---
 
