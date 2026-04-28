@@ -124,15 +124,19 @@ def generar_reporte():
     fig3.colorbar(im, ax=ax3)
     img3 = fig_to_base64(fig3)
 
-    # ===== GRAFICO 4: Top 10 instituciones por pagos =====
+    # ===== GRAFICO 4: Top 10 Universidades/Instituciones por pagos =====
     fig4, ax4 = plt.subplots(figsize=(8, 4))
     
+    # Filtrar solo descripciones que contienen la palabra UNIVERSIDAD
+    mask_univ = df['descripcion'].str.contains('UNIVERSIDAD', case=False, na=False)
+    df_univ = df[mask_univ]
+    
     # Acortar nombres largos para el grafico
-    top10 = df.groupby("nombre_uej")["pagos"].sum().nlargest(10) / 1e12
+    top10 = df_univ.groupby("descripcion")["pagos"].sum().nlargest(10) / 1e12
     top10.index = [str(x)[:60] + '...' if len(str(x)) > 60 else str(x) for x in top10.index]
     
     top10.plot(kind='barh', ax=ax4, color='#3498db')
-    ax4.set_title("Top 10 Instituciones por Pagos (Billones COP)")
+    ax4.set_title("Top 10 Universidades / Conceptos Universitarios (Billones COP)")
     ax4.set_xlabel("Billones COP")
     img4 = fig_to_base64(fig4)
 
