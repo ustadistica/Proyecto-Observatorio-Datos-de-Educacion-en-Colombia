@@ -115,25 +115,50 @@ def extraer_periodo_xls(ruta: Path) -> tuple[str, str]:
 def leer_excel_men(ruta: Path) -> Optional[pd.DataFrame]:
     """
     Lee un XLS/XLSX del MEN con encoding correcto (latin-1 → UTF-8).
-
-    Parámetros críticos:
-    - engine='xlrd' para .xls (Office 97-2003)
-    - engine='openpyxl' para .xlsx
-    - NO usar 'encoding' en read_excel; el fix se hace post-lectura sobre strings.
+    Detecta y salta filas de metadatos; lee headers reales de la fila de datos.
+    Aplica normalización cross-bright a los nombres de columna.
     """
     try:
         is_xlsx = ruta.suffix.lower() == ".xlsx"
         engine = "openpyxl" if is_xlsx else "xlrd"
 
         logger.info(f"  Leyendo {ruta.name} con engine='{engine}'...")
-        df = pd.read_excel(ruta, engine=engine, header=None, dtype=str)
+        # Leer sin header para detectar fila de columnas
+        df_raw = pd.read_excel(ruta, engine=engine, header=None, dtype=str)
 
         # Reparar mojibake en todos los strings
+        df_raw = reparar_encoding_df(df_raw)
+
+        # Buscar fila que contiene los headers reales
+        header_row = None
+        for i, row in df_raw.iterrows():
+            vals = [str(v).strip().upper() if pd.notna(v) else '' for v in row]
+            if 'UEJ' in vals or 'NOMBRE UEJ' in vals or 'RUBRO' in vals:
+                header_row = i
+                break
+
+        if header_row is None:
+            logger.warning(f"  No se detectó fila de headers en {ruta.name}, usando fila 0")
+            header_row = 0
+
+        # Re-leer con header correcto
+        df = pd.read_excel(ruta, engine=engine, header=header_row, dtype=str)
         df = reparar_encoding_df(df)
 
-        # Extraer periodo (para trazabilidad y nombre)
+        # Cross-bright: normalizar headers por nombre (no por posición)
+        from src.ingesta.header_utils import normalise_header
+        df.columns = [normalise_header(str(col)) for col in df.columns]
+
+        # Eliminar filas vacías o de totales
+        df = df.dropna(subset=['codigo_uej', 'rubro'], how='all')
+        df = df[~df['codigo_uej'].astype(str).str.upper().isin(['TOTAL', 'NAN', ''])]
+
+        # Estandarizar: crear columnas modernas desde columnas SIIF antiguas
+        _estandarizar_siif_antiguo(df)
+
+        # Extraer periodo
         anio, mes = extraer_periodo_xls(ruta)
-        df["anio_reporte"] = anio
+        df["anio_proceso"] = anio
         df["mes_reporte"] = mes
 
         logger.info(f"  ✅ {ruta.name}: {len(df):,} filas, año={anio}, mes={mes}")
@@ -144,16 +169,56 @@ def leer_excel_men(ruta: Path) -> Optional[pd.DataFrame]:
         return None, None, None
 
 
+def _estandarizar_siif_antiguo(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Convierte las columnas de cuenta SIIF antiguas (cta, sub_cta, obj, ord, item, sub_item)
+    al formato moderno (codigo_cuarto_nivel, codigo_quinto_nivel, nombre_*).
+    Elimina las columnas antiguas del DataFrame.
+    """
+    # Crear codigo_cuarto_nivel y codigo_quinto_nivel desde la jerarquia de cuenta
+    def _concat_cols(row, cols):
+        vals = [str(row.get(c, '')).strip() for c in cols if pd.notna(row.get(c, ''))]
+        return '.'.join(vals) if vals else None
+
+    cuarto_cols = ['cta', 'sub_cta', 'obj', 'ord']
+    quinto_cols = ['cta', 'sub_cta', 'obj', 'ord', 'item', 'sub_item']
+
+    if all(c in df.columns for c in cuarto_cols):
+        df['codigo_cuarto_nivel'] = df.apply(lambda r: _concat_cols(r, cuarto_cols), axis=1)
+    if all(c in df.columns for c in quinto_cols):
+        df['codigo_quinto_nivel'] = df.apply(lambda r: _concat_cols(r, quinto_cols), axis=1)
+
+    # Rellenar nombres desde descripcion
+    if 'descripcion' in df.columns:
+        for col in ['nombre_rubro', 'nombre_tipo_gasto', 'nombre_detalle_gasto',
+                    'nombre_cuarto_nivel', 'nombre_quinto_nivel']:
+            if col not in df.columns:
+                df[col] = df['descripcion']
+
+    # Eliminar columnas SIIF antiguas
+    old_cols = ['cta', 'sub_cta', 'obj', 'ord', 'sor_ord', 'item', 'sub_item', 'sub_item_2']
+    for c in old_cols:
+        if c in df.columns:
+            df.drop(columns=[c], inplace=True)
+
+    return df
+
+
 def ingestar_excels_men(years: List[int]):
     """
     Convierte los XLS/XLSX del MEN a Parquet UTF-8 limpio en raw/pte/<año>/.
     Solo procesa años 2015-2018 (fuente manual).
+    Agrega los 12 meses de cada año en 1 solo parquet anual (suma de valores).
     """
     RAW_PTE.mkdir(parents=True, exist_ok=True)
 
     # Los excels están en la raíz de raw/pte/ mezclados
     excels = list(RAW_PTE.glob("*.xls")) + list(RAW_PTE.glob("*.xlsx"))
     logger.info(f"Excels encontrados en raw/pte/: {len(excels)}")
+
+    # Agrupar por año
+    from collections import defaultdict
+    year_dfs = defaultdict(list)
 
     for excel in excels:
         anio_ruta, mes_ruta = extraer_periodo_xls(excel)
@@ -164,19 +229,44 @@ def ingestar_excels_men(years: List[int]):
         if df is None:
             continue
 
-        year_path = RAW_PTE / str(anio_df)
+        year_dfs[int(anio_df)].append(df)
+        logger.info(f"  📅 Añadido año={anio_df}, mes={mes_df}: {len(df):,} filas")
+
+    # Agregar cada año (sumar meses)
+    for year, frames in sorted(year_dfs.items()):
+        logger.info(f"\n🧮 AGREGANDO AÑO {year} ({len(frames)} meses)...")
+
+        # Concatenar todos los meses
+        full_year = pd.concat(frames, ignore_index=True, sort=False)
+
+        # Columnas numéricas a sumar
+        numeric_cols = ['apropiacioninicial', 'adiciones', 'reducciones',
+                        'apropiacionvigente', 'apropiacionbloqueada', 'cdp',
+                        'apropiaciondisponible', 'compromisos', 'obligaciones',
+                        'orden_pago', 'pagos']
+        # Solo las que existen
+        numeric_cols = [c for c in numeric_cols if c in full_year.columns]
+
+        # Columnas categóricas para agrupar (todas excepto numéricas y mes_reporte)
+        group_cols = [c for c in full_year.columns
+                      if c not in numeric_cols and c not in ['mes_reporte']]
+
+        # Convertir numéricas
+        for c in numeric_cols:
+            full_year[c] = pd.to_numeric(full_year[c], errors='coerce').fillna(0)
+
+        # Agrupar y sumar
+        agg = full_year.groupby(group_cols, as_index=False, dropna=False)[numeric_cols].sum()
+
+        # Asegurar anio_proceso
+        agg['anio_proceso'] = str(year)
+        agg['mes_reporte'] = '12'  # representativo anual
+
+        year_path = RAW_PTE / str(year)
         year_path.mkdir(parents=True, exist_ok=True)
-
-        # Nombre estandarizado (ej: pte_manual_2015_01.parquet)
-        if mes_df:
-            out_path = year_path / f"pte_manual_{anio_df}_{mes_df}.parquet"
-        else:
-            nombre_limpio = re.sub(r"[^a-z0-9_]", "_", excel.stem.lower()).strip("_")
-            nombre_limpio = re.sub(r"_+", "_", nombre_limpio)
-            out_path = year_path / f"pte_manual_{anio_df}_{nombre_limpio}.parquet"
-
-        df.to_parquet(out_path, index=False)
-        logger.info(f"  💾 Guardado: {out_path.name}")
+        out_path = year_path / f"pte_manual_{year}.parquet"
+        agg.to_parquet(out_path, index=False)
+        logger.info(f"  💾 Guardado agregado: {out_path.name} ({len(agg):,} filas)")
 
 
 # ── Fuente B: API Socrata 2019-2024 ──────────────────────────────────────────
