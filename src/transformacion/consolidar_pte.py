@@ -66,7 +66,9 @@ def main():
 
     # Filtrar solo la entidad MEN según el requerimiento del estudio
     if 'nombre_uej' in full_df.columns:
-        full_df = full_df[full_df['nombre_uej'] == 'MINISTERIO EDUCACION NACIONAL - GESTION GENERAL'].copy()
+        mask = full_df['nombre_uej'].astype(str).str.upper().str.contains('MINISTERIO EDUCACI') & \
+               full_df['nombre_uej'].astype(str).str.upper().str.contains('GESTI')
+        full_df = full_df[mask].copy()
 
     # Eliminar columnas de contabilidad granular que no se usarán para análisis macro
     cols_to_drop = [

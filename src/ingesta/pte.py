@@ -77,7 +77,7 @@ def extraer_periodo_xls(ruta: Path) -> tuple[str, str]:
         import unicodedata
         texto_busqueda = unicodedata.normalize("NFKD", texto_busqueda).encode("ASCII", "ignore").decode("utf-8")
         
-        match_anio = re.search(r"(201[5678])", texto_busqueda)
+        match_anio = re.search(r"(201[5-9]|202[0-5])", texto_busqueda)
         if match_anio:
             anio = match_anio.group(1)
             
@@ -97,7 +97,7 @@ def extraer_periodo_xls(ruta: Path) -> tuple[str, str]:
         pass
 
     if not anio:
-        match_anio = re.search(r"(201[5678])", ruta.name)
+        match_anio = re.search(r"(201[5-9]|202[0-5])", ruta.name)
         if match_anio:
             anio = match_anio.group(1)
             
@@ -146,6 +146,9 @@ def leer_excel_men(ruta: Path) -> Optional[pd.DataFrame]:
         df = reparar_encoding_df(df)
 
         # Cross-bright: normalizar headers por nombre (no por posición)
+        import sys
+        if str(BASE_DIR) not in sys.path:
+            sys.path.insert(0, str(BASE_DIR))
         from src.ingesta.header_utils import normalise_header
         df.columns = [normalise_header(str(col)) for col in df.columns]
 
@@ -367,19 +370,12 @@ def ejecutar_ingesta_total(
 
     logger.info("=" * 65)
     logger.info("INICIANDO INGESTA PTE — Presupuesto del Sector Educación")
-    logger.info(f"Años objetivo: {years}")
+    logger.info(f"Años objetivo: {years} (MODO 100% EXCEL MEN)")
     logger.info("=" * 65)
 
-    anios_manual = [y for y in years if y < 2019]
-    anios_api    = [y for y in years if y >= 2019]
-
-    if anios_manual:
-        logger.info(f"\n── Fuente A: Excels MEN {anios_manual} ──")
-        ingestar_excels_men(anios_manual)
-
-    if anios_api:
-        logger.info(f"\n── Fuente B: API Socrata {anios_api} ──")
-        ingestar_api_socrata(anios_api, token=token, forzar=forzar)
+    # El usuario solicitó consumir EXCLUSIVAMENTE archivos Excel para todos los años
+    logger.info(f"\n── Fuente Única: Excels MEN {years} ──")
+    ingestar_excels_men(years)
 
     logger.info("\n" + "=" * 65)
     logger.info("INGESTA PTE COMPLETADA")

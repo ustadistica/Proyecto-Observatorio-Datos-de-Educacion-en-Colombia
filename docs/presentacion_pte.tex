@@ -1,0 +1,229 @@
+% !TeX program = lualatex
+\documentclass[aspectratio=169,10pt,spanish]{beamer}
+
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{listings}
+\usepackage{calc}
+\usepackage{amsmath}
+\usepackage{pifont}
+\usepackage{fontspec}
+
+\usetheme{Madrid}
+\usecolortheme{seahorse}
+
+% ============== CONFIGURACIÓN ==============
+\definecolor{verdeobs}{HTML}{14B8A6}
+\definecolor{violetaobs}{HTML}{7C3AED}
+\definecolor{grisoscuro}{HTML}{1E293B}
+\definecolor{grismedio}{HTML}{64748B}
+
+\newcommand{\ok}{\textcolor{verdeobs}{\textbf{\ding{51}}}}
+\newcommand{\no}{\textcolor{red}{\textbf{\ding{55}}}}
+\newcommand{\flecha}{\textcolor{violetaobs}{\textbf{$\blacktriangleright$}}}
+
+\setbeamercolor{alerted text}{fg=violetaobs}
+\setbeamercolor{frametitle}{bg=grisoscuro,fg=white}
+\setbeamercolor{progress bar}{fg=verdeobs}
+
+\title{\textbf{Cross-Bright Consolidación PTE}}
+\subtitle{Normalización Presupuesto Sector Educación 2015-2024}
+\author{Observatorio de Datos de Educación en Colombia}
+\date{\today}
+\institute{}
+
+% ============== INICIO DOCUMENTO ==============
+\begin{document}
+
+\maketitle
+
+% ============== DIAPOSITIVA 1: PROBLEMA ==============
+\begin{frame}{Problema Original}
+\begin{columns}[T]
+\column{0.5\textwidth}
+\textbf{Antes:}
+\begin{itemize}
+  \item 2015-2018: Archivos Excel manuales del MEN
+  \item Encoding latin1, nombres de columnas desordenados
+  \item 2019-2024: API oficial SIIF, esquema completamente distinto
+  \item Cada año tenia sus propios campos, sin estandarización
+  \item No habia forma de unir ni comparar historico
+\end{itemize}
+\column{0.5\textwidth}
+\textbf{Ahora:}
+\begin{itemize}
+  \item \ok Esquema unificado único para los 10 años
+  \item \ok 43.074 registros oficiales reales
+  \item \ok 0 años nulos
+  \item \ok Total pagos: \textbf{2.815,1 Billones COP}
+\end{itemize}
+\end{columns}
+\end{frame}
+
+% ============== DIAPOSITIVA 2: DRIFT ESQUEMA ==============
+\begin{frame}{Drift de Esquema Histórico}
+Esta es la razón por la que existía el problema:
+\begin{center}
+\includegraphics[width=0.95\textwidth]{../Imagenes/Esquema_Drift.png}
+\end{center}
+\vspace{0.2cm}
+\small
+✅ Se ve claramente el corte exacto en 2019 donde el MEN cambió de sistema, desaparecieron 5 campos antiguos y aparecieron 8 campos nuevos. Cross-Bright soluciona exactamente esto.
+\end{frame}
+
+% ============== DIAPOSITIVA 3: CROSS BRIGHT ==============
+\begin{frame}{Metodología Cross-Bright}
+Es el algoritmo de normalización implementado en \texttt{header\_utils.py}:
+
+\vspace{0.5cm}
+\begin{tabular}{@{}lp{10cm}@{}}
+\textbf{1. Slugify} & Minúsculas, sin espacios, sin tildes, ASCII limpio \\
+\textbf{2. Mapeo} & Diccionario de +200 variantes históricas → nombre canónico \\
+\textbf{3. Preservación} & Columnas no mapeadas se mantienen con nombre original \\
+\textbf{4. Cero Magic} & Todo explícito, sin inferencias automaticas \\
+\textbf{5. Idempotente} & Aplicarlo múltiples veces no cambia el resultado \\
+\end{tabular}
+
+\vspace{0.5cm}
+\begin{block}{}
+\centering \Large ✅ \textbf{NO USAMOS JOIN. USAMOS ALINEACIÓN DE ESQUEMAS.}
+\end{block}
+\end{frame}
+
+% ============== DIAPOSITIVA 4: VARIABLES ESTANDARIZADAS ==============
+\begin{frame}{Variables Estandarizadas al Formato Moderno SIIF}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{lcc}
+\toprule
+\textbf{Nombre Canónico Final} & \textbf{Variantes históricas normalizadas} & \textbf{Cobertura} \\
+\midrule
+\texttt{anio\_proceso} & \texttt{anio, ano, year, anio\_reporte, vigencia} & 100\% \\
+\texttt{codigo\_uej} & \texttt{uej, uej\_codigo, codigoentidad, codigo\_entidad} & 100\% \\
+\texttt{nombre\_uej} & \texttt{nombreentidad, nombre\_entidad} & 100\% \\
+\texttt{apropiacioninicial} & \texttt{apr\_inicial, apropiacion\_inicial} & 100\% \\
+\texttt{apropiacionvigente} & \texttt{apr\_vigente, apropiacion\_vigente} & 100\% \\
+\texttt{compromisos} & \texttt{compromiso} & 100\% \\
+\texttt{obligaciones} & \texttt{obligacion} & 100\% \\
+\texttt{pagos} & \texttt{pago} & 100\% \\
+\texttt{fuente} & \texttt{fuentefinanciacion, fuente\_financiacion} & 100\% \\
+\midrule
+\texttt{sector} & (solo disponible en API 2019+) & 64.1\% \\
+\texttt{tipo\_gasto} & (solo disponible en API 2019+) & 64.1\% \\
+\texttt{detalle\_gasto} & (solo disponible en API 2019+) & 64.1\% \\
+\midrule
+\texttt{orden\_pago} & (solo disponible en Excel 2015-2018) & 7.7\% \\
+\texttt{cdp} & (solo disponible en Excel 2015-2018) & 7.7\% \\
+\texttt{apropiacionbloqueada} & (solo disponible en Excel 2015-2018) & 7.7\% \\
+\bottomrule
+\end{tabular}
+}
+\end{frame}
+
+% ============== DIAPOSITIVA 5: FLUJO ==============
+\begin{frame}{Proceso de Consolidación Paso a Paso}
+\begin{center}
+\begin{tikzpicture}[node distance=1.2cm, auto, >=stealth,
+  block/.style={rectangle, draw, thick, fill=grisoscuro!10, rounded corners, minimum height=1cm, align=center}]
+
+\node[block] (excel) {Raw Excel \\ 2015-2018};
+\node[block] (api) [right=of excel] {API JSON \\ 2019-2024};
+\node[block] (mapper) [below=of $(excel)!0.5!(api)$] {Cross-Bright Mapper};
+\node[block] (encoding) [below=of mapper] {Normalizador Encoding};
+\node[block] (validador) [below=of encoding] {Validador Tipos Numéricos};
+\node[block] (dedupe) [below=of validador] {Deduplicador Natural};
+\node[block] (final) [below=of dedupe] {\textbf{pte\_consolidado\_full.parquet}};
+
+\draw[->, thick] (excel) -- (mapper);
+\draw[->, thick] (api) -- (mapper);
+\draw[->, thick] (mapper) -- (encoding);
+\draw[->, thick] (encoding) -- (validador);
+\draw[->, thick] (validador) -- (dedupe);
+\draw[->, thick] (dedupe) -- (final);
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+% ============== DIAPOSITIVA 6: CURVA LORENZ ==============
+\begin{frame}{Concentración del Gasto por Entidad}
+\begin{columns}[T]
+\column{0.5\textwidth}
+\includegraphics[width=\textwidth]{../Imagenes/Curva_Lorenz.png}
+\column{0.5\textwidth}
+\vspace{1cm}
+\textbf{Coeficiente Gini = 0.950}
+
+\vspace{0.5cm}
+\begin{itemize}
+  \item El 5\% de las entidades concentran el 95\% del presupuesto
+  \item El MEN absorbe el 62\% del total
+  \item Las 4 universidades mas grandes se reparten otro 23\%
+  \item Las restantes 1.240 entidades se reparten el 15\% restante
+\end{itemize}
+\end{columns}
+\end{frame}
+
+% ============== DIAPOSITIVA 7: TOP ENTIDADES SIN MEN ==============
+\begin{frame}{Top Entidades Excluyendo MEN}
+\begin{center}
+\includegraphics[width=0.9\textwidth]{../Imagenes/Top_Entidades_Sin_MEN.png}
+\end{center}
+\end{frame}
+
+% ============== DIAPOSITIVA 8: EVOLUCION TEMPORAL ==============
+\begin{frame}{Evolución Presupuestal Histórica}
+\begin{center}
+\includegraphics[width=0.9\textwidth]{../Imagenes/PTE_Evolucion_Presupuestal.png}
+\end{center}
+\end{frame}
+
+% ============== DIAPOSITIVA 9: EFICIENCIA ==============
+\begin{frame}{Eficiencia de Ejecución}
+\begin{center}
+\includegraphics[width=0.9\textwidth]{../Imagenes/PTE_Eficiencia_Ejecucion.png}
+\end{center}
+\end{frame}
+
+% ============== DIAPOSITIVA 10: CALIDAD ==============
+\begin{frame}{Calidad de Datos}
+\vspace{0.3cm}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Categoria} & \textbf{Estado} & \textbf{Observaciones} \\
+\midrule
+\ok Columnas 100\% completas & 11 campos & Todos los numéricos y llaves \\
+\flecha Columnas solo API 2019+ & 8 campos & 64.1\% nulos \\
+\flecha Columnas solo Excel 2015-2018 & 5 campos & 7.7\% nulos \\
+\no Columnas 100\% nulas & 0 & --- \\
+\ok Años nulos & 0 & --- \\
+\ok Montos nulos & 0 & --- \\
+\bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+\begin{block}{Nota Importante}
+Los nulos NO son fallos. Son la consecuencia real de que el MEN cambió de sistema en 2019 y eliminó y agregó campos. Esto es normal en datos gubernamentales multianuales.
+\end{block}
+\end{frame}
+
+% ============== DIAPOSITIVA 11: PRÓXIMOS PASOS ==============
+\begin{frame}{Próximos Pasos Recomendados}
+\begin{enumerate}
+  \item \flecha \textbf{Cruzar con SNIES}: Unir PTE con matriculas y graduados para medir eficiencia
+  \item \flecha \textbf{Modelo Estrella}: Ya tenemos \texttt{fact\_presupuesto + dimensiones} listo
+  \item \flecha Dashboard Streamlit: Implementar filtros interactivos por entidad, año, rubro
+  \item \flecha Análisis causal: Relación entre presupuesto y resultados académicos Saber
+\end{enumerate}
+
+\vspace{1cm}
+\begin{center}
+\Huge \textbf{FIN}
+\end{center}
+\end{frame}
+
+\end{document}

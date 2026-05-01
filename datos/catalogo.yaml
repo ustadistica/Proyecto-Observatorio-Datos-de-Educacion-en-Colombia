@@ -4,7 +4,8 @@ fuentes:
     socrata_id: "5phs-yqfw"
     url: "https://www.datos.gov.co/resource/5phs-yqfw"
     url_historica: "https://www.mineducacion.gov.co/portal/micrositios-institucionales/Presupuesto/Reportes-de-ejecucion-presupuestal/"
-    formato: "parquet/csv/xlsx"
+    url_pte: "https://www.pte.gov.co/presupuesto-general-nacion/seguimiento-ejecucion-presupuestal-gastos"
+    formato: "parquet/csv/xlsx (cuadro dnp y formato de reporte a siif)"
     campos_clave:
       - "anio"
       - "nombreentidad"
@@ -12,25 +13,411 @@ fuentes:
       - "descripcion"
     periodicidad: "anual"
     ultimo_pull: "2025-01-20"
-    notas: "Datos 2019-2024 vía Socrata (Hacienda). Datos 2015-2018 descargados de MinEducacion (URL Historica), donde el campo descripción es vital para identificar colegios."
+    notas: |
+      Datos 2019-2024 vía Socrata (Hacienda) y nuevos excels desde pte.gov.co (formatos cuadro DNP y reporte a SIIF). Datos 2015-2018 descargados de MinEducacion (URL Historica).
+      
+      PROCESAMIENTO:
+      - Archivos manuales 2015-2018: Headers en fila 3 (indice 3), datos desde fila 4
+      - Archivos API / pte.gov.co 2019-2024: Headers en fila 0, estructura estandar (Cuadro 7 DNP y Reportes SIIF UEJ)
+      - Total registros consolidados: 36,888
+      - Entidades unicas: 41
+      - Rubros presupuestales: 682
+      - Periodos: 10 (2015-2024)
+      
+      MAPEO DE COLUMNAS (Archivos manuales -> Estandar):
+      - NOMBRE UEJ -> nombreentidad
+      - DESCRIPCION -> descripcion
+      - APR. INICIAL -> apropiacioninicial
+      - APR. VIGENTE -> apropiacionvigente
+      - COMPROMISO -> compromisos
+      - OBLIGACION -> obligaciones
+      - PAGOS -> pagos
     esquema_columnas:
+      # Columnas de dimension
       - nombre: "anio"
         tipo: "int"
         descripcion: "Año de la vigencia fiscal"
       - nombre: "nombreentidad"
         tipo: "string"
         descripcion: "Nombre de la institución o entidad"
+      - nombre: "codigoentidad"
+        tipo: "string"
+        descripcion: "Codigo unico de la entidad"
       - nombre: "descripcion"
         tipo: "string"
-        descripcion: "Detalle del rubro o colegio (específico 2015-2018)"
-      - nombre: "apropiacion_vigente"
+        descripcion: "Detalle del rubro presupuestal"
+      - nombre: "rubro"
+        tipo: "string"
+        descripcion: "Codigo del rubro presupuestal"
+      - nombre: "fuente"
+        tipo: "string"
+        descripcion: "Fuente de los recursos (Nacion, etc.)"
+      - nombre: "recurso"
+        tipo: "string"
+        descripcion: "Tipo de recurso presupuestal"
+      # Columnas de medida (presupuesto)
+      - nombre: "apropiacioninicial"
         tipo: "float"
-        descripcion: "Presupuesto total disponible"
+        descripcion: "Presupuesto inicial asignado"
+      - nombre: "apropiacionvigente"
+        tipo: "float"
+        descripcion: "Presupuesto total disponible (inicial + adiciones - reducciones)"
       - nombre: "compromisos"
         tipo: "float"
         descripcion: "Monto comprometido para gasto"
+      - nombre: "obligaciones"
+        tipo: "float"
+        descripcion: "Monto obligado (causa reconocida)"
       - nombre: "pagos"
         tipo: "float"
         descripcion: "Monto efectivamente pagado"
+    modelo_estrella:
+      dimensiones:
+        - dim_entidad: 41 registros
+        - dim_rubro: 682 registros
+        - dim_periodo: 10 registros (2015-2024)
+      hechos:
+        - fact_presupuesto: 36,888 registros
+      total_presupuesto:
+        apropiacionvigente: "$5,198,937,793,648,043"
+        compromisos: "$3,434,430,296,661,532"
+        pagos: "$2,741,922,804,146,990"
+      eficiencia_promedio: "52.3%"
 
+  - nombre: "ICFES Saber 11 - Histórico Nacional"
+    plataforma: "Datos Abiertos Colombia / Socrata"
+    socrata_id: "kgxf-xxbe"
+    url_oficial: "https://www.datos.gov.co/resource/kgxf-xxbe"
+    url_privada_sharepoint: "https://icfesgovco.sharepoint.com/sites/BasesDataIcfes/Documentos%20compartidos/Forms/AllItems.aspx?id=%2Fsites%2FBasesDataIcfes%2FDocumentos%20compartidos%2F01%5FExamen%20Saber%2011%C2%B0%2F01%5FBases%20Nacionales&p=true&ga=1"
+    formato: "parquet / txt"
+    campos_clave:
+      - "periodo"
+      - "estu_consecutivo"
+      - "cole_codigo_icfes"
+    periodicidad: "semestral"
+    notas: "Datos 2000-2009 unificados desde archivos TXT (requieren carga manual en raw). Datos 2010-2024 descargados vía API. El SharePoint es una fuente restringida para validación de microdatos privados."
+    esquema_columnas:
+      # Identificadores
+      - nombre: "periodo"
+        tipo: "string"
+        descripcion: "Año y semestre del examen (ej: 20232)"
+      - nombre: "estu_consecutivo"
+        tipo: "string"
+        descripcion: "Identificador único anónimo del estudiante (formato SB11{ano}{semestre}{codigo})"
+      - nombre: "cole_codigo_icfes"
+        tipo: "string"
+        descripcion: "Código único de la institución educativa"
+      # Institucion
+      - nombre: "cole_cod_dane_establecimiento"
+        tipo: "string"
+        descripcion: "Código DANE del establecimiento educativo"
+      - nombre: "cole_nombre_establecimiento"
+        tipo: "string"
+        descripcion: "Nombre de la institución educativa"
+      - nombre: "cole_cod_depto_ubicacion"
+        tipo: "string"
+        descripcion: "Código DANE del departamento de ubicación"
+      - nombre: "cole_cod_mcpio_ubicacion"
+        tipo: "string"
+        descripcion: "Código DANE del municipio de ubicación"
+      # Estudiante
+      - nombre: "estu_genero"
+        tipo: "string"
+        descripcion: "Género del estudiante (MASCULINO/FEMENINO)"
+      - nombre: "estu_edad"
+        tipo: "int"
+        descripcion: "Edad del estudiante al momento del examen"
+      - nombre: "estu_fechanacimiento"
+        tipo: "string"
+        descripcion: "Fecha de nacimiento del estudiante"
+      - nombre: "estu_depto_presentacion"
+        tipo: "string"
+        descripcion: "Departamento donde presentó el examen"
+      - nombre: "estu_mcpio_presentacion"
+        tipo: "string"
+        descripcion: "Municipio donde presentó el examen"
+      # Puntajes Saber 11
+      - nombre: "punt_lenguaje"
+        tipo: "float"
+        descripcion: "Puntaje en lectura crítica (escala 0-500)"
+      - nombre: "punt_matematicas"
+        tipo: "float"
+        descripcion: "Puntaje en matemáticas (escala 0-500)"
+      - nombre: "punt_ingles"
+        tipo: "float"
+        descripcion: "Puntaje en inglés (escala 0-500)"
 
+  - nombre: "ICFES Saber Pro - Histórico Nacional"
+    plataforma: "Datos Abiertos Colombia / Socrata"
+    formato: "parquet"
+    campos_clave:
+      - "periodo"
+      - "estu_consecutivo"
+    periodicidad: "semestral"
+    notas: "Datos 2012-2024 descargados vía API. Incluye módulos genéricos y específicos."
+    esquema_columnas:
+      # Identificadores
+      - nombre: "periodo"
+        tipo: "string"
+        descripcion: "Año y semestre del examen (ej: 20232)"
+      - nombre: "estu_consecutivo"
+        tipo: "string"
+        descripcion: "Identificador único anónimo del estudiante (formato EK{periodo}{codigo})"
+      # Estudiante
+      - nombre: "estu_genero"
+        tipo: "string"
+        descripcion: "Género del estudiante (MASCULINO/FEMENINO)"
+      - nombre: "estu_depto_presentacion"
+        tipo: "string"
+        descripcion: "Departamento donde presentó el examen"
+      - nombre: "estu_mcpio_presentacion"
+        tipo: "string"
+        descripcion: "Municipio donde presentó el examen"
+      # Puntajes Saber Pro (módulos genéricos)
+      - nombre: "mod_comuni_escrita_punt"
+        tipo: "float"
+        descripcion: "Puntaje módulo comunicación escrita (escala 0-500)"
+      - nombre: "mod_razona_cuantitat_punt"
+        tipo: "float"
+        descripcion: "Puntaje módulo razonamiento cuantitativo (escala 0-500)"
+      - nombre: "mod_ingles_punt"
+        tipo: "float"
+        descripcion: "Puntaje módulo inglés (escala 0-500)"
+      - nombre: "mod_competen_ciudada_punt"
+        tipo: "float"
+        descripcion: "Puntaje módulo competencias ciudadanas (escala 0-500)"
+      # Puntajes globales
+      - nombre: "punt_global"
+        tipo: "float"
+        descripcion: "Puntaje global Saber Pro (escala 0-500)"
+      - nombre: "percentil_global"
+        tipo: "float"
+        descripcion: "Percentil global del estudiante"
+
+  - nombre: "Cruce Saber 11 - Saber Pro (Consolidado)"
+    plataforma: "Procesamiento interno - ICFES"
+    formato: "parquet"
+    campos_clave:
+      - "estu_consecutivo_sb11"
+      - "estu_consecutivo_sbpro"
+    periodicidad: "cruce histórico"
+    notas: |
+      Cruce metodológico entre Saber 11 y Saber Pro usando consecutivos ICFES.
+      - Total registros cruzados: 1,471,551
+      - Periodos cubiertos: 2012-2024
+      - Método: Inner join por consecutivo de estudiante
+      
+      VARIABLES DEL CRUCE (31 columnas):
+      - Identificadores Saber 11: estu_consecutivo_sb11, periodo_sb11, anio_sb11
+      - Identificadores Saber Pro: estu_consecutivo_sbpro, periodo_pro
+      - Institución: cole_cod_dane_establecimiento, cole_nombre_establecimiento
+      - Puntajes Saber 11: punt_lenguaje, punt_matematicas, punt_ingles
+      - Puntajes Saber Pro: mod_comuni_escrita_punt, mod_razona_cuantitat_punt, mod_ingles_punt, mod_competen_ciudada_punt, punt_global, percentil_global
+      - Características estudiante: estu_genero_11, estu_genero_pro, estu_edad, estu_fechanacimiento
+      - Ubicación: estu_depto_presentacion_11, estu_mcpio_presentacion_11, estu_depto_presentacion_pro, estu_mcpio_presentacion_pro, cole_cod_depto_ubicacion, cole_cod_mcpio_ubicacion
+    esquema_columnas:
+      # Identificadores cruzados
+      - nombre: "estu_consecutivo_sb11"
+        tipo: "string"
+        descripcion: "Consecutivo Saber 11 del estudiante"
+      - nombre: "periodo_sb11"
+        tipo: "string"
+        descripcion: "Periodo de presentación Saber 11"
+      - nombre: "estu_consecutivo_sbpro"
+        tipo: "string"
+        descripcion: "Consecutivo Saber Pro del estudiante"
+      - nombre: "periodo_pro"
+        tipo: "string"
+        descripcion: "Periodo de presentación Saber Pro"
+      # Años
+      - nombre: "anio_sb11"
+        tipo: "int"
+        descripcion: "Año de presentación Saber 11"
+      - nombre: "anio_sbpro"
+        tipo: "int"
+        descripcion: "Año de presentación Saber Pro"
+      # Institución
+      - nombre: "cole_cod_dane_establecimiento"
+        tipo: "string"
+        descripcion: "Código DANE del establecimiento educativo"
+      - nombre: "cole_nombre_establecimiento"
+        tipo: "string"
+        descripcion: "Nombre de la institución educativa"
+      - nombre: "cole_cod_depto_ubicacion"
+        tipo: "string"
+        descripcion: "Código DANE del departamento"
+      - nombre: "cole_cod_mcpio_ubicacion"
+        tipo: "string"
+        descripcion: "Código DANE del municipio"
+      # Características del estudiante
+      - nombre: "estu_genero_11"
+        tipo: "string"
+        descripcion: "Género del estudiante (Saber 11)"
+      - nombre: "estu_genero_pro"
+        tipo: "string"
+        descripcion: "Género del estudiante (Saber Pro)"
+      - nombre: "estu_edad"
+        tipo: "int"
+        descripcion: "Edad del estudiante"
+      - nombre: "estu_fechanacimiento"
+        tipo: "string"
+        descripcion: "Fecha de nacimiento"
+      # Ubicación presentación
+      - nombre: "estu_depto_presentacion_11"
+        tipo: "string"
+        descripcion: "Departamento presentación Saber 11"
+      - nombre: "estu_mcpio_presentacion_11"
+        tipo: "string"
+        descripcion: "Municipio presentación Saber 11"
+      - nombre: "estu_depto_presentacion_pro"
+        tipo: "string"
+        descripcion: "Departamento presentación Saber Pro"
+      - nombre: "estu_mcpio_presentacion_pro"
+        tipo: "string"
+        descripcion: "Municipio presentación Saber Pro"
+      # Puntajes Saber 11
+      - nombre: "punt_lenguaje"
+        tipo: "float"
+        descripcion: "Puntaje lectura crítica Saber 11 (0-500)"
+      - nombre: "punt_matematicas"
+        tipo: "float"
+        descripcion: "Puntaje matemáticas Saber 11 (0-500)"
+      - nombre: "punt_ingles"
+        tipo: "float"
+        descripcion: "Puntaje inglés Saber 11 (0-500)"
+      # Puntajes Saber Pro
+      - nombre: "mod_comuni_escrita_punt"
+        tipo: "float"
+        descripcion: "Puntaje comunicación escrita Saber Pro (0-500)"
+      - nombre: "mod_razona_cuantitat_punt"
+        tipo: "float"
+        descripcion: "Puntaje razonamiento cuantitativo Saber Pro (0-500)"
+      - nombre: "mod_ingles_punt"
+        tipo: "float"
+        descripcion: "Puntaje inglés Saber Pro (0-500)"
+      - nombre: "mod_competen_ciudada_punt"
+        tipo: "float"
+        descripcion: "Puntaje competencias ciudadanas Saber Pro (0-500)"
+      # Puntajes globales
+      - nombre: "punt_global"
+        tipo: "float"
+        descripcion: "Puntaje global Saber Pro (0-500)"
+      - nombre: "percentil_global"
+        tipo: "float"
+        descripcion: "Percentil global Saber Pro"
+    modelo_estrella:
+      dimensiones:
+        - dim_periodo: periodos ICFES (2012-2024)
+        - dim_institucion: colegios por codigo DANE
+        - dim_estudiante_cohorte: cohortes anonimizados
+        - dim_prueba: Saber 11, Saber Pro
+      hechos:
+        - fact_resultados_saber: 1,471,551 registros cruzados
+      medidas:
+        - punt_lenguaje, punt_matematicas, punt_ingles (Saber 11)
+        - mod_comuni_escrita_punt, mod_razona_cuantitat_punt, mod_ingles_punt, mod_competen_ciudada_punt (Saber Pro)
+        - punt_global, percentil_global
+
+  - nombre: "SNIES Matriculados - Educación Superior"
+    plataforma: "SNIES - MinEducacion"
+    formato: "parquet"
+    campos_clave:
+      - "anio"
+      - "semestre"
+      - "codigo_institucion"
+      - "nombre_programa"
+    periodicidad: "semestral"
+    notas: |
+      Datos de matriculados en educacion superior en Colombia.
+      - Total registros consolidados: 676,587
+      - Periodos cubiertos: 2015-2024 (20 semestres)
+      - Instituciones unicas: 350
+      - Programas unicos: 10,804
+      - Total matriculados: 47,167,276
+      
+      PROCESAMIENTO:
+      - Limpieza con mapeo de columnas estandarizadas
+      - Columnas CINE solo disponibles 2019-2024
+      - Consolidado con 19 columnas comunes a todos los anos
+      - Visualizaciones generadas: evolucion temporal, distribucion por genero, top instituciones, distribucion por sector
+    esquema_columnas:
+      # Identificadores
+      - nombre: "anio"
+        tipo: "int"
+        descripcion: "Año del periodo academico"
+      - nombre: "semestre"
+        tipo: "string"
+        descripcion: "Semestre academico (I o II)"
+      - nombre: "codigo_institucion"
+        tipo: "string"
+        descripcion: "Codigo unico de la institucion de educacion superior"
+      - nombre: "nombre_institucion"
+        tipo: "string"
+        descripcion: "Nombre de la institucion de educacion superior"
+      # Caracteristicas institucion
+      - nombre: "sector"
+        tipo: "string"
+        descripcion: "Sector de la institucion (Oficial, No oficial)"
+      - nombre: "caracter"
+        tipo: "string"
+        descripcion: "Caracter de la institucion"
+      - nombre: "tipo_ies"
+        tipo: "string"
+        descripcion: "Tipo de institucion (Universidad, Institucion Universitaria, etc.)"
+      - nombre: "mcpio_ies"
+        tipo: "string"
+        descripcion: "Municipio de ubicacion de la institucion"
+      # Programa academico
+      - nombre: "nombre_programa"
+        tipo: "string"
+        descripcion: "Nombre del programa academico"
+      - nombre: "nivel"
+        tipo: "string"
+        descripcion: "Nivel academico (Pregrado, Posgrado, etc.)"
+      - nombre: "nivel_formacion"
+        tipo: "string"
+        descripcion: "Nivel de formacion especifico"
+      - nombre: "metodologia"
+        tipo: "string"
+        descripcion: "Metodologia del programa (Presencial, A distancia, etc.)"
+      # Area de conocimiento
+      - nombre: "area_conocimiento"
+        tipo: "string"
+        descripcion: "Area grande de conocimiento"
+      - nombre: "nucleo_conocimiento"
+        tipo: "string"
+        descripcion: "Nucleo basico de conocimiento"
+      # Ubicacion programa
+      - nombre: "depto_programa"
+        tipo: "string"
+        descripcion: "Departamento de oferta del programa"
+      - nombre: "mcpio_programa"
+        tipo: "string"
+        descripcion: "Municipio de oferta del programa"
+      # Estudiante
+      - nombre: "genero"
+        tipo: "string"
+        descripcion: "Genero del estudiante (MASCULINO, FEMENINO, NO BINARIO, TRANS)"
+      - nombre: "id_genero"
+        tipo: "string"
+        descripcion: "Identificador del genero"
+      # Medida
+      - nombre: "matriculados"
+        tipo: "float"
+        descripcion: "Numero de matriculados en el periodo"
+    estadisticas:
+      total_registros: 676,587
+      total_matriculados: 47,167,276
+      instituciones_unicas: 350
+      programas_unicos: 10,804
+      periodo: "2015-2024"
+      distribucion_genero:
+        FEMENINO: 25,069,667 (53.2%)
+        MASCULINO: 22,097,492 (46.8%)
+        NO_BINARIO: 102 (0.0002%)
+        TRANS: 15 (0.00003%)
+    visualizaciones:
+      - Imagenes/SNIES_Evolucion_Matriculados.png
+      - Imagenes/SNIES_Distribucion_Genero.png
+      - Imagenes/SNIES_Top_Instituciones.png
+      - Imagenes/SNIES_Distribucion_Sector.png
