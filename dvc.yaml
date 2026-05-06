@@ -1,5 +1,70 @@
 stages:
-  # Stage 1: Descarga y procesamiento de PTE
+
+  # ==========================
+  # VERIFICACIÓN DEL ENTORNO
+  # ==========================
+
+  verificar_entorno:
+    cmd: python -c "import pandas; import numpy; import openpyxl; import pyarrow; print('✅ Entorno verificado'); open('reportes/entorno_verificado.txt', 'w').write('Entorno OK')"
+    outs:
+      - reportes/entorno_verificado.txt
+
+  probar_ingesta_snies:
+    cmd: python src/ingesta/ingesta_snies.py && echo "✅ Ingesta SNIES verificada" > reportes/ingesta_snies_verificada.txt
+    deps:
+      - datos/raw/snies/
+      - src/ingesta/ingesta_snies.py
+    outs:
+      - reportes/ingesta_snies_verificada.txt
+
+  probar_ingesta_original:
+    cmd: python src/ingesta/ingesta_snies_original.py && echo "✅ Ingesta original verificada" > reportes/ingesta_original_verificada.txt
+    deps:
+      - src/ingesta/ingesta_snies_original.py
+    outs:
+      - reportes/ingesta_original_verificada.txt
+
+  probar_ingesta_main:
+    cmd: python src/ingesta/main.py && echo "✅ Ingesta main verificada" > reportes/ingesta_main_verificada.txt
+    deps:
+      - src/ingesta/main.py
+    outs:
+      - reportes/ingesta_main_verificada.txt
+
+  probar_transformacion:
+    cmd: python src/transformacion/main.py && echo "✅ Transformación verificada" > reportes/transformacion_verificada.txt
+    deps:
+      - src/transformacion/main.py
+    outs:
+      - reportes/transformacion_verificada.txt
+
+  probar_visualizacion:
+    cmd: python -c "import src.visualizacion; print('✅ Visualización OK')" && echo "✅ Visualización verificada" > reportes/visualizacion_verificada.txt
+    deps:
+      - src/visualizacion/__init__.py
+    outs:
+      - reportes/visualizacion_verificada.txt
+
+  probar_modelo:
+    cmd: python -c "import src.modelo; print('✅ Modelo OK')" && echo "✅ Modelo verificado" > reportes/modelo_verificado.txt
+    deps:
+      - src/modelo/__init__.py
+    outs:
+      - reportes/modelo_verificado.txt
+
+  probar_tests:
+    cmd: python -m pytest tests/ -v && echo "✅ Tests verificados" > reportes/tests_verificados.txt
+    deps:
+      - tests/__init__.py
+      - tests/test_ingesta.py
+    outs:
+      - reportes/tests_verificados.txt
+
+
+  # ==========================
+  # INGESTA DE DATOS
+  # ==========================
+
   descargar_pte:
     cmd: python src/ingesta/pte.py
     deps:
@@ -8,7 +73,6 @@ stages:
       - datos/raw/pte/
     always_changed: true
 
-  # Stage 2: Descarga y procesamiento de ICFES Saber 11
   descargar_icfes_saber11:
     cmd: python src/ingesta/icfes_saber11.py
     deps:
@@ -17,7 +81,6 @@ stages:
       - datos/raw/icfes/saber_11/
     always_changed: true
 
-  # Stage 3: Descarga y procesamiento de ICFES Saber Pro
   descargar_icfes_saberpro:
     cmd: python src/ingesta/icfes_socrata.py
     deps:
@@ -26,7 +89,6 @@ stages:
       - datos/raw/icfes/saber_pro/
     always_changed: true
 
-  # Stage 4: Descarga y procesamiento de SNIES
   descargar_snies:
     cmd: python src/ingesta/download_datos.py
     deps:
@@ -35,7 +97,11 @@ stages:
       - datos/raw/snies/
     always_changed: true
 
-  # Stage 5: Transformación de datos
+
+  # ==========================
+  # TRANSFORMACIÓN
+  # ==========================
+
   transformar_datos:
     cmd: python src/transformacion/main.py
     deps:
@@ -48,7 +114,11 @@ stages:
       - datos/processed/
     always_changed: true
 
-  # Stage 6: Visualización de datos
+
+  # ==========================
+  # VISUALIZACIÓN
+  # ==========================
+
   visualizar_datos:
     cmd: python src/visualizacion/main.py
     deps:
@@ -57,3 +127,34 @@ stages:
     outs:
       - Imagenes/
     always_changed: true
+
+
+  # ==========================
+  # REPORTE FINAL
+  # ==========================
+
+  generar_reporte:
+    cmd: |
+      echo "=== Pipeline DVC Completada ===" > reportes/dvc_pipeline_report.txt
+      echo "Fecha: $(date)" >> reportes/dvc_pipeline_report.txt
+      echo "" >> reportes/dvc_pipeline_report.txt
+      echo "✅ Entorno verificado" >> reportes/dvc_pipeline_report.txt
+      echo "✅ Scripts de ingesta verificados" >> reportes/dvc_pipeline_report.txt
+      echo "✅ Scripts de transformación verificados" >> reportes/dvc_pipeline_report.txt
+      echo "✅ Módulos de visualización y modelo verificados" >> reportes/dvc_pipeline_report.txt
+      echo "✅ Tests unitarios ejecutados" >> reportes/dvc_pipeline_report.txt
+      echo "" >> reportes/dvc_pipeline_report.txt
+      echo "=== Estado de Archivos ===" >> reportes/dvc_pipeline_report.txt
+      ls -la datos/raw/snies/matriculados/ >> reportes/dvc_pipeline_report.txt
+      ls -la datos/raw/snies/graduados/ >> reportes/dvc_pipeline_report.txt
+    deps:
+      - reportes/entorno_verificado.txt
+      - reportes/ingesta_main_verificada.txt
+      - reportes/ingesta_original_verificada.txt
+      - reportes/ingesta_snies_verificada.txt
+      - reportes/modelo_verificado.txt
+      - reportes/tests_verificados.txt
+      - reportes/transformacion_verificada.txt
+      - reportes/visualizacion_verificada.txt
+    outs:
+      - reportes/dvc_pipeline_report.txt

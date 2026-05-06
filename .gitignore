@@ -60,3 +60,7 @@ mlruns/
 *.tmp
 .coverage
 htmlcov/
+
+# === Ignorar archivos Excel ===
+*.xlsx
+*.xls
