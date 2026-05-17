@@ -1,0 +1,3230 @@
+{
+  "generated_at": "2026-05-11T12:38:32.158160",
+  "pipeline_status": "OK",
+  "summary": {
+    "total_rows_consolidado": 3284,
+    "duplicate_rows_consolidado": 0,
+    "duplicate_ies_per_year": 0,
+    "unique_institutions": 439,
+    "total_matriculados_10_anios": 24270410,
+    "total_graduados_10_anios": 4843517,
+    "cifras_coinciden_con_oficial": true
+  },
+  "validations": {
+    "dictionary_unit_test": {
+      "status": "OK",
+      "total_canonicals": 46,
+      "total_variants": 70,
+      "details": {
+        "anio_proceso": {
+          "status": "OK",
+          "variant_count": 3,
+          "variants": {
+            "ano": {
+              "maps_to": "anio_proceso",
+              "expected": "anio_proceso",
+              "ok": true
+            },
+            "anio": {
+              "maps_to": "anio_proceso",
+              "expected": "anio_proceso",
+              "ok": true
+            },
+            "anio_proceso": {
+              "maps_to": "anio_proceso",
+              "expected": "anio_proceso",
+              "ok": true
+            }
+          }
+        },
+        "area_conocimiento": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "area_de_conocimiento": {
+              "maps_to": "area_conocimiento",
+              "expected": "area_conocimiento",
+              "ok": true
+            }
+          }
+        },
+        "caracter_ies": {
+          "status": "OK",
+          "variant_count": 2,
+          "variants": {
+            "caracter_ies": {
+              "maps_to": "caracter_ies",
+              "expected": "caracter_ies",
+              "ok": true
+            },
+            "caracter": {
+              "maps_to": "caracter_ies",
+              "expected": "caracter_ies",
+              "ok": true
+            }
+          }
+        },
+        "codigo_del_municipio": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "codigo_del_municipio": {
+              "maps_to": "codigo_del_municipio",
+              "expected": "codigo_del_municipio",
+              "ok": true
+            }
+          }
+        },
+        "codigo_depto_ies": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "codigo_del_departamento_ies": {
+              "maps_to": "codigo_depto_ies",
+              "expected": "codigo_depto_ies",
+              "ok": true
+            }
+          }
+        },
+        "codigo_depto_programa": {
+          "status": "OK",
+          "variant_count": 2,
+          "variants": {
+            "codigo_del_departamento_programa": {
+              "maps_to": "codigo_depto_programa",
+              "expected": "codigo_depto_programa",
+              "ok": true
+            },
+            "codigo_del_departamentoprograma": {
+              "maps_to": "codigo_depto_programa",
+              "expected": "codigo_depto_programa",
+              "ok": true
+            }
+          }
+        },
+        "codigo_institucion": {
+          "status": "OK",
+          "variant_count": 2,
+          "variants": {
+            "codigo_de_la_institucion": {
+              "maps_to": "codigo_institucion",
+              "expected": "codigo_institucion",
+              "ok": true
+            },
+            "codigo_institucion": {
+              "maps_to": "codigo_institucion",
+              "expected": "codigo_institucion",
+              "ok": true
+            }
+          }
+        },
+        "codigo_mcpio_ies": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "codigo_del_municipio_ies": {
+              "maps_to": "codigo_mcpio_ies",
+              "expected": "codigo_mcpio_ies",
+              "ok": true
+            }
+          }
+        },
+        "codigo_mcpio_programa": {
+          "status": "OK",
+          "variant_count": 3,
+          "variants": {
+            "cdigo_del_municipio_programa": {
+              "maps_to": "codigo_mcpio_programa",
+              "expected": "codigo_mcpio_programa",
+              "ok": true
+            },
+            "codigo_del_municipio_programa": {
+              "maps_to": "codigo_mcpio_programa",
+              "expected": "codigo_mcpio_programa",
+              "ok": true
+            },
+            "codigo_del_municipioprograma": {
+              "maps_to": "codigo_mcpio_programa",
+              "expected": "codigo_mcpio_programa",
+              "ok": true
+            }
+          }
+        },
+        "codigo_snies_programa": {
+          "status": "OK",
+          "variant_count": 2,
+          "variants": {
+            "codigo_snies_delprograma": {
+              "maps_to": "codigo_snies_programa",
+              "expected": "codigo_snies_programa",
+              "ok": true
+            },
+            "codigo_snies_del_programa": {
+              "maps_to": "codigo_snies_programa",
+              "expected": "codigo_snies_programa",
+              "ok": true
+            }
+          }
+        },
+        "depto_ies": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "departamento_de_domicilio_de_la_ies": {
+              "maps_to": "depto_ies",
+              "expected": "depto_ies",
+              "ok": true
+            }
+          }
+        },
+        "depto_programa": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "departamento_de_oferta_del_programa": {
+              "maps_to": "depto_programa",
+              "expected": "depto_programa",
+              "ok": true
+            }
+          }
+        },
+        "desc_cine_campo_amplio": {
+          "status": "OK",
+          "variant_count": 2,
+          "variants": {
+            "desc_cine_campo_amplio": {
+              "maps_to": "desc_cine_campo_amplio",
+              "expected": "desc_cine_campo_amplio",
+              "ok": true
+            },
+            "cine_campo_amplio": {
+              "maps_to": "desc_cine_campo_amplio",
+              "expected": "desc_cine_campo_amplio",
+              "ok": true
+            }
+          }
+        },
+        "desc_cine_campo_detallado": {
+          "status": "OK",
+          "variant_count": 2,
+          "variants": {
+            "desc_cine_codigo_detallado": {
+              "maps_to": "desc_cine_campo_detallado",
+              "expected": "desc_cine_campo_detallado",
+              "ok": true
+            },
+            "desc_cine_campo_detallado": {
+              "maps_to": "desc_cine_campo_detallado",
+              "expected": "desc_cine_campo_detallado",
+              "ok": true
+            }
+          }
+        },
+        "desc_cine_campo_especifico": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "desc_cine_campo_especifico": {
+              "maps_to": "desc_cine_campo_especifico",
+              "expected": "desc_cine_campo_especifico",
+              "ok": true
+            }
+          }
+        },
+        "genero": {
+          "status": "OK",
+          "variant_count": 2,
+          "variants": {
+            "sexo": {
+              "maps_to": "genero",
+              "expected": "genero",
+              "ok": true
+            },
+            "genero": {
+              "maps_to": "genero",
+              "expected": "genero",
+              "ok": true
+            }
+          }
+        },
+        "graduados": {
+          "status": "OK",
+          "variant_count": 2,
+          "variants": {
+            "graduados": {
+              "maps_to": "graduados",
+              "expected": "graduados",
+              "ok": true
+            },
+            "total_graduados": {
+              "maps_to": "graduados",
+              "expected": "graduados",
+              "ok": true
+            }
+          }
+        },
+        "id_area_conocimiento": {
+          "status": "OK",
+          "variant_count": 2,
+          "variants": {
+            "id_area": {
+              "maps_to": "id_area_conocimiento",
+              "expected": "id_area_conocimiento",
+              "ok": true
+            },
+            "id_area_de_conocimiento": {
+              "maps_to": "id_area_conocimiento",
+              "expected": "id_area_conocimiento",
+              "ok": true
+            }
+          }
+        },
+        "id_caracter": {
+          "status": "OK",
+          "variant_count": 2,
+          "variants": {
+            "id_caracter": {
+              "maps_to": "id_caracter",
+              "expected": "id_caracter",
+              "ok": true
+            },
+            "id_caracter_ies": {
+              "maps_to": "id_caracter",
+              "expected": "id_caracter",
+              "ok": true
+            }
+          }
+        },
+        "id_cine_campo_amplio": {
+          "status": "OK",
+          "variant_count": 2,
+          "variants": {
+            "id_cine_campo_amplio": {
+              "maps_to": "id_cine_campo_amplio",
+              "expected": "id_cine_campo_amplio",
+              "ok": true
+            },
+            "id_cine_campo_amplio_desc": {
+              "maps_to": "id_cine_campo_amplio",
+              "expected": "id_cine_campo_amplio",
+              "ok": true
+            }
+          }
+        },
+        "id_cine_campo_detallado": {
+          "status": "OK",
+          "variant_count": 2,
+          "variants": {
+            "id_cine_codigo_detallado": {
+              "maps_to": "id_cine_campo_detallado",
+              "expected": "id_cine_campo_detallado",
+              "ok": true
+            },
+            "id_cine_campo_detallado": {
+              "maps_to": "id_cine_campo_detallado",
+              "expected": "id_cine_campo_detallado",
+              "ok": true
+            }
+          }
+        },
+        "id_cine_campo_especifico": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "id_cine_campo_especifico": {
+              "maps_to": "id_cine_campo_especifico",
+              "expected": "id_cine_campo_especifico",
+              "ok": true
+            }
+          }
+        },
+        "id_genero": {
+          "status": "OK",
+          "variant_count": 2,
+          "variants": {
+            "id_sexo": {
+              "maps_to": "id_genero",
+              "expected": "id_genero",
+              "ok": true
+            },
+            "id_genero": {
+              "maps_to": "id_genero",
+              "expected": "id_genero",
+              "ok": true
+            }
+          }
+        },
+        "id_metodologia": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "id_metodologia": {
+              "maps_to": "id_metodologia",
+              "expected": "id_metodologia",
+              "ok": true
+            }
+          }
+        },
+        "id_modalidad": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "id_modalidad": {
+              "maps_to": "id_modalidad",
+              "expected": "id_modalidad",
+              "ok": true
+            }
+          }
+        },
+        "id_nivel_academico": {
+          "status": "OK",
+          "variant_count": 2,
+          "variants": {
+            "id_nivel_academico": {
+              "maps_to": "id_nivel_academico",
+              "expected": "id_nivel_academico",
+              "ok": true
+            },
+            "id_nivel": {
+              "maps_to": "id_nivel_academico",
+              "expected": "id_nivel_academico",
+              "ok": true
+            }
+          }
+        },
+        "id_nivel_formacion": {
+          "status": "OK",
+          "variant_count": 2,
+          "variants": {
+            "id_nivel_de_formacion": {
+              "maps_to": "id_nivel_formacion",
+              "expected": "id_nivel_formacion",
+              "ok": true
+            },
+            "id_nivel_formacion": {
+              "maps_to": "id_nivel_formacion",
+              "expected": "id_nivel_formacion",
+              "ok": true
+            }
+          }
+        },
+        "id_nucleo": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "id_nucleo": {
+              "maps_to": "id_nucleo",
+              "expected": "id_nucleo",
+              "ok": true
+            }
+          }
+        },
+        "id_sector": {
+          "status": "OK",
+          "variant_count": 2,
+          "variants": {
+            "id_sector_ies": {
+              "maps_to": "id_sector",
+              "expected": "id_sector",
+              "ok": true
+            },
+            "id_sector": {
+              "maps_to": "id_sector",
+              "expected": "id_sector",
+              "ok": true
+            }
+          }
+        },
+        "ies_acreditada": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "ies_acreditada": {
+              "maps_to": "ies_acreditada",
+              "expected": "ies_acreditada",
+              "ok": true
+            }
+          }
+        },
+        "ies_padre": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "ies_padre": {
+              "maps_to": "ies_padre",
+              "expected": "ies_padre",
+              "ok": true
+            }
+          }
+        },
+        "matriculados": {
+          "status": "OK",
+          "variant_count": 2,
+          "variants": {
+            "matriculados": {
+              "maps_to": "matriculados",
+              "expected": "matriculados",
+              "ok": true
+            },
+            "total_matriculados": {
+              "maps_to": "matriculados",
+              "expected": "matriculados",
+              "ok": true
+            }
+          }
+        },
+        "mcpio_ies": {
+          "status": "OK",
+          "variant_count": 2,
+          "variants": {
+            "municipio_de_domicilio_de_la_ies": {
+              "maps_to": "mcpio_ies",
+              "expected": "mcpio_ies",
+              "ok": true
+            },
+            "municipio_dedomicilio_de_la_ies": {
+              "maps_to": "mcpio_ies",
+              "expected": "mcpio_ies",
+              "ok": true
+            }
+          }
+        },
+        "mcpio_programa": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "municipio_de_oferta_del_programa": {
+              "maps_to": "mcpio_programa",
+              "expected": "mcpio_programa",
+              "ok": true
+            }
+          }
+        },
+        "metodologia": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "metodologia": {
+              "maps_to": "metodologia",
+              "expected": "metodologia",
+              "ok": true
+            }
+          }
+        },
+        "modalidad": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "modalidad": {
+              "maps_to": "modalidad",
+              "expected": "modalidad",
+              "ok": true
+            }
+          }
+        },
+        "nivel_academico": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "nivel_academico": {
+              "maps_to": "nivel_academico",
+              "expected": "nivel_academico",
+              "ok": true
+            }
+          }
+        },
+        "nivel_formacion": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "nivel_de_formacion": {
+              "maps_to": "nivel_formacion",
+              "expected": "nivel_formacion",
+              "ok": true
+            }
+          }
+        },
+        "nombre_institucion": {
+          "status": "OK",
+          "variant_count": 2,
+          "variants": {
+            "institucion_de_educacion_superior_ies": {
+              "maps_to": "nombre_institucion",
+              "expected": "nombre_institucion",
+              "ok": true
+            },
+            "ies": {
+              "maps_to": "nombre_institucion",
+              "expected": "nombre_institucion",
+              "ok": true
+            }
+          }
+        },
+        "nombre_programa": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "programa_academico": {
+              "maps_to": "nombre_programa",
+              "expected": "nombre_programa",
+              "ok": true
+            }
+          }
+        },
+        "nucleo_conocimiento": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "nucleo_basico_del_conocimiento_nbc": {
+              "maps_to": "nucleo_conocimiento",
+              "expected": "nucleo_conocimiento",
+              "ok": true
+            }
+          }
+        },
+        "principal_o_seccional": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "principal_o_seccional": {
+              "maps_to": "principal_o_seccional",
+              "expected": "principal_o_seccional",
+              "ok": true
+            }
+          }
+        },
+        "programa_acreditado": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "programa_acreditado": {
+              "maps_to": "programa_acreditado",
+              "expected": "programa_acreditado",
+              "ok": true
+            }
+          }
+        },
+        "sector_ies": {
+          "status": "OK",
+          "variant_count": 2,
+          "variants": {
+            "sector_ies": {
+              "maps_to": "sector_ies",
+              "expected": "sector_ies",
+              "ok": true
+            },
+            "sector": {
+              "maps_to": "sector_ies",
+              "expected": "sector_ies",
+              "ok": true
+            }
+          }
+        },
+        "semestre": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "semestre": {
+              "maps_to": "semestre",
+              "expected": "semestre",
+              "ok": true
+            }
+          }
+        },
+        "tipo_ies": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "tipo_ies": {
+              "maps_to": "tipo_ies",
+              "expected": "tipo_ies",
+              "ok": true
+            }
+          }
+        }
+      }
+    },
+    "cross_bright_mapper": {
+      "graduados_2015": {
+        "status": "OK",
+        "unmapped_columns": [],
+        "total_columns": 33
+      },
+      "graduados_2016": {
+        "status": "OK",
+        "unmapped_columns": [],
+        "total_columns": 33
+      },
+      "graduados_2017": {
+        "status": "OK",
+        "unmapped_columns": [],
+        "total_columns": 33
+      },
+      "graduados_2018": {
+        "status": "OK",
+        "unmapped_columns": [],
+        "total_columns": 33
+      },
+      "graduados_2019": {
+        "status": "OK",
+        "unmapped_columns": [],
+        "total_columns": 39
+      },
+      "graduados_2020": {
+        "status": "OK",
+        "unmapped_columns": [],
+        "total_columns": 39
+      },
+      "graduados_2021": {
+        "status": "OK",
+        "unmapped_columns": [],
+        "total_columns": 41
+      },
+      "graduados_2022": {
+        "status": "OK",
+        "unmapped_columns": [],
+        "total_columns": 41
+      },
+      "graduados_2023": {
+        "status": "OK",
+        "unmapped_columns": [],
+        "total_columns": 41
+      },
+      "graduados_2024": {
+        "status": "OK",
+        "unmapped_columns": [],
+        "total_columns": 41
+      },
+      "matriculados_2015": {
+        "status": "OK",
+        "unmapped_columns": [],
+        "total_columns": 33
+      },
+      "matriculados_2016": {
+        "status": "OK",
+        "unmapped_columns": [],
+        "total_columns": 33
+      },
+      "matriculados_2017": {
+        "status": "OK",
+        "unmapped_columns": [],
+        "total_columns": 33
+      },
+      "matriculados_2018": {
+        "status": "OK",
+        "unmapped_columns": [],
+        "total_columns": 33
+      },
+      "matriculados_2019": {
+        "status": "OK",
+        "unmapped_columns": [],
+        "total_columns": 39
+      },
+      "matriculados_2020": {
+        "status": "OK",
+        "unmapped_columns": [],
+        "total_columns": 39
+      },
+      "matriculados_2021": {
+        "status": "OK",
+        "unmapped_columns": [],
+        "total_columns": 41
+      },
+      "matriculados_2022": {
+        "status": "OK",
+        "unmapped_columns": [],
+        "total_columns": 41
+      },
+      "matriculados_2023": {
+        "status": "OK",
+        "unmapped_columns": [],
+        "total_columns": 41
+      },
+      "matriculados_2024": {
+        "status": "OK",
+        "unmapped_columns": [],
+        "total_columns": 41
+      }
+    },
+    "variants_audit": {
+      "graduados_2015": {
+        "status": "OK",
+        "columns_in_file": [
+          "Código de \nla Institución",
+          "IES PADRE",
+          "Institución de Educación Superior (IES)",
+          "Principal\n o\nSeccional",
+          "ID Sector IES",
+          "Sector IES",
+          "ID Caracter",
+          "Caracter IES",
+          "Código del \ndepartamento\n(IES)",
+          "Departamento de \ndomicilio de la IES",
+          "Código del \nMunicipio\n(IES)",
+          "Municipio de\ndomicilio de la IES",
+          "Código \nSNIES del\nprograma",
+          "Programa Académico",
+          "ID Nivel Académico",
+          "Nivel Académico",
+          "ID Nivel de Formación",
+          "Nivel de Formación",
+          "ID Metodología",
+          "Metodología",
+          "ID Área",
+          "Área de Conocimiento",
+          "Id_Nucleo",
+          "Núcleo Básico del Conocimiento (NBC)",
+          "Código del \nDepartamento\n(Programa)",
+          "Departamento de oferta del programa",
+          "Código del \nMunicipio\n(Programa)",
+          "Municipio de oferta del programa",
+          "ID Sexo",
+          "Sexo",
+          "Año*",
+          "Semestre",
+          "Graduados"
+        ],
+        "mapped_variants": {
+          "Código de \nla Institución": "codigo_institucion",
+          "IES PADRE": "ies_padre",
+          "Institución de Educación Superior (IES)": "nombre_institucion",
+          "Principal\n o\nSeccional": "principal_o_seccional",
+          "ID Sector IES": "id_sector",
+          "Sector IES": "sector_ies",
+          "ID Caracter": "id_caracter",
+          "Caracter IES": "caracter_ies",
+          "Código del \ndepartamento\n(IES)": "codigo_depto_ies",
+          "Departamento de \ndomicilio de la IES": "depto_ies",
+          "Código del \nMunicipio\n(IES)": "codigo_mcpio_ies",
+          "Municipio de\ndomicilio de la IES": "mcpio_ies",
+          "Código \nSNIES del\nprograma": "codigo_snies_programa",
+          "Programa Académico": "nombre_programa",
+          "ID Nivel Académico": "id_nivel_academico",
+          "Nivel Académico": "nivel_academico",
+          "ID Nivel de Formación": "id_nivel_formacion",
+          "Nivel de Formación": "nivel_formacion",
+          "ID Metodología": "id_metodologia",
+          "Metodología": "metodologia",
+          "ID Área": "id_area_conocimiento",
+          "Área de Conocimiento": "area_conocimiento",
+          "Id_Nucleo": "id_nucleo",
+          "Núcleo Básico del Conocimiento (NBC)": "nucleo_conocimiento",
+          "Código del \nDepartamento\n(Programa)": "codigo_depto_programa",
+          "Departamento de oferta del programa": "depto_programa",
+          "Código del \nMunicipio\n(Programa)": "codigo_mcpio_programa",
+          "Municipio de oferta del programa": "mcpio_programa",
+          "ID Sexo": "id_genero",
+          "Sexo": "genero",
+          "Año*": "anio_proceso",
+          "Semestre": "semestre",
+          "Graduados": "graduados"
+        },
+        "unmapped_raw_columns": [],
+        "note": "33 de 33 columnas mapeadas via Cross-Bright"
+      },
+      "graduados_2016": {
+        "status": "OK",
+        "columns_in_file": [
+          "Código de \nla Institución",
+          "IES PADRE",
+          "Institución de Educación Superior (IES)",
+          "Principal\n o\nSeccional",
+          "ID Sector IES",
+          "Sector IES",
+          "ID Caracter",
+          "Caracter IES",
+          "Código del \ndepartamento\n(IES)",
+          "Departamento de \ndomicilio de la IES",
+          "Código del \nMunicipio\n(IES)",
+          "Municipio de\ndomicilio de la IES",
+          "Código \nSNIES del\nprograma",
+          "Programa Académico",
+          "ID Nivel Académico",
+          "Nivel Académico",
+          "ID Nivel de Formación",
+          "Nivel de Formación",
+          "ID Metodología",
+          "Metodología",
+          "ID Área",
+          "Área de Conocimiento",
+          "Id_Nucleo",
+          "Núcleo Básico del Conocimiento (NBC)",
+          "Código del \nDepartamento\n(Programa)",
+          "Departamento de oferta del programa",
+          "Código del \nMunicipio\n(Programa)",
+          "Municipio de oferta del programa",
+          "ID Sexo",
+          "Sexo",
+          "Año*",
+          "Semestre",
+          "Graduados"
+        ],
+        "mapped_variants": {
+          "Código de \nla Institución": "codigo_institucion",
+          "IES PADRE": "ies_padre",
+          "Institución de Educación Superior (IES)": "nombre_institucion",
+          "Principal\n o\nSeccional": "principal_o_seccional",
+          "ID Sector IES": "id_sector",
+          "Sector IES": "sector_ies",
+          "ID Caracter": "id_caracter",
+          "Caracter IES": "caracter_ies",
+          "Código del \ndepartamento\n(IES)": "codigo_depto_ies",
+          "Departamento de \ndomicilio de la IES": "depto_ies",
+          "Código del \nMunicipio\n(IES)": "codigo_mcpio_ies",
+          "Municipio de\ndomicilio de la IES": "mcpio_ies",
+          "Código \nSNIES del\nprograma": "codigo_snies_programa",
+          "Programa Académico": "nombre_programa",
+          "ID Nivel Académico": "id_nivel_academico",
+          "Nivel Académico": "nivel_academico",
+          "ID Nivel de Formación": "id_nivel_formacion",
+          "Nivel de Formación": "nivel_formacion",
+          "ID Metodología": "id_metodologia",
+          "Metodología": "metodologia",
+          "ID Área": "id_area_conocimiento",
+          "Área de Conocimiento": "area_conocimiento",
+          "Id_Nucleo": "id_nucleo",
+          "Núcleo Básico del Conocimiento (NBC)": "nucleo_conocimiento",
+          "Código del \nDepartamento\n(Programa)": "codigo_depto_programa",
+          "Departamento de oferta del programa": "depto_programa",
+          "Código del \nMunicipio\n(Programa)": "codigo_mcpio_programa",
+          "Municipio de oferta del programa": "mcpio_programa",
+          "ID Sexo": "id_genero",
+          "Sexo": "genero",
+          "Año*": "anio_proceso",
+          "Semestre": "semestre",
+          "Graduados": "graduados"
+        },
+        "unmapped_raw_columns": [],
+        "note": "33 de 33 columnas mapeadas via Cross-Bright"
+      },
+      "graduados_2017": {
+        "status": "OK",
+        "columns_in_file": [
+          "Código de \nla Institución",
+          "IES PADRE",
+          "Institución de Educación Superior (IES)",
+          "Principal\n o\nSeccional",
+          "ID Sector IES",
+          "Sector IES",
+          "ID Caracter",
+          "Caracter IES",
+          "Código del \ndepartamento\n(IES)",
+          "Departamento de \ndomicilio de la IES",
+          "Código del \nMunicipio\n(IES)",
+          "Municipio de\ndomicilio de la IES",
+          "Código \nSNIES del\nprograma",
+          "Programa Académico",
+          "ID Nivel Académico",
+          "Nivel Académico",
+          "ID Nivel de Formación",
+          "Nivel de Formación",
+          "ID Metodología",
+          "Metodología",
+          "ID Área",
+          "Área de Conocimiento",
+          "Id_Nucleo",
+          "Núcleo Básico del Conocimiento (NBC)",
+          "Código del \nDepartamento\n(Programa)",
+          "Departamento de oferta del programa",
+          "Código del \nMunicipio\n(Programa)",
+          "Municipio de oferta del programa",
+          "ID Sexo",
+          "Sexo",
+          "Año*",
+          "Semestre",
+          "Graduados"
+        ],
+        "mapped_variants": {
+          "Código de \nla Institución": "codigo_institucion",
+          "IES PADRE": "ies_padre",
+          "Institución de Educación Superior (IES)": "nombre_institucion",
+          "Principal\n o\nSeccional": "principal_o_seccional",
+          "ID Sector IES": "id_sector",
+          "Sector IES": "sector_ies",
+          "ID Caracter": "id_caracter",
+          "Caracter IES": "caracter_ies",
+          "Código del \ndepartamento\n(IES)": "codigo_depto_ies",
+          "Departamento de \ndomicilio de la IES": "depto_ies",
+          "Código del \nMunicipio\n(IES)": "codigo_mcpio_ies",
+          "Municipio de\ndomicilio de la IES": "mcpio_ies",
+          "Código \nSNIES del\nprograma": "codigo_snies_programa",
+          "Programa Académico": "nombre_programa",
+          "ID Nivel Académico": "id_nivel_academico",
+          "Nivel Académico": "nivel_academico",
+          "ID Nivel de Formación": "id_nivel_formacion",
+          "Nivel de Formación": "nivel_formacion",
+          "ID Metodología": "id_metodologia",
+          "Metodología": "metodologia",
+          "ID Área": "id_area_conocimiento",
+          "Área de Conocimiento": "area_conocimiento",
+          "Id_Nucleo": "id_nucleo",
+          "Núcleo Básico del Conocimiento (NBC)": "nucleo_conocimiento",
+          "Código del \nDepartamento\n(Programa)": "codigo_depto_programa",
+          "Departamento de oferta del programa": "depto_programa",
+          "Código del \nMunicipio\n(Programa)": "codigo_mcpio_programa",
+          "Municipio de oferta del programa": "mcpio_programa",
+          "ID Sexo": "id_genero",
+          "Sexo": "genero",
+          "Año*": "anio_proceso",
+          "Semestre": "semestre",
+          "Graduados": "graduados"
+        },
+        "unmapped_raw_columns": [],
+        "note": "33 de 33 columnas mapeadas via Cross-Bright"
+      },
+      "graduados_2018": {
+        "status": "OK",
+        "columns_in_file": [
+          "Código de la Institución",
+          "IES_PADRE",
+          "Institución de Educación Superior (IES)",
+          "Principal o Seccional",
+          "ID Sector IES",
+          "Sector IES",
+          "ID Caracter",
+          "Caracter IES",
+          "Código del departamento (IES)",
+          "Departamento de domicilio de la IES",
+          "Código del municipio",
+          "Municipio de domicilio de la IES",
+          "Código SNIES del programa",
+          "Programa Académico",
+          "ID Nivel Académico",
+          "Nivel Académico",
+          "ID Nivel de Formación",
+          "Nivel de Formación",
+          "ID Metodología",
+          "Metodología",
+          "ID Área",
+          "Área de Conocimiento",
+          "ID Núcleo",
+          "Núcleo Básico del Conocimiento (NBC)",
+          "Código del Departamento (Programa)",
+          "Departamento de Oferta del Programa",
+          "Código del Municipio (Programa)",
+          "Municipio de Oferta del Programa",
+          "ID Sexo",
+          "Sexo",
+          "Año",
+          "Semestre",
+          "Graduados"
+        ],
+        "mapped_variants": {
+          "Código de la Institución": "codigo_institucion",
+          "IES_PADRE": "ies_padre",
+          "Institución de Educación Superior (IES)": "nombre_institucion",
+          "Principal o Seccional": "principal_o_seccional",
+          "ID Sector IES": "id_sector",
+          "Sector IES": "sector_ies",
+          "ID Caracter": "id_caracter",
+          "Caracter IES": "caracter_ies",
+          "Código del departamento (IES)": "codigo_depto_ies",
+          "Departamento de domicilio de la IES": "depto_ies",
+          "Código del municipio": "codigo_del_municipio",
+          "Municipio de domicilio de la IES": "mcpio_ies",
+          "Código SNIES del programa": "codigo_snies_programa",
+          "Programa Académico": "nombre_programa",
+          "ID Nivel Académico": "id_nivel_academico",
+          "Nivel Académico": "nivel_academico",
+          "ID Nivel de Formación": "id_nivel_formacion",
+          "Nivel de Formación": "nivel_formacion",
+          "ID Metodología": "id_metodologia",
+          "Metodología": "metodologia",
+          "ID Área": "id_area_conocimiento",
+          "Área de Conocimiento": "area_conocimiento",
+          "ID Núcleo": "id_nucleo",
+          "Núcleo Básico del Conocimiento (NBC)": "nucleo_conocimiento",
+          "Código del Departamento (Programa)": "codigo_depto_programa",
+          "Departamento de Oferta del Programa": "depto_programa",
+          "Código del Municipio (Programa)": "codigo_mcpio_programa",
+          "Municipio de Oferta del Programa": "mcpio_programa",
+          "ID Sexo": "id_genero",
+          "Sexo": "genero",
+          "Año": "anio_proceso",
+          "Semestre": "semestre",
+          "Graduados": "graduados"
+        },
+        "unmapped_raw_columns": [],
+        "note": "33 de 33 columnas mapeadas via Cross-Bright"
+      },
+      "graduados_2019": {
+        "status": "OK",
+        "columns_in_file": [
+          "CÓDIGO DE LA INSTITUCIÓN",
+          "IES_PADRE",
+          "INSTITUCIÓN DE EDUCACIÓN SUPERIOR (IES)",
+          "PRINCIPAL O SECCIONAL",
+          "ID SECTOR IES",
+          "SECTOR IES",
+          "ID CARACTER",
+          "CARACTER IES",
+          "CÓDIGO DEL DEPARTAMENTO (IES)",
+          "DEPARTAMENTO DE DOMICILIO DE LA IES",
+          "CÓDIGO DEL MUNICIPIO",
+          "MUNICIPIO DE DOMICILIO DE LA IES",
+          "CÓDIGO SNIES DEL PROGRAMA",
+          "PROGRAMA ACADÉMICO",
+          "ID NIVEL ACADÉMICO",
+          "NIVEL ACADÉMICO",
+          "ID NIVEL DE FORMACIÓN",
+          "NIVEL DE FORMACIÓN",
+          "ID METODOLOGÍA",
+          "METODOLOGÍA",
+          "ID ÁREA",
+          "ÁREA DE CONOCIMIENTO",
+          "ID NÚCLEO",
+          "NÚCLEO BÁSICO DEL CONOCIMIENTO (NBC)",
+          "ID CINE CAMPO AMPLIO",
+          "DESC CINE CAMPO AMPLIO",
+          "ID CINE CAMPO ESPECIFICO",
+          "DESC CINE CAMPO ESPECIFICO",
+          "ID CINE CODIGO DETALLADO",
+          "DESC CINE CODIGO DETALLADO",
+          "CÓDIGO DEL DEPARTAMENTO (PROGRAMA)",
+          "DEPARTAMENTO DE OFERTA DEL PROGRAMA",
+          "CÓDIGO DEL MUNICIPIO (PROGRAMA)",
+          "MUNICIPIO DE OFERTA DEL PROGRAMA",
+          "ID SEXO",
+          "SEXO",
+          "AÑO",
+          "SEMESTRE",
+          "GRADUADOS"
+        ],
+        "mapped_variants": {
+          "CÓDIGO DE LA INSTITUCIÓN": "codigo_institucion",
+          "IES_PADRE": "ies_padre",
+          "INSTITUCIÓN DE EDUCACIÓN SUPERIOR (IES)": "nombre_institucion",
+          "PRINCIPAL O SECCIONAL": "principal_o_seccional",
+          "ID SECTOR IES": "id_sector",
+          "SECTOR IES": "sector_ies",
+          "ID CARACTER": "id_caracter",
+          "CARACTER IES": "caracter_ies",
+          "CÓDIGO DEL DEPARTAMENTO (IES)": "codigo_depto_ies",
+          "DEPARTAMENTO DE DOMICILIO DE LA IES": "depto_ies",
+          "CÓDIGO DEL MUNICIPIO": "codigo_del_municipio",
+          "MUNICIPIO DE DOMICILIO DE LA IES": "mcpio_ies",
+          "CÓDIGO SNIES DEL PROGRAMA": "codigo_snies_programa",
+          "PROGRAMA ACADÉMICO": "nombre_programa",
+          "ID NIVEL ACADÉMICO": "id_nivel_academico",
+          "NIVEL ACADÉMICO": "nivel_academico",
+          "ID NIVEL DE FORMACIÓN": "id_nivel_formacion",
+          "NIVEL DE FORMACIÓN": "nivel_formacion",
+          "ID METODOLOGÍA": "id_metodologia",
+          "METODOLOGÍA": "metodologia",
+          "ID ÁREA": "id_area_conocimiento",
+          "ÁREA DE CONOCIMIENTO": "area_conocimiento",
+          "ID NÚCLEO": "id_nucleo",
+          "NÚCLEO BÁSICO DEL CONOCIMIENTO (NBC)": "nucleo_conocimiento",
+          "ID CINE CAMPO AMPLIO": "id_cine_campo_amplio",
+          "DESC CINE CAMPO AMPLIO": "desc_cine_campo_amplio",
+          "ID CINE CAMPO ESPECIFICO": "id_cine_campo_especifico",
+          "DESC CINE CAMPO ESPECIFICO": "desc_cine_campo_especifico",
+          "ID CINE CODIGO DETALLADO": "id_cine_campo_detallado",
+          "DESC CINE CODIGO DETALLADO": "desc_cine_campo_detallado",
+          "CÓDIGO DEL DEPARTAMENTO (PROGRAMA)": "codigo_depto_programa",
+          "DEPARTAMENTO DE OFERTA DEL PROGRAMA": "depto_programa",
+          "CÓDIGO DEL MUNICIPIO (PROGRAMA)": "codigo_mcpio_programa",
+          "MUNICIPIO DE OFERTA DEL PROGRAMA": "mcpio_programa",
+          "ID SEXO": "id_genero",
+          "SEXO": "genero",
+          "AÑO": "anio_proceso",
+          "SEMESTRE": "semestre",
+          "GRADUADOS": "graduados"
+        },
+        "unmapped_raw_columns": [],
+        "note": "39 de 39 columnas mapeadas via Cross-Bright"
+      },
+      "graduados_2020": {
+        "status": "OK",
+        "columns_in_file": [
+          "CÓDIGO DE LA INSTITUCIÓN",
+          "IES_PADRE",
+          "INSTITUCIÓN DE EDUCACIÓN SUPERIOR (IES)",
+          "PRINCIPAL O SECCIONAL",
+          "ID SECTOR IES",
+          "SECTOR IES",
+          "ID CARACTER",
+          "CARACTER IES",
+          "CÓDIGO DEL DEPARTAMENTO (IES)",
+          "DEPARTAMENTO DE DOMICILIO DE LA IES",
+          "CÓDIGO DEL MUNICIPIO (IES)",
+          "MUNICIPIO DE DOMICILIO DE LA IES",
+          "CÓDIGO SNIES DEL PROGRAMA",
+          "PROGRAMA ACADÉMICO",
+          "ID NIVEL ACADÉMICO",
+          "NIVEL ACADÉMICO",
+          "ID NIVEL DE FORMACIÓN",
+          "NIVEL DE FORMACIÓN",
+          "ID METODOLOGÍA",
+          "METODOLOGÍA",
+          "ID ÁREA",
+          "ÁREA DE CONOCIMIENTO",
+          "ID NÚCLEO",
+          "NÚCLEO BÁSICO DEL CONOCIMIENTO (NBC)",
+          "ID CINE CAMPO AMPLIO\tDESC",
+          "CINE CAMPO AMPLIO",
+          "ID CINE CAMPO ESPECIFICO",
+          "DESC CINE CAMPO ESPECIFICO",
+          "ID CINE CODIGO DETALLADO",
+          "DESC CINE CODIGO DETALLADO",
+          "CÓDIGO DEL DEPARTAMENTO (PROGRAMA)",
+          "DEPARTAMENTO DE OFERTA DEL PROGRAMA",
+          "CÓDIGO DEL MUNICIPIO (PROGRAMA)",
+          "MUNICIPIO DE OFERTA DEL PROGRAMA",
+          "ID SEXO",
+          "SEXO",
+          "AÑO",
+          "SEMESTRE",
+          "GRADUADOS"
+        ],
+        "mapped_variants": {
+          "CÓDIGO DE LA INSTITUCIÓN": "codigo_institucion",
+          "IES_PADRE": "ies_padre",
+          "INSTITUCIÓN DE EDUCACIÓN SUPERIOR (IES)": "nombre_institucion",
+          "PRINCIPAL O SECCIONAL": "principal_o_seccional",
+          "ID SECTOR IES": "id_sector",
+          "SECTOR IES": "sector_ies",
+          "ID CARACTER": "id_caracter",
+          "CARACTER IES": "caracter_ies",
+          "CÓDIGO DEL DEPARTAMENTO (IES)": "codigo_depto_ies",
+          "DEPARTAMENTO DE DOMICILIO DE LA IES": "depto_ies",
+          "CÓDIGO DEL MUNICIPIO (IES)": "codigo_mcpio_ies",
+          "MUNICIPIO DE DOMICILIO DE LA IES": "mcpio_ies",
+          "CÓDIGO SNIES DEL PROGRAMA": "codigo_snies_programa",
+          "PROGRAMA ACADÉMICO": "nombre_programa",
+          "ID NIVEL ACADÉMICO": "id_nivel_academico",
+          "NIVEL ACADÉMICO": "nivel_academico",
+          "ID NIVEL DE FORMACIÓN": "id_nivel_formacion",
+          "NIVEL DE FORMACIÓN": "nivel_formacion",
+          "ID METODOLOGÍA": "id_metodologia",
+          "METODOLOGÍA": "metodologia",
+          "ID ÁREA": "id_area_conocimiento",
+          "ÁREA DE CONOCIMIENTO": "area_conocimiento",
+          "ID NÚCLEO": "id_nucleo",
+          "NÚCLEO BÁSICO DEL CONOCIMIENTO (NBC)": "nucleo_conocimiento",
+          "ID CINE CAMPO AMPLIO\tDESC": "id_cine_campo_amplio",
+          "CINE CAMPO AMPLIO": "desc_cine_campo_amplio",
+          "ID CINE CAMPO ESPECIFICO": "id_cine_campo_especifico",
+          "DESC CINE CAMPO ESPECIFICO": "desc_cine_campo_especifico",
+          "ID CINE CODIGO DETALLADO": "id_cine_campo_detallado",
+          "DESC CINE CODIGO DETALLADO": "desc_cine_campo_detallado",
+          "CÓDIGO DEL DEPARTAMENTO (PROGRAMA)": "codigo_depto_programa",
+          "DEPARTAMENTO DE OFERTA DEL PROGRAMA": "depto_programa",
+          "CÓDIGO DEL MUNICIPIO (PROGRAMA)": "codigo_mcpio_programa",
+          "MUNICIPIO DE OFERTA DEL PROGRAMA": "mcpio_programa",
+          "ID SEXO": "id_genero",
+          "SEXO": "genero",
+          "AÑO": "anio_proceso",
+          "SEMESTRE": "semestre",
+          "GRADUADOS": "graduados"
+        },
+        "unmapped_raw_columns": [],
+        "note": "39 de 39 columnas mapeadas via Cross-Bright"
+      },
+      "graduados_2021": {
+        "status": "OK",
+        "columns_in_file": [
+          "CÓDIGO DE LA INSTITUCIÓN",
+          "IES_PADRE",
+          "INSTITUCIÓN DE EDUCACIÓN SUPERIOR (IES)",
+          "PRINCIPAL O SECCIONAL",
+          "ID SECTOR IES",
+          "SECTOR IES",
+          "IES ACREDITADA",
+          "ID CARACTER",
+          "CARACTER IES",
+          "CÓDIGO DEL DEPARTAMENTO (IES)",
+          "DEPARTAMENTO DE DOMICILIO DE LA IES",
+          "CÓDIGO DEL MUNICIPIO (IES)",
+          "MUNICIPIO DE DOMICILIO DE LA IES",
+          "CÓDIGO SNIES DEL PROGRAMA",
+          "PROGRAMA ACADÉMICO",
+          "PROGRAMA ACREDITADO",
+          "ID NIVEL ACADÉMICO",
+          "NIVEL ACADÉMICO",
+          "ID NIVEL DE FORMACIÓN",
+          "NIVEL DE FORMACIÓN",
+          "ID METODOLOGÍA",
+          "METODOLOGÍA",
+          "ID ÁREA DE CONOCIMIENTO",
+          "ÁREA DE CONOCIMIENTO",
+          "ID NÚCLEO",
+          "NÚCLEO BÁSICO DEL CONOCIMIENTO (NBC)",
+          "ID CINE CAMPO AMPLIO",
+          "DESC CINE CAMPO AMPLIO",
+          "ID CINE CAMPO ESPECIFICO",
+          "DESC CINE CAMPO ESPECIFICO",
+          "ID CINE CODIGO DETALLADO",
+          "DESC CINE CODIGO DETALLADO",
+          "CÓDIGO DEL DEPARTAMENTO (PROGRAMA)",
+          "DEPARTAMENTO DE OFERTA DEL PROGRAMA",
+          "CÓDIGO DEL MUNICIPIO (PROGRAMA)",
+          "MUNICIPIO DE OFERTA DEL PROGRAMA",
+          "ID SEXO",
+          "SEXO",
+          "AÑO",
+          "SEMESTRE",
+          "GRADUADOS"
+        ],
+        "mapped_variants": {
+          "CÓDIGO DE LA INSTITUCIÓN": "codigo_institucion",
+          "IES_PADRE": "ies_padre",
+          "INSTITUCIÓN DE EDUCACIÓN SUPERIOR (IES)": "nombre_institucion",
+          "PRINCIPAL O SECCIONAL": "principal_o_seccional",
+          "ID SECTOR IES": "id_sector",
+          "SECTOR IES": "sector_ies",
+          "IES ACREDITADA": "ies_acreditada",
+          "ID CARACTER": "id_caracter",
+          "CARACTER IES": "caracter_ies",
+          "CÓDIGO DEL DEPARTAMENTO (IES)": "codigo_depto_ies",
+          "DEPARTAMENTO DE DOMICILIO DE LA IES": "depto_ies",
+          "CÓDIGO DEL MUNICIPIO (IES)": "codigo_mcpio_ies",
+          "MUNICIPIO DE DOMICILIO DE LA IES": "mcpio_ies",
+          "CÓDIGO SNIES DEL PROGRAMA": "codigo_snies_programa",
+          "PROGRAMA ACADÉMICO": "nombre_programa",
+          "PROGRAMA ACREDITADO": "programa_acreditado",
+          "ID NIVEL ACADÉMICO": "id_nivel_academico",
+          "NIVEL ACADÉMICO": "nivel_academico",
+          "ID NIVEL DE FORMACIÓN": "id_nivel_formacion",
+          "NIVEL DE FORMACIÓN": "nivel_formacion",
+          "ID METODOLOGÍA": "id_metodologia",
+          "METODOLOGÍA": "metodologia",
+          "ID ÁREA DE CONOCIMIENTO": "id_area_conocimiento",
+          "ÁREA DE CONOCIMIENTO": "area_conocimiento",
+          "ID NÚCLEO": "id_nucleo",
+          "NÚCLEO BÁSICO DEL CONOCIMIENTO (NBC)": "nucleo_conocimiento",
+          "ID CINE CAMPO AMPLIO": "id_cine_campo_amplio",
+          "DESC CINE CAMPO AMPLIO": "desc_cine_campo_amplio",
+          "ID CINE CAMPO ESPECIFICO": "id_cine_campo_especifico",
+          "DESC CINE CAMPO ESPECIFICO": "desc_cine_campo_especifico",
+          "ID CINE CODIGO DETALLADO": "id_cine_campo_detallado",
+          "DESC CINE CODIGO DETALLADO": "desc_cine_campo_detallado",
+          "CÓDIGO DEL DEPARTAMENTO (PROGRAMA)": "codigo_depto_programa",
+          "DEPARTAMENTO DE OFERTA DEL PROGRAMA": "depto_programa",
+          "CÓDIGO DEL MUNICIPIO (PROGRAMA)": "codigo_mcpio_programa",
+          "MUNICIPIO DE OFERTA DEL PROGRAMA": "mcpio_programa",
+          "ID SEXO": "id_genero",
+          "SEXO": "genero",
+          "AÑO": "anio_proceso",
+          "SEMESTRE": "semestre",
+          "GRADUADOS": "graduados"
+        },
+        "unmapped_raw_columns": [],
+        "note": "41 de 41 columnas mapeadas via Cross-Bright"
+      },
+      "graduados_2022": {
+        "status": "OK",
+        "columns_in_file": [
+          "CÓDIGO DE LA INSTITUCIÓN",
+          "IES_PADRE",
+          "INSTITUCIÓN DE EDUCACIÓN SUPERIOR (IES)",
+          "PRINCIPAL O SECCIONAL",
+          "ID SECTOR IES",
+          "SECTOR IES",
+          "IES ACREDITADA",
+          "ID CARACTER",
+          "CARACTER IES",
+          "CÓDIGO DEL DEPARTAMENTO (IES)",
+          "DEPARTAMENTO DE DOMICILIO DE LA IES",
+          "CÓDIGO DEL MUNICIPIO (IES)",
+          "MUNICIPIO DE DOMICILIO DE LA IES",
+          "CÓDIGO SNIES DEL PROGRAMA",
+          "PROGRAMA ACADÉMICO",
+          "PROGRAMA ACREDITADO",
+          "ID NIVEL ACADÉMICO",
+          "NIVEL ACADÉMICO",
+          "ID NIVEL DE FORMACIÓN",
+          "NIVEL DE FORMACIÓN",
+          "ID METODOLOGÍA",
+          "METODOLOGÍA",
+          "ID ÁREA",
+          "ÁREA DE CONOCIMIENTO",
+          "ID NÚCLEO",
+          "NÚCLEO BÁSICO DEL CONOCIMIENTO (NBC)",
+          "ID CINE CAMPO AMPLIO\tDESC",
+          "CINE CAMPO AMPLIO",
+          "ID CINE CAMPO ESPECIFICO",
+          "DESC CINE CAMPO ESPECIFICO",
+          "ID CINE CODIGO DETALLADO",
+          "DESC CINE CODIGO DETALLADO",
+          "CÓDIGO DEL DEPARTAMENTO (PROGRAMA)",
+          "DEPARTAMENTO DE OFERTA DEL PROGRAMA",
+          "CDIGO DEL MUNICIPIO (PROGRAMA)",
+          "MUNICIPIO DE OFERTA DEL PROGRAMA",
+          "ID SEXO",
+          "SEXO",
+          "AÑO",
+          "SEMESTRE",
+          "GRADUADOS"
+        ],
+        "mapped_variants": {
+          "CÓDIGO DE LA INSTITUCIÓN": "codigo_institucion",
+          "IES_PADRE": "ies_padre",
+          "INSTITUCIÓN DE EDUCACIÓN SUPERIOR (IES)": "nombre_institucion",
+          "PRINCIPAL O SECCIONAL": "principal_o_seccional",
+          "ID SECTOR IES": "id_sector",
+          "SECTOR IES": "sector_ies",
+          "IES ACREDITADA": "ies_acreditada",
+          "ID CARACTER": "id_caracter",
+          "CARACTER IES": "caracter_ies",
+          "CÓDIGO DEL DEPARTAMENTO (IES)": "codigo_depto_ies",
+          "DEPARTAMENTO DE DOMICILIO DE LA IES": "depto_ies",
+          "CÓDIGO DEL MUNICIPIO (IES)": "codigo_mcpio_ies",
+          "MUNICIPIO DE DOMICILIO DE LA IES": "mcpio_ies",
+          "CÓDIGO SNIES DEL PROGRAMA": "codigo_snies_programa",
+          "PROGRAMA ACADÉMICO": "nombre_programa",
+          "PROGRAMA ACREDITADO": "programa_acreditado",
+          "ID NIVEL ACADÉMICO": "id_nivel_academico",
+          "NIVEL ACADÉMICO": "nivel_academico",
+          "ID NIVEL DE FORMACIÓN": "id_nivel_formacion",
+          "NIVEL DE FORMACIÓN": "nivel_formacion",
+          "ID METODOLOGÍA": "id_metodologia",
+          "METODOLOGÍA": "metodologia",
+          "ID ÁREA": "id_area_conocimiento",
+          "ÁREA DE CONOCIMIENTO": "area_conocimiento",
+          "ID NÚCLEO": "id_nucleo",
+          "NÚCLEO BÁSICO DEL CONOCIMIENTO (NBC)": "nucleo_conocimiento",
+          "ID CINE CAMPO AMPLIO\tDESC": "id_cine_campo_amplio",
+          "CINE CAMPO AMPLIO": "desc_cine_campo_amplio",
+          "ID CINE CAMPO ESPECIFICO": "id_cine_campo_especifico",
+          "DESC CINE CAMPO ESPECIFICO": "desc_cine_campo_especifico",
+          "ID CINE CODIGO DETALLADO": "id_cine_campo_detallado",
+          "DESC CINE CODIGO DETALLADO": "desc_cine_campo_detallado",
+          "CÓDIGO DEL DEPARTAMENTO (PROGRAMA)": "codigo_depto_programa",
+          "DEPARTAMENTO DE OFERTA DEL PROGRAMA": "depto_programa",
+          "CDIGO DEL MUNICIPIO (PROGRAMA)": "codigo_mcpio_programa",
+          "MUNICIPIO DE OFERTA DEL PROGRAMA": "mcpio_programa",
+          "ID SEXO": "id_genero",
+          "SEXO": "genero",
+          "AÑO": "anio_proceso",
+          "SEMESTRE": "semestre",
+          "GRADUADOS": "graduados"
+        },
+        "unmapped_raw_columns": [],
+        "note": "41 de 41 columnas mapeadas via Cross-Bright"
+      },
+      "graduados_2023": {
+        "status": "OK",
+        "columns_in_file": [
+          "CÓDIGO DE LA INSTITUCIÓN",
+          "IES PADRE",
+          "INSTITUCIÓN DE EDUCACIÓN SUPERIOR (IES)",
+          "TIPO IES",
+          "ID SECTOR IES",
+          "SECTOR IES",
+          "ID CARÁCTER IES",
+          "CARÁCTER IES",
+          "CÓDIGO DEL DEPARTAMENTO (IES)",
+          "DEPARTAMENTO DE DOMICILIO DE LA IES",
+          "CÓDIGO DEL MUNICIPIO IES",
+          "MUNICIPIO DE DOMICILIO DE LA IES",
+          "IES ACREDITADA",
+          "CÓDIGO SNIES DEL PROGRAMA",
+          "PROGRAMA ACADÉMICO",
+          "PROGRAMA ACREDITADO",
+          "ID NIVEL ACADÉMICO",
+          "NIVEL ACADÉMICO",
+          "ID NIVEL DE FORMACIÓN",
+          "NIVEL DE FORMACIÓN",
+          "ID MODALIDAD",
+          "MODALIDAD",
+          "ID ÁREA",
+          "ÁREA DE CONOCIMIENTO",
+          "ID NÚCLEO",
+          "NÚCLEO BÁSICO DEL CONOCIMIENTO (NBC)",
+          "ID CINE CAMPO AMPLIO",
+          "DESC CINE CAMPO AMPLIO",
+          "ID CINE CAMPO ESPECIFICO",
+          "DESC CINE CAMPO ESPECIFICO",
+          "ID CINE CAMPO DETALLADO",
+          "DESC CINE CAMPO DETALLADO",
+          "CÓDIGO DEL DEPARTAMENTO (PROGRAMA)",
+          "DEPARTAMENTO DE OFERTA DEL PROGRAMA",
+          "CÓDIGO DEL MUNICIPIO (PROGRAMA)",
+          "MUNICIPIO DE OFERTA DEL PROGRAMA",
+          "ID SEXO",
+          "SEXO",
+          "AÑO",
+          "SEMESTRE",
+          "GRADUADOS"
+        ],
+        "mapped_variants": {
+          "CÓDIGO DE LA INSTITUCIÓN": "codigo_institucion",
+          "IES PADRE": "ies_padre",
+          "INSTITUCIÓN DE EDUCACIÓN SUPERIOR (IES)": "nombre_institucion",
+          "TIPO IES": "tipo_ies",
+          "ID SECTOR IES": "id_sector",
+          "SECTOR IES": "sector_ies",
+          "ID CARÁCTER IES": "id_caracter",
+          "CARÁCTER IES": "caracter_ies",
+          "CÓDIGO DEL DEPARTAMENTO (IES)": "codigo_depto_ies",
+          "DEPARTAMENTO DE DOMICILIO DE LA IES": "depto_ies",
+          "CÓDIGO DEL MUNICIPIO IES": "codigo_mcpio_ies",
+          "MUNICIPIO DE DOMICILIO DE LA IES": "mcpio_ies",
+          "IES ACREDITADA": "ies_acreditada",
+          "CÓDIGO SNIES DEL PROGRAMA": "codigo_snies_programa",
+          "PROGRAMA ACADÉMICO": "nombre_programa",
+          "PROGRAMA ACREDITADO": "programa_acreditado",
+          "ID NIVEL ACADÉMICO": "id_nivel_academico",
+          "NIVEL ACADÉMICO": "nivel_academico",
+          "ID NIVEL DE FORMACIÓN": "id_nivel_formacion",
+          "NIVEL DE FORMACIÓN": "nivel_formacion",
+          "ID MODALIDAD": "id_modalidad",
+          "MODALIDAD": "modalidad",
+          "ID ÁREA": "id_area_conocimiento",
+          "ÁREA DE CONOCIMIENTO": "area_conocimiento",
+          "ID NÚCLEO": "id_nucleo",
+          "NÚCLEO BÁSICO DEL CONOCIMIENTO (NBC)": "nucleo_conocimiento",
+          "ID CINE CAMPO AMPLIO": "id_cine_campo_amplio",
+          "DESC CINE CAMPO AMPLIO": "desc_cine_campo_amplio",
+          "ID CINE CAMPO ESPECIFICO": "id_cine_campo_especifico",
+          "DESC CINE CAMPO ESPECIFICO": "desc_cine_campo_especifico",
+          "ID CINE CAMPO DETALLADO": "id_cine_campo_detallado",
+          "DESC CINE CAMPO DETALLADO": "desc_cine_campo_detallado",
+          "CÓDIGO DEL DEPARTAMENTO (PROGRAMA)": "codigo_depto_programa",
+          "DEPARTAMENTO DE OFERTA DEL PROGRAMA": "depto_programa",
+          "CÓDIGO DEL MUNICIPIO (PROGRAMA)": "codigo_mcpio_programa",
+          "MUNICIPIO DE OFERTA DEL PROGRAMA": "mcpio_programa",
+          "ID SEXO": "id_genero",
+          "SEXO": "genero",
+          "AÑO": "anio_proceso",
+          "SEMESTRE": "semestre",
+          "GRADUADOS": "graduados"
+        },
+        "unmapped_raw_columns": [],
+        "note": "41 de 41 columnas mapeadas via Cross-Bright"
+      },
+      "graduados_2024": {
+        "status": "OK",
+        "columns_in_file": [
+          "CÓDIGO DE LA INSTITUCIÓN",
+          "IES PADRE",
+          "INSTITUCIÓN DE EDUCACIÓN SUPERIOR (IES)",
+          "TIPO IES",
+          "ID SECTOR IES",
+          "SECTOR IES",
+          "ID CARÁCTER IES",
+          "CARÁCTER IES",
+          "CÓDIGO DEL DEPARTAMENTO (IES)",
+          "DEPARTAMENTO DE DOMICILIO DE LA IES",
+          "CÓDIGO DEL MUNICIPIO IES",
+          "MUNICIPIO DE DOMICILIO DE LA IES",
+          "IES ACREDITADA",
+          "CÓDIGO SNIES DEL PROGRAMA",
+          "PROGRAMA ACADÉMICO",
+          "PROGRAMA ACREDITADO",
+          "ID NIVEL ACADÉMICO",
+          "NIVEL ACADÉMICO",
+          "ID NIVEL DE FORMACIÓN",
+          "NIVEL DE FORMACIÓN",
+          "ID MODALIDAD",
+          "MODALIDAD",
+          "ID ÁREA",
+          "ÁREA DE CONOCIMIENTO",
+          "ID NÚCLEO",
+          "NÚCLEO BÁSICO DEL CONOCIMIENTO (NBC)",
+          "ID CINE CAMPO AMPLIO",
+          "DESC CINE CAMPO AMPLIO",
+          "ID CINE CAMPO ESPECIFICO",
+          "DESC CINE CAMPO ESPECIFICO",
+          "ID CINE CAMPO DETALLADO",
+          "DESC CINE CAMPO DETALLADO",
+          "CÓDIGO DEL DEPARTAMENTO (PROGRAMA)",
+          "DEPARTAMENTO DE OFERTA DEL PROGRAMA",
+          "CÓDIGO DEL MUNICIPIO (PROGRAMA)",
+          "MUNICIPIO DE OFERTA DEL PROGRAMA",
+          "ID SEXO",
+          "SEXO",
+          "AÑO",
+          "SEMESTRE",
+          "GRADUADOS"
+        ],
+        "mapped_variants": {
+          "CÓDIGO DE LA INSTITUCIÓN": "codigo_institucion",
+          "IES PADRE": "ies_padre",
+          "INSTITUCIÓN DE EDUCACIÓN SUPERIOR (IES)": "nombre_institucion",
+          "TIPO IES": "tipo_ies",
+          "ID SECTOR IES": "id_sector",
+          "SECTOR IES": "sector_ies",
+          "ID CARÁCTER IES": "id_caracter",
+          "CARÁCTER IES": "caracter_ies",
+          "CÓDIGO DEL DEPARTAMENTO (IES)": "codigo_depto_ies",
+          "DEPARTAMENTO DE DOMICILIO DE LA IES": "depto_ies",
+          "CÓDIGO DEL MUNICIPIO IES": "codigo_mcpio_ies",
+          "MUNICIPIO DE DOMICILIO DE LA IES": "mcpio_ies",
+          "IES ACREDITADA": "ies_acreditada",
+          "CÓDIGO SNIES DEL PROGRAMA": "codigo_snies_programa",
+          "PROGRAMA ACADÉMICO": "nombre_programa",
+          "PROGRAMA ACREDITADO": "programa_acreditado",
+          "ID NIVEL ACADÉMICO": "id_nivel_academico",
+          "NIVEL ACADÉMICO": "nivel_academico",
+          "ID NIVEL DE FORMACIÓN": "id_nivel_formacion",
+          "NIVEL DE FORMACIÓN": "nivel_formacion",
+          "ID MODALIDAD": "id_modalidad",
+          "MODALIDAD": "modalidad",
+          "ID ÁREA": "id_area_conocimiento",
+          "ÁREA DE CONOCIMIENTO": "area_conocimiento",
+          "ID NÚCLEO": "id_nucleo",
+          "NÚCLEO BÁSICO DEL CONOCIMIENTO (NBC)": "nucleo_conocimiento",
+          "ID CINE CAMPO AMPLIO": "id_cine_campo_amplio",
+          "DESC CINE CAMPO AMPLIO": "desc_cine_campo_amplio",
+          "ID CINE CAMPO ESPECIFICO": "id_cine_campo_especifico",
+          "DESC CINE CAMPO ESPECIFICO": "desc_cine_campo_especifico",
+          "ID CINE CAMPO DETALLADO": "id_cine_campo_detallado",
+          "DESC CINE CAMPO DETALLADO": "desc_cine_campo_detallado",
+          "CÓDIGO DEL DEPARTAMENTO (PROGRAMA)": "codigo_depto_programa",
+          "DEPARTAMENTO DE OFERTA DEL PROGRAMA": "depto_programa",
+          "CÓDIGO DEL MUNICIPIO (PROGRAMA)": "codigo_mcpio_programa",
+          "MUNICIPIO DE OFERTA DEL PROGRAMA": "mcpio_programa",
+          "ID SEXO": "id_genero",
+          "SEXO": "genero",
+          "AÑO": "anio_proceso",
+          "SEMESTRE": "semestre",
+          "GRADUADOS": "graduados"
+        },
+        "unmapped_raw_columns": [],
+        "note": "41 de 41 columnas mapeadas via Cross-Bright"
+      },
+      "matriculados_2015": {
+        "status": "OK",
+        "columns_in_file": [
+          "Código de \nla Institución",
+          "IES PADRE",
+          "Institución de Educación Superior (IES)",
+          "Principal\n o\nSeccional",
+          "Id_Sector",
+          "Sector IES",
+          "Id_Caracter",
+          "Caracter IES",
+          "Código del \ndepartamento\n(IES)",
+          "Departamento de \ndomicilio de la IES",
+          "Código del \nMunicipio\n(IES)",
+          "Municipio de\ndomicilio de la IES",
+          "Código \nSNIES del\nprograma",
+          "Programa Académico",
+          "Id_Nivel",
+          "Nivel Académico",
+          "Id_Nivel_Formacion",
+          "Nivel de Formación",
+          "Id_Metodologia",
+          "Metodología",
+          "Id_Area",
+          "Área de Conocimiento",
+          "Id_Nucleo",
+          "Núcleo Básico del Conocimiento (NBC)",
+          "Código del \nDepartamento\n(Programa)",
+          "Departamento de oferta del programa",
+          "Código del \nMunicipio\n(Programa)",
+          "Municipio de oferta del programa",
+          "Id Género",
+          "Género",
+          "Año",
+          "Semestre",
+          "Matriculados 2015"
+        ],
+        "mapped_variants": {
+          "Código de \nla Institución": "codigo_institucion",
+          "IES PADRE": "ies_padre",
+          "Institución de Educación Superior (IES)": "nombre_institucion",
+          "Principal\n o\nSeccional": "principal_o_seccional",
+          "Id_Sector": "id_sector",
+          "Sector IES": "sector_ies",
+          "Id_Caracter": "id_caracter",
+          "Caracter IES": "caracter_ies",
+          "Código del \ndepartamento\n(IES)": "codigo_depto_ies",
+          "Departamento de \ndomicilio de la IES": "depto_ies",
+          "Código del \nMunicipio\n(IES)": "codigo_mcpio_ies",
+          "Municipio de\ndomicilio de la IES": "mcpio_ies",
+          "Código \nSNIES del\nprograma": "codigo_snies_programa",
+          "Programa Académico": "nombre_programa",
+          "Id_Nivel": "id_nivel_academico",
+          "Nivel Académico": "nivel_academico",
+          "Id_Nivel_Formacion": "id_nivel_formacion",
+          "Nivel de Formación": "nivel_formacion",
+          "Id_Metodologia": "id_metodologia",
+          "Metodología": "metodologia",
+          "Id_Area": "id_area_conocimiento",
+          "Área de Conocimiento": "area_conocimiento",
+          "Id_Nucleo": "id_nucleo",
+          "Núcleo Básico del Conocimiento (NBC)": "nucleo_conocimiento",
+          "Código del \nDepartamento\n(Programa)": "codigo_depto_programa",
+          "Departamento de oferta del programa": "depto_programa",
+          "Código del \nMunicipio\n(Programa)": "codigo_mcpio_programa",
+          "Municipio de oferta del programa": "mcpio_programa",
+          "Id Género": "id_genero",
+          "Género": "genero",
+          "Año": "anio_proceso",
+          "Semestre": "semestre",
+          "Matriculados 2015": "matriculados"
+        },
+        "unmapped_raw_columns": [],
+        "note": "33 de 33 columnas mapeadas via Cross-Bright"
+      },
+      "matriculados_2016": {
+        "status": "OK",
+        "columns_in_file": [
+          "Código de \nla Institución",
+          "IES PADRE",
+          "Institución de Educación Superior (IES)",
+          "Principal\n o\nSeccional",
+          "ID Sector IES",
+          "Sector IES",
+          "ID Caracter",
+          "Caracter IES",
+          "Código del \ndepartamento\n(IES)",
+          "Departamento de \ndomicilio de la IES",
+          "Código del \nMunicipio\n(IES)",
+          "Municipio de\ndomicilio de la IES",
+          "Código \nSNIES del\nprograma",
+          "Programa Académico",
+          "ID Nivel Académico",
+          "Nivel Académico",
+          "ID Nivel de Formación",
+          "Nivel de Formación",
+          "ID Metodología",
+          "Metodología",
+          "ID Área",
+          "Área de Conocimiento",
+          "Id_Nucleo",
+          "Núcleo Básico del Conocimiento (NBC)",
+          "Código del \nDepartamento\n(Programa)",
+          "Departamento de oferta del programa",
+          "Código del \nMunicipio\n(Programa)",
+          "Municipio de oferta del programa",
+          "ID Sexo",
+          "Sexo",
+          "Año",
+          "Semestre",
+          "Matriculados 2016"
+        ],
+        "mapped_variants": {
+          "Código de \nla Institución": "codigo_institucion",
+          "IES PADRE": "ies_padre",
+          "Institución de Educación Superior (IES)": "nombre_institucion",
+          "Principal\n o\nSeccional": "principal_o_seccional",
+          "ID Sector IES": "id_sector",
+          "Sector IES": "sector_ies",
+          "ID Caracter": "id_caracter",
+          "Caracter IES": "caracter_ies",
+          "Código del \ndepartamento\n(IES)": "codigo_depto_ies",
+          "Departamento de \ndomicilio de la IES": "depto_ies",
+          "Código del \nMunicipio\n(IES)": "codigo_mcpio_ies",
+          "Municipio de\ndomicilio de la IES": "mcpio_ies",
+          "Código \nSNIES del\nprograma": "codigo_snies_programa",
+          "Programa Académico": "nombre_programa",
+          "ID Nivel Académico": "id_nivel_academico",
+          "Nivel Académico": "nivel_academico",
+          "ID Nivel de Formación": "id_nivel_formacion",
+          "Nivel de Formación": "nivel_formacion",
+          "ID Metodología": "id_metodologia",
+          "Metodología": "metodologia",
+          "ID Área": "id_area_conocimiento",
+          "Área de Conocimiento": "area_conocimiento",
+          "Id_Nucleo": "id_nucleo",
+          "Núcleo Básico del Conocimiento (NBC)": "nucleo_conocimiento",
+          "Código del \nDepartamento\n(Programa)": "codigo_depto_programa",
+          "Departamento de oferta del programa": "depto_programa",
+          "Código del \nMunicipio\n(Programa)": "codigo_mcpio_programa",
+          "Municipio de oferta del programa": "mcpio_programa",
+          "ID Sexo": "id_genero",
+          "Sexo": "genero",
+          "Año": "anio_proceso",
+          "Semestre": "semestre",
+          "Matriculados 2016": "matriculados"
+        },
+        "unmapped_raw_columns": [],
+        "note": "33 de 33 columnas mapeadas via Cross-Bright"
+      },
+      "matriculados_2017": {
+        "status": "OK",
+        "columns_in_file": [
+          "Código de \nla Institución",
+          "IES PADRE",
+          "Institución de Educación Superior (IES)",
+          "Principal\n o\nSeccional",
+          "ID Sector IES",
+          "Sector IES",
+          "ID Caracter",
+          "Caracter IES",
+          "Código del \ndepartamento\n(IES)",
+          "Departamento de \ndomicilio de la IES",
+          "Código del \nMunicipio\n(IES)",
+          "Municipio de\ndomicilio de la IES",
+          "Código \nSNIES del\nprograma",
+          "Programa Académico",
+          "ID Nivel Académico",
+          "Nivel Académico",
+          "ID Nivel de Formación",
+          "Nivel de Formación",
+          "ID Metodología",
+          "Metodología",
+          "ID Área",
+          "Área de Conocimiento",
+          "Id_Nucleo",
+          "Núcleo Básico del Conocimiento (NBC)",
+          "Código del \nDepartamento\n(Programa)",
+          "Departamento de oferta del programa",
+          "Código del \nMunicipio\n(Programa)",
+          "Municipio de oferta del programa",
+          "ID Sexo",
+          "Sexo",
+          "Año",
+          "Semestre",
+          "Matriculados 2017"
+        ],
+        "mapped_variants": {
+          "Código de \nla Institución": "codigo_institucion",
+          "IES PADRE": "ies_padre",
+          "Institución de Educación Superior (IES)": "nombre_institucion",
+          "Principal\n o\nSeccional": "principal_o_seccional",
+          "ID Sector IES": "id_sector",
+          "Sector IES": "sector_ies",
+          "ID Caracter": "id_caracter",
+          "Caracter IES": "caracter_ies",
+          "Código del \ndepartamento\n(IES)": "codigo_depto_ies",
+          "Departamento de \ndomicilio de la IES": "depto_ies",
+          "Código del \nMunicipio\n(IES)": "codigo_mcpio_ies",
+          "Municipio de\ndomicilio de la IES": "mcpio_ies",
+          "Código \nSNIES del\nprograma": "codigo_snies_programa",
+          "Programa Académico": "nombre_programa",
+          "ID Nivel Académico": "id_nivel_academico",
+          "Nivel Académico": "nivel_academico",
+          "ID Nivel de Formación": "id_nivel_formacion",
+          "Nivel de Formación": "nivel_formacion",
+          "ID Metodología": "id_metodologia",
+          "Metodología": "metodologia",
+          "ID Área": "id_area_conocimiento",
+          "Área de Conocimiento": "area_conocimiento",
+          "Id_Nucleo": "id_nucleo",
+          "Núcleo Básico del Conocimiento (NBC)": "nucleo_conocimiento",
+          "Código del \nDepartamento\n(Programa)": "codigo_depto_programa",
+          "Departamento de oferta del programa": "depto_programa",
+          "Código del \nMunicipio\n(Programa)": "codigo_mcpio_programa",
+          "Municipio de oferta del programa": "mcpio_programa",
+          "ID Sexo": "id_genero",
+          "Sexo": "genero",
+          "Año": "anio_proceso",
+          "Semestre": "semestre",
+          "Matriculados 2017": "matriculados"
+        },
+        "unmapped_raw_columns": [],
+        "note": "33 de 33 columnas mapeadas via Cross-Bright"
+      },
+      "matriculados_2018": {
+        "status": "OK",
+        "columns_in_file": [
+          "Código de \nla Institución",
+          "IES PADRE",
+          "Institución de Educación Superior (IES)",
+          "Principal\n o\nSeccional",
+          "ID Sector IES",
+          "Sector IES",
+          "ID Caracter",
+          "Caracter IES",
+          "Código del \ndepartamento\n(IES)",
+          "Departamento de \ndomicilio de la IES",
+          "Código del \nMunicipio\n(IES)",
+          "Municipio de\ndomicilio de la IES",
+          "Código \nSNIES del\nprograma",
+          "Programa Académico",
+          "ID Nivel Académico",
+          "Nivel Académico",
+          "ID Nivel de Formación",
+          "Nivel de Formación",
+          "ID Metodología",
+          "Metodología",
+          "ID Área",
+          "Área de Conocimiento",
+          "Id_Nucleo",
+          "Núcleo Básico del Conocimiento (NBC)",
+          "Código del \nDepartamento\n(Programa)",
+          "Departamento de oferta del programa",
+          "Código del \nMunicipio\n(Programa)",
+          "Municipio de oferta del programa",
+          "ID Sexo",
+          "Sexo",
+          "Año",
+          "Semestre",
+          "Matriculados 2018"
+        ],
+        "mapped_variants": {
+          "Código de \nla Institución": "codigo_institucion",
+          "IES PADRE": "ies_padre",
+          "Institución de Educación Superior (IES)": "nombre_institucion",
+          "Principal\n o\nSeccional": "principal_o_seccional",
+          "ID Sector IES": "id_sector",
+          "Sector IES": "sector_ies",
+          "ID Caracter": "id_caracter",
+          "Caracter IES": "caracter_ies",
+          "Código del \ndepartamento\n(IES)": "codigo_depto_ies",
+          "Departamento de \ndomicilio de la IES": "depto_ies",
+          "Código del \nMunicipio\n(IES)": "codigo_mcpio_ies",
+          "Municipio de\ndomicilio de la IES": "mcpio_ies",
+          "Código \nSNIES del\nprograma": "codigo_snies_programa",
+          "Programa Académico": "nombre_programa",
+          "ID Nivel Académico": "id_nivel_academico",
+          "Nivel Académico": "nivel_academico",
+          "ID Nivel de Formación": "id_nivel_formacion",
+          "Nivel de Formación": "nivel_formacion",
+          "ID Metodología": "id_metodologia",
+          "Metodología": "metodologia",
+          "ID Área": "id_area_conocimiento",
+          "Área de Conocimiento": "area_conocimiento",
+          "Id_Nucleo": "id_nucleo",
+          "Núcleo Básico del Conocimiento (NBC)": "nucleo_conocimiento",
+          "Código del \nDepartamento\n(Programa)": "codigo_depto_programa",
+          "Departamento de oferta del programa": "depto_programa",
+          "Código del \nMunicipio\n(Programa)": "codigo_mcpio_programa",
+          "Municipio de oferta del programa": "mcpio_programa",
+          "ID Sexo": "id_genero",
+          "Sexo": "genero",
+          "Año": "anio_proceso",
+          "Semestre": "semestre",
+          "Matriculados 2018": "matriculados"
+        },
+        "unmapped_raw_columns": [],
+        "note": "33 de 33 columnas mapeadas via Cross-Bright"
+      },
+      "matriculados_2019": {
+        "status": "OK",
+        "columns_in_file": [
+          "CÓDIGO DE LA INSTITUCIÓN",
+          "IES_PADRE",
+          "INSTITUCIÓN DE EDUCACIÓN SUPERIOR (IES)",
+          "PRINCIPAL O SECCIONAL",
+          "ID SECTOR IES",
+          "SECTOR IES",
+          "ID CARACTER",
+          "CARACTER IES",
+          "CÓDIGO DEL DEPARTAMENTO (IES)",
+          "DEPARTAMENTO DE DOMICILIO DE LA IES",
+          "CÓDIGO DEL MUNICIPIO",
+          "MUNICIPIO DE DOMICILIO DE LA IES",
+          "CÓDIGO SNIES DEL PROGRAMA",
+          "PROGRAMA ACADÉMICO",
+          "ID NIVEL ACADÉMICO",
+          "NIVEL ACADÉMICO",
+          "ID NIVEL DE FORMACIÓN",
+          "NIVEL DE FORMACIÓN",
+          "ID METODOLOGÍA",
+          "METODOLOGÍA",
+          "ID ÁREA",
+          "ÁREA DE CONOCIMIENTO",
+          "ID NÚCLEO",
+          "NÚCLEO BÁSICO DEL CONOCIMIENTO (NBC)",
+          "ID CINE CAMPO AMPLIO",
+          "DESC CINE CAMPO AMPLIO",
+          "ID CINE CAMPO ESPECIFICO",
+          "DESC CINE CAMPO ESPECIFICO",
+          "ID CINE CODIGO DETALLADO",
+          "DESC CINE CODIGO DETALLADO",
+          "CÓDIGO DEL DEPARTAMENTO (PROGRAMA)",
+          "DEPARTAMENTO DE OFERTA DEL PROGRAMA",
+          "CÓDIGO DEL MUNICIPIO (PROGRAMA)",
+          "MUNICIPIO DE OFERTA DEL PROGRAMA",
+          "ID SEXO",
+          "SEXO",
+          "AÑO",
+          "SEMESTRE",
+          "MATRICULADOS "
+        ],
+        "mapped_variants": {
+          "CÓDIGO DE LA INSTITUCIÓN": "codigo_institucion",
+          "IES_PADRE": "ies_padre",
+          "INSTITUCIÓN DE EDUCACIÓN SUPERIOR (IES)": "nombre_institucion",
+          "PRINCIPAL O SECCIONAL": "principal_o_seccional",
+          "ID SECTOR IES": "id_sector",
+          "SECTOR IES": "sector_ies",
+          "ID CARACTER": "id_caracter",
+          "CARACTER IES": "caracter_ies",
+          "CÓDIGO DEL DEPARTAMENTO (IES)": "codigo_depto_ies",
+          "DEPARTAMENTO DE DOMICILIO DE LA IES": "depto_ies",
+          "CÓDIGO DEL MUNICIPIO": "codigo_del_municipio",
+          "MUNICIPIO DE DOMICILIO DE LA IES": "mcpio_ies",
+          "CÓDIGO SNIES DEL PROGRAMA": "codigo_snies_programa",
+          "PROGRAMA ACADÉMICO": "nombre_programa",
+          "ID NIVEL ACADÉMICO": "id_nivel_academico",
+          "NIVEL ACADÉMICO": "nivel_academico",
+          "ID NIVEL DE FORMACIÓN": "id_nivel_formacion",
+          "NIVEL DE FORMACIÓN": "nivel_formacion",
+          "ID METODOLOGÍA": "id_metodologia",
+          "METODOLOGÍA": "metodologia",
+          "ID ÁREA": "id_area_conocimiento",
+          "ÁREA DE CONOCIMIENTO": "area_conocimiento",
+          "ID NÚCLEO": "id_nucleo",
+          "NÚCLEO BÁSICO DEL CONOCIMIENTO (NBC)": "nucleo_conocimiento",
+          "ID CINE CAMPO AMPLIO": "id_cine_campo_amplio",
+          "DESC CINE CAMPO AMPLIO": "desc_cine_campo_amplio",
+          "ID CINE CAMPO ESPECIFICO": "id_cine_campo_especifico",
+          "DESC CINE CAMPO ESPECIFICO": "desc_cine_campo_especifico",
+          "ID CINE CODIGO DETALLADO": "id_cine_campo_detallado",
+          "DESC CINE CODIGO DETALLADO": "desc_cine_campo_detallado",
+          "CÓDIGO DEL DEPARTAMENTO (PROGRAMA)": "codigo_depto_programa",
+          "DEPARTAMENTO DE OFERTA DEL PROGRAMA": "depto_programa",
+          "CÓDIGO DEL MUNICIPIO (PROGRAMA)": "codigo_mcpio_programa",
+          "MUNICIPIO DE OFERTA DEL PROGRAMA": "mcpio_programa",
+          "ID SEXO": "id_genero",
+          "SEXO": "genero",
+          "AÑO": "anio_proceso",
+          "SEMESTRE": "semestre",
+          "MATRICULADOS ": "matriculados"
+        },
+        "unmapped_raw_columns": [],
+        "note": "39 de 39 columnas mapeadas via Cross-Bright"
+      },
+      "matriculados_2020": {
+        "status": "OK",
+        "columns_in_file": [
+          "CÓDIGO DE LA INSTITUCIÓN",
+          "IES_PADRE",
+          "INSTITUCIÓN DE EDUCACIÓN SUPERIOR (IES)",
+          "PRINCIPAL O SECCIONAL",
+          "ID SECTOR IES",
+          "SECTOR IES",
+          "ID CARACTER",
+          "CARACTER IES",
+          "CÓDIGO DEL DEPARTAMENTO (IES)",
+          "DEPARTAMENTO DE DOMICILIO DE LA IES",
+          "CÓDIGO DEL MUNICIPIO (IES)",
+          "MUNICIPIO DE DOMICILIO DE LA IES",
+          "CÓDIGO SNIES DEL PROGRAMA",
+          "PROGRAMA ACADÉMICO",
+          "ID NIVEL ACADÉMICO",
+          "NIVEL ACADÉMICO",
+          "ID NIVEL DE FORMACIÓN",
+          "NIVEL DE FORMACIÓN",
+          "ID METODOLOGÍA",
+          "METODOLOGÍA",
+          "ID ÁREA DE CONOCIMIENTO",
+          "ÁREA DE CONOCIMIENTO",
+          "ID NÚCLEO",
+          "NÚCLEO BÁSICO DEL CONOCIMIENTO (NBC)",
+          "ID CINE CAMPO AMPLIO",
+          "DESC CINE CAMPO AMPLIO",
+          "ID CINE CAMPO ESPECIFICO",
+          "DESC CINE CAMPO ESPECIFICO",
+          "ID CINE CODIGO DETALLADO",
+          "DESC CINE CODIGO DETALLADO",
+          "CÓDIGO DEL DEPARTAMENTO (PROGRAMA)",
+          "DEPARTAMENTO DE OFERTA DEL PROGRAMA",
+          "CÓDIGO DEL MUNICIPIO (PROGRAMA)",
+          "MUNICIPIO DE OFERTA DEL PROGRAMA",
+          "ID SEXO",
+          "SEXO",
+          "AÑO",
+          "SEMESTRE",
+          "MATRICULADOS"
+        ],
+        "mapped_variants": {
+          "CÓDIGO DE LA INSTITUCIÓN": "codigo_institucion",
+          "IES_PADRE": "ies_padre",
+          "INSTITUCIÓN DE EDUCACIÓN SUPERIOR (IES)": "nombre_institucion",
+          "PRINCIPAL O SECCIONAL": "principal_o_seccional",
+          "ID SECTOR IES": "id_sector",
+          "SECTOR IES": "sector_ies",
+          "ID CARACTER": "id_caracter",
+          "CARACTER IES": "caracter_ies",
+          "CÓDIGO DEL DEPARTAMENTO (IES)": "codigo_depto_ies",
+          "DEPARTAMENTO DE DOMICILIO DE LA IES": "depto_ies",
+          "CÓDIGO DEL MUNICIPIO (IES)": "codigo_mcpio_ies",
+          "MUNICIPIO DE DOMICILIO DE LA IES": "mcpio_ies",
+          "CÓDIGO SNIES DEL PROGRAMA": "codigo_snies_programa",
+          "PROGRAMA ACADÉMICO": "nombre_programa",
+          "ID NIVEL ACADÉMICO": "id_nivel_academico",
+          "NIVEL ACADÉMICO": "nivel_academico",
+          "ID NIVEL DE FORMACIÓN": "id_nivel_formacion",
+          "NIVEL DE FORMACIÓN": "nivel_formacion",
+          "ID METODOLOGÍA": "id_metodologia",
+          "METODOLOGÍA": "metodologia",
+          "ID ÁREA DE CONOCIMIENTO": "id_area_conocimiento",
+          "ÁREA DE CONOCIMIENTO": "area_conocimiento",
+          "ID NÚCLEO": "id_nucleo",
+          "NÚCLEO BÁSICO DEL CONOCIMIENTO (NBC)": "nucleo_conocimiento",
+          "ID CINE CAMPO AMPLIO": "id_cine_campo_amplio",
+          "DESC CINE CAMPO AMPLIO": "desc_cine_campo_amplio",
+          "ID CINE CAMPO ESPECIFICO": "id_cine_campo_especifico",
+          "DESC CINE CAMPO ESPECIFICO": "desc_cine_campo_especifico",
+          "ID CINE CODIGO DETALLADO": "id_cine_campo_detallado",
+          "DESC CINE CODIGO DETALLADO": "desc_cine_campo_detallado",
+          "CÓDIGO DEL DEPARTAMENTO (PROGRAMA)": "codigo_depto_programa",
+          "DEPARTAMENTO DE OFERTA DEL PROGRAMA": "depto_programa",
+          "CÓDIGO DEL MUNICIPIO (PROGRAMA)": "codigo_mcpio_programa",
+          "MUNICIPIO DE OFERTA DEL PROGRAMA": "mcpio_programa",
+          "ID SEXO": "id_genero",
+          "SEXO": "genero",
+          "AÑO": "anio_proceso",
+          "SEMESTRE": "semestre",
+          "MATRICULADOS": "matriculados"
+        },
+        "unmapped_raw_columns": [],
+        "note": "39 de 39 columnas mapeadas via Cross-Bright"
+      },
+      "matriculados_2021": {
+        "status": "OK",
+        "columns_in_file": [
+          "CÓDIGO DE LA INSTITUCIÓN",
+          "IES_PADRE",
+          "INSTITUCIÓN DE EDUCACIÓN SUPERIOR (IES)",
+          "PRINCIPAL O SECCIONAL",
+          "ID SECTOR IES",
+          "SECTOR IES",
+          "IES ACREDITADA",
+          "ID CARACTER",
+          "CARACTER IES",
+          "CÓDIGO DEL DEPARTAMENTO (IES)",
+          "DEPARTAMENTO DE DOMICILIO DE LA IES",
+          "CÓDIGO DEL MUNICIPIO (IES)",
+          "MUNICIPIO DE DOMICILIO DE LA IES",
+          "CÓDIGO SNIES DEL PROGRAMA",
+          "PROGRAMA ACADÉMICO",
+          "PROGRAMA ACREDITADO",
+          "ID NIVEL ACADÉMICO",
+          "NIVEL ACADÉMICO",
+          "ID NIVEL DE FORMACIÓN",
+          "NIVEL DE FORMACIÓN",
+          "ID METODOLOGÍA",
+          "METODOLOGÍA",
+          "ID ÁREA DE CONOCIMIENTO",
+          "ÁREA DE CONOCIMIENTO",
+          "ID NÚCLEO",
+          "NÚCLEO BÁSICO DEL CONOCIMIENTO (NBC)",
+          "ID CINE CAMPO AMPLIO",
+          "DESC CINE CAMPO AMPLIO",
+          "ID CINE CAMPO ESPECIFICO",
+          "DESC CINE CAMPO ESPECIFICO",
+          "ID CINE CODIGO DETALLADO",
+          "DESC CINE CODIGO DETALLADO",
+          "CÓDIGO DEL DEPARTAMENTO (PROGRAMA)",
+          "DEPARTAMENTO DE OFERTA DEL PROGRAMA",
+          "CÓDIGO DEL MUNICIPIO (PROGRAMA)",
+          "MUNICIPIO DE OFERTA DEL PROGRAMA",
+          "ID SEXO",
+          "SEXO",
+          "AÑO",
+          "SEMESTRE",
+          "MATRICULADOS"
+        ],
+        "mapped_variants": {
+          "CÓDIGO DE LA INSTITUCIÓN": "codigo_institucion",
+          "IES_PADRE": "ies_padre",
+          "INSTITUCIÓN DE EDUCACIÓN SUPERIOR (IES)": "nombre_institucion",
+          "PRINCIPAL O SECCIONAL": "principal_o_seccional",
+          "ID SECTOR IES": "id_sector",
+          "SECTOR IES": "sector_ies",
+          "IES ACREDITADA": "ies_acreditada",
+          "ID CARACTER": "id_caracter",
+          "CARACTER IES": "caracter_ies",
+          "CÓDIGO DEL DEPARTAMENTO (IES)": "codigo_depto_ies",
+          "DEPARTAMENTO DE DOMICILIO DE LA IES": "depto_ies",
+          "CÓDIGO DEL MUNICIPIO (IES)": "codigo_mcpio_ies",
+          "MUNICIPIO DE DOMICILIO DE LA IES": "mcpio_ies",
+          "CÓDIGO SNIES DEL PROGRAMA": "codigo_snies_programa",
+          "PROGRAMA ACADÉMICO": "nombre_programa",
+          "PROGRAMA ACREDITADO": "programa_acreditado",
+          "ID NIVEL ACADÉMICO": "id_nivel_academico",
+          "NIVEL ACADÉMICO": "nivel_academico",
+          "ID NIVEL DE FORMACIÓN": "id_nivel_formacion",
+          "NIVEL DE FORMACIÓN": "nivel_formacion",
+          "ID METODOLOGÍA": "id_metodologia",
+          "METODOLOGÍA": "metodologia",
+          "ID ÁREA DE CONOCIMIENTO": "id_area_conocimiento",
+          "ÁREA DE CONOCIMIENTO": "area_conocimiento",
+          "ID NÚCLEO": "id_nucleo",
+          "NÚCLEO BÁSICO DEL CONOCIMIENTO (NBC)": "nucleo_conocimiento",
+          "ID CINE CAMPO AMPLIO": "id_cine_campo_amplio",
+          "DESC CINE CAMPO AMPLIO": "desc_cine_campo_amplio",
+          "ID CINE CAMPO ESPECIFICO": "id_cine_campo_especifico",
+          "DESC CINE CAMPO ESPECIFICO": "desc_cine_campo_especifico",
+          "ID CINE CODIGO DETALLADO": "id_cine_campo_detallado",
+          "DESC CINE CODIGO DETALLADO": "desc_cine_campo_detallado",
+          "CÓDIGO DEL DEPARTAMENTO (PROGRAMA)": "codigo_depto_programa",
+          "DEPARTAMENTO DE OFERTA DEL PROGRAMA": "depto_programa",
+          "CÓDIGO DEL MUNICIPIO (PROGRAMA)": "codigo_mcpio_programa",
+          "MUNICIPIO DE OFERTA DEL PROGRAMA": "mcpio_programa",
+          "ID SEXO": "id_genero",
+          "SEXO": "genero",
+          "AÑO": "anio_proceso",
+          "SEMESTRE": "semestre",
+          "MATRICULADOS": "matriculados"
+        },
+        "unmapped_raw_columns": [],
+        "note": "41 de 41 columnas mapeadas via Cross-Bright"
+      },
+      "matriculados_2022": {
+        "status": "OK",
+        "columns_in_file": [
+          "CÓDIGO DE LA INSTITUCIÓN",
+          "IES_PADRE",
+          "INSTITUCIÓN DE EDUCACIÓN SUPERIOR (IES)",
+          "PRINCIPAL O SECCIONAL",
+          "ID SECTOR IES",
+          "SECTOR IES",
+          "IES ACREDITADA",
+          "ID CARACTER",
+          "CARACTER IES",
+          "CÓDIGO DEL DEPARTAMENTO (IES)",
+          "DEPARTAMENTO DE DOMICILIO DE LA IES",
+          "CÓDIGO DEL MUNICIPIO (IES)",
+          "MUNICIPIO DE DOMICILIO DE LA IES",
+          "CÓDIGO SNIES DEL PROGRAMA",
+          "PROGRAMA ACADÉMICO",
+          "PROGRAMA ACREDITADO",
+          "ID NIVEL ACADÉMICO",
+          "NIVEL ACADÉMICO",
+          "ID NIVEL DE FORMACIÓN",
+          "NIVEL DE FORMACIÓN",
+          "ID METODOLOGÍA",
+          "METODOLOGÍA",
+          "ID ÁREA DE CONOCIMIENTO",
+          "ÁREA DE CONOCIMIENTO",
+          "ID NÚCLEO",
+          "NÚCLEO BÁSICO DEL CONOCIMIENTO (NBC)",
+          "ID CINE CAMPO AMPLIO",
+          "DESC CINE CAMPO AMPLIO",
+          "ID CINE CAMPO ESPECIFICO",
+          "DESC CINE CAMPO ESPECIFICO",
+          "ID CINE CODIGO DETALLADO",
+          "DESC CINE CODIGO DETALLADO",
+          "CÓDIGO DEL DEPARTAMENTO (PROGRAMA)",
+          "DEPARTAMENTO DE OFERTA DEL PROGRAMA",
+          "CÓDIGO DEL MUNICIPIO (PROGRAMA)",
+          "MUNICIPIO DE OFERTA DEL PROGRAMA",
+          "ID SEXO",
+          "SEXO",
+          "AÑO",
+          "SEMESTRE",
+          "MATRICULADOS"
+        ],
+        "mapped_variants": {
+          "CÓDIGO DE LA INSTITUCIÓN": "codigo_institucion",
+          "IES_PADRE": "ies_padre",
+          "INSTITUCIÓN DE EDUCACIÓN SUPERIOR (IES)": "nombre_institucion",
+          "PRINCIPAL O SECCIONAL": "principal_o_seccional",
+          "ID SECTOR IES": "id_sector",
+          "SECTOR IES": "sector_ies",
+          "IES ACREDITADA": "ies_acreditada",
+          "ID CARACTER": "id_caracter",
+          "CARACTER IES": "caracter_ies",
+          "CÓDIGO DEL DEPARTAMENTO (IES)": "codigo_depto_ies",
+          "DEPARTAMENTO DE DOMICILIO DE LA IES": "depto_ies",
+          "CÓDIGO DEL MUNICIPIO (IES)": "codigo_mcpio_ies",
+          "MUNICIPIO DE DOMICILIO DE LA IES": "mcpio_ies",
+          "CÓDIGO SNIES DEL PROGRAMA": "codigo_snies_programa",
+          "PROGRAMA ACADÉMICO": "nombre_programa",
+          "PROGRAMA ACREDITADO": "programa_acreditado",
+          "ID NIVEL ACADÉMICO": "id_nivel_academico",
+          "NIVEL ACADÉMICO": "nivel_academico",
+          "ID NIVEL DE FORMACIÓN": "id_nivel_formacion",
+          "NIVEL DE FORMACIÓN": "nivel_formacion",
+          "ID METODOLOGÍA": "id_metodologia",
+          "METODOLOGÍA": "metodologia",
+          "ID ÁREA DE CONOCIMIENTO": "id_area_conocimiento",
+          "ÁREA DE CONOCIMIENTO": "area_conocimiento",
+          "ID NÚCLEO": "id_nucleo",
+          "NÚCLEO BÁSICO DEL CONOCIMIENTO (NBC)": "nucleo_conocimiento",
+          "ID CINE CAMPO AMPLIO": "id_cine_campo_amplio",
+          "DESC CINE CAMPO AMPLIO": "desc_cine_campo_amplio",
+          "ID CINE CAMPO ESPECIFICO": "id_cine_campo_especifico",
+          "DESC CINE CAMPO ESPECIFICO": "desc_cine_campo_especifico",
+          "ID CINE CODIGO DETALLADO": "id_cine_campo_detallado",
+          "DESC CINE CODIGO DETALLADO": "desc_cine_campo_detallado",
+          "CÓDIGO DEL DEPARTAMENTO (PROGRAMA)": "codigo_depto_programa",
+          "DEPARTAMENTO DE OFERTA DEL PROGRAMA": "depto_programa",
+          "CÓDIGO DEL MUNICIPIO (PROGRAMA)": "codigo_mcpio_programa",
+          "MUNICIPIO DE OFERTA DEL PROGRAMA": "mcpio_programa",
+          "ID SEXO": "id_genero",
+          "SEXO": "genero",
+          "AÑO": "anio_proceso",
+          "SEMESTRE": "semestre",
+          "MATRICULADOS": "matriculados"
+        },
+        "unmapped_raw_columns": [],
+        "note": "41 de 41 columnas mapeadas via Cross-Bright"
+      },
+      "matriculados_2023": {
+        "status": "OK",
+        "columns_in_file": [
+          "CÓDIGO DE LA INSTITUCIÓN",
+          "IES PADRE",
+          "INSTITUCIÓN DE EDUCACIÓN SUPERIOR (IES)",
+          "TIPO IES",
+          "ID SECTOR IES",
+          "SECTOR IES",
+          "ID CARÁCTER IES",
+          "CARÁCTER IES",
+          "CÓDIGO DEL DEPARTAMENTO (IES)",
+          "DEPARTAMENTO DE DOMICILIO DE LA IES",
+          "CÓDIGO DEL MUNICIPIO IES",
+          "MUNICIPIO DE DOMICILIO DE LA IES",
+          "IES ACREDITADA",
+          "CÓDIGO SNIES DEL PROGRAMA",
+          "PROGRAMA ACADÉMICO",
+          "PROGRAMA ACREDITADO",
+          "ID NIVEL ACADÉMICO",
+          "NIVEL ACADÉMICO",
+          "ID NIVEL DE FORMACIÓN",
+          "NIVEL DE FORMACIÓN",
+          "ID MODALIDAD",
+          "MODALIDAD",
+          "ID ÁREA",
+          "ÁREA DE CONOCIMIENTO",
+          "ID NÚCLEO",
+          "NÚCLEO BÁSICO DEL CONOCIMIENTO (NBC)",
+          "ID CINE CAMPO AMPLIO",
+          "DESC CINE CAMPO AMPLIO",
+          "ID CINE CAMPO ESPECIFICO",
+          "DESC CINE CAMPO ESPECIFICO",
+          "ID CINE CAMPO DETALLADO",
+          "DESC CINE CAMPO DETALLADO",
+          "CÓDIGO DEL DEPARTAMENTO (PROGRAMA)",
+          "DEPARTAMENTO DE OFERTA DEL PROGRAMA",
+          "CÓDIGO DEL MUNICIPIO (PROGRAMA)",
+          "MUNICIPIO DE OFERTA DEL PROGRAMA",
+          "ID SEXO",
+          "SEXO",
+          "AÑO",
+          "SEMESTRE",
+          "MATRICULADOS"
+        ],
+        "mapped_variants": {
+          "CÓDIGO DE LA INSTITUCIÓN": "codigo_institucion",
+          "IES PADRE": "ies_padre",
+          "INSTITUCIÓN DE EDUCACIÓN SUPERIOR (IES)": "nombre_institucion",
+          "TIPO IES": "tipo_ies",
+          "ID SECTOR IES": "id_sector",
+          "SECTOR IES": "sector_ies",
+          "ID CARÁCTER IES": "id_caracter",
+          "CARÁCTER IES": "caracter_ies",
+          "CÓDIGO DEL DEPARTAMENTO (IES)": "codigo_depto_ies",
+          "DEPARTAMENTO DE DOMICILIO DE LA IES": "depto_ies",
+          "CÓDIGO DEL MUNICIPIO IES": "codigo_mcpio_ies",
+          "MUNICIPIO DE DOMICILIO DE LA IES": "mcpio_ies",
+          "IES ACREDITADA": "ies_acreditada",
+          "CÓDIGO SNIES DEL PROGRAMA": "codigo_snies_programa",
+          "PROGRAMA ACADÉMICO": "nombre_programa",
+          "PROGRAMA ACREDITADO": "programa_acreditado",
+          "ID NIVEL ACADÉMICO": "id_nivel_academico",
+          "NIVEL ACADÉMICO": "nivel_academico",
+          "ID NIVEL DE FORMACIÓN": "id_nivel_formacion",
+          "NIVEL DE FORMACIÓN": "nivel_formacion",
+          "ID MODALIDAD": "id_modalidad",
+          "MODALIDAD": "modalidad",
+          "ID ÁREA": "id_area_conocimiento",
+          "ÁREA DE CONOCIMIENTO": "area_conocimiento",
+          "ID NÚCLEO": "id_nucleo",
+          "NÚCLEO BÁSICO DEL CONOCIMIENTO (NBC)": "nucleo_conocimiento",
+          "ID CINE CAMPO AMPLIO": "id_cine_campo_amplio",
+          "DESC CINE CAMPO AMPLIO": "desc_cine_campo_amplio",
+          "ID CINE CAMPO ESPECIFICO": "id_cine_campo_especifico",
+          "DESC CINE CAMPO ESPECIFICO": "desc_cine_campo_especifico",
+          "ID CINE CAMPO DETALLADO": "id_cine_campo_detallado",
+          "DESC CINE CAMPO DETALLADO": "desc_cine_campo_detallado",
+          "CÓDIGO DEL DEPARTAMENTO (PROGRAMA)": "codigo_depto_programa",
+          "DEPARTAMENTO DE OFERTA DEL PROGRAMA": "depto_programa",
+          "CÓDIGO DEL MUNICIPIO (PROGRAMA)": "codigo_mcpio_programa",
+          "MUNICIPIO DE OFERTA DEL PROGRAMA": "mcpio_programa",
+          "ID SEXO": "id_genero",
+          "SEXO": "genero",
+          "AÑO": "anio_proceso",
+          "SEMESTRE": "semestre",
+          "MATRICULADOS": "matriculados"
+        },
+        "unmapped_raw_columns": [],
+        "note": "41 de 41 columnas mapeadas via Cross-Bright"
+      },
+      "matriculados_2024": {
+        "status": "OK",
+        "columns_in_file": [
+          "CÓDIGO DE LA INSTITUCIÓN",
+          "IES PADRE",
+          "INSTITUCIÓN DE EDUCACIÓN SUPERIOR (IES)",
+          "TIPO IES",
+          "ID SECTOR IES",
+          "SECTOR IES",
+          "ID CARÁCTER IES",
+          "CARÁCTER IES",
+          "CÓDIGO DEL DEPARTAMENTO (IES)",
+          "DEPARTAMENTO DE DOMICILIO DE LA IES",
+          "CÓDIGO DEL MUNICIPIO IES",
+          "MUNICIPIO DE DOMICILIO DE LA IES",
+          "IES ACREDITADA",
+          "CÓDIGO SNIES DEL PROGRAMA",
+          "PROGRAMA ACADÉMICO",
+          "PROGRAMA ACREDITADO",
+          "ID NIVEL ACADÉMICO",
+          "NIVEL ACADÉMICO",
+          "ID NIVEL DE FORMACIÓN",
+          "NIVEL DE FORMACIÓN",
+          "ID MODALIDAD",
+          "MODALIDAD",
+          "ID ÁREA",
+          "ÁREA DE CONOCIMIENTO",
+          "ID NÚCLEO",
+          "NÚCLEO BÁSICO DEL CONOCIMIENTO (NBC)",
+          "ID CINE CAMPO AMPLIO",
+          "DESC CINE CAMPO AMPLIO",
+          "ID CINE CAMPO ESPECIFICO",
+          "DESC CINE CAMPO ESPECIFICO",
+          "ID CINE CAMPO DETALLADO",
+          "DESC CINE CAMPO DETALLADO",
+          "CÓDIGO DEL DEPARTAMENTO (PROGRAMA)",
+          "DEPARTAMENTO DE OFERTA DEL PROGRAMA",
+          "CÓDIGO DEL MUNICIPIO (PROGRAMA)",
+          "MUNICIPIO DE OFERTA DEL PROGRAMA",
+          "ID SEXO",
+          "SEXO",
+          "AÑO",
+          "SEMESTRE",
+          "MATRICULADOS"
+        ],
+        "mapped_variants": {
+          "CÓDIGO DE LA INSTITUCIÓN": "codigo_institucion",
+          "IES PADRE": "ies_padre",
+          "INSTITUCIÓN DE EDUCACIÓN SUPERIOR (IES)": "nombre_institucion",
+          "TIPO IES": "tipo_ies",
+          "ID SECTOR IES": "id_sector",
+          "SECTOR IES": "sector_ies",
+          "ID CARÁCTER IES": "id_caracter",
+          "CARÁCTER IES": "caracter_ies",
+          "CÓDIGO DEL DEPARTAMENTO (IES)": "codigo_depto_ies",
+          "DEPARTAMENTO DE DOMICILIO DE LA IES": "depto_ies",
+          "CÓDIGO DEL MUNICIPIO IES": "codigo_mcpio_ies",
+          "MUNICIPIO DE DOMICILIO DE LA IES": "mcpio_ies",
+          "IES ACREDITADA": "ies_acreditada",
+          "CÓDIGO SNIES DEL PROGRAMA": "codigo_snies_programa",
+          "PROGRAMA ACADÉMICO": "nombre_programa",
+          "PROGRAMA ACREDITADO": "programa_acreditado",
+          "ID NIVEL ACADÉMICO": "id_nivel_academico",
+          "NIVEL ACADÉMICO": "nivel_academico",
+          "ID NIVEL DE FORMACIÓN": "id_nivel_formacion",
+          "NIVEL DE FORMACIÓN": "nivel_formacion",
+          "ID MODALIDAD": "id_modalidad",
+          "MODALIDAD": "modalidad",
+          "ID ÁREA": "id_area_conocimiento",
+          "ÁREA DE CONOCIMIENTO": "area_conocimiento",
+          "ID NÚCLEO": "id_nucleo",
+          "NÚCLEO BÁSICO DEL CONOCIMIENTO (NBC)": "nucleo_conocimiento",
+          "ID CINE CAMPO AMPLIO": "id_cine_campo_amplio",
+          "DESC CINE CAMPO AMPLIO": "desc_cine_campo_amplio",
+          "ID CINE CAMPO ESPECIFICO": "id_cine_campo_especifico",
+          "DESC CINE CAMPO ESPECIFICO": "desc_cine_campo_especifico",
+          "ID CINE CAMPO DETALLADO": "id_cine_campo_detallado",
+          "DESC CINE CAMPO DETALLADO": "desc_cine_campo_detallado",
+          "CÓDIGO DEL DEPARTAMENTO (PROGRAMA)": "codigo_depto_programa",
+          "DEPARTAMENTO DE OFERTA DEL PROGRAMA": "depto_programa",
+          "CÓDIGO DEL MUNICIPIO (PROGRAMA)": "codigo_mcpio_programa",
+          "MUNICIPIO DE OFERTA DEL PROGRAMA": "mcpio_programa",
+          "ID SEXO": "id_genero",
+          "SEXO": "genero",
+          "AÑO": "anio_proceso",
+          "SEMESTRE": "semestre",
+          "MATRICULADOS": "matriculados"
+        },
+        "unmapped_raw_columns": [],
+        "note": "41 de 41 columnas mapeadas via Cross-Bright"
+      }
+    },
+    "duplicates": {
+      "graduados_2015": {
+        "status": "OK",
+        "total_rows": 34475,
+        "duplicate_rows": 0
+      },
+      "graduados_2016": {
+        "status": "OK",
+        "total_rows": 39648,
+        "duplicate_rows": 0
+      },
+      "graduados_2017": {
+        "status": "OK",
+        "total_rows": 38885,
+        "duplicate_rows": 0
+      },
+      "graduados_2018": {
+        "status": "OK",
+        "total_rows": 40517,
+        "duplicate_rows": 0
+      },
+      "graduados_2019": {
+        "status": "OK",
+        "total_rows": 42422,
+        "duplicate_rows": 0
+      },
+      "graduados_2020": {
+        "status": "OK",
+        "total_rows": 42189,
+        "duplicate_rows": 0
+      },
+      "graduados_2021": {
+        "status": "OK",
+        "total_rows": 44842,
+        "duplicate_rows": 0
+      },
+      "graduados_2022": {
+        "status": "OK",
+        "total_rows": 45424,
+        "duplicate_rows": 0
+      },
+      "graduados_2023": {
+        "status": "OK",
+        "total_rows": 45660,
+        "duplicate_rows": 0
+      },
+      "graduados_2024": {
+        "status": "OK",
+        "total_rows": 46548,
+        "duplicate_rows": 0
+      },
+      "matriculados_2015": {
+        "status": "OK",
+        "total_rows": 59996,
+        "duplicate_rows": 0
+      },
+      "matriculados_2016": {
+        "status": "OK",
+        "total_rows": 60363,
+        "duplicate_rows": 0
+      },
+      "matriculados_2017": {
+        "status": "OK",
+        "total_rows": 65382,
+        "duplicate_rows": 0
+      },
+      "matriculados_2018": {
+        "status": "OK",
+        "total_rows": 63385,
+        "duplicate_rows": 0
+      },
+      "matriculados_2019": {
+        "status": "OK",
+        "total_rows": 70232,
+        "duplicate_rows": 0
+      },
+      "matriculados_2020": {
+        "status": "OK",
+        "total_rows": 69585,
+        "duplicate_rows": 0
+      },
+      "matriculados_2021": {
+        "status": "OK",
+        "total_rows": 70607,
+        "duplicate_rows": 0
+      },
+      "matriculados_2022": {
+        "status": "OK",
+        "total_rows": 69755,
+        "duplicate_rows": 0
+      },
+      "matriculados_2023": {
+        "status": "OK",
+        "total_rows": 72381,
+        "duplicate_rows": 0
+      },
+      "matriculados_2024": {
+        "status": "OK",
+        "total_rows": 75183,
+        "duplicate_rows": 0
+      }
+    },
+    "metric_nulls": {
+      "graduados_2015": {
+        "status": "OK",
+        "metric_column": "Graduados",
+        "null_count": 0,
+        "excel_padding_rows": 0,
+        "real_null_count": 0,
+        "note": "Nulos con año=NaN son relleno/notas del Excel, filtrados en limpieza_snies."
+      },
+      "graduados_2016": {
+        "status": "OK",
+        "metric_column": "Graduados",
+        "null_count": 0,
+        "excel_padding_rows": 0,
+        "real_null_count": 0,
+        "note": "Nulos con año=NaN son relleno/notas del Excel, filtrados en limpieza_snies."
+      },
+      "graduados_2017": {
+        "status": "OK",
+        "metric_column": "Graduados",
+        "null_count": 0,
+        "excel_padding_rows": 0,
+        "real_null_count": 0,
+        "note": "Nulos con año=NaN son relleno/notas del Excel, filtrados en limpieza_snies."
+      },
+      "graduados_2018": {
+        "status": "OK",
+        "metric_column": "Graduados",
+        "null_count": 0,
+        "excel_padding_rows": 0,
+        "real_null_count": 0,
+        "note": "Nulos con año=NaN son relleno/notas del Excel, filtrados en limpieza_snies."
+      },
+      "graduados_2019": {
+        "status": "OK",
+        "metric_column": "GRADUADOS",
+        "null_count": 0,
+        "excel_padding_rows": 0,
+        "real_null_count": 0,
+        "note": "Nulos con año=NaN son relleno/notas del Excel, filtrados en limpieza_snies."
+      },
+      "graduados_2020": {
+        "status": "OK",
+        "metric_column": "GRADUADOS",
+        "null_count": 0,
+        "excel_padding_rows": 0,
+        "real_null_count": 0,
+        "note": "Nulos con año=NaN son relleno/notas del Excel, filtrados en limpieza_snies."
+      },
+      "graduados_2021": {
+        "status": "OK",
+        "metric_column": "GRADUADOS",
+        "null_count": 0,
+        "excel_padding_rows": 0,
+        "real_null_count": 0,
+        "note": "Nulos con año=NaN son relleno/notas del Excel, filtrados en limpieza_snies."
+      },
+      "graduados_2022": {
+        "status": "OK",
+        "metric_column": "GRADUADOS",
+        "null_count": 0,
+        "excel_padding_rows": 0,
+        "real_null_count": 0,
+        "note": "Nulos con año=NaN son relleno/notas del Excel, filtrados en limpieza_snies."
+      },
+      "graduados_2023": {
+        "status": "OK",
+        "metric_column": "GRADUADOS",
+        "null_count": 8,
+        "excel_padding_rows": 8,
+        "real_null_count": 0,
+        "note": "Nulos con año=NaN son relleno/notas del Excel, filtrados en limpieza_snies."
+      },
+      "graduados_2024": {
+        "status": "OK",
+        "metric_column": "GRADUADOS",
+        "null_count": 8,
+        "excel_padding_rows": 8,
+        "real_null_count": 0,
+        "note": "Nulos con año=NaN son relleno/notas del Excel, filtrados en limpieza_snies."
+      },
+      "matriculados_2015": {
+        "status": "OK",
+        "metric_column": "Matriculados 2015",
+        "null_count": 0,
+        "excel_padding_rows": 0,
+        "real_null_count": 0,
+        "note": "Nulos con año=NaN son relleno/notas del Excel, filtrados en limpieza_snies."
+      },
+      "matriculados_2016": {
+        "status": "OK",
+        "metric_column": "Matriculados 2016",
+        "null_count": 0,
+        "excel_padding_rows": 0,
+        "real_null_count": 0,
+        "note": "Nulos con año=NaN son relleno/notas del Excel, filtrados en limpieza_snies."
+      },
+      "matriculados_2017": {
+        "status": "OK",
+        "metric_column": "Matriculados 2017",
+        "null_count": 0,
+        "excel_padding_rows": 0,
+        "real_null_count": 0,
+        "note": "Nulos con año=NaN son relleno/notas del Excel, filtrados en limpieza_snies."
+      },
+      "matriculados_2018": {
+        "status": "OK",
+        "metric_column": "Matriculados 2018",
+        "null_count": 0,
+        "excel_padding_rows": 0,
+        "real_null_count": 0,
+        "note": "Nulos con año=NaN son relleno/notas del Excel, filtrados en limpieza_snies."
+      },
+      "matriculados_2019": {
+        "status": "OK",
+        "metric_column": "MATRICULADOS ",
+        "null_count": 0,
+        "excel_padding_rows": 0,
+        "real_null_count": 0,
+        "note": "Nulos con año=NaN son relleno/notas del Excel, filtrados en limpieza_snies."
+      },
+      "matriculados_2020": {
+        "status": "OK",
+        "metric_column": "MATRICULADOS",
+        "null_count": 0,
+        "excel_padding_rows": 0,
+        "real_null_count": 0,
+        "note": "Nulos con año=NaN son relleno/notas del Excel, filtrados en limpieza_snies."
+      },
+      "matriculados_2021": {
+        "status": "OK",
+        "metric_column": "MATRICULADOS",
+        "null_count": 0,
+        "excel_padding_rows": 0,
+        "real_null_count": 0,
+        "note": "Nulos con año=NaN son relleno/notas del Excel, filtrados en limpieza_snies."
+      },
+      "matriculados_2022": {
+        "status": "OK",
+        "metric_column": "MATRICULADOS",
+        "null_count": 0,
+        "excel_padding_rows": 0,
+        "real_null_count": 0,
+        "note": "Nulos con año=NaN son relleno/notas del Excel, filtrados en limpieza_snies."
+      },
+      "matriculados_2023": {
+        "status": "OK",
+        "metric_column": "MATRICULADOS",
+        "null_count": 8,
+        "excel_padding_rows": 8,
+        "real_null_count": 0,
+        "note": "Nulos con año=NaN son relleno/notas del Excel, filtrados en limpieza_snies."
+      },
+      "matriculados_2024": {
+        "status": "OK",
+        "metric_column": "MATRICULADOS",
+        "null_count": 8,
+        "excel_padding_rows": 8,
+        "real_null_count": 0,
+        "note": "Nulos con año=NaN son relleno/notas del Excel, filtrados en limpieza_snies."
+      }
+    },
+    "core_headers_presence": {
+      "graduados_2015": {
+        "status": "OK",
+        "missing_headers": [],
+        "present_headers": [
+          "anio_proceso",
+          "semestre",
+          "codigo_institucion",
+          "nombre_institucion",
+          "codigo_snies_programa",
+          "nombre_programa",
+          "graduados"
+        ]
+      },
+      "graduados_2016": {
+        "status": "OK",
+        "missing_headers": [],
+        "present_headers": [
+          "anio_proceso",
+          "semestre",
+          "codigo_institucion",
+          "nombre_institucion",
+          "codigo_snies_programa",
+          "nombre_programa",
+          "graduados"
+        ]
+      },
+      "graduados_2017": {
+        "status": "OK",
+        "missing_headers": [],
+        "present_headers": [
+          "anio_proceso",
+          "semestre",
+          "codigo_institucion",
+          "nombre_institucion",
+          "codigo_snies_programa",
+          "nombre_programa",
+          "graduados"
+        ]
+      },
+      "graduados_2018": {
+        "status": "OK",
+        "missing_headers": [],
+        "present_headers": [
+          "anio_proceso",
+          "semestre",
+          "codigo_institucion",
+          "nombre_institucion",
+          "codigo_snies_programa",
+          "nombre_programa",
+          "graduados"
+        ]
+      },
+      "graduados_2019": {
+        "status": "OK",
+        "missing_headers": [],
+        "present_headers": [
+          "anio_proceso",
+          "semestre",
+          "codigo_institucion",
+          "nombre_institucion",
+          "codigo_snies_programa",
+          "nombre_programa",
+          "graduados"
+        ]
+      },
+      "graduados_2020": {
+        "status": "OK",
+        "missing_headers": [],
+        "present_headers": [
+          "anio_proceso",
+          "semestre",
+          "codigo_institucion",
+          "nombre_institucion",
+          "codigo_snies_programa",
+          "nombre_programa",
+          "graduados"
+        ]
+      },
+      "graduados_2021": {
+        "status": "OK",
+        "missing_headers": [],
+        "present_headers": [
+          "anio_proceso",
+          "semestre",
+          "codigo_institucion",
+          "nombre_institucion",
+          "codigo_snies_programa",
+          "nombre_programa",
+          "graduados"
+        ]
+      },
+      "graduados_2022": {
+        "status": "OK",
+        "missing_headers": [],
+        "present_headers": [
+          "anio_proceso",
+          "semestre",
+          "codigo_institucion",
+          "nombre_institucion",
+          "codigo_snies_programa",
+          "nombre_programa",
+          "graduados"
+        ]
+      },
+      "graduados_2023": {
+        "status": "OK",
+        "missing_headers": [],
+        "present_headers": [
+          "anio_proceso",
+          "semestre",
+          "codigo_institucion",
+          "nombre_institucion",
+          "codigo_snies_programa",
+          "nombre_programa",
+          "graduados"
+        ]
+      },
+      "graduados_2024": {
+        "status": "OK",
+        "missing_headers": [],
+        "present_headers": [
+          "anio_proceso",
+          "semestre",
+          "codigo_institucion",
+          "nombre_institucion",
+          "codigo_snies_programa",
+          "nombre_programa",
+          "graduados"
+        ]
+      },
+      "matriculados_2015": {
+        "status": "OK",
+        "missing_headers": [],
+        "present_headers": [
+          "anio_proceso",
+          "semestre",
+          "codigo_institucion",
+          "nombre_institucion",
+          "codigo_snies_programa",
+          "nombre_programa",
+          "matriculados"
+        ]
+      },
+      "matriculados_2016": {
+        "status": "OK",
+        "missing_headers": [],
+        "present_headers": [
+          "anio_proceso",
+          "semestre",
+          "codigo_institucion",
+          "nombre_institucion",
+          "codigo_snies_programa",
+          "nombre_programa",
+          "matriculados"
+        ]
+      },
+      "matriculados_2017": {
+        "status": "OK",
+        "missing_headers": [],
+        "present_headers": [
+          "anio_proceso",
+          "semestre",
+          "codigo_institucion",
+          "nombre_institucion",
+          "codigo_snies_programa",
+          "nombre_programa",
+          "matriculados"
+        ]
+      },
+      "matriculados_2018": {
+        "status": "OK",
+        "missing_headers": [],
+        "present_headers": [
+          "anio_proceso",
+          "semestre",
+          "codigo_institucion",
+          "nombre_institucion",
+          "codigo_snies_programa",
+          "nombre_programa",
+          "matriculados"
+        ]
+      },
+      "matriculados_2019": {
+        "status": "OK",
+        "missing_headers": [],
+        "present_headers": [
+          "anio_proceso",
+          "semestre",
+          "codigo_institucion",
+          "nombre_institucion",
+          "codigo_snies_programa",
+          "nombre_programa",
+          "matriculados"
+        ]
+      },
+      "matriculados_2020": {
+        "status": "OK",
+        "missing_headers": [],
+        "present_headers": [
+          "anio_proceso",
+          "semestre",
+          "codigo_institucion",
+          "nombre_institucion",
+          "codigo_snies_programa",
+          "nombre_programa",
+          "matriculados"
+        ]
+      },
+      "matriculados_2021": {
+        "status": "OK",
+        "missing_headers": [],
+        "present_headers": [
+          "anio_proceso",
+          "semestre",
+          "codigo_institucion",
+          "nombre_institucion",
+          "codigo_snies_programa",
+          "nombre_programa",
+          "matriculados"
+        ]
+      },
+      "matriculados_2022": {
+        "status": "OK",
+        "missing_headers": [],
+        "present_headers": [
+          "anio_proceso",
+          "semestre",
+          "codigo_institucion",
+          "nombre_institucion",
+          "codigo_snies_programa",
+          "nombre_programa",
+          "matriculados"
+        ]
+      },
+      "matriculados_2023": {
+        "status": "OK",
+        "missing_headers": [],
+        "present_headers": [
+          "anio_proceso",
+          "semestre",
+          "codigo_institucion",
+          "nombre_institucion",
+          "codigo_snies_programa",
+          "nombre_programa",
+          "matriculados"
+        ]
+      },
+      "matriculados_2024": {
+        "status": "OK",
+        "missing_headers": [],
+        "present_headers": [
+          "anio_proceso",
+          "semestre",
+          "codigo_institucion",
+          "nombre_institucion",
+          "codigo_snies_programa",
+          "nombre_programa",
+          "matriculados"
+        ]
+      }
+    },
+    "years_coverage": {
+      "graduados": {
+        "status": "OK",
+        "expected": [
+          2015,
+          2016,
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024
+        ],
+        "present": [
+          2015,
+          2016,
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024
+        ],
+        "missing": []
+      },
+      "matriculados": {
+        "status": "OK",
+        "expected": [
+          2015,
+          2016,
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024
+        ],
+        "present": [
+          2015,
+          2016,
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024
+        ],
+        "missing": []
+      }
+    },
+    "per_year_stats": {
+      "graduados_2015": {
+        "rows": 34475,
+        "total": 374738,
+        "columns_available": 33
+      },
+      "graduados_2016": {
+        "rows": 39648,
+        "total": 423182,
+        "columns_available": 33
+      },
+      "graduados_2017": {
+        "rows": 38885,
+        "total": 462367,
+        "columns_available": 33
+      },
+      "graduados_2018": {
+        "rows": 40517,
+        "total": 482122,
+        "columns_available": 33
+      },
+      "graduados_2019": {
+        "rows": 42422,
+        "total": 507338,
+        "columns_available": 39
+      },
+      "graduados_2020": {
+        "rows": 42189,
+        "total": 449923,
+        "columns_available": 39
+      },
+      "graduados_2021": {
+        "rows": 44842,
+        "total": 524983,
+        "columns_available": 41
+      },
+      "graduados_2022": {
+        "rows": 45424,
+        "total": 535963,
+        "columns_available": 41
+      },
+      "graduados_2023": {
+        "rows": 45652,
+        "total": 534942,
+        "columns_available": 41
+      },
+      "graduados_2024": {
+        "rows": 46540,
+        "total": 547959,
+        "columns_available": 41
+      },
+      "graduados_consolidado_summary": {
+        "total_rows": 420594,
+        "duplicate_rows": 0,
+        "total_columns": 45,
+        "dtype_metric": "int64"
+      },
+      "matriculados_2015": {
+        "rows": 59996,
+        "total": 4580485,
+        "columns_available": 33
+      },
+      "matriculados_2016": {
+        "rows": 60363,
+        "total": 4613422,
+        "columns_available": 33
+      },
+      "matriculados_2017": {
+        "rows": 65382,
+        "total": 4689279,
+        "columns_available": 33
+      },
+      "matriculados_2018": {
+        "rows": 63385,
+        "total": 4692703,
+        "columns_available": 33
+      },
+      "matriculados_2019": {
+        "rows": 70232,
+        "total": 4676857,
+        "columns_available": 39
+      },
+      "matriculados_2020": {
+        "rows": 69585,
+        "total": 4494207,
+        "columns_available": 39
+      },
+      "matriculados_2021": {
+        "rows": 70607,
+        "total": 4750760,
+        "columns_available": 41
+      },
+      "matriculados_2022": {
+        "rows": 69755,
+        "total": 4817624,
+        "columns_available": 41
+      },
+      "matriculados_2023": {
+        "rows": 72373,
+        "total": 4829200,
+        "columns_available": 41
+      },
+      "matriculados_2024": {
+        "rows": 75175,
+        "total": 5026633,
+        "columns_available": 41
+      },
+      "matriculados_consolidado_summary": {
+        "total_rows": 676853,
+        "duplicate_rows": 0,
+        "total_columns": 45,
+        "dtype_metric": "int64"
+      }
+    },
+    "consolidado_integrity": {
+      "status": "OK",
+      "total_rows": 3284,
+      "exact_duplicate_rows": 0,
+      "duplicate_ies_per_year": 0,
+      "columns": [
+        "anio_proceso",
+        "codigo_institucion",
+        "nombre_institucion",
+        "total_matriculados",
+        "total_graduados"
+      ],
+      "unique_institutions": 439,
+      "year_range": "2015-2024"
+    },
+    "cifras_oficiales": {
+      "status": "OK",
+      "fuente": "articles-391286_recurso_12.xlsx (MEN-SNIES)",
+      "nota_matriculados": "Regla MEN: Sem1 todas IES (excepto SENA) + Sem2 SENA",
+      "nota_graduados": "Suma total de ambos semestres",
+      "por_anio": {
+        "2015": {
+          "matriculados_parquet": 2293550,
+          "matriculados_oficial": 2293550,
+          "matriculados_match": true,
+          "graduados_parquet": 374738,
+          "graduados_oficial": 374738,
+          "graduados_match": true
+        },
+        "2016": {
+          "matriculados_parquet": 2394434,
+          "matriculados_oficial": 2394434,
+          "matriculados_match": true,
+          "graduados_parquet": 423182,
+          "graduados_oficial": 423182,
+          "graduados_match": true
+        },
+        "2017": {
+          "matriculados_parquet": 2446314,
+          "matriculados_oficial": 2446314,
+          "matriculados_match": true,
+          "graduados_parquet": 462367,
+          "graduados_oficial": 462367,
+          "graduados_match": true
+        },
+        "2018": {
+          "matriculados_parquet": 2440367,
+          "matriculados_oficial": 2440367,
+          "matriculados_match": true,
+          "graduados_parquet": 482122,
+          "graduados_oficial": 482122,
+          "graduados_match": true
+        },
+        "2019": {
+          "matriculados_parquet": 2396250,
+          "matriculados_oficial": 2396250,
+          "matriculados_match": true,
+          "graduados_parquet": 507338,
+          "graduados_oficial": 507338,
+          "graduados_match": true
+        },
+        "2020": {
+          "matriculados_parquet": 2355603,
+          "matriculados_oficial": 2355603,
+          "matriculados_match": true,
+          "graduados_parquet": 449923,
+          "graduados_oficial": 449923,
+          "graduados_match": true
+        },
+        "2021": {
+          "matriculados_parquet": 2448271,
+          "matriculados_oficial": 2448271,
+          "matriculados_match": true,
+          "graduados_parquet": 524983,
+          "graduados_oficial": 524983,
+          "graduados_match": true
+        },
+        "2022": {
+          "matriculados_parquet": 2466228,
+          "matriculados_oficial": 2466228,
+          "matriculados_match": true,
+          "graduados_parquet": 535963,
+          "graduados_oficial": 535963,
+          "graduados_match": true
+        },
+        "2023": {
+          "matriculados_parquet": 2475833,
+          "matriculados_oficial": 2475833,
+          "matriculados_match": true,
+          "graduados_parquet": 534942,
+          "graduados_oficial": 534942,
+          "graduados_match": true
+        },
+        "2024": {
+          "matriculados_parquet": 2553560,
+          "matriculados_oficial": 2553560,
+          "matriculados_match": true,
+          "graduados_parquet": 547959,
+          "graduados_oficial": 547959,
+          "graduados_match": true
+        }
+      }
+    }
+  },
+  "errors": []
+}

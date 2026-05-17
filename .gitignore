@@ -25,6 +25,8 @@ datos/raw/*
 !datos/processed/
 datos/processed/*.csv
 !datos/processed/**/*.parquet
+# Excluir archivos individuales de saber_pro, solo mantener consolidados
+datos/processed/saber_pro/saber_pro_20??_limpio.parquet
 
 datos/interim/
 *.duckdb
