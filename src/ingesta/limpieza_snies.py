@@ -6,7 +6,7 @@ aplica el diccionario Cross-Bright de header_utils_snies.py para
 unificar nombres de columnas, castea las métricas a int, y exporta
 archivos limpios consolidados a datos/processed/snies/.
 """
-
+import sys
 import unicodedata
 import pandas as pd
 import numpy as np
@@ -17,6 +17,9 @@ logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 logger = logging.getLogger(__name__)
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
+
+if str(BASE_DIR) not in sys.path:
+    sys.path.insert(0, str(BASE_DIR))
 
 from src.ingesta.header_utils_snies import (
     normalise_header_snies,
