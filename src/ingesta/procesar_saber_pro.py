@@ -20,8 +20,8 @@ from pathlib import Path
 
 # Configuración de rutas
 RUTA_PROYECTO = Path(__file__).parent.parent.parent
-RUTA_DATOS = RUTA_PROYECTO / "datos"
-RUTA_SALIDA = RUTA_PROYECTO / "Códigos" / "procesamiento_saber_pro" / "datos_procesados"
+RUTA_DATOS = RUTA_PROYECTO / "datos" / "raw"
+RUTA_SALIDA = RUTA_PROYECTO / "datos" / "processed"
 
 # Crear directorio de salida si no existe
 RUTA_SALIDA.mkdir(parents=True, exist_ok=True)
@@ -91,6 +91,30 @@ def validar_estructura(df: pd.DataFrame, anio: int) -> dict:
     return validacion
 
 
+def estandarizar_bogota(valor):
+    """
+    Estandariza todas las variaciones de Bogotá a un solo formato.
+    """
+    if pd.isna(valor) or str(valor).strip() == '':
+        return valor
+    
+    valor_str = str(valor).strip().upper()
+    
+    # Lista de variaciones de Bogotá
+    variaciones_bogota = [
+        'BOGOTA', 'BOGOTÁ', 'BOGOTA D.C.', 'BOGOTÁ D.C.', 
+        'BOGOTA DC', 'BOGOTÁ DC', 'BOGOTA D.F.', 'BOGOTÁ D.F.',
+        'DISTRITO CAPITAL', 'SANTA FE DE BOGOTA', 'SANTA FE DE BOGOTÁ'
+    ]
+    
+    # Verificar si el valor es alguna variación de Bogotá
+    for variacion in variaciones_bogota:
+        if variacion in valor_str:
+            return 'BOGOTÁ D.C.'
+    
+    return valor
+
+
 def limpiar_datos(df: pd.DataFrame, anio: int) -> pd.DataFrame:
     """
     Realiza la limpieza de los datos:
@@ -99,6 +123,7 @@ def limpiar_datos(df: pd.DataFrame, anio: int) -> pd.DataFrame:
     3. Estandariza nombres de columnas (lowercase, sin espacios)
     4. Convierte columnas numéricas a su tipo correspondiente
     5. Maneja valores nulos de manera apropiada
+    6. Estandariza nombres de departamentos (especialmente Bogotá)
     """
     print(f"  Limpiando datos para {anio}...")
     df_limpio = df.copy()
@@ -128,11 +153,21 @@ def limpiar_datos(df: pd.DataFrame, anio: int) -> pd.DataFrame:
         if col in df_limpio.columns:
             df_limpio[col] = pd.to_numeric(df_limpio[col], errors='coerce')
     
-    # 5. Agregar columna de año si no existe
+    # 5. Estandarizar departamento de presentación (Bogotá)
+    columnas_departamento = ['estu_depto_presentacion', 'cole_cod_depto_ubicacion']
+    for col in columnas_departamento:
+        if col in df_limpio.columns:
+            antes = df_limpio[col].nunique()
+            df_limpio[col] = df_limpio[col].apply(estandarizar_bogota)
+            despues = df_limpio[col].nunique()
+            if antes != despues:
+                print(f"    - Departamento estandarizado '{col}': {antes} -> {despues} valores únicos")
+    
+    # 6. Agregar columna de año si no existe
     if 'anio_procesamiento' not in df_limpio.columns:
         df_limpio['anio_procesamiento'] = anio
     
-    # 6. Agregar columna de fecha de procesamiento
+    # 7. Agregar columna de fecha de procesamiento
     df_limpio['fecha_procesamiento'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     
     print(f"  ✅ Limpieza completada: {df_limpio.shape[0]} filas, {df_limpio.shape[1]} columnas")

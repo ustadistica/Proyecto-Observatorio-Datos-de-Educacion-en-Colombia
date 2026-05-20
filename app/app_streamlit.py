@@ -45,8 +45,8 @@ COLORS = {
 COLOR_PALETTE = ['#1E3A8A', '#3B82F6', '#60A5FA', '#93C5FD', '#BFDBFE', '#F97316', '#FB923C', '#FDBA74']
 
 # Rutas
-RUTA_PROYECTO = Path(__file__).parent.parent.parent
-RUTA_DATOS_PROCESADOS = RUTA_PROYECTO / "Códigos" / "procesamiento_saber_pro" / "datos_procesados"
+RUTA_PROYECTO = Path(__file__).parent.parent
+RUTA_DATOS_PROCESADOS = RUTA_PROYECTO / "datos" / "processed"
 
 
 def load_processed_data():

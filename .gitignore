@@ -21,10 +21,17 @@ datos/raw/pte/**/*.xls
 # === Datos RAW (NUNCA SUBIR ESTOS ARCHIVOS) ===
 datos/raw/*
 
-# === Datos PROCESADOS (SI PERMITIR SUBIR ESTOS) ===
-!datos/processed/
+# === Datos PROCESADOS (IGNORAR POR PESO) ===
+# Los archivos .parquet son demasiado pesados para GitHub
+# Usar DVC para versionar datos procesados
+datos/processed/*.parquet
+datos/processed/**/*.parquet
 datos/processed/*.csv
-!datos/processed/**/*.parquet
+datos/processed/**/*.csv
+datos/processed/*.feather
+datos/processed/**/*.feather
+datos/processed/*.h5
+datos/processed/**/*.h5
 
 datos/interim/
 *.duckdb
