@@ -32,6 +32,8 @@ datos/processed/*.feather
 datos/processed/**/*.feather
 datos/processed/*.h5
 datos/processed/**/*.h5
+# Archivos individuales de saber_pro (ignorar, solo mantener consolidados)
+datos/processed/saber_pro/saber_pro_20??_limpio.parquet
 
 datos/interim/
 *.duckdb

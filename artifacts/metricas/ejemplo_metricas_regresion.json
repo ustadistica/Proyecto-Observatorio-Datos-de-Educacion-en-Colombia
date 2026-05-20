@@ -1,0 +1,57 @@
+{
+  "metadata": {
+    "modelo": "random_forest_puntaje_saberpro",
+    "fecha_entrenamiento": "2026-05-17",
+    "autor": "German",
+    "issue": "Sprint 7.1 - Predicción puntajes Saber Pro",
+    "descripcion": "Modelo de regresión para predecir puntaje global Saber Pro"
+  },
+  "datos": {
+    "n_samples_train": 0,
+    "n_samples_test": 0,
+    "n_features": 0,
+    "target_variable": "puntaje_global",
+    "periodo": "2015-2024"
+  },
+  "hiperparametros": {
+    "algoritmo": "RandomForestRegressor",
+    "n_estimators": 100,
+    "max_depth": 10,
+    "min_samples_split": 5,
+    "min_samples_leaf": 2,
+    "random_state": 42
+  },
+  "metricas_train": {
+    "r2_score": 0.0,
+    "rmse": 0.0,
+    "mae": 0.0,
+    "mape": 0.0
+  },
+  "metricas_test": {
+    "r2_score": 0.0,
+    "rmse": 0.0,
+    "mae": 0.0,
+    "mape": 0.0
+  },
+  "validacion_cruzada": {
+    "cv_folds": 5,
+    "cv_mean_r2": 0.0,
+    "cv_std_r2": 0.0,
+    "cv_scores": [0.0, 0.0, 0.0, 0.0, 0.0]
+  },
+  "feature_importance_top10": {
+    "feature_1": 0.0,
+    "feature_2": 0.0,
+    "feature_3": 0.0
+  },
+  "features_utilizadas": [
+    "estu_genero",
+    "fami_estratovivienda",
+    "estu_area_residencia",
+    "inst_nombre_institucion",
+    "estu_depto_presentacion",
+    "punt_razona_cuantitativa",
+    "punt_lectura_critica",
+    "punt_ingles"
+  ]
+}

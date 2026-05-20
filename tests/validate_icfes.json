@@ -1,0 +1,3032 @@
+{
+  "generated_at": "2026-05-12T10:07:42.871491",
+  "pipeline_status": "OK",
+  "fuente": "Saber Pro (ICFES) 2015-2024",
+  "summary": {
+    "total_filas_consolidado": 2683632,
+    "total_columnas": 98,
+    "duplicados_consolidado": 0,
+    "anos_procesados": 10,
+    "total_anos": 10
+  },
+  "validations": {
+    "dictionary_unit_test": {
+      "status": "OK",
+      "total_canonicals": 150,
+      "total_variants": 161,
+      "details": {
+        "actividad_refuerzo_areas": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_actividadrefuerzoareas": {
+              "maps_to": "actividad_refuerzo_areas",
+              "expected": "actividad_refuerzo_areas",
+              "ok": true
+            }
+          }
+        },
+        "actividad_refuerzo_generica": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_actividadrefuerzogeneric": {
+              "maps_to": "actividad_refuerzo_generica",
+              "expected": "actividad_refuerzo_generica",
+              "ok": true
+            }
+          }
+        },
+        "ano_termino_ultimo_grado": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_anoterminoultimogrado": {
+              "maps_to": "ano_termino_ultimo_grado",
+              "expected": "ano_termino_ultimo_grado",
+              "ok": true
+            }
+          }
+        },
+        "area_residencia": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_areareside": {
+              "maps_to": "area_residencia",
+              "expected": "area_residencia",
+              "ok": true
+            }
+          }
+        },
+        "caracter_ies": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "inst_caracter_academico": {
+              "maps_to": "caracter_ies",
+              "expected": "caracter_ies",
+              "ok": true
+            }
+          }
+        },
+        "cod_dane_colegio_termino": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_coddane_cole_termino": {
+              "maps_to": "cod_dane_colegio_termino",
+              "expected": "cod_dane_colegio_termino",
+              "ok": true
+            }
+          }
+        },
+        "cod_depto_presentacion": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_cod_depto_presentacion": {
+              "maps_to": "cod_depto_presentacion",
+              "expected": "cod_depto_presentacion",
+              "ok": true
+            }
+          }
+        },
+        "cod_depto_residencia": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_cod_reside_depto": {
+              "maps_to": "cod_depto_residencia",
+              "expected": "cod_depto_residencia",
+              "ok": true
+            }
+          }
+        },
+        "cod_icfes_colegio_termino": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_codicfescole_termino": {
+              "maps_to": "cod_icfes_colegio_termino",
+              "expected": "cod_icfes_colegio_termino",
+              "ok": true
+            }
+          }
+        },
+        "cod_mcpio_colegio_termino": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_cod_cole_mcpio_termino": {
+              "maps_to": "cod_mcpio_colegio_termino",
+              "expected": "cod_mcpio_colegio_termino",
+              "ok": true
+            }
+          }
+        },
+        "cod_mcpio_ies": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_inst_codmunicipio": {
+              "maps_to": "cod_mcpio_ies",
+              "expected": "cod_mcpio_ies",
+              "ok": true
+            }
+          }
+        },
+        "cod_mcpio_presentacion": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_cod_mcpio_presentacion": {
+              "maps_to": "cod_mcpio_presentacion",
+              "expected": "cod_mcpio_presentacion",
+              "ok": true
+            }
+          }
+        },
+        "cod_mcpio_programa": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_prgm_codmunicipio": {
+              "maps_to": "cod_mcpio_programa",
+              "expected": "cod_mcpio_programa",
+              "ok": true
+            }
+          }
+        },
+        "cod_mcpio_residencia": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_cod_reside_mcpio": {
+              "maps_to": "cod_mcpio_residencia",
+              "expected": "cod_mcpio_residencia",
+              "ok": true
+            }
+          }
+        },
+        "cod_sitio_presentacion": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_cod_sitio_presentacion": {
+              "maps_to": "cod_sitio_presentacion",
+              "expected": "cod_sitio_presentacion",
+              "ok": true
+            }
+          }
+        },
+        "codigo_ies": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "inst_cod_institucion": {
+              "maps_to": "codigo_ies",
+              "expected": "codigo_ies",
+              "ok": true
+            }
+          }
+        },
+        "codigo_snies_programa": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_snies_prgmacademico": {
+              "maps_to": "codigo_snies_programa",
+              "expected": "codigo_snies_programa",
+              "ok": true
+            }
+          }
+        },
+        "curso_docente_ies": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_cursodocentesies": {
+              "maps_to": "curso_docente_ies",
+              "expected": "curso_docente_ies",
+              "ok": true
+            }
+          }
+        },
+        "curso_ies_apoyo_externo": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_cursoiesapoyoexterno": {
+              "maps_to": "curso_ies_apoyo_externo",
+              "expected": "curso_ies_apoyo_externo",
+              "ok": true
+            }
+          }
+        },
+        "curso_ies_externa": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_cursoiesexterna": {
+              "maps_to": "curso_ies_externa",
+              "expected": "curso_ies_externa",
+              "ok": true
+            }
+          }
+        },
+        "depto_ies": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_inst_departamento": {
+              "maps_to": "depto_ies",
+              "expected": "depto_ies",
+              "ok": true
+            }
+          }
+        },
+        "depto_presentacion": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_depto_presentacion": {
+              "maps_to": "depto_presentacion",
+              "expected": "depto_presentacion",
+              "ok": true
+            }
+          }
+        },
+        "depto_programa": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_prgm_departamento": {
+              "maps_to": "depto_programa",
+              "expected": "depto_programa",
+              "ok": true
+            }
+          }
+        },
+        "depto_residencia": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_depto_reside": {
+              "maps_to": "depto_residencia",
+              "expected": "depto_residencia",
+              "ok": true
+            }
+          }
+        },
+        "desem_comp_ciudadanas": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "mod_competen_ciudada_desem": {
+              "maps_to": "desem_comp_ciudadanas",
+              "expected": "desem_comp_ciudadanas",
+              "ok": true
+            }
+          }
+        },
+        "desem_comuni_escrita": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "mod_comuni_escrita_desem": {
+              "maps_to": "desem_comuni_escrita",
+              "expected": "desem_comuni_escrita",
+              "ok": true
+            }
+          }
+        },
+        "desem_ingles": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "mod_ingles_desem": {
+              "maps_to": "desem_ingles",
+              "expected": "desem_ingles",
+              "ok": true
+            }
+          }
+        },
+        "desem_lectura_critica": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "mod_lectura_critica_desem": {
+              "maps_to": "desem_lectura_critica",
+              "expected": "desem_lectura_critica",
+              "ok": true
+            }
+          }
+        },
+        "desem_razona_cuantitativa": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "mod_razona_cuantitat_desem": {
+              "maps_to": "desem_razona_cuantitativa",
+              "expected": "desem_razona_cuantitativa",
+              "ok": true
+            }
+          }
+        },
+        "estu_agregado": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_agregado": {
+              "maps_to": "estu_agregado",
+              "expected": "estu_agregado",
+              "ok": true
+            }
+          }
+        },
+        "estu_ano_examen_estado_sb11": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_ano_examenestado_sb11": {
+              "maps_to": "estu_ano_examen_estado_sb11",
+              "expected": "estu_ano_examen_estado_sb11",
+              "ok": true
+            }
+          }
+        },
+        "estu_apo_acompanamiento": {
+          "status": "OK",
+          "variant_count": 3,
+          "variants": {
+            "estu_apo_acompaaamiento": {
+              "maps_to": "estu_apo_acompanamiento",
+              "expected": "estu_apo_acompanamiento",
+              "ok": true
+            },
+            "estu_apo_acompa_amiento": {
+              "maps_to": "estu_apo_acompanamiento",
+              "expected": "estu_apo_acompanamiento",
+              "ok": true
+            },
+            "estu_apo_acompanamiento": {
+              "maps_to": "estu_apo_acompanamiento",
+              "expected": "estu_apo_acompanamiento",
+              "ok": true
+            }
+          }
+        },
+        "estu_apo_desplaza_sitio": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_apo_desplazasitio": {
+              "maps_to": "estu_apo_desplaza_sitio",
+              "expected": "estu_apo_desplaza_sitio",
+              "ok": true
+            }
+          }
+        },
+        "estu_apo_interp_senas": {
+          "status": "OK",
+          "variant_count": 3,
+          "variants": {
+            "estu_apo_interpseaas": {
+              "maps_to": "estu_apo_interp_senas",
+              "expected": "estu_apo_interp_senas",
+              "ok": true
+            },
+            "estu_apo_interp_seas": {
+              "maps_to": "estu_apo_interp_senas",
+              "expected": "estu_apo_interp_senas",
+              "ok": true
+            },
+            "estu_apo_interpsenas": {
+              "maps_to": "estu_apo_interp_senas",
+              "expected": "estu_apo_interp_senas",
+              "ok": true
+            }
+          }
+        },
+        "estu_apo_interp_sordo_ciego": {
+          "status": "OK",
+          "variant_count": 2,
+          "variants": {
+            "estu_apo_interpsordo_ciego": {
+              "maps_to": "estu_apo_interp_sordo_ciego",
+              "expected": "estu_apo_interp_sordo_ciego",
+              "ok": true
+            },
+            "estu_apo_interpsordociego": {
+              "maps_to": "estu_apo_interp_sordo_ciego",
+              "expected": "estu_apo_interp_sordo_ciego",
+              "ok": true
+            }
+          }
+        },
+        "estu_apo_jefe_salon": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_apo_jefesalon": {
+              "maps_to": "estu_apo_jefe_salon",
+              "expected": "estu_apo_jefe_salon",
+              "ok": true
+            }
+          }
+        },
+        "estu_apo_lector_apoyo": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_apo_lectorapoyo": {
+              "maps_to": "estu_apo_lector_apoyo",
+              "expected": "estu_apo_lector_apoyo",
+              "ok": true
+            }
+          }
+        },
+        "estu_apo_maniobrar_material": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_apo_maniobrarmat": {
+              "maps_to": "estu_apo_maniobrar_material",
+              "expected": "estu_apo_maniobrar_material",
+              "ok": true
+            }
+          }
+        },
+        "estu_apo_no_requiere": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_apo_norequiere": {
+              "maps_to": "estu_apo_no_requiere",
+              "expected": "estu_apo_no_requiere",
+              "ok": true
+            }
+          }
+        },
+        "estu_como_capacito_examen_sb11": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_comocapacitoexamensb11": {
+              "maps_to": "estu_como_capacito_examen_sb11",
+              "expected": "estu_como_capacito_examen_sb11",
+              "ok": true
+            }
+          }
+        },
+        "estu_consecutivo": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_consecutivo": {
+              "maps_to": "estu_consecutivo",
+              "expected": "estu_consecutivo",
+              "ok": true
+            }
+          }
+        },
+        "estu_dedicacion_internet": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_dedicacioninternet": {
+              "maps_to": "estu_dedicacion_internet",
+              "expected": "estu_dedicacion_internet",
+              "ok": true
+            }
+          }
+        },
+        "estu_dedicacion_lectura_diaria": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_dedicacionlecturadiaria": {
+              "maps_to": "estu_dedicacion_lectura_diaria",
+              "expected": "estu_dedicacion_lectura_diaria",
+              "ok": true
+            }
+          }
+        },
+        "estu_discapacidad": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_discapacidad": {
+              "maps_to": "estu_discapacidad",
+              "expected": "estu_discapacidad",
+              "ok": true
+            }
+          }
+        },
+        "estu_es_validante": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_esvalidante": {
+              "maps_to": "estu_es_validante",
+              "expected": "estu_es_validante",
+              "ok": true
+            }
+          }
+        },
+        "estu_estado_civil": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_estadocivil": {
+              "maps_to": "estu_estado_civil",
+              "expected": "estu_estado_civil",
+              "ok": true
+            }
+          }
+        },
+        "estu_etnia": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_etnia": {
+              "maps_to": "estu_etnia",
+              "expected": "estu_etnia",
+              "ok": true
+            }
+          }
+        },
+        "estu_exterior": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_exterior": {
+              "maps_to": "estu_exterior",
+              "expected": "estu_exterior",
+              "ok": true
+            }
+          }
+        },
+        "estu_nacionalidad": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_nacionalidad": {
+              "maps_to": "estu_nacionalidad",
+              "expected": "estu_nacionalidad",
+              "ok": true
+            }
+          }
+        },
+        "estu_privado_libertad": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_privado_libertad": {
+              "maps_to": "estu_privado_libertad",
+              "expected": "estu_privado_libertad",
+              "ok": true
+            }
+          }
+        },
+        "estu_repite": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_repite": {
+              "maps_to": "estu_repite",
+              "expected": "estu_repite",
+              "ok": true
+            }
+          }
+        },
+        "estu_semestre_examen_estado_sb11": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_semestre_examenestadosb11": {
+              "maps_to": "estu_semestre_examen_estado_sb11",
+              "expected": "estu_semestre_examen_estado_sb11",
+              "ok": true
+            }
+          }
+        },
+        "estu_simulacro_tipo_icfes": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_simulacrotipoicfes": {
+              "maps_to": "estu_simulacro_tipo_icfes",
+              "expected": "estu_simulacro_tipo_icfes",
+              "ok": true
+            }
+          }
+        },
+        "estu_tiene_etnia": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_tieneetnia": {
+              "maps_to": "estu_tiene_etnia",
+              "expected": "estu_tiene_etnia",
+              "ok": true
+            }
+          }
+        },
+        "estu_tipo_documento": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_tipodocumento": {
+              "maps_to": "estu_tipo_documento",
+              "expected": "estu_tipo_documento",
+              "ok": true
+            }
+          }
+        },
+        "estu_tipo_documento_sb11": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_tipodocumentosb11": {
+              "maps_to": "estu_tipo_documento_sb11",
+              "expected": "estu_tipo_documento_sb11",
+              "ok": true
+            }
+          }
+        },
+        "estu_tipo_registro": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_estudiante": {
+              "maps_to": "estu_tipo_registro",
+              "expected": "estu_tipo_registro",
+              "ok": true
+            }
+          }
+        },
+        "estu_tipo_remuneracion": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_tiporemuneracion": {
+              "maps_to": "estu_tipo_remuneracion",
+              "expected": "estu_tipo_remuneracion",
+              "ok": true
+            }
+          }
+        },
+        "estu_veces_presento_examen": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_vecespresentoexamen": {
+              "maps_to": "estu_veces_presento_examen",
+              "expected": "estu_veces_presento_examen",
+              "ok": true
+            }
+          }
+        },
+        "estu_veces_presento_examen_estado": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_vecespresentoexamenestado": {
+              "maps_to": "estu_veces_presento_examen_estado",
+              "expected": "estu_veces_presento_examen_estado",
+              "ok": true
+            }
+          }
+        },
+        "fami_cabeza_familia": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "fami_cabezafamilia": {
+              "maps_to": "fami_cabeza_familia",
+              "expected": "fami_cabeza_familia",
+              "ok": true
+            }
+          }
+        },
+        "fami_cuantos_comparten_bano": {
+          "status": "OK",
+          "variant_count": 7,
+          "variants": {
+            "fami_cuantoscompartebaao": {
+              "maps_to": "fami_cuantos_comparten_bano",
+              "expected": "fami_cuantos_comparten_bano",
+              "ok": true
+            },
+            "fami_cuantoscomparteba_o": {
+              "maps_to": "fami_cuantos_comparten_bano",
+              "expected": "fami_cuantos_comparten_bano",
+              "ok": true
+            },
+            "fami_cuantoscompartebano": {
+              "maps_to": "fami_cuantos_comparten_bano",
+              "expected": "fami_cuantos_comparten_bano",
+              "ok": true
+            },
+            "fami_cuantoscomparteba__o": {
+              "maps_to": "fami_cuantos_comparten_bano",
+              "expected": "fami_cuantos_comparten_bano",
+              "ok": true
+            },
+            "fami_cuantoscompartebao": {
+              "maps_to": "fami_cuantos_comparten_bano",
+              "expected": "fami_cuantos_comparten_bano",
+              "ok": true
+            },
+            "fami_cuantoscompartebaano": {
+              "maps_to": "fami_cuantos_comparten_bano",
+              "expected": "fami_cuantos_comparten_bano",
+              "ok": true
+            },
+            "fami_cuantoscompartebaa_o": {
+              "maps_to": "fami_cuantos_comparten_bano",
+              "expected": "fami_cuantos_comparten_bano",
+              "ok": true
+            }
+          }
+        },
+        "fami_cuartos_hogar": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "fami_cuartoshogar": {
+              "maps_to": "fami_cuartos_hogar",
+              "expected": "fami_cuartos_hogar",
+              "ok": true
+            }
+          }
+        },
+        "fami_educacion_madre": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "fami_educacionmadre": {
+              "maps_to": "fami_educacion_madre",
+              "expected": "fami_educacion_madre",
+              "ok": true
+            }
+          }
+        },
+        "fami_educacion_padre": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "fami_educacionpadre": {
+              "maps_to": "fami_educacion_padre",
+              "expected": "fami_educacion_padre",
+              "ok": true
+            }
+          }
+        },
+        "fami_estrato_vivienda": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "fami_estratovivienda": {
+              "maps_to": "fami_estrato_vivienda",
+              "expected": "fami_estrato_vivienda",
+              "ok": true
+            }
+          }
+        },
+        "fami_hogar_actual": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "fami_hogaractual": {
+              "maps_to": "fami_hogar_actual",
+              "expected": "fami_hogar_actual",
+              "ok": true
+            }
+          }
+        },
+        "fami_ingreso_familiar_mensual": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "fami_ingreso_fmiliar_mensual": {
+              "maps_to": "fami_ingreso_familiar_mensual",
+              "expected": "fami_ingreso_familiar_mensual",
+              "ok": true
+            }
+          }
+        },
+        "fami_nivel_sisben": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "fami_nivel_sisben": {
+              "maps_to": "fami_nivel_sisben",
+              "expected": "fami_nivel_sisben",
+              "ok": true
+            }
+          }
+        },
+        "fami_num_libros": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "fami_numlibros": {
+              "maps_to": "fami_num_libros",
+              "expected": "fami_num_libros",
+              "ok": true
+            }
+          }
+        },
+        "fami_num_personas_acargo": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "fami_numpersonasacargo": {
+              "maps_to": "fami_num_personas_acargo",
+              "expected": "fami_num_personas_acargo",
+              "ok": true
+            }
+          }
+        },
+        "fami_ocupacion_madre": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "fami_ocupacionmadre": {
+              "maps_to": "fami_ocupacion_madre",
+              "expected": "fami_ocupacion_madre",
+              "ok": true
+            }
+          }
+        },
+        "fami_ocupacion_padre": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "fami_ocupacionpadre": {
+              "maps_to": "fami_ocupacion_padre",
+              "expected": "fami_ocupacion_padre",
+              "ok": true
+            }
+          }
+        },
+        "fami_personas_hogar": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "fami_personashogar": {
+              "maps_to": "fami_personas_hogar",
+              "expected": "fami_personas_hogar",
+              "ok": true
+            }
+          }
+        },
+        "fami_pisos_hogar": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "fami_pisos_hogar": {
+              "maps_to": "fami_pisos_hogar",
+              "expected": "fami_pisos_hogar",
+              "ok": true
+            }
+          }
+        },
+        "fami_telefono": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "fami_telefono": {
+              "maps_to": "fami_telefono",
+              "expected": "fami_telefono",
+              "ok": true
+            }
+          }
+        },
+        "fami_tiene_automovil": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "fami_tieneautomovil": {
+              "maps_to": "fami_tiene_automovil",
+              "expected": "fami_tiene_automovil",
+              "ok": true
+            }
+          }
+        },
+        "fami_tiene_celular": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "fami_tiene_celular": {
+              "maps_to": "fami_tiene_celular",
+              "expected": "fami_tiene_celular",
+              "ok": true
+            }
+          }
+        },
+        "fami_tiene_computador": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "fami_tienecomputador": {
+              "maps_to": "fami_tiene_computador",
+              "expected": "fami_tiene_computador",
+              "ok": true
+            }
+          }
+        },
+        "fami_tiene_consola": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "fami_tieneconsolavideojuegos": {
+              "maps_to": "fami_tiene_consola",
+              "expected": "fami_tiene_consola",
+              "ok": true
+            }
+          }
+        },
+        "fami_tiene_horno": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "fami_tiene_horno": {
+              "maps_to": "fami_tiene_horno",
+              "expected": "fami_tiene_horno",
+              "ok": true
+            }
+          }
+        },
+        "fami_tiene_horno_microondas": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "fami_tienehornomicroogas": {
+              "maps_to": "fami_tiene_horno_microondas",
+              "expected": "fami_tiene_horno_microondas",
+              "ok": true
+            }
+          }
+        },
+        "fami_tiene_internet": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "fami_tieneinternet": {
+              "maps_to": "fami_tiene_internet",
+              "expected": "fami_tiene_internet",
+              "ok": true
+            }
+          }
+        },
+        "fami_tiene_lavadora": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "fami_tienelavadora": {
+              "maps_to": "fami_tiene_lavadora",
+              "expected": "fami_tiene_lavadora",
+              "ok": true
+            }
+          }
+        },
+        "fami_tiene_microondas": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "fami_tiene_microondas": {
+              "maps_to": "fami_tiene_microondas",
+              "expected": "fami_tiene_microondas",
+              "ok": true
+            }
+          }
+        },
+        "fami_tiene_motocicleta": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "fami_tienemotocicleta": {
+              "maps_to": "fami_tiene_motocicleta",
+              "expected": "fami_tiene_motocicleta",
+              "ok": true
+            }
+          }
+        },
+        "fami_tiene_nevera": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "fami_tiene_nevera": {
+              "maps_to": "fami_tiene_nevera",
+              "expected": "fami_tiene_nevera",
+              "ok": true
+            }
+          }
+        },
+        "fami_tiene_servicio_tv": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "fami_tieneserviciotv": {
+              "maps_to": "fami_tiene_servicio_tv",
+              "expected": "fami_tiene_servicio_tv",
+              "ok": true
+            }
+          }
+        },
+        "fami_trabajo_labor_madre": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "fami_trabajolabormadre": {
+              "maps_to": "fami_trabajo_labor_madre",
+              "expected": "fami_trabajo_labor_madre",
+              "ok": true
+            }
+          }
+        },
+        "fami_trabajo_labor_padre": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "fami_trabajolaborpadre": {
+              "maps_to": "fami_trabajo_labor_padre",
+              "expected": "fami_trabajo_labor_padre",
+              "ok": true
+            }
+          }
+        },
+        "fecha_acta_grado": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_fechaactagrado": {
+              "maps_to": "fecha_acta_grado",
+              "expected": "fecha_acta_grado",
+              "ok": true
+            }
+          }
+        },
+        "fecha_grado_bachiller": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_fechagradobachiller": {
+              "maps_to": "fecha_grado_bachiller",
+              "expected": "fecha_grado_bachiller",
+              "ok": true
+            }
+          }
+        },
+        "fecha_nacimiento": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_fechanacimiento": {
+              "maps_to": "fecha_nacimiento",
+              "expected": "fecha_nacimiento",
+              "ok": true
+            }
+          }
+        },
+        "genero": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_genero": {
+              "maps_to": "genero",
+              "expected": "genero",
+              "ok": true
+            }
+          }
+        },
+        "horas_semana_trabaja": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_horassemanatrabaja": {
+              "maps_to": "horas_semana_trabaja",
+              "expected": "horas_semana_trabaja",
+              "ok": true
+            }
+          }
+        },
+        "inse_individual": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_inse_individual": {
+              "maps_to": "inse_individual",
+              "expected": "inse_individual",
+              "ok": true
+            }
+          }
+        },
+        "mcpio_ies": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_inst_municipio": {
+              "maps_to": "mcpio_ies",
+              "expected": "mcpio_ies",
+              "ok": true
+            }
+          }
+        },
+        "mcpio_presentacion": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_mcpio_presentacion": {
+              "maps_to": "mcpio_presentacion",
+              "expected": "mcpio_presentacion",
+              "ok": true
+            }
+          }
+        },
+        "mcpio_programa": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_prgm_municipio": {
+              "maps_to": "mcpio_programa",
+              "expected": "mcpio_programa",
+              "ok": true
+            }
+          }
+        },
+        "mcpio_residencia": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_mcpio_reside": {
+              "maps_to": "mcpio_residencia",
+              "expected": "mcpio_residencia",
+              "ok": true
+            }
+          }
+        },
+        "metodologia_programa": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_metodo_prgm": {
+              "maps_to": "metodologia_programa",
+              "expected": "metodologia_programa",
+              "ok": true
+            }
+          }
+        },
+        "nivel_programa": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_nivel_prgm_academico": {
+              "maps_to": "nivel_programa",
+              "expected": "nivel_programa",
+              "ok": true
+            }
+          }
+        },
+        "nombre_colegio_termino": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_cole_termino": {
+              "maps_to": "nombre_colegio_termino",
+              "expected": "nombre_colegio_termino",
+              "ok": true
+            }
+          }
+        },
+        "nombre_ies": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "inst_nombre_institucion": {
+              "maps_to": "nombre_ies",
+              "expected": "nombre_ies",
+              "ok": true
+            }
+          }
+        },
+        "nse_ies": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_nse_ies": {
+              "maps_to": "nse_ies",
+              "expected": "nse_ies",
+              "ok": true
+            }
+          }
+        },
+        "nse_individual": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_nse_individual": {
+              "maps_to": "nse_individual",
+              "expected": "nse_individual",
+              "ok": true
+            }
+          }
+        },
+        "nucleo_pregrado": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_nucleo_pregrado": {
+              "maps_to": "nucleo_pregrado",
+              "expected": "nucleo_pregrado",
+              "ok": true
+            }
+          }
+        },
+        "origen_ies": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "inst_origen": {
+              "maps_to": "origen_ies",
+              "expected": "origen_ies",
+              "ok": true
+            }
+          }
+        },
+        "otro_colegio_termino": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_otrocole_termino": {
+              "maps_to": "otro_colegio_termino",
+              "expected": "otro_colegio_termino",
+              "ok": true
+            }
+          }
+        },
+        "pago_matricula_beca": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_pagomatriculabeca": {
+              "maps_to": "pago_matricula_beca",
+              "expected": "pago_matricula_beca",
+              "ok": true
+            }
+          }
+        },
+        "pago_matricula_credito": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_pagomatriculacredito": {
+              "maps_to": "pago_matricula_credito",
+              "expected": "pago_matricula_credito",
+              "ok": true
+            }
+          }
+        },
+        "pago_matricula_exterior": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_pagomatriculaext": {
+              "maps_to": "pago_matricula_exterior",
+              "expected": "pago_matricula_exterior",
+              "ok": true
+            }
+          }
+        },
+        "pago_matricula_padres": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_pagomatriculapadres": {
+              "maps_to": "pago_matricula_padres",
+              "expected": "pago_matricula_padres",
+              "ok": true
+            }
+          }
+        },
+        "pago_matricula_propio": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_pagomatriculapropio": {
+              "maps_to": "pago_matricula_propio",
+              "expected": "pago_matricula_propio",
+              "ok": true
+            }
+          }
+        },
+        "pais_documento_sb11": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_paisdocumentosb11": {
+              "maps_to": "pais_documento_sb11",
+              "expected": "pais_documento_sb11",
+              "ok": true
+            }
+          }
+        },
+        "pais_residencia": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_pais_reside": {
+              "maps_to": "pais_residencia",
+              "expected": "pais_residencia",
+              "ok": true
+            }
+          }
+        },
+        "pct_creditos_aprobados": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_porcentajecreditosaprob": {
+              "maps_to": "pct_creditos_aprobados",
+              "expected": "pct_creditos_aprobados",
+              "ok": true
+            }
+          }
+        },
+        "percentil_global": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "percentil_global": {
+              "maps_to": "percentil_global",
+              "expected": "percentil_global",
+              "ok": true
+            }
+          }
+        },
+        "percentil_nbc": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "percentil_nbc": {
+              "maps_to": "percentil_nbc",
+              "expected": "percentil_nbc",
+              "ok": true
+            }
+          }
+        },
+        "periodo": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "periodo": {
+              "maps_to": "periodo",
+              "expected": "periodo",
+              "ok": true
+            }
+          }
+        },
+        "pgref_comp_ciudadanas": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "mod_competen_ciudada_pgref": {
+              "maps_to": "pgref_comp_ciudadanas",
+              "expected": "pgref_comp_ciudadanas",
+              "ok": true
+            }
+          }
+        },
+        "pgref_comuni_escrita": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "mod_comuni_escrita_pgref": {
+              "maps_to": "pgref_comuni_escrita",
+              "expected": "pgref_comuni_escrita",
+              "ok": true
+            }
+          }
+        },
+        "pgref_ingles": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "mod_ingles_pgref": {
+              "maps_to": "pgref_ingles",
+              "expected": "pgref_ingles",
+              "ok": true
+            }
+          }
+        },
+        "pgref_lectura_critica": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "mod_lectura_critica_pgref": {
+              "maps_to": "pgref_lectura_critica",
+              "expected": "pgref_lectura_critica",
+              "ok": true
+            }
+          }
+        },
+        "pgref_razona_cuantitativa": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "mod_razona_cuantitativo_pgref": {
+              "maps_to": "pgref_razona_cuantitativa",
+              "expected": "pgref_razona_cuantitativa",
+              "ok": true
+            }
+          }
+        },
+        "pnal_comp_ciudadanas": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "mod_competen_ciudada_pnal": {
+              "maps_to": "pnal_comp_ciudadanas",
+              "expected": "pnal_comp_ciudadanas",
+              "ok": true
+            }
+          }
+        },
+        "pnal_comuni_escrita": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "mod_comuni_escrita_pnal": {
+              "maps_to": "pnal_comuni_escrita",
+              "expected": "pnal_comuni_escrita",
+              "ok": true
+            }
+          }
+        },
+        "pnal_ingles": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "mod_ingles_pnal": {
+              "maps_to": "pnal_ingles",
+              "expected": "pnal_ingles",
+              "ok": true
+            }
+          }
+        },
+        "pnal_lectura_critica": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "mod_lectura_critica_pnal": {
+              "maps_to": "pnal_lectura_critica",
+              "expected": "pnal_lectura_critica",
+              "ok": true
+            }
+          }
+        },
+        "pnal_razona_cuantitativa": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "mod_razona_cuantitativo_pnal": {
+              "maps_to": "pnal_razona_cuantitativa",
+              "expected": "pnal_razona_cuantitativa",
+              "ok": true
+            }
+          }
+        },
+        "pnbc_comp_ciudadanas": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "mod_competen_ciudada_pnbc": {
+              "maps_to": "pnbc_comp_ciudadanas",
+              "expected": "pnbc_comp_ciudadanas",
+              "ok": true
+            }
+          }
+        },
+        "pnbc_comuni_escrita": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "mod_comuni_escrita_pnbc": {
+              "maps_to": "pnbc_comuni_escrita",
+              "expected": "pnbc_comuni_escrita",
+              "ok": true
+            }
+          }
+        },
+        "pnbc_ingles": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "mod_ingles_pnbc": {
+              "maps_to": "pnbc_ingles",
+              "expected": "pnbc_ingles",
+              "ok": true
+            }
+          }
+        },
+        "pnbc_lectura_critica": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "mod_lectura_critica_pnbc": {
+              "maps_to": "pnbc_lectura_critica",
+              "expected": "pnbc_lectura_critica",
+              "ok": true
+            }
+          }
+        },
+        "pnbc_razona_cuantitativa": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "mod_razona_cuantitativo_pnbc": {
+              "maps_to": "pnbc_razona_cuantitativa",
+              "expected": "pnbc_razona_cuantitativa",
+              "ok": true
+            }
+          }
+        },
+        "programa_academico": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_prgm_academico": {
+              "maps_to": "programa_academico",
+              "expected": "programa_academico",
+              "ok": true
+            }
+          }
+        },
+        "punt_comp_ciudadanas": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "mod_competen_ciudada_punt": {
+              "maps_to": "punt_comp_ciudadanas",
+              "expected": "punt_comp_ciudadanas",
+              "ok": true
+            }
+          }
+        },
+        "punt_comuni_escrita": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "mod_comuni_escrita_punt": {
+              "maps_to": "punt_comuni_escrita",
+              "expected": "punt_comuni_escrita",
+              "ok": true
+            }
+          }
+        },
+        "punt_ingles": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "mod_ingles_punt": {
+              "maps_to": "punt_ingles",
+              "expected": "punt_ingles",
+              "ok": true
+            }
+          }
+        },
+        "punt_lectura_critica": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "mod_lectura_critica_punt": {
+              "maps_to": "punt_lectura_critica",
+              "expected": "punt_lectura_critica",
+              "ok": true
+            }
+          }
+        },
+        "punt_razona_cuantitativa": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "mod_razona_cuantitat_punt": {
+              "maps_to": "punt_razona_cuantitativa",
+              "expected": "punt_razona_cuantitativa",
+              "ok": true
+            }
+          }
+        },
+        "puntaje_global": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "punt_global": {
+              "maps_to": "puntaje_global",
+              "expected": "puntaje_global",
+              "ok": true
+            }
+          }
+        },
+        "semestre_cursa": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_semestrecursa": {
+              "maps_to": "semestre_cursa",
+              "expected": "semestre_cursa",
+              "ok": true
+            }
+          }
+        },
+        "titulo_obtenido_bachiller": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_tituloobtenidobachiller": {
+              "maps_to": "titulo_obtenido_bachiller",
+              "expected": "titulo_obtenido_bachiller",
+              "ok": true
+            }
+          }
+        },
+        "tomo_curso_preparacion": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_tomo_cursopreparacion": {
+              "maps_to": "tomo_curso_preparacion",
+              "expected": "tomo_curso_preparacion",
+              "ok": true
+            }
+          }
+        },
+        "trabaja_actualmente": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_trabaja_actualmente": {
+              "maps_to": "trabaja_actualmente",
+              "expected": "trabaja_actualmente",
+              "ok": true
+            }
+          }
+        },
+        "ultimo_grado_aprobo": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_ultimogradoaprobo": {
+              "maps_to": "ultimo_grado_aprobo",
+              "expected": "ultimo_grado_aprobo",
+              "ok": true
+            }
+          }
+        },
+        "valor_matricula_exterior": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_valormatriculauext": {
+              "maps_to": "valor_matricula_exterior",
+              "expected": "valor_matricula_exterior",
+              "ok": true
+            }
+          }
+        },
+        "valor_matricula_universidad": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_valormatriculauniversidad": {
+              "maps_to": "valor_matricula_universidad",
+              "expected": "valor_matricula_universidad",
+              "ok": true
+            }
+          }
+        },
+        "zona_presentacion": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "estu_zona_presentacion": {
+              "maps_to": "zona_presentacion",
+              "expected": "zona_presentacion",
+              "ok": true
+            }
+          }
+        }
+      }
+    },
+    "por_anio_limpieza": {
+      "2015": {
+        "anio": 2015,
+        "exitoso": true,
+        "filas_raw": 411331,
+        "filas_limpias": 411331,
+        "duplicados_eliminados": 0,
+        "filas_vacias_eliminadas": 0,
+        "unmapped_columns": [],
+        "columnas_core_faltantes": [],
+        "mensaje": "OK"
+      },
+      "2016": {
+        "anio": 2016,
+        "exitoso": true,
+        "filas_raw": 245181,
+        "filas_limpias": 245181,
+        "duplicados_eliminados": 0,
+        "filas_vacias_eliminadas": 0,
+        "unmapped_columns": [],
+        "columnas_core_faltantes": [],
+        "mensaje": "OK"
+      },
+      "2017": {
+        "anio": 2017,
+        "exitoso": true,
+        "filas_raw": 248854,
+        "filas_limpias": 248854,
+        "duplicados_eliminados": 0,
+        "filas_vacias_eliminadas": 0,
+        "unmapped_columns": [],
+        "columnas_core_faltantes": [],
+        "mensaje": "OK"
+      },
+      "2018": {
+        "anio": 2018,
+        "exitoso": true,
+        "filas_raw": 240406,
+        "filas_limpias": 240406,
+        "duplicados_eliminados": 0,
+        "filas_vacias_eliminadas": 0,
+        "unmapped_columns": [],
+        "columnas_core_faltantes": [],
+        "mensaje": "OK"
+      },
+      "2019": {
+        "anio": 2019,
+        "exitoso": true,
+        "filas_raw": 269427,
+        "filas_limpias": 269427,
+        "duplicados_eliminados": 0,
+        "filas_vacias_eliminadas": 0,
+        "unmapped_columns": [],
+        "columnas_core_faltantes": [],
+        "mensaje": "OK"
+      },
+      "2020": {
+        "anio": 2020,
+        "exitoso": true,
+        "filas_raw": 253138,
+        "filas_limpias": 253138,
+        "duplicados_eliminados": 0,
+        "filas_vacias_eliminadas": 0,
+        "unmapped_columns": [],
+        "columnas_core_faltantes": [],
+        "mensaje": "OK"
+      },
+      "2021": {
+        "anio": 2021,
+        "exitoso": true,
+        "filas_raw": 253568,
+        "filas_limpias": 253568,
+        "duplicados_eliminados": 0,
+        "filas_vacias_eliminadas": 0,
+        "unmapped_columns": [],
+        "columnas_core_faltantes": [],
+        "mensaje": "OK"
+      },
+      "2022": {
+        "anio": 2022,
+        "exitoso": true,
+        "filas_raw": 231030,
+        "filas_limpias": 231030,
+        "duplicados_eliminados": 0,
+        "filas_vacias_eliminadas": 0,
+        "unmapped_columns": [],
+        "columnas_core_faltantes": [],
+        "mensaje": "OK"
+      },
+      "2023": {
+        "anio": 2023,
+        "exitoso": true,
+        "filas_raw": 249096,
+        "filas_limpias": 249096,
+        "duplicados_eliminados": 0,
+        "filas_vacias_eliminadas": 0,
+        "unmapped_columns": [],
+        "columnas_core_faltantes": [],
+        "mensaje": "OK"
+      },
+      "2024": {
+        "anio": 2024,
+        "exitoso": true,
+        "filas_raw": 281601,
+        "filas_limpias": 281601,
+        "duplicados_eliminados": 0,
+        "filas_vacias_eliminadas": 0,
+        "unmapped_columns": [],
+        "columnas_core_faltantes": [],
+        "mensaje": "OK"
+      }
+    },
+    "por_anio_validacion": {
+      "2015": {
+        "status": "OK",
+        "anio": 2015,
+        "total_filas": 411331,
+        "duplicados": 0,
+        "unmapped_columns": [],
+        "columnas_core_faltantes": [],
+        "puntaje_nulls": {},
+        "columnas": [
+          "actividad_refuerzo_areas",
+          "actividad_refuerzo_generica",
+          "ano_termino_ultimo_grado",
+          "caracter_ies",
+          "cod_dane_colegio_termino",
+          "cod_depto_presentacion",
+          "cod_depto_residencia",
+          "cod_icfes_colegio_termino",
+          "cod_mcpio_colegio_termino",
+          "cod_mcpio_ies",
+          "cod_mcpio_presentacion",
+          "cod_mcpio_programa",
+          "cod_mcpio_residencia",
+          "cod_sitio_presentacion",
+          "codigo_ies",
+          "codigo_snies_programa",
+          "curso_docente_ies",
+          "curso_ies_apoyo_externo",
+          "curso_ies_externa",
+          "depto_ies",
+          "depto_presentacion",
+          "depto_programa",
+          "depto_residencia",
+          "desem_comuni_escrita",
+          "desem_ingles",
+          "estu_ano_examen_estado_sb11",
+          "estu_consecutivo",
+          "estu_discapacidad",
+          "estu_estado_civil",
+          "estu_etnia",
+          "estu_nacionalidad",
+          "estu_privado_libertad",
+          "estu_repite",
+          "estu_semestre_examen_estado_sb11",
+          "estu_simulacro_tipo_icfes",
+          "estu_tipo_documento",
+          "estu_tipo_documento_sb11",
+          "estu_tipo_registro",
+          "estu_veces_presento_examen",
+          "estu_veces_presento_examen_estado",
+          "fami_cabeza_familia",
+          "fami_cuartos_hogar",
+          "fami_educacion_madre",
+          "fami_educacion_padre",
+          "fami_estrato_vivienda",
+          "fami_hogar_actual",
+          "fami_ingreso_familiar_mensual",
+          "fami_nivel_sisben",
+          "fami_num_personas_acargo",
+          "fami_ocupacion_madre",
+          "fami_ocupacion_padre",
+          "fami_personas_hogar",
+          "fami_pisos_hogar",
+          "fami_telefono",
+          "fami_tiene_automovil",
+          "fami_tiene_celular",
+          "fami_tiene_computador",
+          "fami_tiene_horno",
+          "fami_tiene_internet",
+          "fami_tiene_lavadora",
+          "fami_tiene_microondas",
+          "fami_tiene_nevera",
+          "fecha_acta_grado",
+          "fecha_grado_bachiller",
+          "fecha_nacimiento",
+          "genero",
+          "horas_semana_trabaja",
+          "mcpio_ies",
+          "mcpio_presentacion",
+          "mcpio_programa",
+          "mcpio_residencia",
+          "metodologia_programa",
+          "nivel_programa",
+          "nombre_colegio_termino",
+          "nombre_ies",
+          "nucleo_pregrado",
+          "origen_ies",
+          "otro_colegio_termino",
+          "pago_matricula_beca",
+          "pago_matricula_credito",
+          "pago_matricula_padres",
+          "pago_matricula_propio",
+          "pais_residencia",
+          "pct_creditos_aprobados",
+          "periodo",
+          "programa_academico",
+          "punt_comp_ciudadanas",
+          "punt_comuni_escrita",
+          "punt_ingles",
+          "punt_lectura_critica",
+          "punt_razona_cuantitativa",
+          "semestre_cursa",
+          "titulo_obtenido_bachiller",
+          "tomo_curso_preparacion",
+          "trabaja_actualmente",
+          "ultimo_grado_aprobo",
+          "valor_matricula_universidad",
+          "zona_presentacion"
+        ]
+      },
+      "2016": {
+        "status": "OK",
+        "anio": 2016,
+        "total_filas": 245181,
+        "duplicados": 0,
+        "unmapped_columns": [],
+        "columnas_core_faltantes": [],
+        "puntaje_nulls": {
+          "puntaje_global": 0,
+          "percentil_global": 0
+        },
+        "columnas": [
+          "actividad_refuerzo_areas",
+          "actividad_refuerzo_generica",
+          "area_residencia",
+          "caracter_ies",
+          "cod_dane_colegio_termino",
+          "cod_depto_presentacion",
+          "cod_depto_residencia",
+          "cod_mcpio_colegio_termino",
+          "cod_mcpio_ies",
+          "cod_mcpio_presentacion",
+          "cod_mcpio_programa",
+          "cod_mcpio_residencia",
+          "cod_sitio_presentacion",
+          "codigo_ies",
+          "codigo_snies_programa",
+          "curso_docente_ies",
+          "curso_ies_apoyo_externo",
+          "curso_ies_externa",
+          "depto_ies",
+          "depto_presentacion",
+          "depto_programa",
+          "depto_residencia",
+          "desem_comp_ciudadanas",
+          "desem_comuni_escrita",
+          "desem_ingles",
+          "desem_lectura_critica",
+          "desem_razona_cuantitativa",
+          "estu_agregado",
+          "estu_apo_acompanamiento",
+          "estu_apo_desplaza_sitio",
+          "estu_apo_interp_senas",
+          "estu_apo_interp_sordo_ciego",
+          "estu_apo_jefe_salon",
+          "estu_apo_lector_apoyo",
+          "estu_apo_maniobrar_material",
+          "estu_apo_no_requiere",
+          "estu_como_capacito_examen_sb11",
+          "estu_consecutivo",
+          "estu_dedicacion_internet",
+          "estu_dedicacion_lectura_diaria",
+          "estu_discapacidad",
+          "estu_es_validante",
+          "estu_estado_civil",
+          "estu_etnia",
+          "estu_exterior",
+          "estu_nacionalidad",
+          "estu_privado_libertad",
+          "estu_repite",
+          "estu_simulacro_tipo_icfes",
+          "estu_tiene_etnia",
+          "estu_tipo_documento",
+          "estu_tipo_documento_sb11",
+          "estu_tipo_registro",
+          "estu_tipo_remuneracion",
+          "fami_cabeza_familia",
+          "fami_cuartos_hogar",
+          "fami_educacion_madre",
+          "fami_educacion_padre",
+          "fami_estrato_vivienda",
+          "fami_hogar_actual",
+          "fami_num_libros",
+          "fami_num_personas_acargo",
+          "fami_ocupacion_madre",
+          "fami_ocupacion_padre",
+          "fami_personas_hogar",
+          "fami_tiene_automovil",
+          "fami_tiene_computador",
+          "fami_tiene_horno_microondas",
+          "fami_tiene_internet",
+          "fami_tiene_lavadora",
+          "fami_tiene_motocicleta",
+          "fami_tiene_servicio_tv",
+          "fecha_nacimiento",
+          "genero",
+          "horas_semana_trabaja",
+          "inse_individual",
+          "mcpio_ies",
+          "mcpio_presentacion",
+          "mcpio_programa",
+          "mcpio_residencia",
+          "metodologia_programa",
+          "nivel_programa",
+          "nombre_colegio_termino",
+          "nombre_ies",
+          "nse_individual",
+          "nucleo_pregrado",
+          "origen_ies",
+          "otro_colegio_termino",
+          "pago_matricula_beca",
+          "pago_matricula_credito",
+          "pago_matricula_padres",
+          "pago_matricula_propio",
+          "pais_residencia",
+          "percentil_global",
+          "periodo",
+          "pgref_comp_ciudadanas",
+          "pgref_comuni_escrita",
+          "pgref_ingles",
+          "pgref_lectura_critica",
+          "pgref_razona_cuantitativa",
+          "pnal_comp_ciudadanas",
+          "pnal_comuni_escrita",
+          "pnal_ingles",
+          "pnal_lectura_critica",
+          "pnal_razona_cuantitativa",
+          "programa_academico",
+          "punt_comp_ciudadanas",
+          "punt_comuni_escrita",
+          "punt_ingles",
+          "punt_lectura_critica",
+          "punt_razona_cuantitativa",
+          "puntaje_global",
+          "semestre_cursa",
+          "titulo_obtenido_bachiller",
+          "valor_matricula_universidad",
+          "zona_presentacion"
+        ]
+      },
+      "2017": {
+        "status": "OK",
+        "anio": 2017,
+        "total_filas": 248854,
+        "duplicados": 0,
+        "unmapped_columns": [],
+        "columnas_core_faltantes": [],
+        "puntaje_nulls": {
+          "puntaje_global": 2,
+          "percentil_global": 158
+        },
+        "columnas": [
+          "actividad_refuerzo_areas",
+          "actividad_refuerzo_generica",
+          "caracter_ies",
+          "cod_dane_colegio_termino",
+          "cod_depto_presentacion",
+          "cod_depto_residencia",
+          "cod_icfes_colegio_termino",
+          "cod_mcpio_colegio_termino",
+          "cod_mcpio_ies",
+          "cod_mcpio_presentacion",
+          "cod_mcpio_programa",
+          "cod_mcpio_residencia",
+          "cod_sitio_presentacion",
+          "codigo_ies",
+          "codigo_snies_programa",
+          "curso_docente_ies",
+          "curso_ies_apoyo_externo",
+          "curso_ies_externa",
+          "depto_ies",
+          "depto_presentacion",
+          "depto_programa",
+          "depto_residencia",
+          "desem_comp_ciudadanas",
+          "desem_comuni_escrita",
+          "desem_ingles",
+          "desem_lectura_critica",
+          "desem_razona_cuantitativa",
+          "estu_agregado",
+          "estu_apo_acompanamiento",
+          "estu_apo_desplaza_sitio",
+          "estu_apo_interp_senas",
+          "estu_apo_jefe_salon",
+          "estu_apo_lector_apoyo",
+          "estu_apo_maniobrar_material",
+          "estu_apo_no_requiere",
+          "estu_como_capacito_examen_sb11",
+          "estu_consecutivo",
+          "estu_dedicacion_internet",
+          "estu_dedicacion_lectura_diaria",
+          "estu_discapacidad",
+          "estu_es_validante",
+          "estu_etnia",
+          "estu_exterior",
+          "estu_nacionalidad",
+          "estu_privado_libertad",
+          "estu_repite",
+          "estu_simulacro_tipo_icfes",
+          "estu_tiene_etnia",
+          "estu_tipo_documento",
+          "estu_tipo_documento_sb11",
+          "estu_tipo_registro",
+          "estu_tipo_remuneracion",
+          "fami_cabeza_familia",
+          "fami_cuantos_comparten_bano",
+          "fami_cuartos_hogar",
+          "fami_educacion_madre",
+          "fami_educacion_padre",
+          "fami_estrato_vivienda",
+          "fami_hogar_actual",
+          "fami_num_libros",
+          "fami_num_personas_acargo",
+          "fami_ocupacion_madre",
+          "fami_ocupacion_padre",
+          "fami_personas_hogar",
+          "fami_tiene_automovil",
+          "fami_tiene_computador",
+          "fami_tiene_consola",
+          "fami_tiene_horno_microondas",
+          "fami_tiene_internet",
+          "fami_tiene_lavadora",
+          "fami_tiene_motocicleta",
+          "fami_tiene_servicio_tv",
+          "fecha_nacimiento",
+          "genero",
+          "horas_semana_trabaja",
+          "inse_individual",
+          "mcpio_ies",
+          "mcpio_presentacion",
+          "mcpio_programa",
+          "mcpio_residencia",
+          "metodologia_programa",
+          "nivel_programa",
+          "nombre_colegio_termino",
+          "nombre_ies",
+          "nse_ies",
+          "nse_individual",
+          "nucleo_pregrado",
+          "origen_ies",
+          "otro_colegio_termino",
+          "pago_matricula_beca",
+          "pago_matricula_credito",
+          "pago_matricula_exterior",
+          "pago_matricula_padres",
+          "pago_matricula_propio",
+          "pais_documento_sb11",
+          "pais_residencia",
+          "percentil_global",
+          "periodo",
+          "pgref_comp_ciudadanas",
+          "pgref_comuni_escrita",
+          "pgref_ingles",
+          "pgref_lectura_critica",
+          "pgref_razona_cuantitativa",
+          "pnal_comp_ciudadanas",
+          "pnal_comuni_escrita",
+          "pnal_ingles",
+          "pnal_lectura_critica",
+          "pnal_razona_cuantitativa",
+          "programa_academico",
+          "punt_comp_ciudadanas",
+          "punt_comuni_escrita",
+          "punt_ingles",
+          "punt_lectura_critica",
+          "punt_razona_cuantitativa",
+          "puntaje_global",
+          "semestre_cursa",
+          "titulo_obtenido_bachiller",
+          "valor_matricula_exterior",
+          "valor_matricula_universidad",
+          "zona_presentacion"
+        ]
+      },
+      "2018": {
+        "status": "OK",
+        "anio": 2018,
+        "total_filas": 240406,
+        "duplicados": 0,
+        "unmapped_columns": [],
+        "columnas_core_faltantes": [],
+        "puntaje_nulls": {
+          "puntaje_global": 1,
+          "percentil_global": 118
+        },
+        "columnas": [
+          "actividad_refuerzo_areas",
+          "actividad_refuerzo_generica",
+          "area_residencia",
+          "caracter_ies",
+          "cod_dane_colegio_termino",
+          "cod_depto_presentacion",
+          "cod_depto_residencia",
+          "cod_icfes_colegio_termino",
+          "cod_mcpio_colegio_termino",
+          "cod_mcpio_ies",
+          "cod_mcpio_presentacion",
+          "cod_mcpio_programa",
+          "cod_mcpio_residencia",
+          "cod_sitio_presentacion",
+          "codigo_ies",
+          "codigo_snies_programa",
+          "curso_docente_ies",
+          "curso_ies_apoyo_externo",
+          "curso_ies_externa",
+          "depto_ies",
+          "depto_presentacion",
+          "depto_programa",
+          "depto_residencia",
+          "desem_comp_ciudadanas",
+          "desem_comuni_escrita",
+          "desem_ingles",
+          "desem_lectura_critica",
+          "desem_razona_cuantitativa",
+          "estu_agregado",
+          "estu_apo_acompanamiento",
+          "estu_apo_desplaza_sitio",
+          "estu_apo_interp_senas",
+          "estu_apo_jefe_salon",
+          "estu_apo_lector_apoyo",
+          "estu_apo_maniobrar_material",
+          "estu_apo_no_requiere",
+          "estu_como_capacito_examen_sb11",
+          "estu_consecutivo",
+          "estu_dedicacion_internet",
+          "estu_dedicacion_lectura_diaria",
+          "estu_discapacidad",
+          "estu_es_validante",
+          "estu_estado_civil",
+          "estu_etnia",
+          "estu_exterior",
+          "estu_nacionalidad",
+          "estu_privado_libertad",
+          "estu_repite",
+          "estu_simulacro_tipo_icfes",
+          "estu_tiene_etnia",
+          "estu_tipo_documento",
+          "estu_tipo_documento_sb11",
+          "estu_tipo_registro",
+          "estu_tipo_remuneracion",
+          "fami_cabeza_familia",
+          "fami_cuantos_comparten_bano",
+          "fami_cuartos_hogar",
+          "fami_educacion_madre",
+          "fami_educacion_padre",
+          "fami_estrato_vivienda",
+          "fami_hogar_actual",
+          "fami_num_libros",
+          "fami_num_personas_acargo",
+          "fami_personas_hogar",
+          "fami_tiene_automovil",
+          "fami_tiene_computador",
+          "fami_tiene_consola",
+          "fami_tiene_horno_microondas",
+          "fami_tiene_internet",
+          "fami_tiene_lavadora",
+          "fami_tiene_motocicleta",
+          "fami_tiene_servicio_tv",
+          "fami_trabajo_labor_madre",
+          "fami_trabajo_labor_padre",
+          "fecha_nacimiento",
+          "genero",
+          "horas_semana_trabaja",
+          "inse_individual",
+          "mcpio_ies",
+          "mcpio_presentacion",
+          "mcpio_programa",
+          "mcpio_residencia",
+          "metodologia_programa",
+          "nivel_programa",
+          "nombre_colegio_termino",
+          "nombre_ies",
+          "nse_ies",
+          "nse_individual",
+          "nucleo_pregrado",
+          "origen_ies",
+          "otro_colegio_termino",
+          "pago_matricula_beca",
+          "pago_matricula_credito",
+          "pago_matricula_padres",
+          "pago_matricula_propio",
+          "pais_residencia",
+          "percentil_global",
+          "periodo",
+          "pgref_comp_ciudadanas",
+          "pgref_comuni_escrita",
+          "pgref_ingles",
+          "pgref_lectura_critica",
+          "pgref_razona_cuantitativa",
+          "pnal_comp_ciudadanas",
+          "pnal_comuni_escrita",
+          "pnal_ingles",
+          "pnal_lectura_critica",
+          "pnal_razona_cuantitativa",
+          "programa_academico",
+          "punt_comp_ciudadanas",
+          "punt_comuni_escrita",
+          "punt_ingles",
+          "punt_lectura_critica",
+          "punt_razona_cuantitativa",
+          "puntaje_global",
+          "titulo_obtenido_bachiller",
+          "valor_matricula_universidad",
+          "zona_presentacion"
+        ]
+      },
+      "2019": {
+        "status": "OK",
+        "anio": 2019,
+        "total_filas": 269427,
+        "duplicados": 0,
+        "unmapped_columns": [],
+        "columnas_core_faltantes": [],
+        "puntaje_nulls": {
+          "puntaje_global": 0,
+          "percentil_global": 412
+        },
+        "columnas": [
+          "actividad_refuerzo_areas",
+          "actividad_refuerzo_generica",
+          "area_residencia",
+          "caracter_ies",
+          "cod_dane_colegio_termino",
+          "cod_depto_presentacion",
+          "cod_depto_residencia",
+          "cod_icfes_colegio_termino",
+          "cod_mcpio_colegio_termino",
+          "cod_mcpio_ies",
+          "cod_mcpio_presentacion",
+          "cod_mcpio_programa",
+          "cod_mcpio_residencia",
+          "cod_sitio_presentacion",
+          "codigo_ies",
+          "codigo_snies_programa",
+          "curso_docente_ies",
+          "curso_ies_apoyo_externo",
+          "curso_ies_externa",
+          "depto_ies",
+          "depto_presentacion",
+          "depto_programa",
+          "depto_residencia",
+          "desem_comp_ciudadanas",
+          "desem_comuni_escrita",
+          "desem_ingles",
+          "desem_lectura_critica",
+          "desem_razona_cuantitativa",
+          "estu_agregado",
+          "estu_como_capacito_examen_sb11",
+          "estu_consecutivo",
+          "estu_discapacidad",
+          "estu_es_validante",
+          "estu_exterior",
+          "estu_nacionalidad",
+          "estu_privado_libertad",
+          "estu_repite",
+          "estu_simulacro_tipo_icfes",
+          "estu_tipo_documento",
+          "estu_tipo_documento_sb11",
+          "estu_tipo_registro",
+          "fami_cuantos_comparten_bano",
+          "fami_educacion_madre",
+          "fami_educacion_padre",
+          "fami_estrato_vivienda",
+          "fami_tiene_automovil",
+          "fami_tiene_computador",
+          "fami_tiene_consola",
+          "fami_tiene_horno_microondas",
+          "fami_tiene_internet",
+          "fami_tiene_lavadora",
+          "fami_tiene_motocicleta",
+          "fami_tiene_servicio_tv",
+          "fami_trabajo_labor_madre",
+          "fami_trabajo_labor_padre",
+          "fecha_nacimiento",
+          "genero",
+          "horas_semana_trabaja",
+          "inse_individual",
+          "mcpio_ies",
+          "mcpio_presentacion",
+          "mcpio_programa",
+          "mcpio_residencia",
+          "metodologia_programa",
+          "nivel_programa",
+          "nombre_colegio_termino",
+          "nombre_ies",
+          "nse_ies",
+          "nse_individual",
+          "nucleo_pregrado",
+          "origen_ies",
+          "otro_colegio_termino",
+          "pago_matricula_beca",
+          "pago_matricula_credito",
+          "pago_matricula_padres",
+          "pago_matricula_propio",
+          "pais_residencia",
+          "percentil_global",
+          "percentil_nbc",
+          "periodo",
+          "pnal_comp_ciudadanas",
+          "pnal_comuni_escrita",
+          "pnal_ingles",
+          "pnal_lectura_critica",
+          "pnal_razona_cuantitativa",
+          "pnbc_comp_ciudadanas",
+          "pnbc_comuni_escrita",
+          "pnbc_ingles",
+          "pnbc_lectura_critica",
+          "pnbc_razona_cuantitativa",
+          "programa_academico",
+          "punt_comp_ciudadanas",
+          "punt_comuni_escrita",
+          "punt_ingles",
+          "punt_lectura_critica",
+          "punt_razona_cuantitativa",
+          "puntaje_global",
+          "semestre_cursa",
+          "valor_matricula_universidad",
+          "zona_presentacion"
+        ]
+      },
+      "2020": {
+        "status": "OK",
+        "anio": 2020,
+        "total_filas": 253138,
+        "duplicados": 0,
+        "unmapped_columns": [],
+        "columnas_core_faltantes": [],
+        "puntaje_nulls": {
+          "puntaje_global": 1,
+          "percentil_global": 546
+        },
+        "columnas": [
+          "actividad_refuerzo_areas",
+          "actividad_refuerzo_generica",
+          "area_residencia",
+          "caracter_ies",
+          "cod_dane_colegio_termino",
+          "cod_depto_presentacion",
+          "cod_depto_residencia",
+          "cod_icfes_colegio_termino",
+          "cod_mcpio_colegio_termino",
+          "cod_mcpio_ies",
+          "cod_mcpio_presentacion",
+          "cod_mcpio_programa",
+          "cod_mcpio_residencia",
+          "cod_sitio_presentacion",
+          "codigo_ies",
+          "codigo_snies_programa",
+          "curso_docente_ies",
+          "curso_ies_apoyo_externo",
+          "curso_ies_externa",
+          "depto_ies",
+          "depto_presentacion",
+          "depto_programa",
+          "depto_residencia",
+          "desem_comp_ciudadanas",
+          "desem_comuni_escrita",
+          "desem_ingles",
+          "desem_lectura_critica",
+          "desem_razona_cuantitativa",
+          "estu_agregado",
+          "estu_como_capacito_examen_sb11",
+          "estu_consecutivo",
+          "estu_discapacidad",
+          "estu_es_validante",
+          "estu_estado_civil",
+          "estu_exterior",
+          "estu_nacionalidad",
+          "estu_privado_libertad",
+          "estu_repite",
+          "estu_simulacro_tipo_icfes",
+          "estu_tipo_documento",
+          "estu_tipo_documento_sb11",
+          "estu_tipo_registro",
+          "fami_cuantos_comparten_bano",
+          "fami_educacion_madre",
+          "fami_educacion_padre",
+          "fami_estrato_vivienda",
+          "fami_tiene_automovil",
+          "fami_tiene_computador",
+          "fami_tiene_consola",
+          "fami_tiene_horno_microondas",
+          "fami_tiene_internet",
+          "fami_tiene_lavadora",
+          "fami_tiene_motocicleta",
+          "fami_tiene_servicio_tv",
+          "fami_trabajo_labor_madre",
+          "fami_trabajo_labor_padre",
+          "fecha_nacimiento",
+          "genero",
+          "horas_semana_trabaja",
+          "inse_individual",
+          "mcpio_ies",
+          "mcpio_presentacion",
+          "mcpio_programa",
+          "mcpio_residencia",
+          "metodologia_programa",
+          "nivel_programa",
+          "nombre_colegio_termino",
+          "nombre_ies",
+          "nse_ies",
+          "nse_individual",
+          "nucleo_pregrado",
+          "origen_ies",
+          "otro_colegio_termino",
+          "pago_matricula_beca",
+          "pago_matricula_credito",
+          "pago_matricula_padres",
+          "pago_matricula_propio",
+          "pais_residencia",
+          "percentil_global",
+          "percentil_nbc",
+          "periodo",
+          "pnal_comp_ciudadanas",
+          "pnal_comuni_escrita",
+          "pnal_ingles",
+          "pnal_lectura_critica",
+          "pnal_razona_cuantitativa",
+          "pnbc_comp_ciudadanas",
+          "pnbc_comuni_escrita",
+          "pnbc_ingles",
+          "pnbc_lectura_critica",
+          "pnbc_razona_cuantitativa",
+          "programa_academico",
+          "punt_comp_ciudadanas",
+          "punt_comuni_escrita",
+          "punt_ingles",
+          "punt_lectura_critica",
+          "punt_razona_cuantitativa",
+          "puntaje_global",
+          "semestre_cursa",
+          "titulo_obtenido_bachiller",
+          "valor_matricula_universidad",
+          "zona_presentacion"
+        ]
+      },
+      "2021": {
+        "status": "OK",
+        "anio": 2021,
+        "total_filas": 253568,
+        "duplicados": 0,
+        "unmapped_columns": [],
+        "columnas_core_faltantes": [],
+        "puntaje_nulls": {
+          "puntaje_global": 7,
+          "percentil_global": 128
+        },
+        "columnas": [
+          "actividad_refuerzo_areas",
+          "actividad_refuerzo_generica",
+          "area_residencia",
+          "caracter_ies",
+          "cod_dane_colegio_termino",
+          "cod_depto_presentacion",
+          "cod_depto_residencia",
+          "cod_mcpio_colegio_termino",
+          "cod_mcpio_ies",
+          "cod_mcpio_presentacion",
+          "cod_mcpio_programa",
+          "cod_mcpio_residencia",
+          "codigo_ies",
+          "codigo_snies_programa",
+          "curso_docente_ies",
+          "curso_ies_apoyo_externo",
+          "curso_ies_externa",
+          "depto_ies",
+          "depto_presentacion",
+          "depto_programa",
+          "depto_residencia",
+          "desem_comp_ciudadanas",
+          "desem_comuni_escrita",
+          "desem_ingles",
+          "desem_lectura_critica",
+          "estu_agregado",
+          "estu_como_capacito_examen_sb11",
+          "estu_consecutivo",
+          "estu_estado_civil",
+          "estu_etnia",
+          "estu_exterior",
+          "estu_nacionalidad",
+          "estu_privado_libertad",
+          "estu_simulacro_tipo_icfes",
+          "estu_tiene_etnia",
+          "estu_tipo_documento",
+          "estu_tipo_documento_sb11",
+          "estu_tipo_registro",
+          "fami_cuantos_comparten_bano",
+          "fami_educacion_madre",
+          "fami_educacion_padre",
+          "fami_estrato_vivienda",
+          "fami_ocupacion_madre",
+          "fami_ocupacion_padre",
+          "fami_tiene_automovil",
+          "fami_tiene_computador",
+          "fami_tiene_consola",
+          "fami_tiene_horno_microondas",
+          "fami_tiene_internet",
+          "fami_tiene_lavadora",
+          "fami_tiene_motocicleta",
+          "fami_tiene_servicio_tv",
+          "fecha_nacimiento",
+          "genero",
+          "horas_semana_trabaja",
+          "inse_individual",
+          "mcpio_ies",
+          "mcpio_presentacion",
+          "mcpio_programa",
+          "mcpio_residencia",
+          "metodologia_programa",
+          "nivel_programa",
+          "nombre_colegio_termino",
+          "nombre_ies",
+          "nse_individual",
+          "nucleo_pregrado",
+          "origen_ies",
+          "otro_colegio_termino",
+          "pago_matricula_beca",
+          "pago_matricula_credito",
+          "pago_matricula_padres",
+          "pago_matricula_propio",
+          "pais_residencia",
+          "percentil_global",
+          "periodo",
+          "pnal_comp_ciudadanas",
+          "pnal_comuni_escrita",
+          "pnal_ingles",
+          "pnal_lectura_critica",
+          "pnal_razona_cuantitativa",
+          "pnbc_comp_ciudadanas",
+          "pnbc_comuni_escrita",
+          "pnbc_ingles",
+          "pnbc_lectura_critica",
+          "pnbc_razona_cuantitativa",
+          "programa_academico",
+          "punt_comp_ciudadanas",
+          "punt_comuni_escrita",
+          "punt_ingles",
+          "punt_lectura_critica",
+          "punt_razona_cuantitativa",
+          "puntaje_global",
+          "semestre_cursa",
+          "titulo_obtenido_bachiller",
+          "valor_matricula_universidad"
+        ]
+      },
+      "2022": {
+        "status": "OK",
+        "anio": 2022,
+        "total_filas": 231030,
+        "duplicados": 0,
+        "unmapped_columns": [],
+        "columnas_core_faltantes": [],
+        "puntaje_nulls": {
+          "puntaje_global": 1,
+          "percentil_global": 127
+        },
+        "columnas": [
+          "actividad_refuerzo_areas",
+          "actividad_refuerzo_generica",
+          "area_residencia",
+          "caracter_ies",
+          "cod_dane_colegio_termino",
+          "cod_depto_presentacion",
+          "cod_depto_residencia",
+          "cod_mcpio_colegio_termino",
+          "cod_mcpio_ies",
+          "cod_mcpio_presentacion",
+          "cod_mcpio_programa",
+          "cod_mcpio_residencia",
+          "codigo_ies",
+          "codigo_snies_programa",
+          "curso_docente_ies",
+          "curso_ies_apoyo_externo",
+          "curso_ies_externa",
+          "depto_ies",
+          "depto_presentacion",
+          "depto_programa",
+          "depto_residencia",
+          "desem_comp_ciudadanas",
+          "desem_comuni_escrita",
+          "desem_ingles",
+          "desem_lectura_critica",
+          "desem_razona_cuantitativa",
+          "estu_agregado",
+          "estu_consecutivo",
+          "estu_discapacidad",
+          "estu_estado_civil",
+          "estu_etnia",
+          "estu_exterior",
+          "estu_nacionalidad",
+          "estu_privado_libertad",
+          "estu_repite",
+          "estu_simulacro_tipo_icfes",
+          "estu_tiene_etnia",
+          "estu_tipo_documento",
+          "estu_tipo_documento_sb11",
+          "estu_tipo_registro",
+          "fami_cuantos_comparten_bano",
+          "fami_educacion_madre",
+          "fami_educacion_padre",
+          "fami_estrato_vivienda",
+          "fami_ocupacion_madre",
+          "fami_ocupacion_padre",
+          "fami_tiene_automovil",
+          "fami_tiene_computador",
+          "fami_tiene_consola",
+          "fami_tiene_horno_microondas",
+          "fami_tiene_internet",
+          "fami_tiene_lavadora",
+          "fami_tiene_motocicleta",
+          "fami_tiene_servicio_tv",
+          "fami_trabajo_labor_madre",
+          "fami_trabajo_labor_padre",
+          "fecha_nacimiento",
+          "genero",
+          "horas_semana_trabaja",
+          "inse_individual",
+          "mcpio_ies",
+          "mcpio_presentacion",
+          "mcpio_programa",
+          "mcpio_residencia",
+          "metodologia_programa",
+          "nivel_programa",
+          "nombre_colegio_termino",
+          "nombre_ies",
+          "nse_ies",
+          "nse_individual",
+          "nucleo_pregrado",
+          "origen_ies",
+          "otro_colegio_termino",
+          "pago_matricula_beca",
+          "pago_matricula_credito",
+          "pago_matricula_padres",
+          "pago_matricula_propio",
+          "pais_residencia",
+          "percentil_global",
+          "percentil_nbc",
+          "periodo",
+          "pnal_comp_ciudadanas",
+          "pnal_comuni_escrita",
+          "pnal_ingles",
+          "pnal_lectura_critica",
+          "pnal_razona_cuantitativa",
+          "pnbc_comp_ciudadanas",
+          "pnbc_comuni_escrita",
+          "pnbc_ingles",
+          "pnbc_lectura_critica",
+          "pnbc_razona_cuantitativa",
+          "programa_academico",
+          "punt_comp_ciudadanas",
+          "punt_comuni_escrita",
+          "punt_ingles",
+          "punt_lectura_critica",
+          "punt_razona_cuantitativa",
+          "puntaje_global",
+          "semestre_cursa",
+          "titulo_obtenido_bachiller"
+        ]
+      },
+      "2023": {
+        "status": "OK",
+        "anio": 2023,
+        "total_filas": 249096,
+        "duplicados": 0,
+        "unmapped_columns": [],
+        "columnas_core_faltantes": [],
+        "puntaje_nulls": {
+          "puntaje_global": 36,
+          "percentil_global": 191
+        },
+        "columnas": [
+          "actividad_refuerzo_areas",
+          "actividad_refuerzo_generica",
+          "area_residencia",
+          "caracter_ies",
+          "cod_depto_presentacion",
+          "cod_depto_residencia",
+          "cod_mcpio_ies",
+          "cod_mcpio_presentacion",
+          "cod_mcpio_programa",
+          "cod_mcpio_residencia",
+          "codigo_ies",
+          "codigo_snies_programa",
+          "curso_docente_ies",
+          "curso_ies_apoyo_externo",
+          "curso_ies_externa",
+          "depto_ies",
+          "depto_presentacion",
+          "depto_programa",
+          "depto_residencia",
+          "desem_comp_ciudadanas",
+          "desem_comuni_escrita",
+          "desem_ingles",
+          "desem_lectura_critica",
+          "desem_razona_cuantitativa",
+          "estu_agregado",
+          "estu_consecutivo",
+          "estu_discapacidad",
+          "estu_estado_civil",
+          "estu_etnia",
+          "estu_exterior",
+          "estu_nacionalidad",
+          "estu_privado_libertad",
+          "estu_repite",
+          "estu_simulacro_tipo_icfes",
+          "estu_tiene_etnia",
+          "estu_tipo_documento",
+          "estu_tipo_documento_sb11",
+          "estu_tipo_registro",
+          "fami_cuantos_comparten_bano",
+          "fami_educacion_madre",
+          "fami_educacion_padre",
+          "fami_estrato_vivienda",
+          "fami_ocupacion_madre",
+          "fami_ocupacion_padre",
+          "fami_tiene_automovil",
+          "fami_tiene_computador",
+          "fami_tiene_consola",
+          "fami_tiene_horno_microondas",
+          "fami_tiene_internet",
+          "fami_tiene_lavadora",
+          "fami_tiene_motocicleta",
+          "fami_tiene_servicio_tv",
+          "fami_trabajo_labor_madre",
+          "fami_trabajo_labor_padre",
+          "fecha_nacimiento",
+          "genero",
+          "horas_semana_trabaja",
+          "inse_individual",
+          "mcpio_ies",
+          "mcpio_presentacion",
+          "mcpio_programa",
+          "mcpio_residencia",
+          "metodologia_programa",
+          "nivel_programa",
+          "nombre_ies",
+          "nse_ies",
+          "nse_individual",
+          "nucleo_pregrado",
+          "origen_ies",
+          "pago_matricula_beca",
+          "pago_matricula_credito",
+          "pago_matricula_padres",
+          "pago_matricula_propio",
+          "pais_residencia",
+          "percentil_global",
+          "percentil_nbc",
+          "periodo",
+          "pnal_comp_ciudadanas",
+          "pnal_comuni_escrita",
+          "pnal_ingles",
+          "pnal_lectura_critica",
+          "pnal_razona_cuantitativa",
+          "pnbc_comp_ciudadanas",
+          "pnbc_comuni_escrita",
+          "pnbc_ingles",
+          "pnbc_lectura_critica",
+          "pnbc_razona_cuantitativa",
+          "programa_academico",
+          "punt_comp_ciudadanas",
+          "punt_comuni_escrita",
+          "punt_ingles",
+          "punt_lectura_critica",
+          "punt_razona_cuantitativa",
+          "puntaje_global",
+          "semestre_cursa",
+          "titulo_obtenido_bachiller"
+        ]
+      },
+      "2024": {
+        "status": "OK",
+        "anio": 2024,
+        "total_filas": 281601,
+        "duplicados": 0,
+        "unmapped_columns": [],
+        "columnas_core_faltantes": [],
+        "puntaje_nulls": {
+          "puntaje_global": 0,
+          "percentil_global": 171
+        },
+        "columnas": [
+          "actividad_refuerzo_areas",
+          "actividad_refuerzo_generica",
+          "caracter_ies",
+          "cod_depto_presentacion",
+          "cod_mcpio_ies",
+          "cod_mcpio_presentacion",
+          "cod_mcpio_programa",
+          "codigo_ies",
+          "codigo_snies_programa",
+          "curso_docente_ies",
+          "curso_ies_apoyo_externo",
+          "curso_ies_externa",
+          "depto_ies",
+          "depto_presentacion",
+          "depto_programa",
+          "desem_comp_ciudadanas",
+          "desem_comuni_escrita",
+          "desem_ingles",
+          "desem_lectura_critica",
+          "desem_razona_cuantitativa",
+          "estu_agregado",
+          "estu_consecutivo",
+          "estu_discapacidad",
+          "estu_etnia",
+          "estu_exterior",
+          "estu_nacionalidad",
+          "estu_privado_libertad",
+          "estu_repite",
+          "estu_simulacro_tipo_icfes",
+          "estu_tiene_etnia",
+          "estu_tipo_documento",
+          "estu_tipo_registro",
+          "fami_cuantos_comparten_bano",
+          "fami_educacion_madre",
+          "fami_educacion_padre",
+          "fami_estrato_vivienda",
+          "fami_ocupacion_madre",
+          "fami_ocupacion_padre",
+          "fami_tiene_automovil",
+          "fami_tiene_computador",
+          "fami_tiene_consola",
+          "fami_tiene_horno_microondas",
+          "fami_tiene_internet",
+          "fami_tiene_lavadora",
+          "fami_tiene_motocicleta",
+          "fami_tiene_servicio_tv",
+          "fami_trabajo_labor_madre",
+          "fami_trabajo_labor_padre",
+          "fecha_nacimiento",
+          "genero",
+          "horas_semana_trabaja",
+          "inse_individual",
+          "mcpio_ies",
+          "mcpio_presentacion",
+          "mcpio_programa",
+          "metodologia_programa",
+          "nivel_programa",
+          "nombre_ies",
+          "nse_ies",
+          "nse_individual",
+          "nucleo_pregrado",
+          "origen_ies",
+          "otro_colegio_termino",
+          "pago_matricula_beca",
+          "pago_matricula_credito",
+          "pago_matricula_padres",
+          "pago_matricula_propio",
+          "pais_residencia",
+          "percentil_global",
+          "percentil_nbc",
+          "periodo",
+          "pnal_comp_ciudadanas",
+          "pnal_comuni_escrita",
+          "pnal_ingles",
+          "pnal_lectura_critica",
+          "pnal_razona_cuantitativa",
+          "pnbc_comp_ciudadanas",
+          "pnbc_comuni_escrita",
+          "pnbc_ingles",
+          "pnbc_lectura_critica",
+          "pnbc_razona_cuantitativa",
+          "programa_academico",
+          "punt_comp_ciudadanas",
+          "punt_comuni_escrita",
+          "punt_ingles",
+          "punt_lectura_critica",
+          "punt_razona_cuantitativa",
+          "puntaje_global",
+          "semestre_cursa",
+          "titulo_obtenido_bachiller"
+        ]
+      }
+    },
+    "consolidacion": {
+      "exitoso": true,
+      "total_filas": 2683632,
+      "total_columnas": 98,
+      "duplicados_consolidado": 0,
+      "anos_incluidos": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "ruta": "C:\\Users\\German\\Proyecto-Observatorio-Datos-de-Educacion-en-Colombia\\datos\\processed\\saber_pro\\saber_pro_consolidado.parquet"
+    }
+  },
+  "errors": []
+}

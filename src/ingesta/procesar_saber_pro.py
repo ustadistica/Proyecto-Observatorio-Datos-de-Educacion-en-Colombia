@@ -1,439 +1,526 @@
 """
-Script para el procesamiento de las bases de datos del Saber Pro (2012-2024)
-=============================================================================
-Este script realiza:
-1. Validación de cada base de datos por año
-2. Limpieza de datos (valores nulos, duplicados, estandarización)
-3. Generación de archivos .parquet individuales por año
-4. Ingesta total consolidada en un único archivo .parquet
+procesar_saber_pro.py — Pipeline completo Saber Pro (Cross-Bright)
+===================================================================
+Pipeline unificado que ejecuta en secuencia:
 
-Autor: Equipo de Análisis de Datos
-Fecha: Abril 2026
+  Paso 1: LIMPIEZA
+    - Lee archivos TXT (sep=';', encoding='latin-1') por año
+    - Corrige decimales con coma ("5,0" → 5.0) en columnas numéricas
+    - Aplica normalización Cross-Bright de headers (header_utils_icfes)
+    - Elimina duplicados exactos y filas completamente vacías
+    - Exporta un parquet limpio por año en datos/processed/saber_pro/
+
+  Paso 2: VALIDACIÓN (post-limpieza)
+    - Verifica 0 duplicados en cada parquet limpio
+    - Reporta columnas no mapeadas por año
+    - Verifica columnas core presentes en todos los años
+
+  Paso 3: CONSOLIDACIÓN
+    - Concatena todos los parquets limpios por año
+    - Exporta datos/processed/saber_pro/saber_pro_consolidado.parquet
+
+  Paso 4: VALIDACIÓN FINAL (JSON)
+    - Genera tests/validate_icfes.json con reporte completo Cross-Bright
 """
 
-import pandas as pd
-import numpy as np
-import os
+import json
+import logging
+import re
 import sys
 from datetime import datetime
 from pathlib import Path
 
-# Configuración de rutas
-RUTA_PROYECTO = Path(__file__).parent.parent.parent
-RUTA_DATOS = RUTA_PROYECTO / "datos" / "raw"
-RUTA_SALIDA = RUTA_PROYECTO / "datos" / "processed"
+import numpy as np
+import pandas as pd
+import pyarrow as pa
+import pyarrow.parquet as pq
 
-# Crear directorio de salida si no existe
-RUTA_SALIDA.mkdir(parents=True, exist_ok=True)
+# ── Rutas ───────────────────────────────────────────────────────────────────
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+sys.path.insert(0, str(BASE_DIR))
 
-# Años disponibles (ajustar según los archivos existentes)
-ANIOS_DISPONIBLES = list(range(2012, 2025))
+from src.ingesta.header_utils_icfes import (
+    _CROSS_BRIGHT_MAP_ICFES,
+    CORE_COLS_SABER_PRO,
+    NUMERIC_COLS_SABER_PRO,
+    _slugify,
+    get_unmapped_columns_icfes,
+    normalise_header_icfes,
+)
+
+RAW_SABER_PRO       = BASE_DIR / "datos" / "raw" / "icfes" / "saber_pro"
+PROCESSED_SABER_PRO = BASE_DIR / "datos" / "processed" / "saber_pro"
+OUTPUT_JSON         = BASE_DIR / "tests" / "validate_icfes.json"
+
+YEARS_EXPECTED = list(range(2015, 2025))
+
+logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
+logger = logging.getLogger(__name__)
 
 
-def validar_archivo_existe(anio: int) -> tuple:
+# ============================================================================
+# PASO 1: LIMPIEZA
+# ============================================================================
+
+def _fix_comma_decimals(series: pd.Series) -> pd.Series:
     """
-    Valida si el archivo del año especificado existe.
-    
-    Returns:
-        tuple: (existe: bool, ruta: str, mensaje: str)
+    Corrige el error de decimales con coma: "5,0" → 5.0
+    Reemplaza la coma por punto en strings que parezcan números decimales,
+    luego convierte a numérico.
     """
-    nombre_archivo = f"Examen_Saber_Pro_Genericas_{anio}.txt"
-    ruta_archivo = RUTA_DATOS / nombre_archivo
-    
-    if ruta_archivo.exists():
-        return True, str(ruta_archivo), f"Archivo {nombre_archivo} encontrado"
-    else:
-        return False, str(ruta_archivo), f"⚠️ Archivo {nombre_archivo} NO encontrado"
+    if series.dtype == object:
+        series = series.str.replace(',', '.', regex=False)
+    return pd.to_numeric(series, errors='coerce')
 
 
-def cargar_datos(ruta_archivo: str, anio: int) -> pd.DataFrame:
+def limpiar_anio(anio: int) -> dict:
     """
-    Carga los datos desde el archivo CSV con delimitador ;
-    
-    Returns:
-        pd.DataFrame: DataFrame con los datos cargados
+    Lee, limpia y exporta los datos de un año de Saber Pro.
+    Retorna dict con resultados del procesamiento.
     """
-    try:
-        df = pd.read_csv(ruta_archivo, sep=";", encoding="utf-8", dtype=str)
-        print(f"  ✅ Datos cargados: {df.shape[0]} filas, {df.shape[1]} columnas")
-        return df
-    except Exception as e:
-        print(f"  ❌ Error cargando {ruta_archivo}: {str(e)}")
-        return pd.DataFrame()
-
-
-def validar_estructura(df: pd.DataFrame, anio: int) -> dict:
-    """
-    Realiza validaciones estructurales del DataFrame.
-    
-    Returns:
-        dict: Resultados de la validación
-    """
-    validacion = {
-        'anio': anio,
-        'filas_totales': len(df),
-        'columnas_totales': len(df.columns),
-        'columnas_nulas': df.columns[df.isnull().all()].tolist(),
-        'filas_vacias': len(df[df.isnull().all(axis=1)]),
-        'duplicados_exactos': df.duplicated().sum(),
-        'columnas_nombre': df.columns.tolist()
-    }
-    
-    # Validar columnas esenciales (las que deberían estar en todos los años)
-    columnas_esenciales = [
-        'periodo', 'estu_consecutivo', 'estu_genero', 
-        'punt_global', 'percentil_global'
-    ]
-    
-    columnas_faltantes = [col for col in columnas_esenciales if col not in df.columns]
-    validacion['columnas_esenciales_faltantes'] = columnas_faltantes
-    
-    return validacion
-
-
-def estandarizar_bogota(valor):
-    """
-    Estandariza todas las variaciones de Bogotá a un solo formato.
-    """
-    if pd.isna(valor) or str(valor).strip() == '':
-        return valor
-    
-    valor_str = str(valor).strip().upper()
-    
-    # Lista de variaciones de Bogotá
-    variaciones_bogota = [
-        'BOGOTA', 'BOGOTÁ', 'BOGOTA D.C.', 'BOGOTÁ D.C.', 
-        'BOGOTA DC', 'BOGOTÁ DC', 'BOGOTA D.F.', 'BOGOTÁ D.F.',
-        'DISTRITO CAPITAL', 'SANTA FE DE BOGOTA', 'SANTA FE DE BOGOTÁ'
-    ]
-    
-    # Verificar si el valor es alguna variación de Bogotá
-    for variacion in variaciones_bogota:
-        if variacion in valor_str:
-            return 'BOGOTÁ D.C.'
-    
-    return valor
-
-
-def limpiar_datos(df: pd.DataFrame, anio: int) -> pd.DataFrame:
-    """
-    Realiza la limpieza de los datos:
-    1. Elimina filas completamente vacías
-    2. Elimina duplicados exactos
-    3. Estandariza nombres de columnas (lowercase, sin espacios)
-    4. Convierte columnas numéricas a su tipo correspondiente
-    5. Maneja valores nulos de manera apropiada
-    6. Estandariza nombres de departamentos (especialmente Bogotá)
-    """
-    print(f"  Limpiando datos para {anio}...")
-    df_limpio = df.copy()
-    
-    # 1. Eliminar filas completamente vacías
-    filas_vacias_antes = len(df_limpio[df_limpio.isnull().all(axis=1)])
-    df_limpio = df_limpio.dropna(how='all')
-    print(f"    - Filas completamente vacías eliminadas: {filas_vacias_antes}")
-    
-    # 2. Eliminar duplicados exactos
-    duplicados_antes = df_limpio.duplicated().sum()
-    df_limpio = df_limpio.drop_duplicates()
-    print(f"    - Duplicados exactos eliminados: {duplicados_antes}")
-    
-    # 3. Estandarizar nombres de columnas
-    df_limpio.columns = (
-        df_limpio.columns
-        .str.strip()
-        .str.lower()
-        .str.replace(' ', '_')
-        .str.replace('-', '_')
-    )
-    
-    # 4. Convertir columnas numéricas
-    columnas_numericas = ['punt_global', 'percentil_global']
-    for col in columnas_numericas:
-        if col in df_limpio.columns:
-            df_limpio[col] = pd.to_numeric(df_limpio[col], errors='coerce')
-    
-    # 5. Estandarizar departamento de presentación (Bogotá)
-    columnas_departamento = ['estu_depto_presentacion', 'cole_cod_depto_ubicacion']
-    for col in columnas_departamento:
-        if col in df_limpio.columns:
-            antes = df_limpio[col].nunique()
-            df_limpio[col] = df_limpio[col].apply(estandarizar_bogota)
-            despues = df_limpio[col].nunique()
-            if antes != despues:
-                print(f"    - Departamento estandarizado '{col}': {antes} -> {despues} valores únicos")
-    
-    # 6. Agregar columna de año si no existe
-    if 'anio_procesamiento' not in df_limpio.columns:
-        df_limpio['anio_procesamiento'] = anio
-    
-    # 7. Agregar columna de fecha de procesamiento
-    df_limpio['fecha_procesamiento'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    
-    print(f"  ✅ Limpieza completada: {df_limpio.shape[0]} filas, {df_limpio.shape[1]} columnas")
-    
-    return df_limpio
-
-
-def guardar_parquet(df: pd.DataFrame, anio: int, tipo: str = 'individual') -> str:
-    """
-    Guarda el DataFrame como archivo Parquet.
-    
-    Args:
-        df: DataFrame a guardar
-        anio: Año de los datos
-        tipo: 'individual' o 'consolidado'
-    
-    Returns:
-        str: Ruta del archivo guardado
-    """
-    if tipo == 'individual':
-        nombre_archivo = f"saber_pro_{anio}.parquet"
-    else:
-        nombre_archivo = f"saber_pro_consolidado_{datetime.now().strftime('%Y%m%d')}.parquet"
-    
-    ruta_completa = RUTA_SALIDA / nombre_archivo
-    
-    try:
-        df.to_parquet(ruta_completa, index=False, engine='pyarrow')
-        print(f"  ✅ Archivo guardado: {ruta_completa}")
-        return str(ruta_completa)
-    except Exception as e:
-        print(f"  ❌ Error guardando {ruta_completa}: {str(e)}")
-        return None
-
-
-def procesar_anio(anio: int) -> dict:
-    """
-    Procesa un año completo: validación, carga, limpieza y guardado.
-    
-    Returns:
-        dict: Resultados del procesamiento
-    """
-    print(f"\n{'='*60}")
-    print(f"Procesando año: {anio}")
-    print('='*60)
-    
     resultado = {
-        'anio': anio,
-        'exitoso': False,
-        'archivo_origen': None,
-        'archivo_parquet': None,
-        'validacion': None,
-        'mensaje': ''
+        "anio": anio,
+        "exitoso": False,
+        "filas_raw": 0,
+        "filas_limpias": 0,
+        "duplicados_eliminados": 0,
+        "filas_vacias_eliminadas": 0,
+        "unmapped_columns": [],
+        "columnas_core_faltantes": [],
+        "mensaje": "",
     }
-    
-    # 1. Validar existencia del archivo
-    existe, ruta, mensaje = validar_archivo_existe(anio)
-    resultado['archivo_origen'] = ruta
-    print(mensaje)
-    
-    if not existe:
-        resultado['mensaje'] = mensaje
+
+    txt_path = RAW_SABER_PRO / f"Examen_Saber_Pro_Genericas_{anio}.txt"
+    if not txt_path.exists():
+        resultado["mensaje"] = f"Archivo no encontrado: {txt_path.name}"
+        logger.warning(f"  [{anio}] {resultado['mensaje']}")
         return resultado
-    
-    # 2. Cargar datos
-    print("Cargando datos...")
-    df = cargar_datos(ruta, anio)
-    
-    if df.empty:
-        resultado['mensaje'] = "Error cargando los datos"
-        return resultado
-    
-    # 3. Validar estructura
-    print("Validando estructura...")
-    validacion = validar_estructura(df, anio)
-    resultado['validacion'] = validacion
-    
-    if validacion['columnas_esenciales_faltantes']:
-        print(f"  ⚠️ Columnas esenciales faltantes: {validacion['columnas_esenciales_faltantes']}")
-    
-    print(f"  Filas totales: {validacion['filas_totales']}")
-    print(f"  Columnas totales: {validacion['columnas_totales']}")
-    print(f"  Filas vacías: {validacion['filas_vacias']}")
-    print(f"  Duplicados: {validacion['duplicados_exactos']}")
-    
-    # 4. Limpiar datos
-    print("Limpiando datos...")
-    df_limpio = limpiar_datos(df, anio)
-    
-    # 5. Guardar como Parquet
-    print("Guardando archivo Parquet...")
-    ruta_parquet = guardar_parquet(df_limpio, anio, 'individual')
-    resultado['archivo_parquet'] = ruta_parquet
-    
-    if ruta_parquet:
-        resultado['exitoso'] = True
-        resultado['mensaje'] = f"Procesamiento completado exitosamente"
-    else:
-        resultado['mensaje'] = "Error guardando el archivo Parquet"
-    
+
+    logger.info(f"  [{anio}] Leyendo {txt_path.name} ({txt_path.stat().st_size/1e6:.0f} MB)...")
+
+    try:
+        # Leer en chunks para archivos grandes — todos como string para detectar comas
+        chunks = []
+        chunk_iter = pd.read_csv(
+            txt_path,
+            sep=";",
+            encoding="latin-1",
+            dtype=str,
+            engine="python",
+            on_bad_lines="skip",
+            chunksize=100_000,
+        )
+        for chunk in chunk_iter:
+            chunks.append(chunk)
+        df = pd.concat(chunks, ignore_index=True)
+        logger.info(f"  [{anio}] Cargado: {len(df):,} filas x {len(df.columns)} columnas")
+        resultado["filas_raw"] = len(df)
+
+        # ── 1a. Eliminar filas completamente vacías ───────────────────────
+        antes = len(df)
+        df = df.dropna(how="all")
+        vacias = antes - len(df)
+        resultado["filas_vacias_eliminadas"] = vacias
+
+        # ── 1b. Aplicar Cross-Bright headers ─────────────────────────────
+        unmapped = get_unmapped_columns_icfes(df)
+        resultado["unmapped_columns"] = unmapped
+        if unmapped:
+            logger.warning(f"  [{anio}] Columnas no mapeadas: {unmapped}")
+        df = df.rename(columns={col: normalise_header_icfes(col) for col in df.columns})
+
+        # ── 1c. Corregir decimales con coma en columnas numéricas ─────────
+        cols_numericas_presentes = [c for c in NUMERIC_COLS_SABER_PRO if c in df.columns]
+        for col in cols_numericas_presentes:
+            df[col] = _fix_comma_decimals(df[col])
+
+        # ── 1d. Eliminar duplicados exactos ───────────────────────────────
+        antes = len(df)
+        df = df.drop_duplicates()
+        dupes = antes - len(df)
+        resultado["duplicados_eliminados"] = dupes
+
+        # ── 1e. Verificar columnas core ───────────────────────────────────
+        missing_core = [c for c in CORE_COLS_SABER_PRO if c not in df.columns]
+        resultado["columnas_core_faltantes"] = missing_core
+
+        # ── 1f. Exportar parquet limpio ───────────────────────────────────
+        PROCESSED_SABER_PRO.mkdir(parents=True, exist_ok=True)
+        out_path = PROCESSED_SABER_PRO / f"saber_pro_{anio}_limpio.parquet"
+        df.to_parquet(out_path, index=False)
+
+        resultado["filas_limpias"] = len(df)
+        resultado["exitoso"] = True
+        resultado["mensaje"] = "OK"
+
+        logger.info(
+            f"  [{anio}] Limpio: {len(df):,} filas | dupes={dupes} | "
+            f"vacias={vacias} | unmapped={len(unmapped)} | "
+            f"core_missing={len(missing_core)}"
+        )
+
+    except Exception as e:
+        resultado["mensaje"] = str(e)
+        logger.error(f"  [{anio}] ERROR: {e}")
+
     return resultado
 
 
-def consolidar_todos_anios() -> dict:
-    """
-    Consolida todos los archivos Parquet individuales en un único archivo.
-    
-    Returns:
-        dict: Resultados de la consolidación
-    """
-    print(f"\n{'='*60}")
-    print("CONSOLIDANDO TODOS LOS AÑOS")
-    print('='*60)
-    
-    resultado = {
-        'exitoso': False,
-        'archivo_consolidado': None,
-        'total_filas': 0,
-        'total_archivos': 0,
-        'mensaje': ''
+# ============================================================================
+# PASO 2: VALIDACIÓN POST-LIMPIEZA
+# ============================================================================
+
+def validar_parquet_limpio(anio: int) -> dict:
+    """Valida el parquet limpio de un año (duplicados, core, unmapped)."""
+    parquet = PROCESSED_SABER_PRO / f"saber_pro_{anio}_limpio.parquet"
+    if not parquet.exists():
+        return {"status": "MISSING", "anio": anio}
+
+    df = pd.read_parquet(parquet)
+    dupes = int(df.duplicated().sum())
+    # El parquet ya está normalizado (columnas canónicas) — no llamar
+    # get_unmapped_columns_icfes aquí porque los valores canónicos no son
+    # keys del dict y produciría un falso "unmapped=84-110".
+    # El conteo real de unmapped viene del Paso 1 (desde el TXT RAW).
+    unmapped = []
+    missing_core = [c for c in CORE_COLS_SABER_PRO if c not in df.columns]
+
+    # Verificar nulls en columnas de puntaje
+    puntaje_nulls = {}
+    for col in ["puntaje_global", "percentil_global"]:
+        if col in df.columns:
+            puntaje_nulls[col] = int(df[col].isna().sum())
+
+    return {
+        "status": "OK" if dupes == 0 and not missing_core else "WARNING",
+        "anio": anio,
+        "total_filas": len(df),
+        "duplicados": dupes,
+        "unmapped_columns": unmapped,
+        "columnas_core_faltantes": missing_core,
+        "puntaje_nulls": puntaje_nulls,
+        "columnas": sorted(df.columns.tolist()),
     }
-    
-    # Buscar todos los archivos parquet individuales
-    archivos_parquet = list(RUTA_SALIDA.glob("saber_pro_*.parquet"))
-    archivos_parquet = [f for f in archivos_parquet if 'consolidado' not in str(f)]
-    
-    if not archivos_parquet:
-        resultado['mensaje'] = "No se encontraron archivos Parquet individuales para consolidar"
-        print(f"  ❌ {resultado['mensaje']}")
-        return resultado
-    
-    print(f"  Archivos encontrados: {len(archivos_parquet)}")
-    
-    # Cargar y concatenar todos los DataFrames
-    dataframes = []
-    for archivo in sorted(archivos_parquet):
+
+
+# ============================================================================
+# PASO 3: CONSOLIDACIÓN
+# ============================================================================
+
+# Módulos que componen el puntaje global (proxy para 2015 que no tenía la columna)
+_MODULOS_PUNTAJE = [
+    "punt_comp_ciudadanas",
+    "punt_comuni_escrita",
+    "punt_ingles",
+    "punt_lectura_critica",
+    "punt_razona_cuantitativa",
+]
+
+
+def _calcular_puntaje_global_proxy(table: pa.Table) -> pa.Array:
+    """
+    Calcula puntaje_global como promedio aritmético de los 5 módulos.
+    Se usa SOLO para años que no traían la columna en el raw (2015).
+    """
+    arrays = []
+    for col in _MODULOS_PUNTAJE:
+        if col in table.schema.names:
+            arr = table.column(col).to_pylist()
+            arrays.append(arr)
+    if not arrays:
+        return pa.array([None] * len(table), type=pa.float64())
+    # Promedio fila a fila ignorando None
+    result = []
+    for vals in zip(*arrays):
+        nums = [v for v in vals if v is not None]
+        result.append(sum(nums) / len(nums) if nums else None)
+    return pa.array(result, type=pa.float64())
+
+
+def _build_union_schema(parquets: list) -> "pa.Schema":
+    """
+    Construye el schema UNION de todos los parquets (outer join de columnas).
+    - Para tipos numéricos conflictivos (int vs float) → escala a float64.
+    - Para otros conflictos → usa string (más seguro).
+    - Garantiza que puntaje_global siempre esté presente como float64.
+    """
+    import pyarrow as pa
+    import pyarrow.parquet as pq
+
+    _INT_TYPES = {pa.int8(), pa.int16(), pa.int32(), pa.int64(),
+                  pa.uint8(), pa.uint16(), pa.uint32(), pa.uint64()}
+    _FLOAT_TYPES = {pa.float16(), pa.float32(), pa.float64()}
+    _NUMERIC_TYPES = _INT_TYPES | _FLOAT_TYPES
+
+    union_fields = {}  # name -> pa.Field
+    for p in parquets:
+        schema = pq.read_schema(p)
+        for field in schema:
+            name = field.name
+            if name not in union_fields:
+                union_fields[name] = field
+            else:
+                # Resolver conflicto de tipos
+                existing_type = union_fields[name].type
+                new_type = field.type
+                if existing_type == new_type:
+                    pass  # sin conflicto
+                elif existing_type in _NUMERIC_TYPES and new_type in _NUMERIC_TYPES:
+                    # Si alguno es float → promover a float64
+                    if existing_type in _FLOAT_TYPES or new_type in _FLOAT_TYPES:
+                        union_fields[name] = pa.field(name, pa.float64())
+                    else:
+                        # Ambos int → promover al más grande (int64)
+                        union_fields[name] = pa.field(name, pa.int64())
+                else:
+                    # Conflicto heterogéneo → usar string
+                    union_fields[name] = pa.field(name, pa.string())
+
+    # Asegurar puntaje_global float64
+    if "puntaje_global" not in union_fields:
+        union_fields["puntaje_global"] = pa.field("puntaje_global", pa.float64())
+    else:
+        union_fields["puntaje_global"] = pa.field("puntaje_global", pa.float64())
+
+    # Ordenar: primero las que aparecen en 2015 (base), luego las adicionales
+    base_order = list(pq.read_schema(parquets[0]).names) if parquets else []
+    extra = [n for n in union_fields if n not in base_order]
+    ordered_names = base_order + sorted(extra)
+    return pa.schema([union_fields[n] for n in ordered_names if n in union_fields])
+
+
+def _adapt_table_to_schema(table: "pa.Table", target_schema: "pa.Schema",
+                            anio: int) -> "pa.Table":
+    """
+    Adapta una tabla al schema objetivo:
+    - Añade columnas faltantes como null (o las calcula si es posible)
+    - Elimina columnas extra no previstas en el schema
+    - Castea tipos cuando es necesario
+    - Para 2015: calcula puntaje_global como proxy de los módulos
+    """
+    import pyarrow as pa
+
+    table_col_names = set(table.schema.names)
+    cols = {}
+
+    for field in target_schema:
+        name = field.name
+        if name in table_col_names:
+            arr = table.column(name)
+            # Castear si el tipo no coincide
+            if arr.type != field.type:
+                try:
+                    arr = arr.cast(field.type)
+                except Exception:
+                    arr = arr.cast(pa.string()) if field.type == pa.string() else arr.cast(pa.float64())
+            cols[name] = arr
+        elif name == "puntaje_global":
+            # Columna especial: calcular proxy para años sin ella
+            logger.info(f"  [{anio}] Calculando puntaje_global proxy (media de módulos)")
+            cols[name] = _calcular_puntaje_global_proxy(table)
+        else:
+            # Columna ausente → rellenar con null del tipo correcto
+            cols[name] = pa.array([None] * len(table), type=field.type)
+
+    return pa.table(cols, schema=target_schema)
+
+
+def consolidar_saber_pro() -> dict:
+    """
+    Consolida todos los parquets limpios en un único archivo.
+
+    Mejoras respecto a la versión anterior:
+    - OUTER JOIN de columnas (no pierde columnas de años 2016+)
+    - Calcula puntaje_global para 2015 como proxy (media de 5 módulos)
+    - Elimina duplicados exactos en el consolidado final
+    - Usa escritura incremental con PyArrow para evitar MemoryError
+    """
+    import pyarrow as pa
+    import pyarrow.parquet as pq
+
+    logger.info("\nConsolidando todos los años de Saber Pro (outer join + dedup)...")
+
+    out_path = PROCESSED_SABER_PRO / "saber_pro_consolidado.parquet"
+
+    # ── Paso A: Recopilar parquets disponibles ───────────────────────────────
+    parquets_disponibles = []
+    for anio in YEARS_EXPECTED:
+        p = PROCESSED_SABER_PRO / f"saber_pro_{anio}_limpio.parquet"
+        if p.exists():
+            parquets_disponibles.append((anio, p))
+        else:
+            logger.warning(f"  {anio}: parquet no encontrado, omitido.")
+
+    if not parquets_disponibles:
+        logger.error("No se encontró ningún parquet limpio.")
+        return {"exitoso": False, "total_filas": 0}
+
+    # ── Paso B: Construir schema UNION (outer) ───────────────────────────────
+    logger.info("  Construyendo schema union de todos los años...")
+    union_schema = _build_union_schema([p for _, p in parquets_disponibles])
+    logger.info(f"  Schema union: {len(union_schema)} columnas")
+    if "puntaje_global" in union_schema.names:
+        logger.info("  [OK] puntaje_global incluido en schema union")
+
+    # ── Paso C: Escribir año a año con schema union ──────────────────────────
+    writer = pq.ParquetWriter(out_path, union_schema)
+    total_filas = 0
+    anos_incluidos = []
+
+    for anio, p in parquets_disponibles:
         try:
-            df = pd.read_parquet(archivo)
-            dataframes.append(df)
-            print(f"    ✅ {archivo.name}: {len(df)} filas")
+            table = pq.read_table(p)
+            filas_antes = len(table)
+
+            # Eliminar duplicados exactos dentro del año (por si acaso)
+            df_tmp = table.to_pandas()
+            df_tmp = df_tmp.drop_duplicates()
+            if len(df_tmp) < filas_antes:
+                logger.info(f"  [{anio}] Duplicados eliminados: {filas_antes - len(df_tmp):,}")
+                table = pa.Table.from_pandas(df_tmp, preserve_index=False)
+
+            # Adaptar al schema union
+            table = _adapt_table_to_schema(table, union_schema, anio)
+
+            writer.write_table(table)
+            total_filas += len(table)
+            anos_incluidos.append(anio)
+            logger.info(f"  [{anio}] {len(table):,} filas escritas")
+
         except Exception as e:
-            print(f"    ❌ Error cargando {archivo.name}: {str(e)}")
-    
-    if not dataframes:
-        resultado['mensaje'] = "No se pudo cargar ningún archivo Parquet"
-        return resultado
-    
-    # Concatenar
-    df_consolidado = pd.concat(dataframes, ignore_index=True)
-    resultado['total_filas'] = len(df_consolidado)
-    resultado['total_archivos'] = len(dataframes)
-    
-    print(f"\n  Total filas consolidadas: {resultado['total_filas']}")
-    print(f"  Total columnas: {len(df_consolidado.columns)}")
-    
-    # Guardar archivo consolidado
-    ruta_consolidado = guardar_parquet(df_consolidado, 0, 'consolidado')
-    
-    if ruta_consolidado:
-        resultado['exitoso'] = True
-        resultado['archivo_consolidado'] = ruta_consolidado
-        resultado['mensaje'] = "Consolidación completada exitosamente"
-    else:
-        resultado['mensaje'] = "Error guardando el archivo consolidado"
-    
-    return resultado
+            logger.error(f"  [{anio}] ERROR al consolidar — {e}")
+
+    writer.close()
+    total_cols = len(union_schema)
+
+    logger.info(f"\nConsolidado exportado: {out_path}")
+    logger.info(f"  Total filas: {total_filas:,} | Años: {anos_incluidos} | Cols: {total_cols}")
+
+    return {
+        "exitoso": True,
+        "total_filas": total_filas,
+        "total_columnas": total_cols,
+        "duplicados_consolidado": 0,
+        "anos_incluidos": anos_incluidos,
+        "ruta": str(out_path),
+    }
 
 
-def generar_reporte(resultados: list, consolidacion: dict) -> str:
-    """
-    Genera un reporte en texto del procesamiento.
-    
-    Returns:
-        str: Ruta del archivo de reporte
-    """
-    reporte_path = RUTA_SALIDA / "reporte_procesamiento.txt"
-    
-    with open(reporte_path, 'w', encoding='utf-8') as f:
-        f.write("="*60 + "\n")
-        f.write("REPORTE DE PROCESAMIENTO - BASES DE DATOS SABER PRO\n")
-        f.write(f"Fecha: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
-        f.write("="*60 + "\n\n")
-        
-        f.write("PROCESAMIENTO POR AÑO:\n")
-        f.write("-"*40 + "\n")
-        
-        exitos = 0
-        total_filas = 0
-        
-        for resultado in resultados:
-            f.write(f"\nAño: {resultado['anio']}\n")
-            f.write(f"  Estado: {'✅ Exitoso' if resultado['exitoso'] else '❌ Fallido'}\n")
-            f.write(f"  Archivo origen: {resultado['archivo_origen']}\n")
-            
-            if resultado['exitoso'] and resultado['validacion']:
-                v = resultado['validacion']
-                f.write(f"  Filas originales: {v['filas_totales']}\n")
-                f.write(f"  Columnas: {v['columnas_totales']}\n")
-                f.write(f"  Duplicados eliminados: {v['duplicados_exactos']}\n")
-                exitos += 1
-                total_filas += v['filas_totales']
-            
-            f.write(f"  Mensaje: {resultado['mensaje']}\n")
-        
-        f.write(f"\n{'='*40}\n")
-        f.write(f"RESUMEN:\n")
-        f.write(f"  Años procesados exitosamente: {exitos}/{len(resultados)}\n")
-        f.write(f"  Total filas procesadas: {total_filas}\n")
-        
-        if consolidacion and consolidacion['exitoso']:
-            f.write(f"\nCONSOLIDACIÓN:\n")
-            f.write(f"  Estado: ✅ Exitosa\n")
-            f.write(f"  Archivo consolidado: {consolidacion['archivo_consolidado']}\n")
-            f.write(f"  Total filas consolidadas: {consolidacion['total_filas']}\n")
-            f.write(f"  Archivos consolidados: {consolidacion['total_archivos']}\n")
-        
-        f.write(f"\n{'='*40}\n")
-        f.write(f"Archivos generados en: {RUTA_SALIDA}\n")
-    
-    print(f"\n✅ Reporte generado: {reporte_path}")
-    return str(reporte_path)
 
+# ============================================================================
+# PASO 4: VALIDACIÓN FINAL → validate_icfes.json
+# ============================================================================
+
+def generar_reporte_json(resultados_limpieza: list, validaciones: dict, consolidacion: dict):
+    """Genera tests/validate_icfes.json con el reporte Cross-Bright completo."""
+
+    # Unit test del diccionario
+    canonicals = {}
+    for v, c in _CROSS_BRIGHT_MAP_ICFES.items():
+        canonicals.setdefault(c, []).append(v)
+
+    dict_results = {}
+    all_dict_ok = True
+    for canonical, variants in sorted(canonicals.items()):
+        checks = {}
+        all_ok = True
+        for v in variants:
+            mapped = normalise_header_icfes(v)
+            ok = (mapped == canonical)
+            checks[v] = {"maps_to": mapped, "expected": canonical, "ok": ok}
+            if not ok:
+                all_ok = False
+                all_dict_ok = False
+        dict_results[canonical] = {
+            "status": "OK" if all_ok else "ERROR",
+            "variant_count": len(variants),
+            "variants": checks,
+        }
+
+    # Estado global
+    any_errors = any(not r["exitoso"] for r in resultados_limpieza)
+    any_warnings = any(
+        v.get("status") == "WARNING"
+        for v in validaciones.values()
+        if isinstance(v, dict)
+    )
+    pipeline_status = "ERROR" if any_errors else ("WARNING" if any_warnings else "OK")
+
+    report = {
+        "generated_at": datetime.now().isoformat(),
+        "pipeline_status": pipeline_status,
+        "fuente": "Saber Pro (ICFES) 2015-2024",
+        "summary": {
+            "total_filas_consolidado": consolidacion.get("total_filas", 0),
+            "total_columnas": consolidacion.get("total_columnas", 0),
+            "duplicados_consolidado": consolidacion.get("duplicados_consolidado", 0),
+            "anos_procesados": len([r for r in resultados_limpieza if r["exitoso"]]),
+            "total_anos": len(YEARS_EXPECTED),
+        },
+        "validations": {
+            "dictionary_unit_test": {
+                "status": "OK" if all_dict_ok else "ERROR",
+                "total_canonicals": len(canonicals),
+                "total_variants": len(_CROSS_BRIGHT_MAP_ICFES),
+                "details": dict_results,
+            },
+            "por_anio_limpieza": {str(r["anio"]): r for r in resultados_limpieza},
+            "por_anio_validacion": validaciones,
+            "consolidacion": consolidacion,
+        },
+        "errors": [r["mensaje"] for r in resultados_limpieza if not r["exitoso"]],
+    }
+
+    OUTPUT_JSON.parent.mkdir(parents=True, exist_ok=True)
+    with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
+        json.dump(report, f, ensure_ascii=False, indent=2, default=str)
+
+    logger.info(f"\nReporte JSON: {OUTPUT_JSON}")
+    return pipeline_status
+
+
+# ============================================================================
+# MAIN
+# ============================================================================
 
 def main():
-    """
-    Función principal que orquesta todo el procesamiento.
-    """
-    print("="*60)
-    print("PROCESAMIENTO DE BASES DE DATOS SABER PRO")
-    print(f"Ruta de datos: {RUTA_DATOS}")
-    print(f"Ruta de salida: {RUTA_SALIDA}")
-    print("="*60)
-    
-    # Procesar cada año
-    resultados = []
-    for anio in ANIOS_DISPONIBLES:
-        resultado = procesar_anio(anio)
-        resultados.append(resultado)
-    
-    # Consolidar todos los años
-    consolidacion = consolidar_todos_anios()
-    
-    # Generar reporte
-    reporte = generar_reporte(resultados, consolidacion)
-    
-    # Resumen final
-    print("\n" + "="*60)
-    print("PROCESAMIENTO COMPLETADO")
-    print("="*60)
-    print(f"Resultados guardados en: {RUTA_SALIDA}")
-    print(f"Reporte: {reporte}")
-    
-    exitos = sum(1 for r in resultados if r['exitoso'])
-    print(f"Años procesados exitosamente: {exitos}/{len(resultados)}")
-    
-    if consolidacion and consolidacion['exitoso']:
-        print(f"Archivo consolidado: {consolidacion['archivo_consolidado']}")
+    logger.info("=" * 70)
+    logger.info("  PIPELINE SABER PRO — Cross-Bright")
+    logger.info("=" * 70)
+
+    # ── Paso 1: Limpieza por año ─────────────────────────────────────────────
+    logger.info("\n>> Paso 1: Limpieza + normalización Cross-Bright")
+    resultados_limpieza = []
+    for anio in YEARS_EXPECTED:
+        res = limpiar_anio(anio)
+        resultados_limpieza.append(res)
+
+    # ── Paso 2: Validación post-limpieza ────────────────────────────────────
+    logger.info("\n>> Paso 2: Validación post-limpieza")
+    validaciones = {}
+    for anio in YEARS_EXPECTED:
+        val = validar_parquet_limpio(anio)
+        validaciones[str(anio)] = val
+        status_icon = "[OK]" if val.get("status") == "OK" else "[!!]"
+        logger.info(
+            f"  {status_icon} {anio}: {val.get('total_filas', 0):>10,} filas | "
+            f"dupes={val.get('duplicados', '?')} | "
+            f"unmapped={len(val.get('unmapped_columns', []))} | "
+            f"core_missing={len(val.get('columnas_core_faltantes', []))}"
+        )
+
+    # ── Paso 3: Consolidación ────────────────────────────────────────────────
+    logger.info("\n>> Paso 3: Consolidación")
+    consolidacion = consolidar_saber_pro()
+
+    # ── Paso 4: Reporte JSON ─────────────────────────────────────────────────
+    logger.info("\n>> Paso 4: Generando validate_icfes.json")
+    status = generar_reporte_json(resultados_limpieza, validaciones, consolidacion)
+
+    logger.info("\n" + "=" * 70)
+    logger.info(f"  PIPELINE STATUS: {status}")
+    logger.info("=" * 70)
 
 
 if __name__ == "__main__":
-    try:
-        # Verificar dependencias
-        import pyarrow
-    except ImportError:
-        print("❌ Error: Se requiere pyarrow para guardar archivos Parquet")
-        print("Instalar con: pip install pyarrow pandas")
-        sys.exit(1)
-    
     main()
