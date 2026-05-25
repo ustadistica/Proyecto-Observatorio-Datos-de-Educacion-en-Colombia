@@ -1,0 +1,125 @@
+============================================================
+REPORTE DE PROCESAMIENTO - BASES DE DATOS SABER PRO
+Fecha: 2026-05-19 19:24:37
+============================================================
+
+PROCESAMIENTO POR AÑO:
+----------------------------------------
+
+Año: 2012
+  Estado: ✅ Exitoso
+  Archivo origen: C:\Users\jhona\Desktop\corte 3 consultoria\Proyecto-Observatorio-Datos-de-Educacion-en-Colombia\datos\raw\Examen_Saber_Pro_Genericas_2012.txt
+  Filas originales: 290687
+  Columnas: 101
+  Duplicados eliminados: 0
+  Mensaje: Procesamiento completado exitosamente
+
+Año: 2013
+  Estado: ✅ Exitoso
+  Archivo origen: C:\Users\jhona\Desktop\corte 3 consultoria\Proyecto-Observatorio-Datos-de-Educacion-en-Colombia\datos\raw\Examen_Saber_Pro_Genericas_2013.txt
+  Filas originales: 385383
+  Columnas: 100
+  Duplicados eliminados: 0
+  Mensaje: Procesamiento completado exitosamente
+
+Año: 2014
+  Estado: ✅ Exitoso
+  Archivo origen: C:\Users\jhona\Desktop\corte 3 consultoria\Proyecto-Observatorio-Datos-de-Educacion-en-Colombia\datos\raw\Examen_Saber_Pro_Genericas_2014.txt
+  Filas originales: 390814
+  Columnas: 95
+  Duplicados eliminados: 0
+  Mensaje: Procesamiento completado exitosamente
+
+Año: 2015
+  Estado: ✅ Exitoso
+  Archivo origen: C:\Users\jhona\Desktop\corte 3 consultoria\Proyecto-Observatorio-Datos-de-Educacion-en-Colombia\datos\raw\Examen_Saber_Pro_Genericas_2015.txt
+  Filas originales: 330578
+  Columnas: 98
+  Duplicados eliminados: 0
+  Mensaje: Procesamiento completado exitosamente
+
+Año: 2016
+  Estado: ✅ Exitoso
+  Archivo origen: C:\Users\jhona\Desktop\corte 3 consultoria\Proyecto-Observatorio-Datos-de-Educacion-en-Colombia\datos\raw\Examen_Saber_Pro_Genericas_2016.txt
+  Filas originales: 182024
+  Columnas: 116
+  Duplicados eliminados: 0
+  Mensaje: Procesamiento completado exitosamente
+
+Año: 2017
+  Estado: ✅ Exitoso
+  Archivo origen: C:\Users\jhona\Desktop\corte 3 consultoria\Proyecto-Observatorio-Datos-de-Educacion-en-Colombia\datos\raw\Examen_Saber_Pro_Genericas_2017.txt
+  Filas originales: 248854
+  Columnas: 120
+  Duplicados eliminados: 0
+  Mensaje: Procesamiento completado exitosamente
+
+Año: 2018
+  Estado: ✅ Exitoso
+  Archivo origen: C:\Users\jhona\Desktop\corte 3 consultoria\Proyecto-Observatorio-Datos-de-Educacion-en-Colombia\datos\raw\Examen_Saber_Pro_Genericas_2018.txt
+  Filas originales: 214612
+  Columnas: 118
+  Duplicados eliminados: 0
+  Mensaje: Procesamiento completado exitosamente
+
+Año: 2019
+  Estado: ✅ Exitoso
+  Archivo origen: C:\Users\jhona\Desktop\corte 3 consultoria\Proyecto-Observatorio-Datos-de-Educacion-en-Colombia\datos\raw\Examen_Saber_Pro_Genericas_2019.txt
+  Filas originales: 214291
+  Columnas: 100
+  Duplicados eliminados: 0
+  Mensaje: Procesamiento completado exitosamente
+
+Año: 2020
+  Estado: ✅ Exitoso
+  Archivo origen: C:\Users\jhona\Desktop\corte 3 consultoria\Proyecto-Observatorio-Datos-de-Educacion-en-Colombia\datos\raw\Examen_Saber_Pro_Genericas_2020.txt
+  Filas originales: 183890
+  Columnas: 102
+  Duplicados eliminados: 0
+  Mensaje: Procesamiento completado exitosamente
+
+Año: 2021
+  Estado: ✅ Exitoso
+  Archivo origen: C:\Users\jhona\Desktop\corte 3 consultoria\Proyecto-Observatorio-Datos-de-Educacion-en-Colombia\datos\raw\Examen_Saber_Pro_Genericas_2021.txt
+  Filas originales: 253568
+  Columnas: 95
+  Duplicados eliminados: 0
+  Mensaje: Procesamiento completado exitosamente
+
+Año: 2022
+  Estado: ✅ Exitoso
+  Archivo origen: C:\Users\jhona\Desktop\corte 3 consultoria\Proyecto-Observatorio-Datos-de-Educacion-en-Colombia\datos\raw\Examen_Saber_Pro_Genericas_2022.txt
+  Filas originales: 179593
+  Columnas: 100
+  Duplicados eliminados: 0
+  Mensaje: Procesamiento completado exitosamente
+
+Año: 2023
+  Estado: ✅ Exitoso
+  Archivo origen: C:\Users\jhona\Desktop\corte 3 consultoria\Proyecto-Observatorio-Datos-de-Educacion-en-Colombia\datos\raw\Examen_Saber_Pro_Genericas_2023.txt
+  Filas originales: 228637
+  Columnas: 96
+  Duplicados eliminados: 0
+  Mensaje: Procesamiento completado exitosamente
+
+Año: 2024
+  Estado: ✅ Exitoso
+  Archivo origen: C:\Users\jhona\Desktop\corte 3 consultoria\Proyecto-Observatorio-Datos-de-Educacion-en-Colombia\datos\raw\Examen_Saber_Pro_Genericas_2024.txt
+  Filas originales: 281601
+  Columnas: 90
+  Duplicados eliminados: 0
+  Mensaje: Procesamiento completado exitosamente
+
+========================================
+RESUMEN:
+  Años procesados exitosamente: 13/13
+  Total filas procesadas: 3384532
+
+CONSOLIDACIÓN:
+  Estado: ✅ Exitosa
+  Archivo consolidado: C:\Users\jhona\Desktop\corte 3 consultoria\Proyecto-Observatorio-Datos-de-Educacion-en-Colombia\datos\processed\saber_pro_consolidado_20260519.parquet
+  Total filas consolidadas: 3384532
+  Archivos consolidados: 13
+
+========================================
+Archivos generados en: C:\Users\jhona\Desktop\corte 3 consultoria\Proyecto-Observatorio-Datos-de-Educacion-en-Colombia\datos\processed

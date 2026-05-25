@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Observatorio de Datos de Educación en Colombia - Presentación del Proyecto</title>
+    <style>
+        /* ============================================
+           ESTILOS GENERALES - COLORES INSTITUCIONALES
+           Universidad Santo Tomás: Azules y Amarillos
+           ============================================ */
+        :root {
+            --azul-oscuro: #003366;
+            --azul-medio: #0066CC;
+            --azul-claro: #4DA6FF;
+            --amarillo-principal: #FFCC00;
+            --amarillo-claro: #FFDD44;
+            --amarillo-suave: #FFF3B3;
+            --blanco: #FFFFFF;
+            --gris-claro: #F5F5F5;
+            --gris-medio: #E0E0E0;
+            --gris-oscuro: #333333;
+            --texto: #2C2C2C;
+            --exito: #28A745;
+            --advertencia: #FFC107;
+            --peligro: #DC3545;
+            --info: #17A2B8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--texto);
+            background-color: var(--gris-claro);
+        }
+
+        /* ============================================
+           NAVEGACIÓN SUPERIOR
+           ============================================ */
+        header {
+            background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--azul-medio) 100%);
+            color: var(--blanco);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--amarillo-principal);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--blanco);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: var(--amarillo-principal);
+            color: var(--azul-oscuro);
+        }
+
+        /* ============================================
+           SECCIÓN HERO / PORTADA
+           ============================================ */
+        .hero {
+            background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--azul-medio) 50%, var(--azul-claro) 100%);
+            color: var(--blanco);
+            padding: 5rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="%23FFCC00" stroke-width="0.5" opacity="0.1"/></svg>');
+            background-size: 200px 200px;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-100px) rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--amarillo-principal);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            color: var(--amarillo-claro);
+        }
+
+        .hero-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-info-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--amarillo-principal);
+        }
+
+        .hero-info-item strong {
+            color: var(--amarillo-principal);
+            display: block;
+            font-size: 1.2rem;
+        }
+
+        /* ============================================
+           CONTENEDOR PRINCIPAL
+           ============================================ */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* ============================================
+           SECCIONES
+           ============================================ */
+        section {
+            background: var(--blanco);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid var(--azul-medio);
+        }
+
+        section:nth-child(even) {
+            border-top-color: var(--amarillo-principal);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--azul-oscuro);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--amarillo-principal);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-title .icon {
+            font-size: 2.2rem;
+        }
+
+        /* ============================================
+           TARJETAS DE RESUMEN
+           ============================================ */
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--azul-medio) 100%);
+            color: var(--blanco);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card.yellow {
+            background: linear-gradient(135deg, var(--amarillo-principal) 0%, var(--amarillo-claro) 100%);
+            color: var(--azul-oscuro);
+        }
+
+        .card-number {
+            font-size: 3rem;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* ============================================
+           OBJETIVOS
+           ============================================ */
+        .objetivos-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .objetivos-list li {
+            background: var(--gris-claro);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            border-left: 5px solid var(--amarillo-principal);
+            transition: all 0.3s ease;
+        }
+
+        .objetivos-list li:hover {
+            border-left-color: var(--azul-medio);
+            background: var(--amarillo-suave);
+        }
+
+        .objetivos-list li strong {
+            color: var(--azul-oscuro);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ============================================
+           RESULTADOS CON IMÁGENES
+           ============================================ */
+        .resultados-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2rem;
+        }
+
+        .resultado-item {
+            background: var(--gris-claro);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .resultado-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .resultado-content {
+            padding: 1.5rem;
+        }
+
+        .resultado-content h4 {
+            color: var(--azul-oscuro);
+            margin-bottom: 0.5rem;
+        }
+
+        /* ============================================
+           SPRINTS Y ROADMAP
+           ============================================ */
+        .sprint-container {
+            margin-bottom: 3rem;
+        }
+
+        .sprint-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--azul-medio) 100%);
+            color: var(--blanco);
+            border-radius: 8px;
+        }
+
+        .sprint-header h3 {
+            font-size: 1.5rem;
+        }
+
+        .sprint-status {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .status-completed {
+            background: var(--exito);
+        }
+
+        .status-progress {
+            background: var(--amarillo-principal);
+            color: var(--azul-oscuro);
+        }
+
+        .status-pending {
+            background: var(--gris-medio);
+            color: var(--gris-oscuro);
+        }
+
+        .issues-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .issue-card {
+            background: var(--blanco);
+            border: 1px solid var(--gris-medio);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .issue-card:hover {
+            border-color: var(--azul-medio);
+            box-shadow: 0 4px 12px rgba(0, 102, 204, 0.15);
+        }
+
+        .issue-card h4 {
+            color: var(--azul-oscuro);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .issue-card .assignee {
+            display: inline-block;
+            background: var(--amarillo-suave);
+            color: var(--azul-oscuro);
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 0.5rem 0;
+        }
+
+        .issue-card .description {
+            font-size: 0.95rem;
+            color: var(--gris-oscuro);
+            margin: 0.5rem 0;
+        }
+
+        .issue-card .deliverables {
+            font-size: 0.9rem;
+            color: var(--azul-medio);
+            font-style: italic;
+        }
+
+        /* ============================================
+           BARRA DE PROGRESO
+           ============================================ */
+        .progress-bar-container {
+            background: var(--gris-medio);
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+
+        .progress-bar {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        .progress-completed {
+            background: var(--exito);
+        }
+
+        .progress-progress {
+            background: var(--amarillo-principal);
+        }
+
+        .progress-pending {
+            background: var(--gris-claro);
+        }
+
+        /* ============================================
+           EQUIPO
+           ============================================ */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .team-member {
+            background: var(--gris-claro);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border-top: 3px solid var(--amarillo-principal);
+        }
+
+        .team-member .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--azul-medio);
+            color: var(--blanco);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+
+        .team-member h4 {
+            color: var(--azul-oscuro);
+            margin-bottom: 0.25rem;
+        }
+
+        .team-member .role {
+            color: var(--amarillo-principal);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .team-member .github {
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: var(--azul-medio);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* ============================================
+           METODOLOGÍA
+           ============================================ */
+        .methodology-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .method-item {
+            background: var(--amarillo-suave);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid var(--amarillo-principal);
+        }
+
+        .method-item strong {
+            color: var(--azul-oscuro);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        footer {
+            background: var(--azul-oscuro);
+            color: var(--blanco);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: var(--amarillo-principal);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+
+            .hero-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+                display: none;
+            }
+
+            .resultados-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            section {
+                padding: 1.5rem;
+            }
+        }
+
+        /* ============================================
+           ANIMACIONES
+           ============================================ */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+    </style>
+</head>
+<body>
+    <!-- ============================================
+         HEADER / NAVEGACIÓN
+         ============================================ -->
+    <header>
+        <div class="header-content">
+            <div class="logo-text">📊 Observatorio Educativo</div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#resumen">Resumen</a></li>
+                    <li><a href="#objetivos">Objetivos</a></li>
+                    <li><a href="#logros">Logros</a></li>
+                    <li><a href="#resultados">Resultados</a></li>
+                    <li><a href="#roadmap">Roadmap</a></li>
+                    <li><a href="#equipo">Equipo</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ============================================
+         HERO / PORTADA
+         ============================================ -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>🎓 Observatorio de Datos de Educación en Colombia</h1>
+            <h2>Integración de SNIES, ICFES y PTE para análisis territorial de brechas educativas</h2>
+            
+            <div class="hero-info">
+                <div class="hero-info-item">
+                    <strong>Universidad Santo Tomás</strong>
+                    Consultoría e Investigación
+                </div>
+                <div class="hero-info-item">
+                    <strong>2026-I</strong>
+                    Octavo Semestre
+                </div>
+                <div class="hero-info-item">
+                    <strong>Director</strong>
+                    @Izainea
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CONTENEDOR PRINCIPAL
+         ============================================ -->
+    <div class="container">
+
+        <!-- ============================================
+             RESUMEN EJECUTIVO
+             ============================================ -->
+        <section id="resumen" class="fade-in">
+            <h2 class="section-title">
+                <span class="icon">📋</span>
+                Resumen Ejecutivo
+            </h2>
+            
+            <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+                El <strong>Observatorio de Datos de Educación en Colombia</strong> es un proyecto que integra tres fuentes oficiales 
+                de datos educativos (SNIES, ICFES y PTE) para crear un sistema unificado de análisis territorial de brechas educativas. 
+                Nuestro objetivo es transformar datos dispersos y heterogéneos en información accionable para la toma de decisiones 
+                en política educativa.
+            </p>
+
+            <div class="summary-cards">
+                <div class="card">
+                    <span class="card-number">3.3M+</span>
+                    <span class="card-label">Registros Saber Pro<br>Procesados (2012-2024)</span>
+                </div>
+                <div class="card yellow">
+                    <span class="card-number">13</span>
+                    <span class="card-label">Años de Datos<br>Consolidados</span>
+                </div>
+                <div class="card">
+                    <span class="card-number">99.9%</span>
+                    <span class="card-label">Calidad de Datos<br>Validada</span>
+                </div>
+                <div class="card yellow">
+                    <span class="card-number">5</span>
+                    <span class="card-label">Módulos de Competencias<br>Analizados</span>
+                </div>
+            </div>
+
+            <div style="background: var(--amarillo-suave); padding: 1.5rem; border-radius: 8px; border-left: 5px solid var(--amarillo-principal); margin-top: 2rem;">
+                <h4 style="color: var(--azul-oscuro); margin-bottom: 0.5rem;">🎯 Enfoque del Proyecto</h4>
+                <p>Periodo de análisis: <strong>2012-2024</strong> (Saber Pro desde 2012, SNIES y PTE desde 2015) | Más de <strong>1 millón de estudiantes</strong> de educación superior evaluados | 
+                <strong>47 millones</strong> de matrículas procesadas | <strong>$5.2 billones</strong> en presupuesto educativo analizado</p>
+            </div>
+        </section>
+
+        <!-- ============================================
+             OBJETIVOS
+             ============================================ -->
+        <section id="objetivos" class="fade-in delay-1">
+            <h2 class="section-title">
+                <span class="icon">🎯</span>
+                Objetivos del Proyecto
+            </h2>
+
+            <h3 style="color: var(--azul-medio); margin-bottom: 1rem;">Objetivo General</h3>
+            <div style="background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--azul-medio) 100%); color: var(--blanco); padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                <p style="font-size: 1.1rem;">
+                    Crear un observatorio de datos que permita reunir, organizar y preparar la información del sistema educativo 
+                    colombiano desde 2012 hasta 2024 de una manera clara y ordenada, construyendo una base sólida y fácil de entender, 
+                    que ayude a analizar estos datos sin dificultad y que pueda seguir creciendo con el paso del tiempo.
+                </p>
+            </div>
+
+            <h3 style="color: var(--azul-medio); margin-bottom: 1rem;">Objetivos Específicos</h3>
+            <ul class="objetivos-list">
+                <li>
+                    <strong>📥 Reunir y organizar las fuentes de datos</strong>
+                    Integrar los datos del SNIES, del PTE y de Saber Pro creando un sistema que facilite su acceso y manejo, 
+                    incluyendo descarga automática, organización con nombres claros y documentación completa.
+                </li>
+                <li>
+                    <strong>⭐ Procesar y validar datos de Educación Superior</strong>
+                    Realizar limpieza, validación y consolidación de más de 3.3 millones de registros de Saber Pro (2012-2024),
+                    garantizando calidad de datos superior al 99.9% y facilitando el análisis de características estudiantiles
+                    y resultados del examen.
+                </li>
+                <li>
+                    <strong>🔄 Garantizar escalabilidad y reproducibilidad</strong>
+                    Dejar un sistema preparado para incorporar nuevos años sin rehacer todo el proceso inicial, asegurando que 
+                    el observatorio pueda mantenerse actualizado de manera sencilla y que su estructura sea clara para futuros análisis.
+                </li>
+            </ul>
+        </section>
+
+        <!-- ============================================
+             METODOLOGÍA
+             ============================================ -->
+        <section class="fade-in delay-2">
+            <h2 class="section-title">
+                <span class="icon">🔧</span>
+                Metodología y Stack Tecnológico
+            </h2>
+
+            <div class="methodology-grid">
+                <div class="method-item">
+                    <strong>CRISP-DM</strong>
+                    Framework Analítico
+                </div>
+                <div class="method-item">
+                    <strong>Git Flow</strong>
+                    Control de Versiones
+                </div>
+                <div class="method-item">
+                    <strong>Sprints 2 semanas</strong>
+                    Gestión Kanban
+                </div>
+                <div class="method-item">
+                    <strong>Big 4 Standards</strong>
+                    Gobernanza Formal
+                </div>
+            </div>
+
+            <h4 style="color: var(--azul-oscuro); margin: 2rem 0 1rem;">Stack Tecnológico</h4>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                <div style="background: var(--gris-claro); padding: 1rem; border-radius: 8px;">
+                    <strong style="color: var(--azul-oscuro);">Ingesta</strong><br>
+                    sodapy, pandas, requests
+                </div>
+                <div style="background: var(--gris-claro); padding: 1rem; border-radius: 8px;">
+                    <strong style="color: var(--azul-oscuro);">Almacenamiento</strong><br>
+                    DuckDB, Parquet
+                </div>
+                <div style="background: var(--gris-claro); padding: 1rem; border-radius: 8px;">
+                    <strong style="color: var(--azul-oscuro);">Análisis</strong><br>
+                    pandas, scikit-learn
+                </div>
+                <div style="background: var(--gris-claro); padding: 1rem; border-radius: 8px;">
+                    <strong style="color: var(--azul-oscuro);">Visualización</strong><br>
+                    matplotlib, plotly, seaborn
+                </div>
+                <div style="background: var(--gris-claro); padding: 1rem; border-radius: 8px;">
+                    <strong style="color: var(--azul-oscuro);">Dashboard</strong><br>
+                    Streamlit
+                </div>
+                <div style="background: var(--gris-claro); padding: 1rem; border-radius: 8px;">
+                    <strong style="color: var(--azul-oscuro);">Reproducibilidad</strong><br>
+                    Poetry, Docker, DVC
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             LOGROS - SPRINTS 1-4
+             ============================================ -->
+        <section id="logros" class="fade-in delay-3">
+            <h2 class="section-title">
+                <span class="icon">✅</span>
+                Lo que ya hemos logrado (Sprints 1-4)
+            </h2>
+
+            <div class="sprint-header">
+                <h3>Sprints 1-4: Fundamentos del Observatorio</h3>
+                <span class="sprint-status status-completed">✅ COMPLETADO</span>
+            </div>
+
+            <div class="summary-cards">
+                <div class="card">
+                    <span class="card-number">3.3M</span>
+                    <span class="card-label">Registros Saber Pro<br>Procesados</span>
+                </div>
+                <div class="card yellow">
+                    <span class="card-number">676K</span>
+                    <span class="card-label">Registros SNIES<br>Procesados</span>
+                </div>
+                <div class="card">
+                    <span class="card-number">36K</span>
+                    <span class="card-label">Registros PTE<br>Consolidados</span>
+                </div>
+                <div class="card yellow">
+                    <span class="card-number">100%</span>
+                    <span class="card-label">Pipeline ETL<br>Automatizado</span>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                <div style="background: var(--amarillo-suave); padding: 1.5rem; border-radius: 8px; border-left: 5px solid var(--exito);">
+                    <h4 style="color: var(--azul-oscuro);">🔧 Pipeline ETL Completado</h4>
+                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>Ingesta automatizada desde datos.gov.co</li>
+                        <li>Procesamiento y limpieza estandarizada</li>
+                        <li>Validación de calidad de datos</li>
+                        <li>Documentación completa de metadatos</li>
+                    </ul>
+                </div>
+                <div style="background: var(--amarillo-suave); padding: 1.5rem; border-radius: 8px; border-left: 5px solid var(--exito);">
+                    <h4 style="color: var(--azul-oscuro);">⭐ Procesamiento y Validación</h4>
+                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>Limpieza de 3.3M+ registros Saber Pro</li>
+                        <li>Validación de calidad >99.9%</li>
+                        <li>Archivos Parquet optimizados</li>
+                        <li>Metadatos y documentación completa</li>
+                    </ul>
+                </div>
+                <div style="background: var(--amarillo-suave); padding: 1.5rem; border-radius: 8px; border-left: 5px solid var(--exito);">
+                    <h4 style="color: var(--azul-oscuro);">📊 Dashboard Streamlit</h4>
+                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>Visualizaciones interactivas</li>
+                        <li>Filtros por departamento, institución, tiempo</li>
+                        <li>Métricas clave en tiempo real</li>
+                        <li>Exportación de reportes</li>
+                    </ul>
+                </div>
+                <div style="background: var(--amarillo-suave); padding: 1.5rem; border-radius: 8px; border-left: 5px solid var(--exito);">
+                    <h4 style="color: var(--azul-oscuro);">📝 Documentación Completa</h4>
+                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>Informe técnico detallado</li>
+                        <li>Catálogo de datos (datos/catalogo.yaml)</li>
+                        <li>Guías de contribución (CONTRIBUTING.md)</li>
+                        <li>README con instrucciones de instalación</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             RESULTADOS PRINCIPALES
+             ============================================ -->
+        <section id="resultados" class="fade-in delay-4">
+            <h2 class="section-title">
+                <span class="icon">📈</span>
+                Resultados Principales del Análisis
+            </h2>
+
+            <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+                A continuación presentamos los hallazgos más relevantes del análisis exploratorio realizado sobre 
+                la base de datos de Saber Pro (2012-2024), que incluye más de 1 millón de estudiantes de educación superior evaluados.
+            </p>
+
+            <div class="resultados-grid">
+                <div class="resultado-item">
+                    <img src="https://github.com/ustadistica/Proyecto-Observatorio-Datos-de-Educacion-en-Colombia/blob/main/Imagenes/Distrib%20sexo.png?raw=true" alt="Distribución por Género">
+                    <div class="resultado-content">
+                        <h4>1. Distribución por Género</h4>
+                        <p><strong>58% mujeres</strong> vs 42% hombres. El dashboard de Streamlit confirma esta distribución en más de 3.3 millones de registros procesados (2012-2024).</p>
+                    </div>
+                </div>
+
+                <div class="resultado-item">
+                    <img src="https://github.com/ustadistica/Proyecto-Observatorio-Datos-de-Educacion-en-Colombia/blob/main/Imagenes/Distrib%20puntajes.png?raw=true" alt="Distribución de Puntajes">
+                    <div class="resultado-content">
+                        <h4>2. Niveles de Desempeño por Módulo</h4>
+                        <p><strong>Inglés</strong> lidera con mejor promedio, seguido de Lectura Crítica. 
+                        <strong>Comunicación Escrita</strong> es el módulo más bajo y variable.</p>
+                    </div>
+                </div>
+
+                <div class="resultado-item">
+                    <img src="https://github.com/ustadistica/Proyecto-Observatorio-Datos-de-Educacion-en-Colombia/blob/main/Imagenes/Puntajes%20anuales.png?raw=true" alt="Evolución Temporal">
+                    <div class="resultado-content">
+                        <h4>3. Evolución Temporal 2012-2024</h4>
+                        <p>Inglés se mantiene alto y mejora en 2024. Lectura Crítica mejora constantemente. 
+                        Comunicación Escrita es inestable. El dashboard muestra la evolución completa de los 13 años procesados.</p>
+                    </div>
+                </div>
+
+                <div class="resultado-item">
+                    <img src="https://github.com/ustadistica/Proyecto-Observatorio-Datos-de-Educacion-en-Colombia/blob/main/Imagenes/Universidades.jpg?raw=true" alt="Participación Institucional">
+                    <div class="resultado-content">
+                        <h4>4. Participación Institucional</h4>
+                        <p><strong>Uniminuto</strong> y <strong>Politécnico Grancolombiano</strong> lideran 
+                        la participación. Programas presenciales muestran resultados ligeramente superiores.</p>
+                    </div>
+                </div>
+
+                <div class="resultado-item">
+                    <img src="https://github.com/ustadistica/Proyecto-Observatorio-Datos-de-Educacion-en-Colombia/blob/main/Imagenes/Departamentos.jpg?raw=true" alt="Participación Departamental">
+                    <div class="resultado-content">
+                        <h4>5. Participación Departamental</h4>
+                        <p><strong>Bogotá</strong> concentra la mayor participación por amplio margen, 
+                        seguida por Antioquia. Fuerte predominio de las principales ciudades.</p>
+                    </div>
+                </div>
+
+                <div class="resultado-item">
+                    <img src="https://github.com/ustadistica/Proyecto-Observatorio-Datos-de-Educacion-en-Colombia/blob/main/Imagenes/FAMD.png?raw=true" alt="Análisis FAMD">
+                    <div class="resultado-content">
+                        <h4>6. Factores del Hogar (FAMD)</h4>
+                        <p>Estrato y educación de los padres son las variables más influyentes. 
+                        Inglés se correlaciona fuertemente con nivel socioeconómico.</p>
+                    </div>
+                </div>
+
+                <div class="resultado-item">
+                    <img src="https://github.com/ustadistica/Proyecto-Observatorio-Datos-de-Educacion-en-Colombia/blob/main/Imagenes/Correlaciones.png?raw=true" alt="Correlaciones">
+                    <div class="resultado-content">
+                        <h4>7. Correlaciones entre Módulos</h4>
+                        <p>Lectura Crítica, Razonamiento Cuantitativo y Competencias Ciudadanas se mueven juntas. 
+                        Comunicación Escrita tiene comportamiento más independiente.</p>
+                    </div>
+                </div>
+
+                <div class="resultado-item">
+                    <div class="resultado-content" style="background: var(--amarillo-suave); padding: 2rem; text-align: center;">
+                        <h4 style="color: var(--azul-oscuro);">8. Análisis Multivariado</h4>
+                        <p style="margin-top: 1rem;">Las 6 primeras dimensiones del FAMD explican ~28% de varianza, 
+                        confirmando un comportamiento verdaderamente <strong>multidimensional</strong>. 
+                        La Dimensión 1 está relacionada con condiciones del hogar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             ROADMAP - SPRINTS 5-8
+             ============================================ -->
+        <section id="roadmap">
+            <h2 class="section-title">
+                <span class="icon">🚀</span>
+                Roadmap Futuro - Sprints 5 a 8
+            </h2>
+
+            <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+                A continuación se presentan las actividades planificadas para continuar avanzando en el proyecto, 
+                organizadas en 4 sprints adicionales que incluyen validación, cruces entre bases, machine learning 
+                e investigación técnica.
+            </p>
+
+            <!-- ============================================
+                 SPRINT 5: VALIDACIÓN Y CALIDAD
+                 ============================================ -->
+            <div class="sprint-container">
+                <div class="sprint-header">
+                    <h3>Sprint 5: Validación y Calidad de Datos</h3>
+                    <span class="sprint-status status-progress">🟡 EN PROGRESO</span>
+                </div>
+
+                <div class="progress-bar-container">
+                    <div class="progress-bar progress-progress" style="width: 75%;"></div>
+                </div>
+                <p style="text-align: center; color: var(--gris-oscuro); font-size: 0.9rem;">75% completado - Validadores implementados, pendiente subir al repositorio</p>
+
+                <div class="issues-grid" style="margin-top: 1.5rem;">
+                    <div class="issue-card">
+                        <h4>🔍 Issue 5.1: Validador Pipeline PTE</h4>
+                        <span class="assignee">👤 Germán</span>
+                        <p class="description">Implementar validador integral para pipeline de datos PTE, incluyendo validación de esquemas, rangos y consistencia temporal.</p>
+                        <p class="deliverables">📦 Entregable: Módulo de validación con tests automatizados</p>
+                    </div>
+
+                    <div class="issue-card">
+                        <h4>🔍 Issue 5.2: Validador Pipeline Saber Pro</h4>
+                        <span class="assignee">👤 Jhonatan</span>
+                        <p class="description">Implementar validador integral para pipeline de datos Saber Pro, validando integridad de registros y consistencia de puntajes.</p>
+                        <p class="deliverables">📦 Entregable: Framework de validación con reportes de calidad</p>
+                    </div>
+
+                    <div class="issue-card">
+                        <h4>🔍 Issue 5.3: Validador Pipeline SNIES</h4>
+                        <span class="assignee">👤 Andrés</span>
+                        <p class="description">Implementar validador integral para pipeline de datos SNIES, verificando completitud de información institucional y de programas.</p>
+                        <p class="deliverables">📦 Entregable: Sistema de validación con alertas de anomalías</p>
+                    </div>
+
+                    <div class="issue-card">
+                        <h4>⚙️ Issue 5.4: Automatización CI/CD</h4>
+                        <span class="assignee">👤 Germán</span>
+                        <p class="description">Automatizar ejecución de validadores en pipeline de integración continua (GitHub Actions).</p>
+                        <p class="deliverables">📦 Entregable: Workflow CI/CD con validación automática</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================
+                 SPRINT 6: CRUCES Y ANÁLISIS DESCRIPTIVO
+                 ============================================ -->
+            <div class="sprint-container">
+                <div class="sprint-header">
+                    <h3>Sprint 6: Cruces entre Bases y Análisis Descriptivo</h3>
+                    <span class="sprint-status status-pending">⚪ POR INICIAR</span>
+                </div>
+
+                <div class="progress-bar-container">
+                    <div class="progress-bar progress-pending" style="width: 0%;"></div>
+                </div>
+
+                <div class="issues-grid" style="margin-top: 1.5rem;">
+                    <div class="issue-card">
+                        <h4>🔗 Issue 6.1: Cruce Saber Pro ↔ Graduados SNIES</h4>
+                        <span class="assignee">👤 Jhonatan</span>
+                        <p class="description">Cruzar Saber Pro con Graduados SNIES por institución (revisión por nombre) para analizar relación entre presentaciones y graduaciones.</p>
+                        <p class="deliverables">📦 Entregable: Análisis de correlación, visualizaciones de eficiencia de titulación</p>
+                        <p style="color: var(--peligro); font-size: 0.85rem; margin-top: 0.5rem;">⚠️ Pendiente: Volver a correr análisis</p>
+                    </div>
+
+                    <div class="issue-card">
+                        <h4>💰 Issue 6.2: Cruce PTE ↔ Resultados Saber Pro</h4>
+                        <span class="assignee">👤 Germán</span>
+                        <p class="description">Relacionar presupuesto ejecutado por entidad con puntajes promedio del Saber Pro para evaluar ROI educativo.</p>
+                        <p class="deliverables">📦 Entregable: HTML de eficiencia presupuestal, métricas de ROI educativo</p>
+                        <p style="color: var(--peligro); font-size: 0.85rem; margin-top: 0.5rem;">⚠️ Pendiente: Por analizar</p>
+                    </div>
+
+                    <div class="issue-card">
+                        <h4>🗺️ Issue 6.3: Análisis Descriptivo SNIES por Región</h4>
+                        <span class="assignee">👤 Andrés</span>
+                        <p class="description">Explorar distribución de matriculados por departamento, tipo de institución y área de conocimiento.</p>
+                        <p class="deliverables">📦 Entregable: Mapas de cobertura, tendencias temporales, análisis de brechas regionales</p>
+                    </div>
+
+                    <div class="issue-card">
+                        <h4>📊 Issue 6.4: Cruce Matriculados ↔ Presentaciones</h4>
+                        <span class="assignee">👤 Jhonatan</span>
+                        <p class="description">Analizar relación entre número de matriculados SNIES y presentaciones al examen Saber Pro.</p>
+                        <p class="deliverables">📦 Entregable: Tasa de presentación por institución, análisis de cobertura del examen</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================
+                 SPRINT 7: PREDICCIÓN Y MACHINE LEARNING
+                 ============================================ -->
+            <div class="sprint-container">
+                <div class="sprint-header">
+                    <h3>Sprint 7: Predicción y Machine Learning</h3>
+                    <span class="sprint-status status-pending">⚪ POR INICIAR</span>
+                </div>
+
+                <div class="progress-bar-container">
+                    <div class="progress-bar progress-pending" style="width: 0%;"></div>
+                </div>
+
+                <div style="background: var(--azul-oscuro); color: var(--blanco); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                    <strong>🎯 Objetivo:</strong> Validar la precisión entre universidades acreditadas y no acreditadas, por ciudad y por estrato
+                </div>
+
+                <div class="issues-grid" style="margin-top: 1.5rem;">
+                    <div class="issue-card">
+                        <h4>🤖 Issue 7.1: Predicción de Puntajes Saber Pro</h4>
+                        <span class="assignee">👤 Andrés</span>
+                        <p class="description">Modelo de regresión para predecir puntajes basado en género, estrato, área de residencia e institución.</p>
+                        <p class="deliverables">📦 Entregable: Modelo entrenado, métricas de desempeño (RMSE, R²), importancia de características</p>
+                    </div>
+
+                    <div class="issue-card">
+                        <h4>🎯 Issue 7.2: Clustering de Instituciones</h4>
+                        <span class="assignee">👤 Germán</span>
+                        <p class="description">Clasificación automática de instituciones por desempeño usando clustering con puntajes Saber Pro y métricas SNIES.</p>
+                        <p class="deliverables">📦 Entregable: Grupos de instituciones identificados, perfiles característicos de cada cluster</p>
+                    </div>
+
+                    <div class="issue-card">
+                        <h4>📈 Issue 7.3: Predicción de Tasa de Graduación</h4>
+                        <span class="assignee">👤 Andrés</span>
+                        <p class="description">Modelo para predecir cuántos estudiantes se gradúan basado en matriculados y características del programa académico.</p>
+                        <p class="deliverables">📦 Entregable: Modelo predictivo, análisis de factores influyentes en la graduación</p>
+                    </div>
+
+                    <div class="issue-card">
+                        <h4>🌐 Issue 7.4: API de Predicciones</h4>
+                        <span class="assignee">👤 Jhonatan</span>
+                        <p class="description">Implementar endpoint REST para obtener predicciones del modelo de manera programática.</p>
+                        <p class="deliverables">📦 Entregable: API documentada con ejemplos de uso (pendiente confirmar viabilidad)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================
+                 SPRINT 8: INVESTIGACIÓN TÉCNICA
+                 ============================================ -->
+            <div class="sprint-container">
+                <div class="sprint-header">
+                    <h3>Sprint 8: Investigación Técnica y Validación Científica</h3>
+                    <span class="sprint-status status-pending">⚪ POR INICIAR</span>
+                </div>
+
+                <div class="progress-bar-container">
+                    <div class="progress-bar progress-pending" style="width: 0%;"></div>
+                </div>
+
+                <div class="issues-grid" style="margin-top: 1.5rem;">
+                    <div class="issue-card" style="grid-column: span 2;">
+                        <h4>📚 Issue 8.1: Estudio Comparativo de Técnicas ETL</h4>
+                        <span class="assignee">👤 Germán</span>
+                        <p class="description">Investigar y documentar las mejores prácticas for la ingesta de datos gubernamentales colombianos, analizando patrones ETL, manejo de esquemas variables, validación de calidad y optimización de rendimiento.</p>
+                        <p class="deliverables">
+                            📦 Productos:<br>
+                            • Paper técnico (formato IEEE/ACM)<br>
+                            • Benchmark de técnicas ETL<br>
+                            • Guía de mejores prácticas documentada<br>
+                            • Repositorio de código con experimentos
+                        </p>
+                    </div>
+
+                    <div class="issue-card" style="grid-column: span 2;">
+                        <h4>🔬 Issue 8.2: Metodología Reproducible para Análisis de Políticas</h4>
+                        <span class="assignee">👤 Jhonatan</span>
+                        <p class="description">Desarrollar y validar una metodología científica para el análisis de políticas públicas educativas, incluyendo proceso CRISP-DM adaptado, protocolo de análisis de impacto presupuestal y framework de recomendaciones basadas en evidencia.</p>
+                        <p class="deliverables">
+                            📦 Productos:<br>
+                            • Artículo metodológico en revista indexada<br>
+                            • Guía metodológica detallada<br>
+                            • Plantillas y checklists reproducibles<br>
+                            • Presentación en congreso académico
+                        </p>
+                    </div>
+
+                    <div class="issue-card" style="grid-column: span 3; background: linear-gradient(135deg, var(--amarillo-suave) 0%, var(--amarillo-claro) 100%);">
+                        <h4>🏛️ Issue 8.3: Síntesis y Marco Conceptual (Trabajo en Equipo)</h4>
+                        <span class="assignee">👥 Todo el Equipo</span>
+                        <p class="description">Integrar todos los hallazgos del proyecto en un marco conceptual coherente: síntesis de evidencia sobre calidad educativa en Colombia, marco conceptual para observatorios de datos educativos, lecciones aprendidas y agenda de investigación futura.</p>
+                        <p class="deliverables">
+                            📦 Productos:<br>
+                            • Síntesis narrativa de hallazgos<br>
+                            • Marco conceptual basado en evidencia<br>
+                            • Validación con expertos (método Delphi)<br>
+                            • Comparación con observatorios internacionales
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             EQUIPO DE TRABAJO
+             ============================================ -->
+        <section id="equipo">
+            <h2 class="section-title">
+                <span class="icon">👥</span>
+                Equipo de Trabajo
+            </h2>
+
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="avatar">GA</div>
+                    <h4>Germán</h4>
+                    <p class="role">Líder Técnico / ETL</p>
+                    <p style="font-size: 0.9rem; margin-top: 0.5rem;">Ingeniería de datos, pipelines ETL, validación y calidad</p>
+                    <a href="https://github.com/Grmng31" class="github" target="_blank">@Grmng31</a>
+                </div>
+
+                <div class="team-member">
+                    <div class="avatar">AF</div>
+                    <h4>Andrés</h4>
+                    <p class="role">Modelado + Análisis</p>
+                    <p style="font-size: 0.9rem; margin-top: 0.5rem;">Modelado estadístico, machine learning, validación de supuestos</p>
+                    <a href="https://github.com/AndresFHR2002" class="github" target="_blank">@AndresFHR2002</a>
+                </div>
+
+                <div class="team-member">
+                    <div class="avatar">JC</div>
+                    <h4>Jhonatan</h4>
+                    <p class="role">Análisis de Datos</p>
+                    <p style="font-size: 0.9rem; margin-top: 0.5rem;">Cruce de bases, análisis descriptivo, visualización de datos</p>
+                    <a href="#" class="github">Por confirmar</a>
+                </div>
+
+                <div class="team-member" style="border-top-color: var(--azul-oscuro);">
+                    <div class="avatar" style="background: var(--amarillo-principal); color: var(--azul-oscuro);">DI</div>
+                    <h4>Director</h4>
+                    <p class="role">@Izainea</p>
+                    <p style="font-size: 0.9rem; margin-top: 0.5rem;">Dirección y supervisión del proyecto</p>
+                    <a href="https://github.com/Izainea" class="github" target="_blank">@Izainea</a>
+                </div>
+            </div>
+
+            <div style="background: var(--gris-claro); padding: 1.5rem; border-radius: 8px; margin-top: 2rem;">
+                <h4 style="color: var(--azul-oscuro); margin-bottom: 1rem;">Roles y Responsabilidades</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                    <div>
+                        <strong style="color: var(--azul-medio);">Líder de Proyecto (PM)</strong><br>
+                        <span style="font-size: 0.9rem;">Comunicación con el Director, gestión Kanban, modera Stand-ups</span>
+                    </div>
+                    <div>
+                        <strong style="color: var(--azul-medio);">Ingeniero de Datos</strong><br>
+                        <span style="font-size: 0.9rem;">Ingesta, limpieza, validación, pipeline reproducible</span>
+                    </div>
+                    <div>
+                        <strong style="color: var(--azul-medio);">Analista Principal</strong><br>
+                        <span style="font-size: 0.9rem;">Modelado estadístico, validación de supuestos</span>
+                    </div>
+                    <div>
+                        <strong style="color: var(--azul-medio);">Gestor del Conocimiento</strong><br>
+                        <span style="font-size: 0.9rem;">Documentación, README, docs/</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             CALL TO ACTION / CIERRE
+             ============================================ -->
+        <section style="text-align: center; background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--azul-medio) 100%); color: var(--blanco); padding: 3rem;">
+            <h2 style="color: var(--amarillo-principal); margin-bottom: 1rem;">¿Listos para continuar?</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Este observatorio representa un paso importante hacia la democratización de datos educativos en Colombia. 
+                Con la implementación de los Sprints 5-8, consolidaremos una herramienta poderosa para el análisis de políticas 
+                públicas basadas en evidencia.
+            </p>
+            <a href="https://github.com/ustadistica/Proyecto-Observatorio-Datos-de-Educacion-en-Colombia" 
+               target="_blank"
+               style="display: inline-block; background: var(--amarillo-principal); color: var(--azul-oscuro); padding: 1rem 2rem; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; transition: all 0.3s ease;">
+                🚀 Visitar Repositorio GitHub
+            </a>
+        </section>
+
+    </div>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer>
+        <p><strong>Observatorio de Datos de Educación en Colombia</strong></p>
+        <p>Universidad Santo Tomás - Facultad de Estadística</p>
+        <p>Consultoría e Investigación - 2026-I</p>
+        <p style="margin-top: 1rem;">
+            <a href="https://github.com/ustadistica/Proyecto-Observatorio-Datos-de-Educacion-en-Colombia" target="_blank">
+                📂 Repositorio GitHub
+            </a>
+        </p>
+        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+            "Si no está en el README, el proyecto no existe." - Ustadistica 2026-I
+        </p>
+    </footer>
+
+    <!-- ============================================
+         JAVASCRIPT PARA INTERACTIVIDAD
+         ============================================ -->
+    <script>
+        // Smooth scrolling para navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animación de entrada al hacer scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+
+        // Actualizar barra de navegación al hacer scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
+            } else {
+                header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+            }
+        });
+
+        // Animación de números en las tarjetas
+        function animateValue(obj, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerHTML = Math.floor(progress * (end - start) + start);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Ejecutar animación cuando las tarjetas sean visibles
+        const cardObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const cardNumber = entry.target.querySelector('.card-number');
+                    if (cardNumber) {
+                        const text = cardNumber.textContent;
+                        const match = text.match(/(\d+)/);
+                        if (match) {
+                            const endValue = parseInt(match[1]);
+                            animateValue(cardNumber, 0, endValue, 2000);
+                        }
+                    }
+                    cardObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.card').forEach(card => {
+            cardObserver.observe(card);
+        });
+    </script>
+</body>
+</html>
