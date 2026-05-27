@@ -73,3 +73,7 @@ mlruns/
 *.tmp
 .coverage
 htmlcov/
+
+# === Archivos CSV generados en informes ===
+docs/informe_final/*.csv
+docs/*.csv
