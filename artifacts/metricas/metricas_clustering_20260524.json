@@ -1,0 +1,46 @@
+{
+  "metadata": {
+    "modelo": "kmeans_ies_desempeno_pca",
+    "fecha_entrenamiento": "2026-05-24T14:05:09.064622",
+    "autor": "German",
+    "issue": "Sprint 7.2 - Clustering IES por desempeno (con PCA reducido)"
+  },
+  "datos": {
+    "n_samples": 336,
+    "n_features_originales": 9,
+    "n_componentes_pca": 2,
+    "varianza_retenida_pca": 0.790731662416376,
+    "periodo": "2015-2024",
+    "fuentes": [
+      "Saber Pro",
+      "SNIES"
+    ],
+    "regla_matricula": "Sem1 todas IES + Sem2 solo SENA (MEN)"
+  },
+  "hiperparametros": {
+    "algoritmo": "KMeans",
+    "n_clusters": 2,
+    "random_state": 42,
+    "input_space": "PCA reduced"
+  },
+  "metricas_clustering": {
+    "silhouette_score": 0.6752133704118736,
+    "davies_bouldin_index": 0.5540843951036866,
+    "calinski_harabasz_score": 366.9508768293851
+  },
+  "distribucion_clusters": {
+    "0": 267,
+    "1": 69
+  },
+  "features_utilizadas": [
+    "puntaje_global",
+    "punt_razona_cuantitativa",
+    "punt_lectura_critica",
+    "punt_ingles",
+    "n_presentaciones",
+    "prop_p75_plus",
+    "total_matriculados",
+    "total_graduados",
+    "es_acreditada"
+  ]
+}
