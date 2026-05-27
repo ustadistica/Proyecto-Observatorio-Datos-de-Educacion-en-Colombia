@@ -1,0 +1,33 @@
+{
+  "metadata": {
+    "experiment_name": "DBSCAN Saturación de Programas",
+    "model_type": "DBSCAN",
+    "description": "Detección de programas académicos en riesgo de saturación por crecimiento de matrícula",
+    "author": "Andrés",
+    "issue": "Sprint 7.3",
+    "fecha_creacion": "2026-05-26T10:50:16.679042",
+    "notas": null
+  },
+  "datos": {
+    "n_programas": 10,
+    "features": [
+      "crecimiento_acumulado",
+      "cambio_puntaje_promedio",
+      "matricula_actual"
+    ],
+    "periodo": "2015-2024"
+  },
+  "hiperparametros": {
+    "eps": 0.5,
+    "min_samples": 5
+  },
+  "metricas": {
+    "n_clusters": 0,
+    "n_outliers": 10,
+    "distribucion_estados": {
+      "Madurez/Estabilidad": 5,
+      "Crecimiento Sostenible": 3,
+      "Otros": 2
+    }
+  }
+}
