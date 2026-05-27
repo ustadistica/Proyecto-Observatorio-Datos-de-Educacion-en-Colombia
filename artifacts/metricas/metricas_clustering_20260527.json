@@ -1,7 +1,7 @@
 {
   "metadata": {
     "modelo": "kmeans_ies_desempeno_pca",
-    "fecha_entrenamiento": "2026-05-26T22:01:18.588843",
+    "fecha_entrenamiento": "2026-05-27T14:50:03.955774",
     "autor": "German",
     "issue": "Sprint 7.2 - Clustering IES por desempeno (con PCA reducido)"
   },

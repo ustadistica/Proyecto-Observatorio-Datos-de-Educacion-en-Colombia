@@ -1,0 +1,4 @@
+cluster,n_presentaciones_sum,n_presentaciones_mean,n_presentaciones_median,n_presentaciones_std,n_presentaciones_count,total_matriculados_sum,total_matriculados_mean,total_matriculados_median,total_matriculados_std,total_matriculados_count,total_graduados_sum,total_graduados_mean,total_graduados_median,total_graduados_std,total_graduados_count
+0,2474261,9096.55,5320.0,13886.42,272,1971719.53,7248.97,3878.08,10994.92,272,391637.6,1439.84,805.9,1988.98,272
+1,61259,988.05,291.5,1762.57,62,627856.54,10126.72,3878.08,18615.33,62,120148.64,1937.88,805.9,3162.5,62
+2,113344,56672.0,56672.0,79597.6,2,872543.0,436271.5,436271.5,0.0,2,164084.8,82042.4,82042.4,0.0,2

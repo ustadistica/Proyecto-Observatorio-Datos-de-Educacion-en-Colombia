@@ -1,3 +1,0 @@
-cluster,puntaje_global_median,puntaje_global_std,puntaje_global_count,punt_razona_cuantitativa_median,punt_lectura_critica_median,punt_ingles_median,prop_p75_plus_median,n_presentaciones_sum,n_presentaciones_median,total_matriculados_sum,total_matriculados_median,total_graduados_sum,total_graduados_median,es_acreditada_median
-0,131.11,14.73,267,129.81,134.03,136.32,0.19,2472798,5409.0,1959044.62,3878.08,388934.44,808.4,0.0
-1,10.03,24.7,69,9.93,10.24,10.06,0.0,176066,296.0,1513074.45,3878.08,286936.59,805.9,0.0
