@@ -77,3 +77,8 @@ htmlcov/
 # === Archivos CSV generados en informes ===
 docs/informe_final/*.csv
 docs/*.csv
+
+# === Archivos HTML generados (reportes y dashboards) ===
+docs/*.html
+docs/informe_final/*.html
+artifacts/reportes/*.html
