@@ -171,7 +171,7 @@ plt.grid(
 plt.tight_layout()
 
 
-plt.savefig("artifact/visualizaciones/tendencia_temporal_matriculados.png", dpi=300, bbox_inches="tight")
+plt.savefig("artifacts/visualizaciones/tendencia_temporal_matriculados.png", dpi=300, bbox_inches="tight")
 plt.show()
 
 
@@ -276,7 +276,7 @@ plt.grid(axis='y', linestyle='--', alpha=0.5)
 
 plt.tight_layout()
 
-plt.savefig("artifact/visualizaciones/matricula_genero.png", dpi=300, bbox_inches="tight")
+plt.savefig("artifacts/visualizaciones/matricula_genero.png", dpi=300, bbox_inches="tight")
 plt.show()
 
 
@@ -370,7 +370,7 @@ plt.grid(axis='y', linestyle='--', alpha=0.4)
 
 plt.tight_layout()
 
-plt.savefig("artifact/visualizaciones/matricula_sector.png", dpi=300, bbox_inches="tight")
+plt.savefig("artifacts/visualizaciones/matricula_sector.png", dpi=300, bbox_inches="tight")
 plt.show()
 
 # ============================================================
@@ -475,7 +475,7 @@ plt.grid(axis='x', linestyle='--', alpha=0.4)
 
 plt.tight_layout()
 
-plt.savefig("artifact/visualizaciones/matricula_area_conocimiento.png", dpi=300, bbox_inches="tight")
+plt.savefig("artifacts/visualizaciones/matricula_area_conocimiento.png", dpi=300, bbox_inches="tight")
 plt.show()
 
 # ============================================================
@@ -683,7 +683,7 @@ plt.grid(axis='x', linestyle='--', alpha=0.4)
 plt.tight_layout()
 
 
-plt.savefig("artifact/visualizaciones/matricula_programa.png", dpi=300, bbox_inches="tight")
+plt.savefig("artifacts/visualizaciones/matricula_programa.png", dpi=300, bbox_inches="tight")
 plt.show()
 
 
@@ -799,7 +799,7 @@ plt.grid(axis='x', linestyle='--', alpha=0.4)
 
 plt.tight_layout()
 
-plt.savefig("artifact/visualizaciones/matriculados_instituciones.png", dpi=300, bbox_inches="tight")
+plt.savefig("artifacts/visualizaciones/matriculados_instituciones.png", dpi=300, bbox_inches="tight")
 plt.show()
 
 
@@ -952,7 +952,7 @@ sns.despine()
 
 plt.tight_layout()
 
-plt.savefig("artifact/visualizaciones/Evolucion_temporal.png", dpi=300, bbox_inches="tight")
+plt.savefig("artifacts/visualizaciones/Evolucion_temporal.png", dpi=300, bbox_inches="tight")
 plt.show()
 
 

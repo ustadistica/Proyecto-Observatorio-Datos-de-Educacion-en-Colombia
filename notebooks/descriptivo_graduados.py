@@ -170,7 +170,7 @@ plt.grid(
 
 plt.tight_layout()
 
-plt.savefig("artifact/visualizaciones/Tendencia_temporal_graduados.png", dpi=300, bbox_inches="tight")
+plt.savefig("artifacts/visualizaciones/Tendencia_temporal_graduados.png", dpi=300, bbox_inches="tight")
 plt.show()
 
 # ============================================================
@@ -273,7 +273,7 @@ plt.grid(axis='y', linestyle='--', alpha=0.5)
 
 plt.tight_layout()
 
-plt.savefig("artifact/visualizaciones/graduados_genero.png", dpi=300, bbox_inches="tight")
+plt.savefig("artifacts/visualizaciones/graduados_genero.png", dpi=300, bbox_inches="tight")
 plt.show()
 
 
@@ -367,7 +367,7 @@ plt.grid(axis='y', linestyle='--', alpha=0.4)
 
 plt.tight_layout()
 
-plt.savefig("artifact/visualizaciones/graduados_sector.png", dpi=300, bbox_inches="tight")
+plt.savefig("artifacts/visualizaciones/graduados_sector.png", dpi=300, bbox_inches="tight")
 plt.show()
 
 # ============================================================
@@ -471,7 +471,7 @@ plt.grid(axis='x', linestyle='--', alpha=0.4)
 
 plt.tight_layout()
 
-plt.savefig("artifact/visualizaciones/graduados_area_conocimiento.png", dpi=300, bbox_inches="tight")
+plt.savefig("artifacts/visualizaciones/graduados_area_conocimiento.png", dpi=300, bbox_inches="tight")
 plt.show()
 
 # ============================================================
@@ -566,7 +566,7 @@ plt.grid(axis='x', linestyle='--', alpha=0.4)
 
 plt.tight_layout()
 
-plt.savefig("artifact/visualizaciones/graduados_genero.png", dpi=300, bbox_inches="tight")
+plt.savefig("artifacts/visualizaciones/graduados_genero.png", dpi=300, bbox_inches="tight")
 plt.show()
 
 
@@ -676,7 +676,7 @@ plt.grid(axis='x', linestyle='--', alpha=0.4)
 
 plt.tight_layout()
 
-plt.savefig("artifact/visualizaciones/graduados_programa.png", dpi=300, bbox_inches="tight")
+plt.savefig("artifacts/visualizaciones/graduados_programa.png", dpi=300, bbox_inches="tight")
 plt.show()
 
 
@@ -791,7 +791,7 @@ plt.grid(axis='x', linestyle='--', alpha=0.4)
 
 plt.tight_layout()
 
-plt.savefig("artifact/visualizaciones/graduados_instituciones.png", dpi=300, bbox_inches="tight")
+plt.savefig("artifacts/visualizaciones/graduados_instituciones.png", dpi=300, bbox_inches="tight")
 plt.show()
 
 
@@ -944,7 +944,7 @@ sns.despine()
 
 plt.tight_layout()
 
-plt.savefig("artifact/visualizaciones/evolucion_temporal.png", dpi=300, bbox_inches="tight")
+plt.savefig("artifacts/visualizaciones/evolucion_temporal.png", dpi=300, bbox_inches="tight")
 plt.show()
 
 
@@ -1198,5 +1198,5 @@ plt.tight_layout(
     pad=2
 )
 
-plt.savefig("artifact/visualizaciones/brecha_graduados.png", dpi=300, bbox_inches="tight")
+plt.savefig("artifacts/visualizaciones/brecha_graduados.png", dpi=300, bbox_inches="tight")
 plt.show()
