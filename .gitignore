@@ -18,10 +18,23 @@ datos/raw/icfes/**/*.txt
 # Ignorar archivos Excel del datos raw de PTE
 datos/raw/pte/**/*.xlsx
 datos/raw/pte/**/*.xls
-# Ignorar CSVs generales pero mantener parquet consolidados
-datos/raw/*.csv
-datos/raw/*.xlsx
+# === Datos RAW (NUNCA SUBIR ESTOS ARCHIVOS) ===
+datos/raw/*
+
+# === Datos PROCESADOS (IGNORAR POR PESO) ===
+# Los archivos .parquet son demasiado pesados para GitHub
+# Usar DVC para versionar datos procesados
+datos/processed/*.parquet
+datos/processed/**/*.parquet
 datos/processed/*.csv
+datos/processed/**/*.csv
+datos/processed/*.feather
+datos/processed/**/*.feather
+datos/processed/*.h5
+datos/processed/**/*.h5
+# Archivos individuales de saber_pro (ignorar, solo mantener consolidados)
+datos/processed/saber_pro/saber_pro_20??_limpio.parquet
+
 datos/interim/
 *.duckdb
 *.sqlite
@@ -61,6 +74,11 @@ mlruns/
 .coverage
 htmlcov/
 
-# === Ignorar archivos Excel ===
-*.xlsx
-*.xls
+# === Archivos CSV generados en informes ===
+docs/informe_final/*.csv
+docs/*.csv
+
+# === Archivos HTML generados (reportes y dashboards) ===
+docs/*.html
+docs/informe_final/*.html
+artifacts/reportes/*.html

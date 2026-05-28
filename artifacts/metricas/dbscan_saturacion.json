@@ -1,0 +1,9 @@
+{
+  "n_clusters": 0,
+  "n_outliers": 10,
+  "distribucion_estados": {
+    "Madurez/Estabilidad": 5,
+    "Crecimiento Sostenible": 3,
+    "Otros": 2
+  }
+}

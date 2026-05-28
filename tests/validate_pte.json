@@ -1,0 +1,1978 @@
+{
+  "generated_at": "2026-05-01T11:14:14.445952",
+  "pipeline_status": "WARNING",
+  "summary": {
+    "total_rows_consolidado": 2091,
+    "duplicate_rows_consolidado": 0,
+    "years_present": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ],
+    "total_pagos_billones": 849.94
+  },
+  "validations": {
+    "dictionary_unit_test": {
+      "status": "OK",
+      "total_canonicals": 42,
+      "total_variants": 129,
+      "details": {
+        "_pct_comp": {
+          "status": "OK",
+          "variant_count": 3,
+          "variants": {
+            "compaprop": {
+              "maps_to": "_pct_comp",
+              "expected": "_pct_comp",
+              "ok": true
+            },
+            "porcent": {
+              "maps_to": "_pct_comp",
+              "expected": "_pct_comp",
+              "ok": true
+            },
+            "porcentajedeejecucion": {
+              "maps_to": "_pct_comp",
+              "expected": "_pct_comp",
+              "ok": true
+            }
+          }
+        },
+        "_pct_oblig": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "obligaprop": {
+              "maps_to": "_pct_oblig",
+              "expected": "_pct_oblig",
+              "ok": true
+            }
+          }
+        },
+        "_pct_pago": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "pagoaprop": {
+              "maps_to": "_pct_pago",
+              "expected": "_pct_pago",
+              "ok": true
+            }
+          }
+        },
+        "adiciones": {
+          "status": "OK",
+          "variant_count": 5,
+          "variants": {
+            "adiciones": {
+              "maps_to": "adiciones",
+              "expected": "adiciones",
+              "ok": true
+            },
+            "apropiacionadicionada": {
+              "maps_to": "adiciones",
+              "expected": "adiciones",
+              "ok": true
+            },
+            "apr_adicionada": {
+              "maps_to": "adiciones",
+              "expected": "adiciones",
+              "ok": true
+            },
+            "apr._adicionada": {
+              "maps_to": "adiciones",
+              "expected": "adiciones",
+              "ok": true
+            },
+            "adicion": {
+              "maps_to": "adiciones",
+              "expected": "adiciones",
+              "ok": true
+            }
+          }
+        },
+        "anio_proceso": {
+          "status": "OK",
+          "variant_count": 5,
+          "variants": {
+            "anio": {
+              "maps_to": "anio_proceso",
+              "expected": "anio_proceso",
+              "ok": true
+            },
+            "ano": {
+              "maps_to": "anio_proceso",
+              "expected": "anio_proceso",
+              "ok": true
+            },
+            "year": {
+              "maps_to": "anio_proceso",
+              "expected": "anio_proceso",
+              "ok": true
+            },
+            "anio_reporte": {
+              "maps_to": "anio_proceso",
+              "expected": "anio_proceso",
+              "ok": true
+            },
+            "anio_proceso": {
+              "maps_to": "anio_proceso",
+              "expected": "anio_proceso",
+              "ok": true
+            }
+          }
+        },
+        "apropiacionbloqueada": {
+          "status": "OK",
+          "variant_count": 6,
+          "variants": {
+            "apropiacionbloqueada": {
+              "maps_to": "apropiacionbloqueada",
+              "expected": "apropiacionbloqueada",
+              "ok": true
+            },
+            "apr_bloqueada": {
+              "maps_to": "apropiacionbloqueada",
+              "expected": "apropiacionbloqueada",
+              "ok": true
+            },
+            "apr._bloqueada": {
+              "maps_to": "apropiacionbloqueada",
+              "expected": "apropiacionbloqueada",
+              "ok": true
+            },
+            "apropiacion_bloqueada": {
+              "maps_to": "apropiacionbloqueada",
+              "expected": "apropiacionbloqueada",
+              "ok": true
+            },
+            "perdidasdeapropiacion": {
+              "maps_to": "apropiacionbloqueada",
+              "expected": "apropiacionbloqueada",
+              "ok": true
+            },
+            "aprbloqueada": {
+              "maps_to": "apropiacionbloqueada",
+              "expected": "apropiacionbloqueada",
+              "ok": true
+            }
+          }
+        },
+        "apropiaciondisponible": {
+          "status": "OK",
+          "variant_count": 6,
+          "variants": {
+            "apropiaciondisponible": {
+              "maps_to": "apropiaciondisponible",
+              "expected": "apropiaciondisponible",
+              "ok": true
+            },
+            "apr_disponible": {
+              "maps_to": "apropiaciondisponible",
+              "expected": "apropiaciondisponible",
+              "ok": true
+            },
+            "apr._disponible": {
+              "maps_to": "apropiaciondisponible",
+              "expected": "apropiaciondisponible",
+              "ok": true
+            },
+            "apropiacion_disponible": {
+              "maps_to": "apropiaciondisponible",
+              "expected": "apropiaciondisponible",
+              "ok": true
+            },
+            "sincomprometer": {
+              "maps_to": "apropiaciondisponible",
+              "expected": "apropiaciondisponible",
+              "ok": true
+            },
+            "aprdisponible": {
+              "maps_to": "apropiaciondisponible",
+              "expected": "apropiaciondisponible",
+              "ok": true
+            }
+          }
+        },
+        "apropiacioninicial": {
+          "status": "OK",
+          "variant_count": 4,
+          "variants": {
+            "apropiacioninicial": {
+              "maps_to": "apropiacioninicial",
+              "expected": "apropiacioninicial",
+              "ok": true
+            },
+            "apr_inicial": {
+              "maps_to": "apropiacioninicial",
+              "expected": "apropiacioninicial",
+              "ok": true
+            },
+            "apr._inicial": {
+              "maps_to": "apropiacioninicial",
+              "expected": "apropiacioninicial",
+              "ok": true
+            },
+            "apropiacion_inicial": {
+              "maps_to": "apropiacioninicial",
+              "expected": "apropiacioninicial",
+              "ok": true
+            }
+          }
+        },
+        "apropiacionvigente": {
+          "status": "OK",
+          "variant_count": 6,
+          "variants": {
+            "apropiacionvigente": {
+              "maps_to": "apropiacionvigente",
+              "expected": "apropiacionvigente",
+              "ok": true
+            },
+            "apr_vigente": {
+              "maps_to": "apropiacionvigente",
+              "expected": "apropiacionvigente",
+              "ok": true
+            },
+            "apr._vigente": {
+              "maps_to": "apropiacionvigente",
+              "expected": "apropiacionvigente",
+              "ok": true
+            },
+            "apropiacion_vigente": {
+              "maps_to": "apropiacionvigente",
+              "expected": "apropiacionvigente",
+              "ok": true
+            },
+            "apropiacionvigente_1": {
+              "maps_to": "apropiacionvigente",
+              "expected": "apropiacionvigente",
+              "ok": true
+            },
+            "aprvigente": {
+              "maps_to": "apropiacionvigente",
+              "expected": "apropiacionvigente",
+              "ok": true
+            }
+          }
+        },
+        "cdp": {
+          "status": "OK",
+          "variant_count": 2,
+          "variants": {
+            "cdp": {
+              "maps_to": "cdp",
+              "expected": "cdp",
+              "ok": true
+            },
+            "certificadodisponibilidadpresupuestal": {
+              "maps_to": "cdp",
+              "expected": "cdp",
+              "ok": true
+            }
+          }
+        },
+        "codigo_cuarto_nivel": {
+          "status": "OK",
+          "variant_count": 2,
+          "variants": {
+            "codigocuartonivel": {
+              "maps_to": "codigo_cuarto_nivel",
+              "expected": "codigo_cuarto_nivel",
+              "ok": true
+            },
+            "codigo_cuarto_nivel": {
+              "maps_to": "codigo_cuarto_nivel",
+              "expected": "codigo_cuarto_nivel",
+              "ok": true
+            }
+          }
+        },
+        "codigo_quinto_nivel": {
+          "status": "OK",
+          "variant_count": 2,
+          "variants": {
+            "codigoquintonivel": {
+              "maps_to": "codigo_quinto_nivel",
+              "expected": "codigo_quinto_nivel",
+              "ok": true
+            },
+            "codigo_quinto_nivel": {
+              "maps_to": "codigo_quinto_nivel",
+              "expected": "codigo_quinto_nivel",
+              "ok": true
+            }
+          }
+        },
+        "codigo_uej": {
+          "status": "OK",
+          "variant_count": 6,
+          "variants": {
+            "uej": {
+              "maps_to": "codigo_uej",
+              "expected": "codigo_uej",
+              "ok": true
+            },
+            "uej_codigo": {
+              "maps_to": "codigo_uej",
+              "expected": "codigo_uej",
+              "ok": true
+            },
+            "codigo_uej": {
+              "maps_to": "codigo_uej",
+              "expected": "codigo_uej",
+              "ok": true
+            },
+            "codigoentidad": {
+              "maps_to": "codigo_uej",
+              "expected": "codigo_uej",
+              "ok": true
+            },
+            "codigo_entidad": {
+              "maps_to": "codigo_uej",
+              "expected": "codigo_uej",
+              "ok": true
+            },
+            "codigo_entidad_uej": {
+              "maps_to": "codigo_uej",
+              "expected": "codigo_uej",
+              "ok": true
+            }
+          }
+        },
+        "compromisos": {
+          "status": "OK",
+          "variant_count": 2,
+          "variants": {
+            "compromiso": {
+              "maps_to": "compromisos",
+              "expected": "compromisos",
+              "ok": true
+            },
+            "compromisos": {
+              "maps_to": "compromisos",
+              "expected": "compromisos",
+              "ok": true
+            }
+          }
+        },
+        "cta": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "cta": {
+              "maps_to": "cta",
+              "expected": "cta",
+              "ok": true
+            }
+          }
+        },
+        "descripcion": {
+          "status": "OK",
+          "variant_count": 7,
+          "variants": {
+            "descripcion": {
+              "maps_to": "descripcion",
+              "expected": "descripcion",
+              "ok": true
+            },
+            "detalleprogramas": {
+              "maps_to": "descripcion",
+              "expected": "descripcion",
+              "ok": true
+            },
+            "detalle_programas": {
+              "maps_to": "descripcion",
+              "expected": "descripcion",
+              "ok": true
+            },
+            "programa": {
+              "maps_to": "descripcion",
+              "expected": "descripcion",
+              "ok": true
+            },
+            "entidaddetalle": {
+              "maps_to": "descripcion",
+              "expected": "descripcion",
+              "ok": true
+            },
+            "entidad_detalle": {
+              "maps_to": "descripcion",
+              "expected": "descripcion",
+              "ok": true
+            },
+            "entidaddetallerubro": {
+              "maps_to": "descripcion",
+              "expected": "descripcion",
+              "ok": true
+            }
+          }
+        },
+        "detalle_gasto": {
+          "status": "OK",
+          "variant_count": 3,
+          "variants": {
+            "codigodetallegasto": {
+              "maps_to": "detalle_gasto",
+              "expected": "detalle_gasto",
+              "ok": true
+            },
+            "detalle_gasto": {
+              "maps_to": "detalle_gasto",
+              "expected": "detalle_gasto",
+              "ok": true
+            },
+            "codigo_detalle_gasto": {
+              "maps_to": "detalle_gasto",
+              "expected": "detalle_gasto",
+              "ok": true
+            }
+          }
+        },
+        "fuente": {
+          "status": "OK",
+          "variant_count": 3,
+          "variants": {
+            "fuente": {
+              "maps_to": "fuente",
+              "expected": "fuente",
+              "ok": true
+            },
+            "fuentefinanciacion": {
+              "maps_to": "fuente",
+              "expected": "fuente",
+              "ok": true
+            },
+            "fuente_financiacion": {
+              "maps_to": "fuente",
+              "expected": "fuente",
+              "ok": true
+            }
+          }
+        },
+        "item": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "item": {
+              "maps_to": "item",
+              "expected": "item",
+              "ok": true
+            }
+          }
+        },
+        "mes_reporte": {
+          "status": "OK",
+          "variant_count": 4,
+          "variants": {
+            "mes": {
+              "maps_to": "mes_reporte",
+              "expected": "mes_reporte",
+              "ok": true
+            },
+            "mes_reporte": {
+              "maps_to": "mes_reporte",
+              "expected": "mes_reporte",
+              "ok": true
+            },
+            "nombremes": {
+              "maps_to": "mes_reporte",
+              "expected": "mes_reporte",
+              "ok": true
+            },
+            "nombre_mes": {
+              "maps_to": "mes_reporte",
+              "expected": "mes_reporte",
+              "ok": true
+            }
+          }
+        },
+        "nombre_cuarto_nivel": {
+          "status": "OK",
+          "variant_count": 2,
+          "variants": {
+            "nombrecuartonivel": {
+              "maps_to": "nombre_cuarto_nivel",
+              "expected": "nombre_cuarto_nivel",
+              "ok": true
+            },
+            "nombre_cuarto_nivel": {
+              "maps_to": "nombre_cuarto_nivel",
+              "expected": "nombre_cuarto_nivel",
+              "ok": true
+            }
+          }
+        },
+        "nombre_detalle_gasto": {
+          "status": "OK",
+          "variant_count": 2,
+          "variants": {
+            "nombredetallegasto": {
+              "maps_to": "nombre_detalle_gasto",
+              "expected": "nombre_detalle_gasto",
+              "ok": true
+            },
+            "nombre_detalle_gasto": {
+              "maps_to": "nombre_detalle_gasto",
+              "expected": "nombre_detalle_gasto",
+              "ok": true
+            }
+          }
+        },
+        "nombre_quinto_nivel": {
+          "status": "OK",
+          "variant_count": 3,
+          "variants": {
+            "nombequintonivel": {
+              "maps_to": "nombre_quinto_nivel",
+              "expected": "nombre_quinto_nivel",
+              "ok": true
+            },
+            "nombre_quinto_nivel": {
+              "maps_to": "nombre_quinto_nivel",
+              "expected": "nombre_quinto_nivel",
+              "ok": true
+            },
+            "nombrequintonivel": {
+              "maps_to": "nombre_quinto_nivel",
+              "expected": "nombre_quinto_nivel",
+              "ok": true
+            }
+          }
+        },
+        "nombre_rubro": {
+          "status": "OK",
+          "variant_count": 3,
+          "variants": {
+            "nombrenivelrubrogasto": {
+              "maps_to": "nombre_rubro",
+              "expected": "nombre_rubro",
+              "ok": true
+            },
+            "nombre_rubro": {
+              "maps_to": "nombre_rubro",
+              "expected": "nombre_rubro",
+              "ok": true
+            },
+            "nombre_nivel_rubro_gasto": {
+              "maps_to": "nombre_rubro",
+              "expected": "nombre_rubro",
+              "ok": true
+            }
+          }
+        },
+        "nombre_tipo_gasto": {
+          "status": "OK",
+          "variant_count": 2,
+          "variants": {
+            "nombretipogasto": {
+              "maps_to": "nombre_tipo_gasto",
+              "expected": "nombre_tipo_gasto",
+              "ok": true
+            },
+            "nombre_tipo_gasto": {
+              "maps_to": "nombre_tipo_gasto",
+              "expected": "nombre_tipo_gasto",
+              "ok": true
+            }
+          }
+        },
+        "nombre_uej": {
+          "status": "OK",
+          "variant_count": 5,
+          "variants": {
+            "nombre_uej": {
+              "maps_to": "nombre_uej",
+              "expected": "nombre_uej",
+              "ok": true
+            },
+            "nombreentidad": {
+              "maps_to": "nombre_uej",
+              "expected": "nombre_uej",
+              "ok": true
+            },
+            "nombre_entidad": {
+              "maps_to": "nombre_uej",
+              "expected": "nombre_uej",
+              "ok": true
+            },
+            "nombre_uej_entidad": {
+              "maps_to": "nombre_uej",
+              "expected": "nombre_uej",
+              "ok": true
+            },
+            "nombreuej": {
+              "maps_to": "nombre_uej",
+              "expected": "nombre_uej",
+              "ok": true
+            }
+          }
+        },
+        "obj": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "obj": {
+              "maps_to": "obj",
+              "expected": "obj",
+              "ok": true
+            }
+          }
+        },
+        "obligaciones": {
+          "status": "OK",
+          "variant_count": 2,
+          "variants": {
+            "obligacion": {
+              "maps_to": "obligaciones",
+              "expected": "obligaciones",
+              "ok": true
+            },
+            "obligaciones": {
+              "maps_to": "obligaciones",
+              "expected": "obligaciones",
+              "ok": true
+            }
+          }
+        },
+        "ord": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "ord": {
+              "maps_to": "ord",
+              "expected": "ord",
+              "ok": true
+            }
+          }
+        },
+        "orden_pago": {
+          "status": "OK",
+          "variant_count": 4,
+          "variants": {
+            "ordenpago": {
+              "maps_to": "orden_pago",
+              "expected": "orden_pago",
+              "ok": true
+            },
+            "orden_pago": {
+              "maps_to": "orden_pago",
+              "expected": "orden_pago",
+              "ok": true
+            },
+            "ordenes_pago": {
+              "maps_to": "orden_pago",
+              "expected": "orden_pago",
+              "ok": true
+            },
+            "ordenpago_1": {
+              "maps_to": "orden_pago",
+              "expected": "orden_pago",
+              "ok": true
+            }
+          }
+        },
+        "pagos": {
+          "status": "OK",
+          "variant_count": 2,
+          "variants": {
+            "pagos": {
+              "maps_to": "pagos",
+              "expected": "pagos",
+              "ok": true
+            },
+            "pago": {
+              "maps_to": "pagos",
+              "expected": "pagos",
+              "ok": true
+            }
+          }
+        },
+        "recursos_presupuestales": {
+          "status": "OK",
+          "variant_count": 4,
+          "variants": {
+            "rec": {
+              "maps_to": "recursos_presupuestales",
+              "expected": "recursos_presupuestales",
+              "ok": true
+            },
+            "recursos": {
+              "maps_to": "recursos_presupuestales",
+              "expected": "recursos_presupuestales",
+              "ok": true
+            },
+            "recursospresupuestales": {
+              "maps_to": "recursos_presupuestales",
+              "expected": "recursos_presupuestales",
+              "ok": true
+            },
+            "recursos_presupuestales": {
+              "maps_to": "recursos_presupuestales",
+              "expected": "recursos_presupuestales",
+              "ok": true
+            }
+          }
+        },
+        "reducciones": {
+          "status": "OK",
+          "variant_count": 5,
+          "variants": {
+            "reducciones": {
+              "maps_to": "reducciones",
+              "expected": "reducciones",
+              "ok": true
+            },
+            "apropiacionreducida": {
+              "maps_to": "reducciones",
+              "expected": "reducciones",
+              "ok": true
+            },
+            "apr_reducida": {
+              "maps_to": "reducciones",
+              "expected": "reducciones",
+              "ok": true
+            },
+            "apr._reducida": {
+              "maps_to": "reducciones",
+              "expected": "reducciones",
+              "ok": true
+            },
+            "reduccion": {
+              "maps_to": "reducciones",
+              "expected": "reducciones",
+              "ok": true
+            }
+          }
+        },
+        "rubro": {
+          "status": "OK",
+          "variant_count": 5,
+          "variants": {
+            "rubro": {
+              "maps_to": "rubro",
+              "expected": "rubro",
+              "ok": true
+            },
+            "codigorubro": {
+              "maps_to": "rubro",
+              "expected": "rubro",
+              "ok": true
+            },
+            "codigo_rubro": {
+              "maps_to": "rubro",
+              "expected": "rubro",
+              "ok": true
+            },
+            "codigonivelrubrogasto": {
+              "maps_to": "rubro",
+              "expected": "rubro",
+              "ok": true
+            },
+            "codigo_nivel_rubro_gasto": {
+              "maps_to": "rubro",
+              "expected": "rubro",
+              "ok": true
+            }
+          }
+        },
+        "sector": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "sector": {
+              "maps_to": "sector",
+              "expected": "sector",
+              "ok": true
+            }
+          }
+        },
+        "situacion": {
+          "status": "OK",
+          "variant_count": 3,
+          "variants": {
+            "sit": {
+              "maps_to": "situacion",
+              "expected": "situacion",
+              "ok": true
+            },
+            "situacion": {
+              "maps_to": "situacion",
+              "expected": "situacion",
+              "ok": true
+            },
+            "situacion_fondo": {
+              "maps_to": "situacion",
+              "expected": "situacion",
+              "ok": true
+            }
+          }
+        },
+        "sor_ord": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "sor_ord": {
+              "maps_to": "sor_ord",
+              "expected": "sor_ord",
+              "ok": true
+            }
+          }
+        },
+        "sub_cta": {
+          "status": "OK",
+          "variant_count": 2,
+          "variants": {
+            "sub_cta": {
+              "maps_to": "sub_cta",
+              "expected": "sub_cta",
+              "ok": true
+            },
+            "subcta": {
+              "maps_to": "sub_cta",
+              "expected": "sub_cta",
+              "ok": true
+            }
+          }
+        },
+        "sub_item": {
+          "status": "OK",
+          "variant_count": 2,
+          "variants": {
+            "sub_item": {
+              "maps_to": "sub_item",
+              "expected": "sub_item",
+              "ok": true
+            },
+            "subitem": {
+              "maps_to": "sub_item",
+              "expected": "sub_item",
+              "ok": true
+            }
+          }
+        },
+        "sub_item_2": {
+          "status": "OK",
+          "variant_count": 3,
+          "variants": {
+            "sub_item_2": {
+              "maps_to": "sub_item_2",
+              "expected": "sub_item_2",
+              "ok": true
+            },
+            "subitem2": {
+              "maps_to": "sub_item_2",
+              "expected": "sub_item_2",
+              "ok": true
+            },
+            "sub_item2": {
+              "maps_to": "sub_item_2",
+              "expected": "sub_item_2",
+              "ok": true
+            }
+          }
+        },
+        "tipo_gasto": {
+          "status": "OK",
+          "variant_count": 5,
+          "variants": {
+            "tipo": {
+              "maps_to": "tipo_gasto",
+              "expected": "tipo_gasto",
+              "ok": true
+            },
+            "tipogasto": {
+              "maps_to": "tipo_gasto",
+              "expected": "tipo_gasto",
+              "ok": true
+            },
+            "tipo_gasto": {
+              "maps_to": "tipo_gasto",
+              "expected": "tipo_gasto",
+              "ok": true
+            },
+            "codigotipogasto": {
+              "maps_to": "tipo_gasto",
+              "expected": "tipo_gasto",
+              "ok": true
+            },
+            "codigo_tipo_gasto": {
+              "maps_to": "tipo_gasto",
+              "expected": "tipo_gasto",
+              "ok": true
+            }
+          }
+        },
+        "vigencia": {
+          "status": "OK",
+          "variant_count": 1,
+          "variants": {
+            "vigencia": {
+              "maps_to": "vigencia",
+              "expected": "vigencia",
+              "ok": true
+            }
+          }
+        }
+      }
+    },
+    "cross_bright_mapper": {
+      "2015": {
+        "status": "OK",
+        "unmapped_columns": []
+      },
+      "2016": {
+        "status": "OK",
+        "unmapped_columns": []
+      },
+      "2017": {
+        "status": "OK",
+        "unmapped_columns": []
+      },
+      "2018": {
+        "status": "OK",
+        "unmapped_columns": []
+      },
+      "2019": {
+        "status": "WARNING",
+        "unmapped_columns": [
+          "fuente_ingesta"
+        ]
+      },
+      "2020": {
+        "status": "WARNING",
+        "unmapped_columns": [
+          "fuente_ingesta"
+        ]
+      },
+      "2021": {
+        "status": "WARNING",
+        "unmapped_columns": [
+          "fuente_ingesta"
+        ]
+      },
+      "2022": {
+        "status": "WARNING",
+        "unmapped_columns": [
+          "fuente_ingesta"
+        ]
+      },
+      "2023": {
+        "status": "WARNING",
+        "unmapped_columns": [
+          "fuente_ingesta"
+        ]
+      },
+      "2024": {
+        "status": "WARNING",
+        "unmapped_columns": [
+          "fuente_ingesta"
+        ]
+      }
+    },
+    "variants_audit": {
+      "2015": {
+        "status": "OK",
+        "columns_in_file": [
+          "codigo_uej",
+          "nombre_uej",
+          "rubro",
+          "tipo_gasto",
+          "fuente",
+          "recursos_presupuestales",
+          "situacion",
+          "descripcion",
+          "codigo_cuarto_nivel",
+          "codigo_quinto_nivel",
+          "nombre_rubro",
+          "nombre_tipo_gasto",
+          "nombre_detalle_gasto",
+          "nombre_cuarto_nivel",
+          "nombre_quinto_nivel",
+          "anio_proceso",
+          "apropiacioninicial",
+          "adiciones",
+          "reducciones",
+          "apropiacionvigente",
+          "apropiacionbloqueada",
+          "cdp",
+          "apropiaciondisponible",
+          "compromisos",
+          "obligaciones",
+          "orden_pago",
+          "pagos",
+          "mes_reporte"
+        ],
+        "mapped_variants": {
+          "codigo_uej": "codigo_uej",
+          "nombre_uej": "nombre_uej",
+          "rubro": "rubro",
+          "tipo_gasto": "tipo_gasto",
+          "fuente": "fuente",
+          "recursos_presupuestales": "recursos_presupuestales",
+          "situacion": "situacion",
+          "descripcion": "descripcion",
+          "codigo_cuarto_nivel": "codigo_cuarto_nivel",
+          "codigo_quinto_nivel": "codigo_quinto_nivel",
+          "nombre_rubro": "nombre_rubro",
+          "nombre_tipo_gasto": "nombre_tipo_gasto",
+          "nombre_detalle_gasto": "nombre_detalle_gasto",
+          "nombre_cuarto_nivel": "nombre_cuarto_nivel",
+          "nombre_quinto_nivel": "nombre_quinto_nivel",
+          "anio_proceso": "anio_proceso",
+          "apropiacioninicial": "apropiacioninicial",
+          "adiciones": "adiciones",
+          "reducciones": "reducciones",
+          "apropiacionvigente": "apropiacionvigente",
+          "apropiacionbloqueada": "apropiacionbloqueada",
+          "cdp": "cdp",
+          "apropiaciondisponible": "apropiaciondisponible",
+          "compromisos": "compromisos",
+          "obligaciones": "obligaciones",
+          "orden_pago": "orden_pago",
+          "pagos": "pagos",
+          "mes_reporte": "mes_reporte"
+        },
+        "unmapped_raw_columns": [],
+        "note": "Solo 28 de 28 columnas tienen entrada en Cross-Bright"
+      },
+      "2016": {
+        "status": "OK",
+        "columns_in_file": [
+          "codigo_uej",
+          "nombre_uej",
+          "rubro",
+          "tipo_gasto",
+          "fuente",
+          "recursos_presupuestales",
+          "situacion",
+          "descripcion",
+          "codigo_cuarto_nivel",
+          "codigo_quinto_nivel",
+          "nombre_rubro",
+          "nombre_tipo_gasto",
+          "nombre_detalle_gasto",
+          "nombre_cuarto_nivel",
+          "nombre_quinto_nivel",
+          "anio_proceso",
+          "apropiacioninicial",
+          "adiciones",
+          "reducciones",
+          "apropiacionvigente",
+          "apropiacionbloqueada",
+          "cdp",
+          "apropiaciondisponible",
+          "compromisos",
+          "obligaciones",
+          "orden_pago",
+          "pagos",
+          "mes_reporte"
+        ],
+        "mapped_variants": {
+          "codigo_uej": "codigo_uej",
+          "nombre_uej": "nombre_uej",
+          "rubro": "rubro",
+          "tipo_gasto": "tipo_gasto",
+          "fuente": "fuente",
+          "recursos_presupuestales": "recursos_presupuestales",
+          "situacion": "situacion",
+          "descripcion": "descripcion",
+          "codigo_cuarto_nivel": "codigo_cuarto_nivel",
+          "codigo_quinto_nivel": "codigo_quinto_nivel",
+          "nombre_rubro": "nombre_rubro",
+          "nombre_tipo_gasto": "nombre_tipo_gasto",
+          "nombre_detalle_gasto": "nombre_detalle_gasto",
+          "nombre_cuarto_nivel": "nombre_cuarto_nivel",
+          "nombre_quinto_nivel": "nombre_quinto_nivel",
+          "anio_proceso": "anio_proceso",
+          "apropiacioninicial": "apropiacioninicial",
+          "adiciones": "adiciones",
+          "reducciones": "reducciones",
+          "apropiacionvigente": "apropiacionvigente",
+          "apropiacionbloqueada": "apropiacionbloqueada",
+          "cdp": "cdp",
+          "apropiaciondisponible": "apropiaciondisponible",
+          "compromisos": "compromisos",
+          "obligaciones": "obligaciones",
+          "orden_pago": "orden_pago",
+          "pagos": "pagos",
+          "mes_reporte": "mes_reporte"
+        },
+        "unmapped_raw_columns": [],
+        "note": "Solo 28 de 28 columnas tienen entrada en Cross-Bright"
+      },
+      "2017": {
+        "status": "OK",
+        "columns_in_file": [
+          "codigo_uej",
+          "nombre_uej",
+          "rubro",
+          "tipo_gasto",
+          "fuente",
+          "recursos_presupuestales",
+          "situacion",
+          "descripcion",
+          "codigo_cuarto_nivel",
+          "codigo_quinto_nivel",
+          "nombre_rubro",
+          "nombre_tipo_gasto",
+          "nombre_detalle_gasto",
+          "nombre_cuarto_nivel",
+          "nombre_quinto_nivel",
+          "anio_proceso",
+          "apropiacioninicial",
+          "adiciones",
+          "reducciones",
+          "apropiacionvigente",
+          "apropiacionbloqueada",
+          "cdp",
+          "apropiaciondisponible",
+          "compromisos",
+          "obligaciones",
+          "orden_pago",
+          "pagos",
+          "mes_reporte"
+        ],
+        "mapped_variants": {
+          "codigo_uej": "codigo_uej",
+          "nombre_uej": "nombre_uej",
+          "rubro": "rubro",
+          "tipo_gasto": "tipo_gasto",
+          "fuente": "fuente",
+          "recursos_presupuestales": "recursos_presupuestales",
+          "situacion": "situacion",
+          "descripcion": "descripcion",
+          "codigo_cuarto_nivel": "codigo_cuarto_nivel",
+          "codigo_quinto_nivel": "codigo_quinto_nivel",
+          "nombre_rubro": "nombre_rubro",
+          "nombre_tipo_gasto": "nombre_tipo_gasto",
+          "nombre_detalle_gasto": "nombre_detalle_gasto",
+          "nombre_cuarto_nivel": "nombre_cuarto_nivel",
+          "nombre_quinto_nivel": "nombre_quinto_nivel",
+          "anio_proceso": "anio_proceso",
+          "apropiacioninicial": "apropiacioninicial",
+          "adiciones": "adiciones",
+          "reducciones": "reducciones",
+          "apropiacionvigente": "apropiacionvigente",
+          "apropiacionbloqueada": "apropiacionbloqueada",
+          "cdp": "cdp",
+          "apropiaciondisponible": "apropiaciondisponible",
+          "compromisos": "compromisos",
+          "obligaciones": "obligaciones",
+          "orden_pago": "orden_pago",
+          "pagos": "pagos",
+          "mes_reporte": "mes_reporte"
+        },
+        "unmapped_raw_columns": [],
+        "note": "Solo 28 de 28 columnas tienen entrada en Cross-Bright"
+      },
+      "2018": {
+        "status": "OK",
+        "columns_in_file": [
+          "codigo_uej",
+          "nombre_uej",
+          "rubro",
+          "tipo_gasto",
+          "fuente",
+          "recursos_presupuestales",
+          "situacion",
+          "descripcion",
+          "codigo_cuarto_nivel",
+          "codigo_quinto_nivel",
+          "nombre_rubro",
+          "nombre_tipo_gasto",
+          "nombre_detalle_gasto",
+          "nombre_cuarto_nivel",
+          "nombre_quinto_nivel",
+          "anio_proceso",
+          "apropiacioninicial",
+          "adiciones",
+          "reducciones",
+          "apropiacionvigente",
+          "apropiacionbloqueada",
+          "cdp",
+          "apropiaciondisponible",
+          "compromisos",
+          "obligaciones",
+          "orden_pago",
+          "pagos",
+          "mes_reporte"
+        ],
+        "mapped_variants": {
+          "codigo_uej": "codigo_uej",
+          "nombre_uej": "nombre_uej",
+          "rubro": "rubro",
+          "tipo_gasto": "tipo_gasto",
+          "fuente": "fuente",
+          "recursos_presupuestales": "recursos_presupuestales",
+          "situacion": "situacion",
+          "descripcion": "descripcion",
+          "codigo_cuarto_nivel": "codigo_cuarto_nivel",
+          "codigo_quinto_nivel": "codigo_quinto_nivel",
+          "nombre_rubro": "nombre_rubro",
+          "nombre_tipo_gasto": "nombre_tipo_gasto",
+          "nombre_detalle_gasto": "nombre_detalle_gasto",
+          "nombre_cuarto_nivel": "nombre_cuarto_nivel",
+          "nombre_quinto_nivel": "nombre_quinto_nivel",
+          "anio_proceso": "anio_proceso",
+          "apropiacioninicial": "apropiacioninicial",
+          "adiciones": "adiciones",
+          "reducciones": "reducciones",
+          "apropiacionvigente": "apropiacionvigente",
+          "apropiacionbloqueada": "apropiacionbloqueada",
+          "cdp": "cdp",
+          "apropiaciondisponible": "apropiaciondisponible",
+          "compromisos": "compromisos",
+          "obligaciones": "obligaciones",
+          "orden_pago": "orden_pago",
+          "pagos": "pagos",
+          "mes_reporte": "mes_reporte"
+        },
+        "unmapped_raw_columns": [],
+        "note": "Solo 28 de 28 columnas tienen entrada en Cross-Bright"
+      },
+      "2019": {
+        "status": "INFO",
+        "columns_in_file": [
+          "anio_proceso",
+          "mes_reporte",
+          "nombre_uej",
+          "codigo_uej",
+          "descripcion",
+          "sector",
+          "fuente_ingesta",
+          "pagos",
+          "apropiacionvigente"
+        ],
+        "mapped_variants": {
+          "anio_proceso": "anio_proceso",
+          "mes_reporte": "mes_reporte",
+          "nombre_uej": "nombre_uej",
+          "codigo_uej": "codigo_uej",
+          "descripcion": "descripcion",
+          "sector": "sector",
+          "pagos": "pagos",
+          "apropiacionvigente": "apropiacionvigente"
+        },
+        "unmapped_raw_columns": [
+          "fuente_ingesta"
+        ],
+        "note": "Solo 8 de 9 columnas tienen entrada en Cross-Bright"
+      },
+      "2020": {
+        "status": "INFO",
+        "columns_in_file": [
+          "anio_proceso",
+          "mes_reporte",
+          "nombre_uej",
+          "codigo_uej",
+          "descripcion",
+          "sector",
+          "fuente_ingesta",
+          "pagos",
+          "apropiacionvigente",
+          "compromisos",
+          "obligaciones"
+        ],
+        "mapped_variants": {
+          "anio_proceso": "anio_proceso",
+          "mes_reporte": "mes_reporte",
+          "nombre_uej": "nombre_uej",
+          "codigo_uej": "codigo_uej",
+          "descripcion": "descripcion",
+          "sector": "sector",
+          "pagos": "pagos",
+          "apropiacionvigente": "apropiacionvigente",
+          "compromisos": "compromisos",
+          "obligaciones": "obligaciones"
+        },
+        "unmapped_raw_columns": [
+          "fuente_ingesta"
+        ],
+        "note": "Solo 10 de 11 columnas tienen entrada en Cross-Bright"
+      },
+      "2021": {
+        "status": "INFO",
+        "columns_in_file": [
+          "anio_proceso",
+          "mes_reporte",
+          "nombre_uej",
+          "codigo_uej",
+          "descripcion",
+          "sector",
+          "fuente_ingesta",
+          "pagos",
+          "apropiacionvigente",
+          "compromisos",
+          "obligaciones"
+        ],
+        "mapped_variants": {
+          "anio_proceso": "anio_proceso",
+          "mes_reporte": "mes_reporte",
+          "nombre_uej": "nombre_uej",
+          "codigo_uej": "codigo_uej",
+          "descripcion": "descripcion",
+          "sector": "sector",
+          "pagos": "pagos",
+          "apropiacionvigente": "apropiacionvigente",
+          "compromisos": "compromisos",
+          "obligaciones": "obligaciones"
+        },
+        "unmapped_raw_columns": [
+          "fuente_ingesta"
+        ],
+        "note": "Solo 10 de 11 columnas tienen entrada en Cross-Bright"
+      },
+      "2022": {
+        "status": "INFO",
+        "columns_in_file": [
+          "anio_proceso",
+          "mes_reporte",
+          "nombre_uej",
+          "codigo_uej",
+          "descripcion",
+          "sector",
+          "fuente_ingesta",
+          "pagos",
+          "apropiacionvigente",
+          "compromisos",
+          "obligaciones"
+        ],
+        "mapped_variants": {
+          "anio_proceso": "anio_proceso",
+          "mes_reporte": "mes_reporte",
+          "nombre_uej": "nombre_uej",
+          "codigo_uej": "codigo_uej",
+          "descripcion": "descripcion",
+          "sector": "sector",
+          "pagos": "pagos",
+          "apropiacionvigente": "apropiacionvigente",
+          "compromisos": "compromisos",
+          "obligaciones": "obligaciones"
+        },
+        "unmapped_raw_columns": [
+          "fuente_ingesta"
+        ],
+        "note": "Solo 10 de 11 columnas tienen entrada en Cross-Bright"
+      },
+      "2023": {
+        "status": "INFO",
+        "columns_in_file": [
+          "anio_proceso",
+          "mes_reporte",
+          "nombre_uej",
+          "codigo_uej",
+          "descripcion",
+          "sector",
+          "fuente_ingesta",
+          "pagos",
+          "apropiacionvigente"
+        ],
+        "mapped_variants": {
+          "anio_proceso": "anio_proceso",
+          "mes_reporte": "mes_reporte",
+          "nombre_uej": "nombre_uej",
+          "codigo_uej": "codigo_uej",
+          "descripcion": "descripcion",
+          "sector": "sector",
+          "pagos": "pagos",
+          "apropiacionvigente": "apropiacionvigente"
+        },
+        "unmapped_raw_columns": [
+          "fuente_ingesta"
+        ],
+        "note": "Solo 8 de 9 columnas tienen entrada en Cross-Bright"
+      },
+      "2024": {
+        "status": "INFO",
+        "columns_in_file": [
+          "anio_proceso",
+          "mes_reporte",
+          "nombre_uej",
+          "codigo_uej",
+          "descripcion",
+          "sector",
+          "fuente_ingesta",
+          "pagos",
+          "apropiacionvigente"
+        ],
+        "mapped_variants": {
+          "anio_proceso": "anio_proceso",
+          "mes_reporte": "mes_reporte",
+          "nombre_uej": "nombre_uej",
+          "codigo_uej": "codigo_uej",
+          "descripcion": "descripcion",
+          "sector": "sector",
+          "pagos": "pagos",
+          "apropiacionvigente": "apropiacionvigente"
+        },
+        "unmapped_raw_columns": [
+          "fuente_ingesta"
+        ],
+        "note": "Solo 8 de 9 columnas tienen entrada en Cross-Bright"
+      }
+    },
+    "duplicates": {
+      "2015": {
+        "status": "OK",
+        "total_rows": 576,
+        "duplicate_rows": 0
+      },
+      "2016": {
+        "status": "OK",
+        "total_rows": 611,
+        "duplicate_rows": 0
+      },
+      "2017": {
+        "status": "OK",
+        "total_rows": 628,
+        "duplicate_rows": 0
+      },
+      "2018": {
+        "status": "OK",
+        "total_rows": 146,
+        "duplicate_rows": 0
+      },
+      "2019": {
+        "status": "OK",
+        "total_rows": 15,
+        "duplicate_rows": 0
+      },
+      "2020": {
+        "status": "OK",
+        "total_rows": 17,
+        "duplicate_rows": 0
+      },
+      "2021": {
+        "status": "OK",
+        "total_rows": 17,
+        "duplicate_rows": 0
+      },
+      "2022": {
+        "status": "OK",
+        "total_rows": 17,
+        "duplicate_rows": 0
+      },
+      "2023": {
+        "status": "OK",
+        "total_rows": 34,
+        "duplicate_rows": 0
+      },
+      "2024": {
+        "status": "OK",
+        "total_rows": 34,
+        "duplicate_rows": 0
+      }
+    },
+    "financial_nulls": {
+      "2015": {
+        "status": "OK",
+        "null_counts": {
+          "apropiacioninicial": 0,
+          "apropiacionvigente": 0,
+          "compromisos": 0,
+          "obligaciones": 0,
+          "pagos": 0
+        }
+      },
+      "2016": {
+        "status": "OK",
+        "null_counts": {
+          "apropiacioninicial": 0,
+          "apropiacionvigente": 0,
+          "compromisos": 0,
+          "obligaciones": 0,
+          "pagos": 0
+        }
+      },
+      "2017": {
+        "status": "OK",
+        "null_counts": {
+          "apropiacioninicial": 0,
+          "apropiacionvigente": 0,
+          "compromisos": 0,
+          "obligaciones": 0,
+          "pagos": 0
+        }
+      },
+      "2018": {
+        "status": "OK",
+        "null_counts": {
+          "apropiacioninicial": 0,
+          "apropiacionvigente": 0,
+          "compromisos": 0,
+          "obligaciones": 0,
+          "pagos": 0
+        }
+      },
+      "2019": {
+        "status": "OK",
+        "null_counts": {
+          "apropiacionvigente": 0,
+          "pagos": 0
+        }
+      },
+      "2020": {
+        "status": "OK",
+        "null_counts": {
+          "apropiacionvigente": 0,
+          "compromisos": 0,
+          "obligaciones": 0,
+          "pagos": 0
+        }
+      },
+      "2021": {
+        "status": "OK",
+        "null_counts": {
+          "apropiacionvigente": 0,
+          "compromisos": 0,
+          "obligaciones": 0,
+          "pagos": 0
+        }
+      },
+      "2022": {
+        "status": "OK",
+        "null_counts": {
+          "apropiacionvigente": 0,
+          "compromisos": 0,
+          "obligaciones": 0,
+          "pagos": 0
+        }
+      },
+      "2023": {
+        "status": "OK",
+        "null_counts": {
+          "apropiacionvigente": 0,
+          "pagos": 0
+        }
+      },
+      "2024": {
+        "status": "OK",
+        "null_counts": {
+          "apropiacionvigente": 0,
+          "pagos": 0
+        }
+      }
+    },
+    "men_filter": {
+      "2015": {
+        "status": "OK",
+        "men_rows": 575,
+        "non_men_rows": 0
+      },
+      "2016": {
+        "status": "OK",
+        "men_rows": 610,
+        "non_men_rows": 0
+      },
+      "2017": {
+        "status": "OK",
+        "men_rows": 627,
+        "non_men_rows": 0
+      },
+      "2018": {
+        "status": "OK",
+        "men_rows": 145,
+        "non_men_rows": 0
+      },
+      "2019": {
+        "status": "INFO",
+        "men_rows": 0,
+        "non_men_rows": 15
+      },
+      "2020": {
+        "status": "INFO",
+        "men_rows": 0,
+        "non_men_rows": 17
+      },
+      "2021": {
+        "status": "INFO",
+        "men_rows": 0,
+        "non_men_rows": 17
+      },
+      "2022": {
+        "status": "INFO",
+        "men_rows": 0,
+        "non_men_rows": 17
+      },
+      "2023": {
+        "status": "INFO",
+        "men_rows": 0,
+        "non_men_rows": 34
+      },
+      "2024": {
+        "status": "INFO",
+        "men_rows": 0,
+        "non_men_rows": 34
+      }
+    },
+    "core_headers_presence": {
+      "2015": {
+        "status": "OK",
+        "missing_headers": [],
+        "present_headers": [
+          "anio_proceso",
+          "mes_reporte",
+          "codigo_uej",
+          "nombre_uej",
+          "pagos"
+        ]
+      },
+      "2016": {
+        "status": "OK",
+        "missing_headers": [],
+        "present_headers": [
+          "anio_proceso",
+          "mes_reporte",
+          "codigo_uej",
+          "nombre_uej",
+          "pagos"
+        ]
+      },
+      "2017": {
+        "status": "OK",
+        "missing_headers": [],
+        "present_headers": [
+          "anio_proceso",
+          "mes_reporte",
+          "codigo_uej",
+          "nombre_uej",
+          "pagos"
+        ]
+      },
+      "2018": {
+        "status": "OK",
+        "missing_headers": [],
+        "present_headers": [
+          "anio_proceso",
+          "mes_reporte",
+          "codigo_uej",
+          "nombre_uej",
+          "pagos"
+        ]
+      },
+      "2019": {
+        "status": "OK",
+        "missing_headers": [],
+        "present_headers": [
+          "anio_proceso",
+          "mes_reporte",
+          "codigo_uej",
+          "nombre_uej",
+          "pagos"
+        ]
+      },
+      "2020": {
+        "status": "OK",
+        "missing_headers": [],
+        "present_headers": [
+          "anio_proceso",
+          "mes_reporte",
+          "codigo_uej",
+          "nombre_uej",
+          "pagos"
+        ]
+      },
+      "2021": {
+        "status": "OK",
+        "missing_headers": [],
+        "present_headers": [
+          "anio_proceso",
+          "mes_reporte",
+          "codigo_uej",
+          "nombre_uej",
+          "pagos"
+        ]
+      },
+      "2022": {
+        "status": "OK",
+        "missing_headers": [],
+        "present_headers": [
+          "anio_proceso",
+          "mes_reporte",
+          "codigo_uej",
+          "nombre_uej",
+          "pagos"
+        ]
+      },
+      "2023": {
+        "status": "OK",
+        "missing_headers": [],
+        "present_headers": [
+          "anio_proceso",
+          "mes_reporte",
+          "codigo_uej",
+          "nombre_uej",
+          "pagos"
+        ]
+      },
+      "2024": {
+        "status": "OK",
+        "missing_headers": [],
+        "present_headers": [
+          "anio_proceso",
+          "mes_reporte",
+          "codigo_uej",
+          "nombre_uej",
+          "pagos"
+        ]
+      }
+    },
+    "years_coverage": {
+      "status": "OK",
+      "expected": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "present": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "missing": [],
+      "note": {
+        "2015-2018": "Multiple meses (ingesta completa anual)",
+        "2019-2024": "Solo diciembre (Excel de cierre anual - totales acumulados)"
+      }
+    },
+    "per_year_stats": {
+      "2015": {
+        "rows": 575,
+        "total_pagos_cop": 180129029014994.6,
+        "total_pagos_billones": 180.13,
+        "columns_available": [
+          "codigo_uej",
+          "nombre_uej",
+          "rubro",
+          "tipo_gasto",
+          "fuente",
+          "recursos_presupuestales",
+          "situacion",
+          "descripcion",
+          "nombre_rubro",
+          "nombre_tipo_gasto",
+          "nombre_detalle_gasto",
+          "anio_proceso",
+          "apropiacioninicial",
+          "adiciones",
+          "reducciones",
+          "apropiacionvigente",
+          "compromisos",
+          "obligaciones",
+          "pagos",
+          "mes_reporte",
+          "fuente_ingesta"
+        ]
+      },
+      "2016": {
+        "rows": 610,
+        "total_pagos_cop": 199659297059598.0,
+        "total_pagos_billones": 199.66,
+        "columns_available": [
+          "codigo_uej",
+          "nombre_uej",
+          "rubro",
+          "tipo_gasto",
+          "fuente",
+          "recursos_presupuestales",
+          "situacion",
+          "descripcion",
+          "nombre_rubro",
+          "nombre_tipo_gasto",
+          "nombre_detalle_gasto",
+          "anio_proceso",
+          "apropiacioninicial",
+          "adiciones",
+          "reducciones",
+          "apropiacionvigente",
+          "compromisos",
+          "obligaciones",
+          "pagos",
+          "mes_reporte",
+          "fuente_ingesta"
+        ]
+      },
+      "2017": {
+        "rows": 627,
+        "total_pagos_cop": 218965531388936.84,
+        "total_pagos_billones": 218.97,
+        "columns_available": [
+          "codigo_uej",
+          "nombre_uej",
+          "rubro",
+          "tipo_gasto",
+          "fuente",
+          "recursos_presupuestales",
+          "situacion",
+          "descripcion",
+          "nombre_rubro",
+          "nombre_tipo_gasto",
+          "nombre_detalle_gasto",
+          "anio_proceso",
+          "apropiacioninicial",
+          "adiciones",
+          "reducciones",
+          "apropiacionvigente",
+          "compromisos",
+          "obligaciones",
+          "pagos",
+          "mes_reporte",
+          "fuente_ingesta"
+        ]
+      },
+      "2018": {
+        "rows": 145,
+        "total_pagos_cop": 236735112308167.78,
+        "total_pagos_billones": 236.74,
+        "columns_available": [
+          "codigo_uej",
+          "nombre_uej",
+          "rubro",
+          "tipo_gasto",
+          "fuente",
+          "recursos_presupuestales",
+          "situacion",
+          "descripcion",
+          "nombre_rubro",
+          "nombre_tipo_gasto",
+          "nombre_detalle_gasto",
+          "anio_proceso",
+          "apropiacioninicial",
+          "adiciones",
+          "reducciones",
+          "apropiacionvigente",
+          "compromisos",
+          "obligaciones",
+          "pagos",
+          "mes_reporte",
+          "fuente_ingesta"
+        ]
+      },
+      "2019": {
+        "rows": 15,
+        "total_pagos_cop": 2371089321762.5,
+        "total_pagos_billones": 2.37,
+        "columns_available": [
+          "codigo_uej",
+          "nombre_uej",
+          "descripcion",
+          "anio_proceso",
+          "apropiacionvigente",
+          "pagos",
+          "mes_reporte",
+          "fuente_ingesta",
+          "sector"
+        ]
+      },
+      "2020": {
+        "rows": 17,
+        "total_pagos_cop": 182855556640.0,
+        "total_pagos_billones": 0.18,
+        "columns_available": [
+          "codigo_uej",
+          "nombre_uej",
+          "descripcion",
+          "anio_proceso",
+          "apropiacionvigente",
+          "compromisos",
+          "obligaciones",
+          "pagos",
+          "mes_reporte",
+          "fuente_ingesta",
+          "sector"
+        ]
+      },
+      "2021": {
+        "rows": 17,
+        "total_pagos_cop": 192578604300.0,
+        "total_pagos_billones": 0.19,
+        "columns_available": [
+          "codigo_uej",
+          "nombre_uej",
+          "descripcion",
+          "anio_proceso",
+          "apropiacionvigente",
+          "compromisos",
+          "obligaciones",
+          "pagos",
+          "mes_reporte",
+          "fuente_ingesta",
+          "sector"
+        ]
+      },
+      "2022": {
+        "rows": 17,
+        "total_pagos_cop": 195356121035.0,
+        "total_pagos_billones": 0.2,
+        "columns_available": [
+          "codigo_uej",
+          "nombre_uej",
+          "descripcion",
+          "anio_proceso",
+          "apropiacionvigente",
+          "compromisos",
+          "obligaciones",
+          "pagos",
+          "mes_reporte",
+          "fuente_ingesta",
+          "sector"
+        ]
+      },
+      "2023": {
+        "rows": 34,
+        "total_pagos_cop": 5366300195322.0,
+        "total_pagos_billones": 5.37,
+        "columns_available": [
+          "codigo_uej",
+          "nombre_uej",
+          "descripcion",
+          "anio_proceso",
+          "apropiacionvigente",
+          "pagos",
+          "mes_reporte",
+          "fuente_ingesta",
+          "sector"
+        ]
+      },
+      "2024": {
+        "rows": 34,
+        "total_pagos_cop": 6144754179976.73,
+        "total_pagos_billones": 6.14,
+        "columns_available": [
+          "codigo_uej",
+          "nombre_uej",
+          "descripcion",
+          "anio_proceso",
+          "apropiacionvigente",
+          "pagos",
+          "mes_reporte",
+          "fuente_ingesta",
+          "sector"
+        ]
+      }
+    }
+  },
+  "errors": []
+}

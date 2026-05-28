@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "experiment_name": "PCA Competencias Saber Pro",
+    "model_type": "PCA",
+    "description": "Análisis de Componentes Principales para competencias genéricas de Saber Pro",
+    "author": "Jhonatan",
+    "issue": "Sprint 7.1",
+    "fecha_creacion": "2026-05-26T10:20:45.031807",
+    "notas": null
+  },
+  "datos": {
+    "n_programas": 6092,
+    "n_competencias": 5,
+    "competencias": [
+      "mod_comuni_escrita_punt",
+      "mod_lectura_critica_punt",
+      "mod_razona_cuantitat_punt",
+      "mod_competen_ciudada_punt",
+      "mod_ingles_punt"
+    ],
+    "filtro_min_presentaciones": 30,
+    "periodo": "2015-2024"
+  },
+  "hiperparametros": {
+    "n_components": 5,
+    "random_state": 42
+  },
+  "metricas": {
+    "varianza_explicada_pc1": 0.9909049914200568,
+    "varianza_explicada_pc2": 0.004454783912045783,
+    "varianza_acumulada_pc1_pc2": 0.9953597753321026,
+    "varianza_total_explicada": 0.9999999999999998
+  }
+}

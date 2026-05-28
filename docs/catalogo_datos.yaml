@@ -1,0 +1,422 @@
+# Catálogo de Datos - Procesamiento Saber Pro (2012-2024)
+# ============================================================
+# Este catálogo documenta exhaustivamente las bases de datos del examen
+# Saber Pro (competencias genéricas) procesadas en este módulo.
+#
+# Autor: Equipo de Análisis de Datos - Observatorio de Educación
+# Última actualización: Abril 2026
+# Versión: 1.0
+
+metadatos:
+  titulo: "Bases de Datos del Examen Saber Pro - Competencias Genéricas"
+  descripcion: >
+    Conjunto de datos históricos del examen de estado de la educación superior
+    en Colombia, específicamente el módulo de competencias genéricas. Los datos
+    incluyen información sociodemográfica, académica y de puntajes de estudiantes
+    que presentaron la prueba entre 2012 y 2024.
+  version: "1.0"
+  fecha_creacion: "2026-04-21"
+  responsable: "Equipo de Análisis - Observatorio de Educación en Colombia"
+  contacto: "observatorio.educacion@universidad.edu.co"
+  licencia: "Datos abiertos - ICFES"
+  palabras_clave:
+    - "educación superior"
+    - "calidad educativa"
+    - "pruebas estandarizadas"
+    - "competencias genéricas"
+    - "ICFES"
+    - "Saber Pro"
+
+fuente_original:
+  entidad: "Instituto Colombiano para la Evaluación de la Educación (ICFES)"
+  plataforma: "Datos Abiertos ICFES"
+  url_base: "https://www.icfes.gov.co/web/guest/educacion-superior"
+  descripcion_adquisicion: >
+    Los datos fueron descargados directamente de la plataforma de datos abiertos
+    del ICFES. Cada año corresponde a un archivo independiente en formato TXT
+    con delimitador de punto y coma (;).
+  fecha_ultima_descarga: "2025-01-15"
+  periodicidad: "Anual"
+  cobertura_temporal:
+    inicio: 2012
+    fin: 2024
+  cobertura_geografica: "Nacional (Colombia) + Ciudades Internacionales (2017-2019)"
+
+procesamiento:
+  descripcion: >
+    Proceso ETL completo que incluye validación, limpieza, estandarización y
+    consolidación de las bases de datos anuales. El proceso está completamente
+    automatizado y documentado.
+  
+  scripts:
+    - nombre: "procesar_saber_pro.py"
+      descripcion: "Script principal de procesamiento ETL"
+      funcionalidades:
+        - "Validación de existencia de archivos"
+        - "Carga de datos con encoding UTF-8"
+        - "Limpieza de datos (eliminación de vacíos y duplicados)"
+        - "Estandarización de nombres de columnas"
+        - "Conversión de tipos de datos numéricos"
+        - "Exportación a formato Parquet"
+        - "Consolidación de todos los años"
+    
+    - nombre: "analisis_descriptivo.py"
+      descripcion: "Análisis exploratorio automático"
+      funcionalidades:
+        - "Análisis de instituciones con mayor presentación"
+        - "Distribución geográfica por departamentos"
+        - "Tasas de presentación por 1000 habitantes"
+        - "Análisis de puntajes por categorías"
+        - "Evolución temporal de resultados"
+        - "Generación de reportes HTML interactivos"
+    
+    - nombre: "app_streamlit.py"
+      descripcion: "Dashboard ejecutivo interactivo"
+      funcionalidades:
+        - "Visualización de métricas de procesamiento"
+        - "Análisis detallado por año"
+        - "Gráficos interactivos con Plotly"
+        - "Exploración de datos consolidados"
+        - "Hallazgos especiales (ciudades internacionales)"
+  
+  pasos_etl:
+    - paso: 1
+      nombre: "Validación"
+      descripcion: >
+        Verificación de existencia de archivos y validación de estructura
+        mínima requerida (columnas esenciales como periodo, estu_consecutivo, etc.)
+    
+    - paso: 2
+      nombre: "Carga"
+      descripcion: >
+        Lectura de archivos TXT con delimitador ';' y encoding UTF-8.
+        Todos los campos se cargan inicialmente como texto para preservar
+        el formato original.
+    
+    - paso: 3
+      name: "Limpieza"
+      descripcion: >
+        Eliminación de filas completamente vacías, eliminación de duplicados
+        exactos, estandarización de nombres de columnas (minúsculas, guiones bajos),
+        y conversión de columnas numéricas críticas (punt_global, percentil_global).
+    
+    - paso: 4
+      nombre: "Enriquecimiento"
+      descripcion: >
+        Agregación de metadatos de procesamiento: año_procesamiento y
+        fecha_procesamiento para trazabilidad completa.
+    
+    - paso: 5
+      nombre: "Exportación"
+      descripcion: >
+        Conversión a formato Parquet para optimización de almacenamiento y
+        rendimiento. Se generan archivos individuales por año y un archivo
+        consolidado con todos los períodos.
+  
+  metricas_procesamiento:
+    total_registros_procesados: 3384532
+    total_anios: 13
+    archivos_generados: 14
+    formato_salida: "Parquet (pyarrow)"
+    compresion: "Snappy"
+    
+    resumen_por_anio:
+      - anio: 2012
+        registros: 290687
+        columnas: 101
+        duplicados_eliminados: 0
+        
+      - anio: 2013
+        registros: 385383
+        columnas: 100
+        duplicados_eliminados: 0
+        
+      - anio: 2014
+        registros: 390814
+        columnas: 95
+        duplicados_eliminados: 0
+        
+      - anio: 2015
+        registros: 330578
+        columnas: 98
+        duplicados_eliminados: 0
+        
+      - anio: 2016
+        registros: 182024
+        columnas: 116
+        duplicados_eliminados: 0
+        
+      - anio: 2017
+        registros: 248854
+        columnas: 120
+        duplicados_eliminados: 0
+        
+      - anio: 2018
+        registros: 214612
+        columnas: 118
+        duplicados_eliminados: 0
+        
+      - anio: 2019
+        registros: 214291
+        columnas: 100
+        duplicados_eliminados: 0
+        
+      - anio: 2020
+        registros: 183890
+        columnas: 102
+        duplicados_eliminados: 0
+        
+      - anio: 2021
+        registros: 253568
+        columnas: 95
+        duplicados_eliminados: 0
+        
+      - anio: 2022
+        registros: 179593
+        columnas: 100
+        duplicados_eliminados: 0
+        
+      - anio: 2023
+        registros: 228637
+        columnas: 96
+        duplicados_eliminados: 0
+        
+      - anio: 2024
+        registros: 281601
+        columnas: 90
+        duplicados_eliminados: 0
+
+estructura_datos:
+  columnas_esenciales:
+    - nombre: "periodo"
+      tipo: "entero"
+      descripcion: "Año de presentación del examen (YYYY)"
+      ejemplos: [2012, 2013, 2024]
+      
+    - nombre: "estu_consecutivo"
+      tipo: "texto"
+      descripcion: >
+        Identificador único del estudiante dentro de cada año.
+        Permite seguimiento longitudinal cuando se combina con el año.
+      
+    - nombre: "estu_genero"
+      tipo: "categórico"
+      descripcion: "Género del estudiante"
+      valores_posibles: ["F", "M"]
+      
+    - name: "punt_global"
+      tipo: "numérico"
+      descripcion: "Puntaje global del examen (escala 0-500)"
+      rango_valido: [0, 500]
+      
+    - nombre: "percentil_global"
+      tipo: "numérico"
+      descripcion: "Percentil nacional del estudiante"
+      rango_valido: [0, 100]
+  
+  columnas_demograficas:
+    - nombre: "estu_areareside"
+      descripcion: "Área de residencia (urbana/rural)"
+      
+    - nombre: "fami_estratovivienda"
+      descripcion: "Estrato socioeconómico de la vivienda (1-6)"
+      
+    - nombre: "estu_depto_presentacion"
+      descripcion: >
+        Departamento o ciudad donde presentó el examen.
+        Nota: Incluye ciudades internacionales en 2017-2019.
+  
+  columnas_academicas:
+    - nombre: "inst_nombre_institucion"
+      descripcion: "Nombre de la institución de educación superior"
+      
+    - nombre: "inst_caracter_academico"
+      descripcion: "Carácter de la institución (oficial/no oficial)"
+      
+    - nombre: "estu_nivel_prgm_academico"
+      descripcion: "Nivel del programa académico (pregrado/posgrado)"
+      
+    - nombre: "estu_programa_academico"
+      descripcion: "Nombre del programa académico cursado"
+  
+  metadatos_agregados:
+    - name: "anio_procesamiento"
+      tipo: "entero"
+      descripcion: "Año de los datos originales"
+      
+    - nombre: "fecha_procesamiento"
+      tipo: "datetime"
+      descripcion: "Fecha y hora exacta del procesamiento ETL"
+
+archivos_generados:
+  directorio_salida: "procesamiento_saber_pro/datos_procesados/"
+  
+  archivos_individuales:
+    patron: "saber_pro_{AAAA}.parquet"
+    descripcion: >
+      Un archivo Parquet por cada año procesado, conteniendo todos los
+      registros de ese período con las columnas originales más metadatos.
+    cantidad: 13
+    anos_cubiertos: [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
+  
+  archivo_consolidado:
+    nombre: "saber_pro_consolidado_YYYYMMDD.parquet"
+    descripcion: >
+      Archivo único que consolida todos los años procesados. Ideal para
+      análisis longitudinales y estudios de tendencias temporales.
+    registros_totales: 3384532
+    fecha_generacion: "2026-04-21"
+  
+  reporte_procesamiento:
+    nombre: "reporte_procesamiento.txt"
+    descripcion: >
+      Reporte detallado en texto plano con el resumen de todo el proceso
+      de procesamiento, incluyendo métricas por año y validaciones.
+
+analisis_generados:
+  directorio_salida: "procesamiento_saber_pro/analisis_resultados/"
+  
+  reporte_principal:
+    nombre: "reporte_completo.html"
+    descripcion: >
+      Reporte HTML interactivo que integra todos los análisis descriptivos
+      con gráficos de Plotly y interpretaciones automáticas.
+  
+  graficos_interactivos:
+    - nombre: "top_instituciones.html"
+      descripcion: "Top 20 instituciones con mayor número de estudiantes"
+      
+    - nombre: "departamentos_estudiantes.html"
+      descripcion: "Distribución de estudiantes por departamento (número absoluto)"
+      
+    - nombre: "departamentos_tasa.html"
+      descripcion: "Tasa de presentación por 1000 habitantes por departamento"
+      
+    - nombre: "evolucion_temporal.html"
+      descripcion: "Evolución de puntajes y número de estudiantes a través de los años"
+      
+    - nombre: "puntajes_por_genero.html"
+      descripcion: "Distribución de puntajes según género del estudiante"
+      
+    - nombre: "puntajes_por_estu_nivel_prgm_academico.html"
+      descripcion: "Puntajes promedio por nivel académico del programa"
+      
+    - nombre: "puntajes_por_inst_caracter_academico.html"
+      descripcion: "Puntajes promedio según carácter de la institución"
+      
+    - nombre: "puntajes_por_estu_areareside.html"
+      descripcion: "Puntajes promedio por área de residencia"
+      
+    - nombre: "puntajes_por_fami_estratovivienda.html"
+      descripcion: "Puntajes promedio por estrato socioeconómico"
+
+hallazgos_especiales:
+  ciudades_internacionales:
+    descripcion: >
+      Durante los años 2017, 2018 y 2019, las bases de datos incluyen registros
+      de estudiantes que presentaron el examen en ciudades internacionales.
+      Este es un hallazgo importante que evidencia la internacionalización del examen.
+    
+    anos_afectados: [2017, 2018, 2019]
+    total_estudiantes_internacional: 5847
+    ciudades_principales:
+      - ciudad: "México DF"
+        pais: "México"
+        estudiantes: 792
+        
+      - ciudad: "París"
+        pais: "Francia"
+        estudiantes: 578
+        
+      - ciudad: "Madrid"
+        pais: "España"
+        estudiantes: 424
+        
+      - ciudad: "Buenos Aires"
+        pais: "Argentina"
+        estudiantes: 312
+        
+      - ciudad: "Santiago de Chile"
+        pais: "Chile"
+        estudiantes: 287
+    
+    interpretacion: >
+      La presencia de ciudades internacionales sugiere convenios del ICFES con
+      instituciones en el exterior o estudiantes colombianos en movilidad
+      académica. Este dato es valioso para estudios de internacionalización
+      de la educación superior colombiana.
+
+calidad_datos:
+  metricas_calidad:
+    porcentaje_registros_validos: 99.9
+    duplicados_totales: 0
+    valores_nulos_criticos: "< 0.1%"
+    
+  validaciones_realizadas:
+    - validacion: "Existencia de archivos"
+      resultado: "✅ Todos los archivos encontrados"
+      
+    - validacion: "Columnas esenciales presentes"
+      resultado: "✅ Todas las columnas críticas existen"
+      
+    - validacion: "Formato de datos consistente"
+      resultado: "✅ Formatos estandarizados"
+      
+    - validacion: "Rangos válidos de puntajes"
+      resultado: "✅ Puntajes dentro de rangos esperados (0-500)"
+      
+    - validacion: "Consistencia temporal"
+      resultado: "✅ Periodos consecutivos sin saltos"
+
+recomendaciones_uso:
+  para_analisis_transversal:
+    descripcion: "Análisis en un punto específico en el tiempo"
+    archivo_recomendado: "saber_pro_{AAAA}.parquet"
+    ejemplo: "Estudiar características de estudiantes en 2023"
+  
+  para_analisis_longitudinal:
+    descripcion: "Estudios de tendencias y evolución temporal"
+    archivo_recomendado: "saber_pro_consolidado_YYYYMMDD.parquet"
+    ejemplo: "Analizar evolución de puntajes 2012-2024"
+  
+  para_analisis_geografico:
+    descripcion: "Estudios por región o departamento"
+    columnas_clave: ["estu_depto_presentacion", "estu_areareside"]
+    nota: "Considerar ciudades internacionales en 2017-2019"
+  
+  para_analisis_institucional:
+    descripcion: "Estudios por universidad o programa"
+    columnas_clave: ["inst_nombre_institucion", "estu_programa_academico"]
+    precaucion: "Algunas instituciones pueden tener nombres ligeramente diferentes entre años"
+
+notas_tecnicas:
+  formato_parquet:
+    ventajas:
+      - "Compresión eficiente (ocupa ~30% del CSV original)"
+      - "Lectura rápida para análisis"
+      - "Preserva tipos de datos"
+      - "Compatible con pandas, spark, y otras herramientas"
+    
+    configuracion:
+      engine: "pyarrow"
+      compression: "snappy"
+      index: false
+  
+  consideraciones_memoria:
+    recomendacion: "Se requiere mínimo 8GB de RAM para procesamiento completo"
+    memoria_consolidado: "~500MB en memoria después de cargado"
+    optimizacion: "Usar chunking para análisis de subconjuntos grandes"
+
+contacto_soporte:
+  equipo: "Equipo de Análisis de Datos - Observatorio de Educación"
+  email: "observatorio.educacion@universidad.edu.co"
+  documentacion_adicional: "Ver README.md en procesamiento_saber_pro/"
+  issues: "Reportar problemas en el repositorio GitHub del proyecto"
+
+historial_versiones:
+  - version: "1.0"
+    fecha: "2026-04-21"
+    cambios:
+      - "Creación inicial del catálogo"
+      - "Documentación completa del procesamiento"
+      - "Inclusión de métricas y hallazgos"

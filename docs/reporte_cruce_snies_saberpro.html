@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Cruce SNIES × Saber Pro — Análisis Integrado (2015-2024)</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; max-width: 1200px; margin: 2em auto; padding: 0 1em; color: #333; }
+  h1 { color: #1a237e; border-bottom: 3px solid #1a237e; padding-bottom: 0.3em; }
+  h2 { color: #283593; margin-top: 2em; border-left: 4px solid #3949ab; padding-left: 0.6em; }
+  h3 { color: #3949ab; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; font-size: 0.9em; }
+  th, td { border: 1px solid #ccc; padding: 7px 11px; text-align: right; }
+  th { background: #e8eaf6; color: #1a237e; font-weight: 600; }
+  td:first-child, th:first-child { text-align: left; }
+  tr:nth-child(even) { background: #f5f5f5; }
+  .note  { background: #fff3e0; border-left: 4px solid #ff9800; padding: 1em; margin: 1em 0; border-radius: 4px; }
+  .warn  { background: #fce4ec; border-left: 4px solid #e53935; padding: 1em; margin: 1em 0; border-radius: 4px; }
+  .ok    { background: #e8f5e9; border-left: 4px solid #43a047; padding: 1em; margin: 1em 0; border-radius: 4px; }
+  .meta  { color: #666; font-size: 0.9em; }
+  code   { background: #f0f4ff; padding: 2px 5px; border-radius: 3px; font-size: 0.88em; }
+  .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1em; margin: 1.5em 0; }
+  .kpi  { background: #e8eaf6; border-radius: 8px; padding: 1em; text-align: center; }
+  .kpi .num  { font-size: 1.8em; font-weight: 700; color: #1a237e; }
+  .kpi .lbl  { font-size: 0.85em; color: #555; margin-top: 0.3em; }
+  .chip-good { background: #c8e6c9; color: #1b5e20; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; }
+  .chip-bad  { background: #ffcdd2; color: #b71c1c; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; }
+</style>
+</head>
+<body>
+<h1>🔗 Cruce SNIES × Saber Pro — Análisis Integrado (2015-2024)</h1>
+<p class="meta">Sección E del artículo | Universo homologado: Pregrado Universitario/Tecnológico | Saber Pro: solo ESTUDIANTE</p>
+
+<div class="warn">
+<strong>⚠️ Consideraciones metodológicas clave:</strong>
+<ol>
+<li><strong>Normalización de puntajes:</strong> Saber Pro escala sus puntajes a media≈150, SD≈25
+    <em>por año de evaluación</em>. Las medias crudas NO son comparables entre años. Este reporte
+    usa <em>z-scores intra-año</em> para comparaciones temporales.</li>
+<li><strong>Granularidad del cruce:</strong> El cruce se hace a nivel
+    <code>codigo_snies_programa</code> (programa × IES), no a nivel de estudiante individual.
+    Los puntajes SP son promedios del programa en el año.</li>
+<li><strong>Cobertura del cruce:</strong> De los 8,306 programas SNIES elegibles,
+    <strong>5,724 (68.9%)</strong> tienen al menos un año con presentaciones en Saber Pro.
+    Solo 2,582 programas <em>nunca</em> aparecieron en ningún año de Saber Pro
+    (pueden ser programas recientes, modalidad virtual sin código, o errores en la llave).
+    Ver análisis detallado en sección H.</li>
+<li><strong>Rezago temporal:</strong> Un graduado de año <em>t</em> presentó Saber Pro en año
+    <em>t−1</em> o <em>t</em>. El cruce por año es aproximado, no exacto a nivel de cohorte.</li>
+</ol>
+</div>
+<div class="kpi-grid">
+  <div class="kpi"><div class="num">8,306</div><div class="lbl">Programas SNIES elegibles</div></div>
+  <div class="kpi"><div class="num">5,724</div><div class="lbl">Con match Saber Pro</div></div>
+  <div class="kpi"><div class="num">68.9%</div><div class="lbl">Cobertura de programas SNIES</div></div>
+  <div class="kpi"><div class="num">2,460,676</div><div class="lbl">Total presentaciones Saber Pro</div></div>
+</div>
+<h2>A. Cobertura del Cruce por Año</h2>
+<div class="note">
+Proporción de programas SNIES con al menos un presentante en Saber Pro ese año.
+Un % alto indica buena cobertura del cruce; valores bajos en años extremos
+pueden deberse a datos incompletos o diferencias en el periodo de reporte.
+</div>
+<table>
+<thead><tr><th>Año</th><th>Prog. SNIES</th><th>Con Saber Pro</th><th>% Cobertura</th><th>Graduados elegibles</th><th>Presentaciones SP</th><th>Ratio (%)</th></tr></thead>
+<tbody>
+<tr><td>2015.0</td><td>4,557</td><td>3,959</td><td>86.9%</td><td>280,441</td><td>313,099</td><td>129.0%</td></tr>
+<tr><td>2016.0</td><td>4,646</td><td>3,094</td><td>66.6%</td><td>316,843</td><td>229,962</td><td>120.8%</td></tr>
+<tr><td>2017.0</td><td>4,787</td><td>3,186</td><td>66.6%</td><td>342,672</td><td>236,537</td><td>116.8%</td></tr>
+<tr><td>2018.0</td><td>5,036</td><td>3,296</td><td>65.4%</td><td>357,189</td><td>231,799</td><td>105.5%</td></tr>
+<tr><td>2019.0</td><td>5,119</td><td>3,400</td><td>66.4%</td><td>377,083</td><td>253,217</td><td>110.5%</td></tr>
+<tr><td>2020.0</td><td>5,231</td><td>3,439</td><td>65.7%</td><td>320,808</td><td>238,787</td><td>109.3%</td></tr>
+<tr><td>2021.0</td><td>5,658</td><td>3,549</td><td>62.7%</td><td>386,884</td><td>239,694</td><td>95.6%</td></tr>
+<tr><td>2022.0</td><td>6,033</td><td>3,710</td><td>61.5%</td><td>389,793</td><td>217,598</td><td>83.7%</td></tr>
+<tr><td>2023.0</td><td>6,258</td><td>3,808</td><td>60.9%</td><td>380,387</td><td>234,760</td><td>90.6%</td></tr>
+<tr><td>2024.0</td><td>6,480</td><td>3,966</td><td>61.2%</td><td>385,153</td><td>265,223</td><td>104.6%</td></tr>
+</tbody></table>
+<h2>B. Puntajes Promedio por Área de Conocimiento</h2>
+<div class="note">
+    Promedios del <strong>puntaje global</strong> y módulos clave por área. Recuerda que la
+    comparación entre áreas refleja diferencias en la composición de la muestra y
+    normas disciplinares, no necesariamente "mejor" o "peor" desempeño absoluto.
+    </div>
+<table>
+<thead><tr><th>Área de Conocimiento</th><th>Presentaciones</th><th>Puntaje Global (media)</th><th>Punt Razona Cuantitativa</th><th>Punt Lectura Critica</th><th>Punt Ingles</th></tr></thead>
+<tbody>
+<tr><td>ECONOMIA ADMINISTRACION CONTADURIA Y AFINES</td><td>764,044</td><td>127.8</td><td>128.6</td><td>128.8</td><td>134.3</td></tr>
+<tr><td>INGENIERIA ARQUITECTURA URBANISMO Y AFINES</td><td>581,284</td><td>135.1</td><td>145.1</td><td>135.5</td><td>142.3</td></tr>
+<tr><td>CIENCIAS SOCIALES Y HUMANAS</td><td>525,928</td><td>138.2</td><td>127.7</td><td>145.4</td><td>143.0</td></tr>
+<tr><td>CIENCIAS DE LA EDUCACION</td><td>212,822</td><td>131.8</td><td>125.5</td><td>137.7</td><td>137.7</td></tr>
+<tr><td>CIENCIAS DE LA SALUD</td><td>202,526</td><td>134.4</td><td>133.1</td><td>138.5</td><td>140.3</td></tr>
+<tr><td>BELLAS ARTES</td><td>75,004</td><td>134.2</td><td>128.1</td><td>139.4</td><td>150.3</td></tr>
+<tr><td>MATEMATICAS Y CIENCIAS NATURALES</td><td>39,991</td><td>148.8</td><td>157.9</td><td>152.3</td><td>156.5</td></tr>
+<tr><td>AGRONOMIA VETERINARIA Y AFINES</td><td>34,318</td><td>123.8</td><td>128.2</td><td>126.2</td><td>127.2</td></tr>
+</tbody></table>
+<h2>C. Puntajes Promedio por Nivel de Formación</h2>
+<table>
+<thead><tr><th>Nivel de Formación</th><th>Presentaciones</th><th>Puntaje Global (media)</th></tr></thead>
+<tbody>
+<tr><td>UNIVERSITARIO</td><td>2,327,912</td><td>137.3</td></tr>
+<tr><td>TECNOLOGICO</td><td>132,764</td><td>10.4</td></tr>
+</tbody></table>
+<h2>D. Rankings de IES por Puntaje Global Promedio</h2>
+<div class="note">
+    Instituciones con mínimo 200 presentaciones en todo el periodo.
+    El <strong>z-score</strong> indica cuántas desviaciones estándar (del conjunto de IES)
+    está el puntaje promedio de esa institución respecto a la media del grupo.
+    </div>
+<h3>🏆 Top 10 IES con mayor puntaje promedio</h3>
+<table>
+<thead><tr><th>Institución</th><th>Presentaciones SP</th><th>Graduados SNIES</th><th>Puntaje Global</th><th>Z-score</th></tr></thead>
+<tbody>
+<tr><td>COLEGIO MAYOR DE NUESTRA SEAORA DEL ROSARIO</td><td>1,408</td><td>1,157</td><td>179.0</td><td>1.45</td></tr>
+<tr><td>UNIVERSIDAD EIA</td><td>2,564</td><td>2,259</td><td>172.4</td><td>1.29</td></tr>
+<tr><td>UNIVERSIDAD DE LOS ANDES</td><td>25,867</td><td>29,127</td><td>172.4</td><td>1.29</td></tr>
+<tr><td>UNIVERSIDAD ESCUELA COLOMBIANA DE INGENIERIA JULIO GARAVITO</td><td>2,487</td><td>3,245</td><td>170.9</td><td>1.26</td></tr>
+<tr><td>COLEGIO DE ESTUDIOS SUPERIORES DE ADMINISTRACION-CESA-</td><td>2,184</td><td>2,094</td><td>165.6</td><td>1.13</td></tr>
+<tr><td>UNIVERSIDAD DE LA SABANA</td><td>14,705</td><td>14,708</td><td>163.8</td><td>1.09</td></tr>
+<tr><td>UNIVERSIDAD ICESI</td><td>8,396</td><td>9,541</td><td>163.4</td><td>1.08</td></tr>
+<tr><td>COLEGIO MAYOR DE NUESTRA SENORA DEL ROSARIO</td><td>14,383</td><td>14,743</td><td>160.4</td><td>1.00</td></tr>
+<tr><td>UNIVERSIDAD EAFIT-</td><td>15,600</td><td>14,623</td><td>160.2</td><td>1.00</td></tr>
+<tr><td>UNIVERSIDAD NACIONAL DE COLOMBIA</td><td>54,619</td><td>56,102</td><td>159.9</td><td>0.99</td></tr>
+</tbody></table>
+<h3>📉 10 IES con menor puntaje promedio (≥200 presentaciones)</h3>
+<table>
+<thead><tr><th>Institución</th><th>Presentaciones SP</th><th>Graduados SNIES</th><th>Puntaje Global</th><th>Z-score</th></tr></thead>
+<tbody>
+<tr><td>ESCUELA  MILITAR DE SUBOFICIALES SARGENTO INOCENCIO CHINCA</td><td>1,219</td><td>1,182</td><td>9.3</td><td>-2.58</td></tr>
+<tr><td>FUNDACION TECNOLOGICA ANTONIO DE AREVALO</td><td>898</td><td>1,068</td><td>9.7</td><td>-2.57</td></tr>
+<tr><td>FUNDACION TECNOLOGICA AUTONOMA DEL PACIFICO</td><td>339</td><td>261</td><td>9.8</td><td>-2.57</td></tr>
+<tr><td>TECNOLOGICA FITEC</td><td>276</td><td>126</td><td>9.8</td><td>-2.57</td></tr>
+<tr><td>SERVICIO NACIONAL DE APRENDIZAJE-SENA-</td><td>94,105</td><td>53,919</td><td>9.8</td><td>-2.57</td></tr>
+<tr><td>CORPORACION ESCUELA SUPERIOR DE ADMINISTRACION Y ESTUDIOS TECNOLOGICOS- EAE</td><td>339</td><td>183</td><td>9.9</td><td>-2.57</td></tr>
+<tr><td>FUNDACION DE ESTUDIOS SUPERIORES COMFANORTE -FESC-</td><td>461</td><td>431</td><td>9.9</td><td>-2.56</td></tr>
+<tr><td>FUNDACION CENTRO DE INVESTIGACION DOCENCIA Y CONSULTORIA ADMINISTRATIVA-F-CIDCA-</td><td>408</td><td>395</td><td>10.0</td><td>-2.56</td></tr>
+<tr><td>CORPORACION UNIVERSITARIA DEL META</td><td>468</td><td>416</td><td>10.0</td><td>-2.56</td></tr>
+<tr><td>FUNDACION CENTRO COLOMBIANO DE ESTUDIOS PROFESIONALES, -FCECEP</td><td>926</td><td>1,200</td><td>10.0</td><td>-2.56</td></tr>
+</tbody></table>
+<h2>E. Tendencia Temporal por Área (Z-score intra-año)</h2>
+<div class="note">
+    Z-score calculado <em>dentro de cada año</em> de evaluación. Valores positivos indican
+    que el área tiene puntajes por encima de la media nacional ese año; valores negativos,
+    por debajo. Esto es comparable entre años a diferencia del puntaje crudo.
+    </div>
+<table>
+<thead><tr><th>Área de Conocimiento</th><th>2015</th><th>2016</th><th>2017</th><th>2018</th><th>2019</th><th>2020</th><th>2021</th><th>2022</th><th>2023</th><th>2024</th></tr></thead>
+<tbody>
+<tr><td>CIENCIAS DE LA EDUCACION</td><td>-0.28</td><td>-0.43</td><td>-0.39</td><td>-0.43</td><td>-0.40</td><td>-0.36</td><td>-0.30</td><td>-0.33</td><td>-0.27</td><td>-0.26</td></tr>
+<tr><td>CIENCIAS DE LA SALUD</td><td>-0.10</td><td>-0.08</td><td>-0.07</td><td>-0.04</td><td>0.01</td><td>0.01</td><td>0.02</td><td>-0.02</td><td>-0.02</td><td>-0.07</td></tr>
+<tr><td>CIENCIAS SOCIALES Y HUMANAS</td><td>0.20</td><td>0.18</td><td>0.17</td><td>0.13</td><td>0.12</td><td>0.13</td><td>0.12</td><td>0.13</td><td>0.11</td><td>0.09</td></tr>
+<tr><td>ECONOMIA ADMINISTRACION CONTADURIA Y AFINES</td><td>-0.27</td><td>-0.30</td><td>-0.28</td><td>-0.28</td><td>-0.30</td><td>-0.33</td><td>-0.34</td><td>-0.34</td><td>-0.34</td><td>-0.34</td></tr>
+<tr><td>INGENIERIA ARQUITECTURA URBANISMO Y AFINES</td><td>0.18</td><td>0.24</td><td>0.22</td><td>0.26</td><td>0.24</td><td>0.24</td><td>0.23</td><td>0.23</td><td>0.21</td><td>0.20</td></tr>
+</tbody></table>
+<h2>F. Programas SNIES sin Cobertura Saber Pro (por Área)</h2>
+<div class="note">
+Programas del universo elegible que <strong>no tienen match</strong> con ningún registro
+en Saber Pro. Pueden ser: (a) programas muy nuevos (sin cohorte completa aún),
+(b) programas con código SNIES diferente al registrado en Saber Pro,
+(c) programas que aún no han completado ciclos de graduación.
+</div>
+<table>
+<thead><tr><th>Área de Conocimiento</th><th>Programas sin SP</th><th>Graduados sin SP</th></tr></thead>
+<tbody>
+<tr><td>ECONOMIA ADMINISTRACION CONTADURIA Y AFINES</td><td>1,439</td><td>573,904</td></tr>
+<tr><td>INGENIERIA ARQUITECTURA URBANISMO Y AFINES</td><td>1,496</td><td>373,160</td></tr>
+<tr><td>CIENCIAS SOCIALES Y HUMANAS</td><td>364</td><td>77,021</td></tr>
+<tr><td>CIENCIAS DE LA SALUD</td><td>117</td><td>46,399</td></tr>
+<tr><td>BELLAS ARTES</td><td>355</td><td>39,466</td></tr>
+<tr><td>AGRONOMIA VETERINARIA Y AFINES</td><td>186</td><td>30,287</td></tr>
+<tr><td>CIENCIAS DE LA EDUCACION</td><td>496</td><td>29,897</td></tr>
+<tr><td>MATEMATICAS Y CIENCIAS NATURALES</td><td>78</td><td>21,025</td></tr>
+</tbody></table>
+
+<h2>G. Metodología del Cruce (para el Artículo)</h2>
+<div class="ok">
+<h3>Proceso de vinculación SNIES ↔ Saber Pro</h3>
+<ol>
+<li><strong>Definición del universo:</strong> Se restringe SNIES a
+    <code>nivel_academico = 'PREGRADO'</code> y
+    <code>nivel_formacion</code> con 'Universitari*' o 'Tecnológic*'.
+    En Saber Pro se excluyen registros con
+    <code>estu_tipo_registro = 'INDIVIDUAL'</code> (sin código SNIES).</li>
+<li><strong>Llave de enlace:</strong> <code>codigo_snies_programa</code> (entero).
+    En SNIES es string; en Saber Pro es float → se castea a int en ambas fuentes.</li>
+<li><strong>Granularidad del cruce:</strong> Nivel programa × IES × año.
+    Los puntajes individuales de Saber Pro se promedian por programa-año.</li>
+<li><strong>Tratamiento de puntajes:</strong> Los puntajes Saber Pro están normalizados
+    a media≈150, SD≈25 por año. Para comparaciones longitudinales se calcula
+    z-score = (puntaje − media_anual) / sd_anual.</li>
+<li><strong>Criterio de calidad del match:</strong> Se retienen programas con
+    ratio presentaciones/graduados entre 10% y 300% para excluir valores extremos
+    debidos a errores en la llave.</li>
+</ol>
+<h3>Limitaciones</h3>
+<ul>
+<li>El cruce es a nivel de programa, no a nivel individual. No se puede rastrear
+    a un estudiante específico entre SNIES y Saber Pro.</li>
+<li>El rezago entre presentación y graduación introduce un desfase de ~1 año.</li>
+<li>Los programas con código SNIES nulo o erróneo en Saber Pro se pierden en el cruce.</li>
+<li>Años 2020-2021 pueden tener menor cobertura por COVID-19 (suspensión parcial de evaluaciones).</li>
+</ul>
+</div>
+
+<h2>H. Análisis de Cobertura por Año — ¿Por Qué Varía?</h2>
+<div class="note">
+<strong>Interpretación de la cobertura anual:</strong>
+La cobertura del cruce mide cuántos programas SNIES tienen presentaciones en Saber Pro <em>ese año</em>.
+No es un ratio de estudiantes; es un indicador de qué tan bien la llave <code>codigo_snies_programa</code>
+conecta ambas fuentes en cada corte temporal.<br><br>
+<strong>Programas únicos en todo el periodo:</strong>
+<ul>
+  <li>Con match en <em>algún año</em>: <strong>5,724</strong> (68.9%)</li>
+  <li>Sin match en <em>ningún año</em>: <strong>2,582</strong> (31.1%) — estos sí son programas estructuralmente ausentes de Saber Pro</li>
+</ul>
+La variación año a año (ej. mayor cobertura en años recientes) se explica por:
+(1) programas nuevos que aún no tienen cohortes completas,
+(2) cambios en el código SNIES entre años,
+(3) diferencias en la temporalidad del reporte SNIES vs. la convocatoria Saber Pro.
+</div>
+<table>
+<thead><tr><th>Año</th><th>Prog. SNIES</th><th>Con Saber Pro</th><th>% Cobertura</th><th>Programas nuevos ese año</th><th>% sin match que son nuevos</th></tr></thead>
+<tbody>
+<tr><td>2015.0</td><td>4,557</td><td>3,959</td><td>86.9%</td><td>4,557</td><td>100.0%</td></tr>
+<tr><td>2016.0</td><td>4,646</td><td>3,094</td><td>66.6%</td><td>416</td><td>16.6%</td></tr>
+<tr><td>2017.0</td><td>4,787</td><td>3,186</td><td>66.6%</td><td>387</td><td>13.7%</td></tr>
+<tr><td>2018.0</td><td>5,036</td><td>3,296</td><td>65.4%</td><td>350</td><td>12.1%</td></tr>
+<tr><td>2019.0</td><td>5,119</td><td>3,400</td><td>66.4%</td><td>289</td><td>9.9%</td></tr>
+<tr><td>2020.0</td><td>5,231</td><td>3,439</td><td>65.7%</td><td>371</td><td>12.3%</td></tr>
+<tr><td>2021.0</td><td>5,658</td><td>3,549</td><td>62.7%</td><td>529</td><td>17.4%</td></tr>
+<tr><td>2022.0</td><td>6,033</td><td>3,710</td><td>61.5%</td><td>532</td><td>15.8%</td></tr>
+<tr><td>2023.0</td><td>6,258</td><td>3,808</td><td>60.9%</td><td>408</td><td>10.5%</td></tr>
+<tr><td>2024.0</td><td>6,480</td><td>3,966</td><td>61.2%</td><td>467</td><td>11.5%</td></tr>
+</tbody></table>
+</body></html>
